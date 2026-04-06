@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <title>Rucoy Nexus - Map</title>
+    <style>
+        :root {
+            --rucoy-blue: #3CBCFC;
+            --rucoy-bg: #121212;
+            --rucoy-drawer-bg: #2173b3;
+            --white: #F3F3F3;
+        }
+
+        /* --- ESTILOS DO MAPA (ORIGINAIS) --- */
+        html, body {
+            margin: 0; width: 100%; height: 100%;
+            overflow: hidden; background: #000;
+            font-family: monospace; cursor: default;
+        }
+
+        canvas {
+            display: block; background: #000;
+            image-rendering: pixelated; touch-action: none;
+        }
+
+        #coords {
+            position: absolute; top: 66px; left: 10px; /* Ajustado para não sumir sob a barra */
+            background: rgba(0, 0, 0, 0.7); color: #0f0;
+            border: 1px solid #0f0; padding: 8px;
+            z-index: 10; user-select: none;
+            -webkit-user-select: none; cursor: default;
+        }
+
+        #crosshair {
+            position: absolute; top: 50%; left: 50%;
+            transform: translate(-50%,-50%); color: #0f0;
+            font-size: 18px; pointer-events: none;
+            user-select: none; z-index: 5;
+        }
+
+        .zoom-controls {
+            position: absolute; bottom: 20px; right: 20px;
+            display: flex; flex-direction: column; gap: 10px; z-index: 10;
+        }
+
+        .zoom-btn {
+            width: 50px; height: 50px; border-radius: 25px;
+            background: rgba(0, 255, 0, 0.2); border: 2px solid #0f0;
+            color: #0f0; font-size: 24px; display: flex;
+            align-items: center; justify-content: center;
+            cursor: pointer; user-select: none;
+            -webkit-user-select: none; touch-action: none;
+        }
+
+        .zoom-btn:active { background: rgba(0, 255, 0, 0.35); }
+
+        /* --- ESTILOS DO MENU (ADAPTADOS) --- */
+        header {
+            background-color: var(--rucoy-blue);
+            height: 56px; display: flex; align-items: center;
+            padding: 0 16px; position: fixed; top: 0;
+            width: 100%; z-index: 100;
+        }
+
+        .top-bar-action {
+            display: flex; align-items: center; height: 100%;
+            padding-right: 30px; cursor: pointer;
+        }
+
+        .menu-btn img { width: 24px; filter: brightness(0) invert(1); margin-right: 20px; }
+        #current-page-title { font-size: 20px; font-weight: 500; color: white; font-family: 'Roboto', sans-serif; }
+
+        #drawer {
+            position: fixed; top: 0; left: -280px; width: 280px; height: 100%;
+            background-color: var(--rucoy-drawer-bg); z-index: 200;
+            transition: 0.3s cubic-bezier(0.4, 0, 0.2, 1); overflow-y: auto;
+        }
+        #drawer.active { left: 0; }
+        .drawer-banner { width: 100%; height: 150px; background: url('/res/icon/draweBanner.png') no-repeat center; background-size: cover; }
+        .drawer-item { padding: 12px 16px; display: flex; align-items: center; color: white; text-decoration: none; font-size: 16px; font-family: 'Roboto', sans-serif; }
+        .drawer-item img { width: 24px; height: 24px; margin-right: 32px; filter: brightness(0) invert(1); }
+        
+        #overlay { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.5); display: none; z-index: 150; }
+
+        /* MODO APP */
+        body.is-app header, body.is-app #drawer, body.is-app #overlay { display: none !important; }
+        body.is-app #coords { top: 10px; }
+    </style>
+</head>
+<body>
+
+    <div id="overlay" onclick="toggleMenu()"></div>
+
+    <header>
+        <div class="top-bar-action" onclick="toggleMenu()">
+            <div class="menu-btn"><img src="/res/icon/navnav.png" alt="menu"></div>
+            <span id="current-page-title">Map Viewer</span>
+        </div>
+    </header>
+
+    <nav id="drawer">
+        <div class="drawer-banner"></div>
+        <div class="drawer-list">
+            <a href="/" class="drawer-item"><img src="/res/icon/home.png"> Home</a>
+            <a href="/settings/" class="drawer-item"><img src="/res/icon/ic_cog.png"> Settings</a>
+            <a href="/profile/" class="drawer-item"><img src="/res/icon/user.png"> Profile</a>
+            <a href="/wiki/" class="drawer-item"><img src="/res/icon/apps.png"> Wiki</a>
+            <a href="/tradeandsales/" class="drawer-item"><img src="/res/icon/change.png"> Trades & Sales</a>
+            <a href="/map/" class="drawer-item"><img src="/res/icon/map.png"> Map</a>
+            <a href="/friends/" class="drawer-item"><img src="/res/icon/friends.png"> Friends</a>
+            <a href="/guild/" class="drawer-item"><img src="/res/icon/guild.png"> Guild</a>
+            <a href="/calculator/" class="drawer-item"><img src="/res/icon/calculator.png"> Calculator</a>
+            <a href="/updates/" class="drawer-item"><img src="/res/icon/update.png"> Updates</a>
+        </div>
+    </nav>
+
+    <div id="coords">Carregando...</div>
+    <div id="crosshair">+</div>
+    <div class="zoom-controls">
+        <div class="zoom-btn" onclick="applyZoom(1.2)">+</div>
+        <div class="zoom-btn" onclick="applyZoom(0.8)">-</div>
+    </div>
+
+    <canvas id="mapCanvas"></canvas>
+
+<script>
+/* ================= LÓGICA DO MENU ================= */
+function toggleMenu() {
+    const d = document.getElementById('drawer'), o = document.getElementById('overlay');
+    d.classList.toggle('active');
+    o.style.display = d.classList.contains('active') ? 'block' : 'none';
+}
+
+/* ================= SEU CÓDIGO DO MAPA (INTEGRO) ================= */
+const canvas = document.getElementById('mapCanvas');
+const ctx = canvas.getContext('2d', { alpha: false });
+const coordsDisplay = document.getElementById('coords');
+
+const TILE_W = 24, TILE_H = 24;
+const MARGIN = 1, STEP = 26;
+const MAP_OFFSET_X = 27;
+const MAP_OFFSET_Y = 254;
+
+let mapData = null;
+let tilesetImg = new Image();
+let camera = { x: 0, y: 0, scale: 2.5 };
+let chunkCache = new Map();
+let animLookup = new Map();
+let mapReady = false;
+
+function initMap(jsonString) {
+  try {
+    mapReady = false;
+    coordsDisplay.textContent = "Carregando mapa...";
+    mapData = (typeof jsonString === 'string') ? JSON.parse(jsonString) : jsonString;
+    const ts = mapData.tilesets[0];
+    animLookup.clear();
+    if (ts.tiles) {
+      ts.tiles.forEach(t => {
+        if (t.animation) animLookup.set(t.id, t.animation);
+      });
+    }
+    tilesetImg.decoding = "async";
+    tilesetImg.src = "map.png";
+    tilesetImg.onload = () => {
+      resize();
+      camera.x = -((130 - MAP_OFFSET_X) * TILE_W);
+      camera.y = -((281 - MAP_OFFSET_Y) * TILE_H);
+      buildChunkCache();
+      mapReady = true;
+      animate();
+    };
+    tilesetImg.onerror = () => { coordsDisplay.textContent = "Erro ao carregar tileset"; };
+  } catch (err) {
+    coordsDisplay.textContent = "Erro no JSON";
+    console.log(err);
+  }
+}
+
+fetch("defaltMap.json")
+  .then(r => r.text())
+  .then(data => { initMap(data); })
+  .catch(err => { coordsDisplay.textContent = "Erro ao carregar JSON"; console.log(err); });
+
+function buildChunkCache() {
+  chunkCache.clear();
+  const ts = mapData.tilesets[0];
+  const cols = ts.columns;
+  mapData.layers.forEach((layer, lIdx) => {
+    if (!layer.chunks) return;
+    layer.chunks.forEach(chunk => {
+      const canvasA = document.createElement("canvas");
+      const canvasB = document.createElement("canvas");
+      canvasA.width = canvasB.width = chunk.width * TILE_W;
+      canvasA.height = canvasB.height = chunk.height * TILE_H;
+      const ctxA = canvasA.getContext("2d");
+      const ctxB = canvasB.getContext("2d");
+      ctxA.imageSmoothingEnabled = false;
+      ctxB.imageSmoothingEnabled = false;
+      chunk.data.forEach((gid, i) => {
+        if (gid === 0) return;
+        const tileId = gid - ts.firstgid;
+        const dx = (i % chunk.width) * TILE_W;
+        const dy = Math.floor(i / chunk.width) * TILE_H;
+        let frame0 = tileId;
+        let frame1 = tileId;
+        if (animLookup.has(tileId)) {
+          const anim = animLookup.get(tileId);
+          frame0 = anim[0].tileid;
+          frame1 = anim[1]?.tileid ?? anim[0].tileid;
+        }
+        const sx0 = MARGIN + ((frame0 % cols) * STEP);
+        const sy0 = MARGIN + (Math.floor(frame0 / cols) * STEP);
+        const sx1 = MARGIN + ((frame1 % cols) * STEP);
+        const sy1 = MARGIN + (Math.floor(frame1 / cols) * STEP);
+        ctxA.drawImage(tilesetImg, sx0, sy0, TILE_W, TILE_H, dx, dy, TILE_W, TILE_H);
+        ctxB.drawImage(tilesetImg, sx1, sy1, TILE_W, TILE_H, dx, dy, TILE_W, TILE_H);
+      });
+      chunkCache.set(`${lIdx}_${chunk.x}_${chunk.y}`, { a: canvasA, b: canvasB });
+    });
+  });
+}
+
+function render() {
+  if (!mapReady || !mapData || !tilesetImg.complete) return;
+  ctx.imageSmoothingEnabled = false;
+  ctx.clearRect(0, 0, canvas.width, canvas.height);
+  const time = performance.now();
+  const frame = Math.floor(time / 900) % 2;
+  mapData.layers.forEach((layer, lIdx) => {
+    if (!layer.chunks) return;
+    const offX = layer.offsetx || 0;
+    const offY = layer.offsety || 0;
+    layer.chunks.forEach(chunk => {
+      const cx = (chunk.x * TILE_W) + offX;
+      const cy = (chunk.y * TILE_H) + offY;
+      const chunkData = chunkCache.get(`${lIdx}_${chunk.x}_${chunk.y}`);
+      if (!chunkData) return;
+      const img = frame === 0 ? chunkData.a : chunkData.b;
+      const screenX = Math.round((cx + camera.x) * camera.scale + canvas.width / 2);
+      const screenY = Math.round((cy + camera.y) * camera.scale + canvas.height / 2);
+      const w = Math.ceil(img.width * camera.scale) + 1;
+      const h = Math.ceil(img.height * camera.scale) + 1;
+      ctx.drawImage(img, screenX, screenY, w, h);
+    });
+  });
+  const centerX = -camera.x;
+  const centerY = -camera.y;
+  const tileX = Math.floor(centerX / TILE_W) + MAP_OFFSET_X;
+  const tileY = Math.floor(centerY / TILE_H) + MAP_OFFSET_Y;
+  coordsDisplay.textContent = `X: ${tileX}, Y: ${tileY} | Zoom: ${camera.scale.toFixed(2)}x`;
+}
+
+function animate() { render(); requestAnimationFrame(animate); }
+function applyZoom(m) { camera.scale = Math.min(Math.max(camera.scale * m, 0.1), 10); }
+function resize() { canvas.width = window.innerWidth; canvas.height = window.innerHeight; }
+
+window.addEventListener("resize", resize);
+resize();
+
+/* ================= EVENTOS DE MOUSE E TOUCH (ORIGINAIS) ================= */
+let dragging = false;
+let lastX = 0, lastY = 0;
+canvas.addEventListener("mousedown", e => { dragging = true; lastX = e.clientX; lastY = e.clientY; });
+window.addEventListener("mouseup", () => { dragging = false; });
+window.addEventListener("mousemove", e => {
+  if (!dragging) return;
+  camera.x += (e.clientX - lastX) / camera.scale;
+  camera.y += (e.clientY - lastY) / camera.scale;
+  lastX = e.clientX; lastY = e.clientY;
+});
+
+canvas.addEventListener("wheel", e => {
+  e.preventDefault();
+  applyZoom(e.deltaY < 0 ? 1.1 : 0.9);
+}, { passive: false });
+
+let activeTouches = new Map();
+let pinchStartDistance = 0, pinchStartScale = 1;
+let dragLastX = 0, dragLastY = 0, touchMode = "none";
+
+function getTouchDistance() {
+  const touches = Array.from(activeTouches.values());
+  if (touches.length < 2) return 0;
+  const dx = touches[0].clientX - touches[1].clientX;
+  const dy = touches[0].clientY - touches[1].clientY;
+  return Math.hypot(dx, dy);
+}
+
+canvas.addEventListener("touchstart", e => {
+  e.preventDefault();
+  for (const t of e.changedTouches) { activeTouches.set(t.identifier, { clientX: t.clientX, clientY: t.clientY }); }
+  if (activeTouches.size === 1) {
+    const t = Array.from(activeTouches.values())[0];
+    dragLastX = t.clientX; dragLastY = t.clientY; touchMode = "drag";
+  } else if (activeTouches.size === 2) {
+    pinchStartDistance = getTouchDistance(); pinchStartScale = camera.scale; touchMode = "pinch";
+  }
+}, { passive: false });
+
+canvas.addEventListener("touchmove", e => {
+  e.preventDefault();
+  for (const t of e.changedTouches) { activeTouches.set(t.identifier, { clientX: t.clientX, clientY: t.clientY }); }
+  if (activeTouches.size === 2) {
+    const dist = getTouchDistance();
+    if (pinchStartDistance > 0) {
+      camera.scale = Math.min(Math.max(pinchStartScale * (dist / pinchStartDistance), 0.1), 10);
+    }
+    touchMode = "pinch";
+  } else if (activeTouches.size === 1) {
+    const t = Array.from(activeTouches.values())[0];
+    if (touchMode !== "drag") { dragLastX = t.clientX; dragLastY = t.clientY; touchMode = "drag"; return; }
+    camera.x += (t.clientX - dragLastX) / camera.scale;
+    camera.y += (t.clientY - dragLastY) / camera.scale;
+    dragLastX = t.clientX; dragLastY = t.clientY;
+  }
+}, { passive: false });
+
+canvas.addEventListener("touchend", e => {
+  e.preventDefault();
+  for (const t of e.changedTouches) { activeTouches.delete(t.identifier); }
+  if (activeTouches.size === 1) {
+    const t = Array.from(activeTouches.values())[0];
+    dragLastX = t.clientX; dragLastY = t.clientY; touchMode = "drag";
+  } else if (activeTouches.size === 0) { touchMode = "none"; pinchStartDistance = 0; }
+}, { passive: false });
+
+canvas.addEventListener("touchcancel", e => {
+  for (const t of e.changedTouches) { activeTouches.delete(t.identifier); }
+  if (activeTouches.size === 0) { touchMode = "none"; pinchStartDistance = 0; }
+});
+
+const params = new URLSearchParams(window.location.search);
+if (params.get('platform') === 'app') { document.body.classList.add('is-app'); }
+</script>
+</body>
+</html>

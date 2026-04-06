@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rucoy Nexus</title>
+    <style>
+        :root {
+            /* Cores oficiais baseadas no seu app */
+            --rucoy-blue: #3CBCFC;
+            --rucoy-bg: #121212;
+            --rucoy-drawer-bg: #2173b3;
+            --white: #F3F3F3;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Roboto', sans-serif; }
+        body { background-color: var(--rucoy-bg); color: var(--white); overflow-x: hidden; }
+
+        /* --- TOP BAR --- */
+        header {
+            background-color: var(--rucoy-blue);
+            height: 56px;
+            display: flex;
+            align-items: center;
+            padding: 0 16px;
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 100;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.3);
+        }
+
+        .top-bar-action {
+            display: flex;
+            align-items: center;
+            height: 100%;
+            padding-right: 30px;
+            cursor: pointer;
+            user-select: none;
+            -webkit-user-select: none;
+        }
+
+        .top-bar-action:active { background-color: rgba(255, 255, 255, 0.1); }
+
+        .menu-btn {
+            background: none;
+            border: none;
+            margin-right: 20px;
+            display: flex;
+            align-items: center;
+            pointer-events: none;
+        }
+
+        .menu-btn img {
+            width: 24px;
+            filter: brightness(0) invert(1); /* Deixa o ícone navnav branco */
+        }
+
+        #current-page-title {
+            font-size: 20px;
+            font-weight: 500;
+            color: white;
+            cursor: pointer;
+        }
+
+        /* --- DRAWER (MENU LATERAL) --- */
+        #drawer {
+            position: fixed;
+            top: 0;
+            left: -280px;
+            width: 280px;
+            height: 100%;
+            background-color: var(--rucoy-drawer-bg);
+            z-index: 200;
+            transition: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            overflow-y: auto;
+            box-shadow: 4px 0 10px rgba(0,0,0,0.5);
+        }
+
+        #drawer.active { left: 0; }
+
+        .drawer-banner {
+            width: 100%;
+            height: 150px;
+            background: url('/res/icon/draweBanner.png') no-repeat center;
+            background-size: cover;
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+        }
+
+        .drawer-list { list-style: none; padding: 8px 0; }
+
+        .drawer-item {
+            padding: 12px 16px;
+            display: flex;
+            align-items: center;
+            color: white;
+            text-decoration: none;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        .drawer-item:hover { background-color: rgba(255, 255, 255, 0.1); }
+
+        .drawer-item img {
+            width: 24px;
+            height: 24px;
+            margin-right: 32px;
+            filter: brightness(0) invert(1); /* Deixa os ícones brancos */
+        }
+
+        /* --- OVERLAY --- */
+        #overlay {
+            position: fixed;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background: rgba(0,0,0,0.5);
+            display: none;
+            z-index: 150;
+        }
+
+        /* --- CONTEÚDO --- */
+        main { padding: 76px 20px 20px 20px; }
+
+        /* MODO APP (Esconde menus para exibir apenas conteúdo no Android) */
+        body.is-app header, body.is-app #drawer, body.is-app #overlay {
+            display: none !important;
+        }
+        body.is-app main { padding: 0; }
+    </style>
+</head>
+<body>
+
+    <div id="overlay" onclick="toggleMenu()"></div>
+
+    <header>
+        <div class="top-bar-action" onclick="toggleMenu()">
+            <div class="menu-btn">
+                <img src="/res/icon/navnav.png" alt="menu">
+            </div>
+            <span id="current-page-title">Home</span>
+        </div>
+    </header>
+
+    <nav id="drawer">
+        <div class="drawer-banner"></div>
+        <div class="drawer-list">
+            <a href="/" class="drawer-item"><img src="/res/icon/home.png"> Home</a>
+            <a href="/settings/" class="drawer-item"><img src="/res/icon/ic_cog.png"> Settings</a>
+            <a href="/profile/" class="drawer-item"><img src="/res/icon/user.png"> Profile</a>
+            <a href="/wiki/" class="drawer-item"><img src="/res/icon/apps.png"> Wiki</a>
+            <a href="/tradeandsales/" class="drawer-item"><img src="/res/icon/change.png"> Trades & Sales</a>
+            <a href="/map/" class="drawer-item"><img src="/res/icon/map.png"> Map</a>
+            <a href="/friends/" class="drawer-item"><img src="/res/icon/friends.png"> Friends</a>
+            <a href="/guild/" class="drawer-item"><img src="/res/icon/guild.png"> Guild</a>
+            <a href="/calculator/" class="drawer-item"><img src="/res/icon/calculator.png"> Calculator</a>
+            <a href="/updates/" class="drawer-item"><img src="/res/icon/update.png"> Updates</a>
+        </div>
+    </nav>
+
+    <main id="main-content">
+        <h1>Updates</h1>
+        <p>Bem-vindo ao Nexus!</p>
+    </main>
+
+    <script>
+        function toggleMenu() {
+            const drawer = document.getElementById('drawer');
+            const overlay = document.getElementById('overlay');
+            drawer.classList.toggle('active');
+            overlay.style.display = drawer.classList.contains('active') ? 'block' : 'none';
+        }
+
+        // Detecta se a página foi aberta com ?platform=app
+        const params = new URLSearchParams(window.location.search);
+        if (params.get('platform') === 'app') {
+            document.body.classList.add('is-app');
+        }
+    </script>
+</body>
+</html>
