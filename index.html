@@ -1,12 +1,11 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Rucoy Nexus</title>
     <style>
         :root {
-            /* Cores oficiais baseadas no seu app */
             --rucoy-blue: #3CBCFC;
             --rucoy-bg: #121212;
             --rucoy-drawer-bg: #2173b3;
@@ -36,34 +35,21 @@
             height: 100%;
             padding-right: 30px;
             cursor: pointer;
-            user-select: none;
-            -webkit-user-select: none;
-        }
-
-        .top-bar-action:active { background-color: rgba(255, 255, 255, 0.1); }
-
-        .menu-btn {
-            background: none;
-            border: none;
-            margin-right: 20px;
-            display: flex;
-            align-items: center;
-            pointer-events: none;
         }
 
         .menu-btn img {
             width: 24px;
-            filter: brightness(0) invert(1); /* Deixa o ícone navnav branco */
+            filter: brightness(0) invert(1);
+            margin-right: 20px;
         }
 
         #current-page-title {
             font-size: 20px;
             font-weight: 500;
             color: white;
-            cursor: pointer;
         }
 
-        /* --- DRAWER (MENU LATERAL) --- */
+        /* --- DRAWER --- */
         #drawer {
             position: fixed;
             top: 0;
@@ -96,7 +82,6 @@
             color: white;
             text-decoration: none;
             font-size: 16px;
-            cursor: pointer;
         }
 
         .drawer-item:hover { background-color: rgba(255, 255, 255, 0.1); }
@@ -105,7 +90,7 @@
             width: 24px;
             height: 24px;
             margin-right: 32px;
-            filter: brightness(0) invert(1); /* Deixa os ícones brancos */
+            filter: brightness(0) invert(1);
         }
 
         /* --- OVERLAY --- */
@@ -117,13 +102,10 @@
             z-index: 150;
         }
 
-        /* --- CONTEÚDO --- */
         main { padding: 76px 20px 20px 20px; }
 
-        /* MODO APP (Esconde menus para exibir apenas conteúdo no Android) */
-        body.is-app header, body.is-app #drawer, body.is-app #overlay {
-            display: none !important;
-        }
+        /* MODO APP */
+        body.is-app header, body.is-app #drawer, body.is-app #overlay { display: none !important; }
         body.is-app main { padding: 0; }
     </style>
 </head>
@@ -153,15 +135,32 @@
             <a href="/guild/" class="drawer-item"><img src="/res/icon/guild.png"> Guild</a>
             <a href="/calculator/" class="drawer-item"><img src="/res/icon/calculator.png"> Calculator</a>
             <a href="/updates/" class="drawer-item"><img src="/res/icon/update.png"> Updates</a>
+            <a href="#" onclick="logout()" class="drawer-item" style="margin-top: 20px; border-top: 1px solid rgba(255,255,255,0.1);">
+                <img src="/res/icon/ic_cog.png" style="filter: invert(30%) sepia(100%) saturate(500%) hue-rotate(0deg);"> Sair
+            </a>
         </div>
     </nav>
 
     <main id="main-content">
-        <h1>Home Page</h1>
-        <p>Bem-vindo ao Nexus!</p>
+        <h1>Dashboard</h1>
+        <p>Bem-vindo ao Rucoy Nexus oficial!</p>
     </main>
 
     <script>
+        // 1. PROTEÇÃO DE ACESSO
+        const token = localStorage.getItem("userToken");
+        // Se não tem token e não está na página de login, expulsa
+        if (!token && !window.location.pathname.includes('/account/')) {
+            window.location.href = "/account/";
+        }
+
+        // 2. FUNÇÃO DE LOGOUT
+        function logout() {
+            localStorage.removeItem("userToken");
+            window.location.href = "/account/";
+        }
+
+        // 3. MENU DRAWER
         function toggleMenu() {
             const drawer = document.getElementById('drawer');
             const overlay = document.getElementById('overlay');
@@ -169,7 +168,7 @@
             overlay.style.display = drawer.classList.contains('active') ? 'block' : 'none';
         }
 
-        // Detecta se a página foi aberta com ?platform=app
+        // 4. DETECTA PLATAFORMA APP
         const params = new URLSearchParams(window.location.search);
         if (params.get('platform') === 'app') {
             document.body.classList.add('is-app');
