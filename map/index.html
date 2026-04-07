@@ -8,73 +8,25 @@
     <style>
         :root {
             --rucoy-blue: #3CBCFC;
+            --rucoy-bg: #121212;
             --rucoy-drawer-bg: #2173b3;
+            --white: #F3F3F3;
         }
-
-        html, body {
-            margin: 0; width: 100%; height: 100%;
-            overflow: hidden; background: #000;
-            font-family: 'Roboto', sans-serif;
-        }
-
+        html, body { margin: 0; width: 100%; height: 100%; overflow: hidden; background: #000; font-family: sans-serif; }
         canvas { display: block; background: #000; image-rendering: pixelated; touch-action: none; }
-
-        /* --- UI ELEMENTS --- */
-        #coords {
-            position: absolute; top: 66px; left: 10px;
-            background: rgba(0, 0, 0, 0.7); color: #0f0;
-            border: 1px solid #0f0; padding: 8px;
-            z-index: 10; font-family: monospace; pointer-events: none;
-        }
-
-        #crosshair {
-            position: absolute; top: 50%; left: 50%;
-            transform: translate(-50%,-50%); color: #0f0;
-            font-size: 18px; pointer-events: none; z-index: 5; opacity: 0.6;
-        }
-
-        /* --- HEADER & DRAWER (SEU MENU) --- */
-        header {
-            background-color: var(--rucoy-blue);
-            height: 56px; display: flex; align-items: center;
-            padding: 0 16px; position: fixed; top: 0;
-            width: 100%; z-index: 100; box-shadow: 0 2px 4px rgba(0,0,0,0.3);
-        }
-
+        #coords { position: absolute; top: 66px; left: 10px; background: rgba(0, 0, 0, 0.7); color: #0f0; border: 1px solid #0f0; padding: 8px; z-index: 10; font-family: monospace; pointer-events: none; }
+        #crosshair { position: absolute; top: 50%; left: 50%; transform: translate(-50%,-50%); color: #0f0; font-size: 18px; pointer-events: none; z-index: 5; }
+        .zoom-controls { position: absolute; bottom: 20px; right: 20px; display: flex; flex-direction: column; gap: 10px; z-index: 10; }
+        .zoom-btn { width: 50px; height: 50px; border-radius: 25px; background: rgba(0, 255, 0, 0.2); border: 2px solid #0f0; color: #0f0; font-size: 24px; display: flex; align-items: center; justify-content: center; cursor: pointer; user-select: none; }
+        header { background-color: var(--rucoy-blue); height: 56px; display: flex; align-items: center; padding: 0 16px; position: fixed; top: 0; width: 100%; z-index: 100; }
         .top-bar-action { display: flex; align-items: center; height: 100%; cursor: pointer; }
         .menu-btn img { width: 24px; filter: brightness(0) invert(1); margin-right: 20px; }
         #current-page-title { font-size: 20px; font-weight: 500; color: white; }
-
-        #drawer {
-            position: fixed; top: 0; left: -285px; width: 280px; height: 100%;
-            background-color: var(--rucoy-drawer-bg); z-index: 200;
-            transition: 0.3s cubic-bezier(0.4, 0, 0.2, 1); overflow-y: auto;
-        }
+        #drawer { position: fixed; top: 0; left: -280px; width: 280px; height: 100%; background-color: var(--rucoy-drawer-bg); z-index: 200; transition: 0.3s; overflow-y: auto; }
         #drawer.active { left: 0; }
-        
-        .drawer-banner { 
-            width: 100%; height: 150px; 
-            background: url('/res/icon/draweBanner.png') no-repeat center; 
-            background-size: cover; 
-        }
-
-        .drawer-item { 
-            padding: 12px 16px; display: flex; align-items: center; 
-            color: white; text-decoration: none; font-size: 16px; 
-        }
-        .drawer-item img { width: 24px; height: 24px; margin-right: 32px; filter: brightness(0) invert(1); }
-        
-        .settings-highlight {
-            margin-top: 20px; border-top: 1px solid rgba(255,255,255,0.1);
-            color: #000 !important; font-weight: bold; background: rgba(255,255,255,0.05);
-        }
-        .settings-highlight img { filter: brightness(0) !important; }
-
-        #overlay { 
-            position: fixed; top: 0; left: 0; width: 100%; height: 100%; 
-            background: rgba(0,0,0,0.5); display: none; z-index: 150; 
-        }
-
+        .drawer-item { padding: 12px 16px; display: flex; align-items: center; color: white; text-decoration: none; }
+        .drawer-item img { width: 24px; margin-right: 32px; filter: brightness(0) invert(1); }
+        #overlay { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.5); display: none; z-index: 150; }
         body.is-app header, body.is-app #drawer, body.is-app #overlay { display: none !important; }
         body.is-app #coords { top: 10px; }
     </style>
@@ -82,7 +34,6 @@
 <body>
 
     <div id="overlay" onclick="toggleMenu()"></div>
-
     <header>
         <div class="top-bar-action" onclick="toggleMenu()">
             <div class="menu-btn"><img src="/res/icon/navnav.png" alt="menu"></div>
@@ -91,23 +42,18 @@
     </header>
 
     <nav id="drawer">
-        <div class="drawer-banner"></div>
-        <div class="drawer-list">
-            <a href="/" class="drawer-item"><img src="/res/icon/home.png"> Home</a>
-            <a href="/profile/" class="drawer-item"><img src="/res/icon/user.png"> Profile</a>
-            <a href="/wiki/" class="drawer-item"><img src="/res/icon/apps.png"> Wiki</a>
-            <a href="/tradeandsales/" class="drawer-item"><img src="/res/icon/change.png"> Trades & Sales</a>
-            <a href="/map/" class="drawer-item"><img src="/res/icon/map.png"> Map</a>
-            <a href="/friends/" class="drawer-item"><img src="/res/icon/friends.png"> Friends</a>
-            <a href="/guild/" class="drawer-item"><img src="/res/icon/guild.png"> Guild</a>
-            <a href="/calculator/" class="drawer-item"><img src="/res/icon/calculator.png"> Calculator</a>
-            <a href="/updates/" class="drawer-item"><img src="/res/icon/update.png"> Updates</a>
-            <a href="/settings/" class="drawer-item settings-highlight"><img src="/res/icon/ic_cog.png"> Settings</a>
-        </div>
+        <div style="height:150px; background: #1a5a8d;"></div>
+        <a href="/" class="drawer-item"><img src="/res/icon/home.png"> Home</a>
+        <a href="/map/" class="drawer-item"><img src="/res/icon/map.png"> Map</a>
     </nav>
 
-    <div id="coords">Carregando mapa...</div>
+    <div id="coords">Carregando...</div>
     <div id="crosshair">+</div>
+    <div class="zoom-controls">
+        <div class="zoom-btn" onclick="applyZoom(1.2)">+</div>
+        <div class="zoom-btn" onclick="applyZoom(0.8)">-</div>
+    </div>
+
     <canvas id="mapCanvas"></canvas>
 
 <script>
@@ -125,127 +71,114 @@ const TILE_W = 24, TILE_H = 24;
 const MARGIN = 1, STEP = 26;
 const MAP_OFFSET_X = 27;
 const MAP_OFFSET_Y = 11;
-const CHUNK_SIZE = 16; 
 
 let mapData = null;
 let tilesetImg = new Image();
 let camera = { x: 0, y: 0, scale: 2.5 };
 let animLookup = new Map();
-let chunkCache = new Map(); 
 let mapReady = false;
 
-function initMap(json) {
-    mapData = json;
-    const ts = mapData.tilesets[0];
-    if (ts.tiles) {
-        ts.tiles.forEach(t => { if (t.animation) animLookup.set(t.id, t.animation); });
-    }
-    tilesetImg.src = "map.png";
-    tilesetImg.onload = () => {
-        resize();
-        camera.x = -((130 - MAP_OFFSET_X) * TILE_W);
-        camera.y = -((281 - MAP_OFFSET_Y) * TILE_H);
-        mapReady = true;
-        renderLoop();
-    };
+function initMap(jsonString) {
+    try {
+        mapData = (typeof jsonString === 'string') ? JSON.parse(jsonString) : jsonString;
+        const ts = mapData.tilesets[0];
+        if (ts.tiles) {
+            ts.tiles.forEach(t => { if (t.animation) animLookup.set(t.id, t.animation); });
+        }
+        tilesetImg.src = "map.png";
+        tilesetImg.onload = () => {
+            resize();
+            // Focar na cidade (130, 281)
+            camera.x = -((130 - MAP_OFFSET_X) * TILE_W);
+            camera.y = -((281 - MAP_OFFSET_Y) * TILE_H);
+            mapReady = true;
+            requestAnimationFrame(renderLoop);
+        };
+    } catch (e) { coordsDisplay.textContent = "Erro no JSON"; }
 }
 
 fetch("defalt_world.json").then(r => r.json()).then(initMap);
 
-// Função de Chunk otimizada
-function getCachedChunk(layerIdx, cx, cy, frameIdx) {
-    const key = `${layerIdx}_${cx}_${cy}_f${frameIdx}`;
-    if (chunkCache.has(key)) return chunkCache.get(key);
-
-    const layer = mapData.layers[layerIdx];
-    const ts = mapData.tilesets[0];
-    const cols = ts.columns;
-
-    const offCanvas = document.createElement('canvas');
-    offCanvas.width = CHUNK_SIZE * TILE_W;
-    offCanvas.height = CHUNK_SIZE * TILE_H;
-    const offCtx = offCanvas.getContext('2d');
-
-    for (let y = 0; y < CHUNK_SIZE; y++) {
-        for (let x = 0; x < CHUNK_SIZE; x++) {
-            const mX = cx * CHUNK_SIZE + x;
-            const mY = cy * CHUNK_SIZE + y;
-            if (mX >= layer.width || mY >= layer.height) continue;
-            let gid = layer.data[mY * layer.width + mX];
-            if (!gid || gid === 0) continue;
-            let tId = gid - ts.firstgid;
-            if (animLookup.has(tId)) {
-                const anim = animLookup.get(tId);
-                tId = anim[frameIdx]?.tileid ?? anim[0].tileid;
-            }
-            const sx = MARGIN + (tId % cols) * STEP;
-            const sy = MARGIN + Math.floor(tId / cols) * STEP;
-            offCtx.drawImage(tilesetImg, sx, sy, TILE_W, TILE_H, x * TILE_W, y * TILE_H, TILE_W, TILE_H);
-        }
-    }
-    chunkCache.set(key, offCanvas);
-    return offCanvas;
-}
-
 function renderLoop() {
     if (!mapReady) return;
+    
     ctx.fillStyle = "#000";
     ctx.fillRect(0, 0, canvas.width, canvas.height);
     ctx.imageSmoothingEnabled = false;
 
     const time = performance.now();
-    // Regra: Sem animação abaixo de 0.50 zoom
-    const frameIdx = (camera.scale >= 0.5) ? (Math.floor(time / 900) % 2) : 0;
+    const animFrame = Math.floor(time / 900) % 2;
+    const ts = mapData.tilesets[0];
+    const cols = ts.columns;
 
+    // Calcular área visível para não processar o que está fora da tela (Culling)
     const viewW = canvas.width / camera.scale;
     const viewH = canvas.height / camera.scale;
-    const sCX = Math.floor((-camera.x - viewW/2) / (CHUNK_SIZE * TILE_W));
-    const eCX = Math.ceil((-camera.x + viewW/2) / (CHUNK_SIZE * TILE_W));
-    const sCY = Math.floor((-camera.y - viewH/2) / (CHUNK_SIZE * TILE_H));
-    const eCY = Math.ceil((-camera.y + viewH/2) / (CHUNK_SIZE * TILE_H));
+    const minX = -camera.x - viewW/2;
+    const maxX = -camera.x + viewW/2;
+    const minY = -camera.y - viewH/2;
+    const maxY = -camera.y + viewH/2;
 
-    mapData.layers.forEach((layer, lIdx) => {
-        if (!layer.visible) return;
+    mapData.layers.forEach(layer => {
+        if (!layer.visible && layer.opacity === 0) return;
         
-        // ABAIXO DE 0.30: Otimização máxima (Baixa Qualidade Simulada)
-        // Só desenha as camadas principais para evitar sobrecarga de transparências
-        if (camera.scale < 0.30 && lIdx > 2) return; 
+        let data = layer.data;
+        let layerW = layer.width;
+        let layerH = layer.height;
+        let startX = 0, startY = 0;
 
-        for (let cy = sCY; cy <= eCY; cy++) {
-            for (let cx = sCX; cx <= eCX; cx++) {
-                if (cx < 0 || cy < 0 || cx >= Math.ceil(layer.width/CHUNK_SIZE) || cy >= Math.ceil(layer.height/CHUNK_SIZE)) continue;
-
-                const chunkImg = getCachedChunk(lIdx, cx, cy, frameIdx);
-                const rx = (cx * CHUNK_SIZE * TILE_W + camera.x) * camera.scale + canvas.width / 2;
-                const ry = (cy * CHUNK_SIZE * TILE_H + camera.y) * camera.scale + canvas.height / 2;
-                
-                ctx.drawImage(chunkImg, Math.round(rx), Math.round(ry), Math.ceil(chunkImg.width * camera.scale), Math.ceil(chunkImg.height * camera.scale));
-            }
+        if (layer.chunks) {
+            // Se ainda houver chunks, processamos cada um de forma leve
+            layer.chunks.forEach(chunk => {
+                drawTileArray(chunk.data, chunk.width, chunk.height, chunk.x, chunk.y, ts, cols, animFrame);
+            });
+        } else if (data) {
+            drawTileArray(data, layerW, layerH, 0, 0, ts, cols, animFrame);
         }
     });
 
+    function drawTileArray(tiles, w, h, offX, offY, ts, cols, frameIdx) {
+        for (let i = 0; i < tiles.length; i++) {
+            const gid = tiles[i];
+            if (gid === 0) continue;
+
+            const tx = (i % w + offX) * TILE_W;
+            const ty = (Math.floor(i / w) + offY) * TILE_H;
+
+            // Só desenha se estiver na tela
+            if (tx + TILE_W < minX || tx > maxX || ty + TILE_H < minY || ty > maxY) continue;
+
+            let tileId = gid - ts.firstgid;
+            if (animLookup.has(tileId)) {
+                const anim = animLookup.get(tileId);
+                tileId = anim[frameIdx]?.tileid ?? anim[0].tileid;
+            }
+
+            const sx = MARGIN + (tileId % cols) * STEP;
+            const sy = MARGIN + Math.floor(tileId / cols) * STEP;
+
+            const screenX = (tx + camera.x) * camera.scale + canvas.width / 2;
+            const screenY = (ty + camera.y) * camera.scale + canvas.height / 2;
+
+            ctx.drawImage(tilesetImg, sx, sy, TILE_W, TILE_H, 
+                          Math.round(screenX), Math.round(screenY), 
+                          Math.ceil(TILE_W * camera.scale), Math.ceil(TILE_H * camera.scale));
+        }
+    }
+
     const tileX = Math.floor((-camera.x) / TILE_W) + MAP_OFFSET_X;
     const tileY = Math.floor((-camera.y) / TILE_H) + MAP_OFFSET_Y;
-    coordsDisplay.textContent = `X: ${tileX}, Y: ${tileY} | Zoom: ${camera.scale.toFixed(2)}x`;
+    coordsDisplay.textContent = `X: ${tileX}, Y: ${tileY} | Zoom: ${camera.scale.toFixed(1)}x`;
+    
     requestAnimationFrame(renderLoop);
 }
 
-/* ================= CONTROLES ================= */
-function applyZoom(m, centerX, centerY) {
-    const oldScale = camera.scale;
-    camera.scale = Math.min(Math.max(camera.scale * m, 0.05), 10);
-    const ratio = camera.scale / oldScale;
-    camera.x = centerX / camera.scale - (centerX / oldScale - camera.x);
-    camera.y = centerY / camera.scale - (centerY / oldScale - camera.y);
-}
+function applyZoom(m) { camera.scale = Math.min(Math.max(camera.scale * m, 0.1), 10); }
+function resize() { canvas.width = window.innerWidth; canvas.height = window.innerHeight; }
+window.addEventListener("resize", resize);
 
-canvas.addEventListener("wheel", e => {
-    e.preventDefault();
-    applyZoom(e.deltaY < 0 ? 1.1 : 0.9, e.clientX - canvas.width/2, e.clientY - canvas.height/2);
-}, { passive: false });
-
-let isDragging = false, lastX, lastY, lastDist = 0;
-
+// Eventos de arrastar
+let isDragging = false, lastX, lastY;
 canvas.addEventListener("mousedown", e => { isDragging = true; lastX = e.clientX; lastY = e.clientY; });
 window.addEventListener("mousemove", e => {
     if (!isDragging) return;
@@ -255,33 +188,24 @@ window.addEventListener("mousemove", e => {
 });
 window.addEventListener("mouseup", () => isDragging = false);
 
+// Touch simplificado para celular
 canvas.addEventListener("touchstart", e => {
-    if (e.touches.length === 1) {
-        isDragging = true; lastX = e.touches[0].clientX; lastY = e.touches[0].clientY;
-    } else if (e.touches.length === 2) {
-        isDragging = false;
-        lastDist = Math.hypot(e.touches[0].clientX - e.touches[1].clientX, e.touches[0].clientY - e.touches[1].clientY);
+    if(e.touches.length === 1) {
+        isDragging = true;
+        lastX = e.touches[0].clientX;
+        lastY = e.touches[0].clientY;
     }
-}, { passive: false });
-
+}, {passive: false});
 canvas.addEventListener("touchmove", e => {
-    e.preventDefault();
-    if (e.touches.length === 1 && isDragging) {
+    if(isDragging && e.touches.length === 1) {
         camera.x += (e.touches[0].clientX - lastX) / camera.scale;
         camera.y += (e.touches[0].clientY - lastY) / camera.scale;
-        lastX = e.touches[0].clientX; lastY = e.touches[0].clientY;
-    } else if (e.touches.length === 2) {
-        const dist = Math.hypot(e.touches[0].clientX - e.touches[1].clientX, e.touches[0].clientY - e.touches[1].clientY);
-        const midX = (e.touches[0].clientX + e.touches[1].clientX) / 2 - canvas.width/2;
-        const midY = (e.touches[0].clientY + e.touches[1].clientY) / 2 - canvas.height/2;
-        applyZoom(dist / lastDist, midX, midY);
-        lastDist = dist;
+        lastX = e.touches[0].clientX;
+        lastY = e.touches[0].clientY;
     }
-}, { passive: false });
-canvas.addEventListener("touchend", () => { isDragging = false; lastDist = 0; });
+}, {passive: false});
+canvas.addEventListener("touchend", () => isDragging = false);
 
-function resize() { canvas.width = window.innerWidth; canvas.height = window.innerHeight; }
-window.addEventListener("resize", resize);
 resize();
 </script>
 </body>
