@@ -26,7 +26,7 @@
         }
 
         #coords {
-            position: absolute; top: 66px; left: 10px; /* Ajustado para não sumir sob a barra */
+            position: absolute; top: 66px; left: 10px;
             background: rgba(0, 0, 0, 0.7); color: #0f0;
             border: 1px solid #0f0; padding: 8px;
             z-index: 10; user-select: none;
@@ -81,20 +81,19 @@
         .drawer-banner { width: 100%; height: 150px; background: url('/res/icon/draweBanner.png') no-repeat center; background-size: cover; }
         .drawer-item { padding: 12px 16px; display: flex; align-items: center; color: white; text-decoration: none; font-size: 16px; font-family: 'Roboto', sans-serif; }
         .drawer-item img { width: 24px; height: 24px; margin-right: 32px; filter: brightness(0) invert(1); }
-        /* --- ESTILO DO SETTINGS NO RODAPÉ --- */
-.settings-highlight {
-    margin-top: auto; /* Joga o botão para o final da lista */
-    border-top: 1px solid rgba(255,255,255,0.1);
-    color: #000000 !important; /* Cor da letra (cinza escuro/preto) */
-    font-weight: bold;
-}
+        
+        .settings-highlight {
+            margin-top: auto; 
+            border-top: 1px solid rgba(255,255,255,0.1);
+            color: #000000 !important; 
+            font-weight: bold;
+        }
 
-.settings-highlight img {
-    filter: brightness(0) !important; /* Deixa o ícone preto */
-}
+        .settings-highlight img {
+            filter: brightness(0) !important;
+        }
         #overlay { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.5); display: none; z-index: 150; }
 
-        /* MODO APP */
         body.is-app header, body.is-app #drawer, body.is-app #overlay { display: none !important; }
         body.is-app #coords { top: 10px; }
     </style>
@@ -146,7 +145,7 @@ function toggleMenu() {
     o.style.display = d.classList.contains('active') ? 'block' : 'none';
 }
 
-/* ================= SEU CÓDIGO DO MAPA (INTEGRO) ================= */
+/* ================= LÓGICA DO MAPA ================= */
 const canvas = document.getElementById('mapCanvas');
 const ctx = canvas.getContext('2d', { alpha: false });
 const coordsDisplay = document.getElementById('coords');
@@ -170,11 +169,13 @@ function initMap(jsonString) {
     mapData = (typeof jsonString === 'string') ? JSON.parse(jsonString) : jsonString;
     const ts = mapData.tilesets[0];
     animLookup.clear();
+    
     if (ts.tiles) {
       ts.tiles.forEach(t => {
         if (t.animation) animLookup.set(t.id, t.animation);
       });
     }
+    
     tilesetImg.decoding = "async";
     tilesetImg.src = "map.png";
     tilesetImg.onload = () => {
@@ -187,23 +188,40 @@ function initMap(jsonString) {
     };
     tilesetImg.onerror = () => { coordsDisplay.textContent = "Erro ao carregar tileset"; };
   } catch (err) {
-    coordsDisplay.textContent = "Erro no JSON";
+    coordsDisplay.textContent = "Erro no JSON/TMJ";
     console.log(err);
   }
 }
 
-fetch("defaltMap.json")
+// ARQUIVO ATUALIZADO AQUI!
+fetch("cloned_map.tmj")
   .then(r => r.text())
   .then(data => { initMap(data); })
-  .catch(err => { coordsDisplay.textContent = "Erro ao carregar JSON"; console.log(err); });
+  .catch(err => { coordsDisplay.textContent = "Erro ao carregar TMJ"; console.log(err); });
 
 function buildChunkCache() {
   chunkCache.clear();
   const ts = mapData.tilesets[0];
   const cols = ts.columns;
+  
   mapData.layers.forEach((layer, lIdx) => {
-    if (!layer.chunks) return;
-    layer.chunks.forEach(chunk => {
+    // Agora o código é inteligente: suporta mapa com CHUNKS ou mapa inteiro com DATA plano.
+    let chunksToProcess = [];
+    
+    if (layer.chunks) {
+        chunksToProcess = layer.chunks;
+    } else if (layer.data) {
+        // Finge que a camada inteira é um "Chunk" gigante para o código antigo funcionar perfeitamente
+        chunksToProcess = [{
+            x: 0, 
+            y: 0, 
+            width: layer.width, 
+            height: layer.height, 
+            data: layer.data
+        }];
+    }
+
+    chunksToProcess.forEach(chunk => {
       const canvasA = document.createElement("canvas");
       const canvasB = document.createElement("canvas");
       canvasA.width = canvasB.width = chunk.width * TILE_W;
@@ -212,6 +230,7 @@ function buildChunkCache() {
       const ctxB = canvasB.getContext("2d");
       ctxA.imageSmoothingEnabled = false;
       ctxB.imageSmoothingEnabled = false;
+      
       chunk.data.forEach((gid, i) => {
         if (gid === 0) return;
         const tileId = gid - ts.firstgid;
@@ -219,15 +238,18 @@ function buildChunkCache() {
         const dy = Math.floor(i / chunk.width) * TILE_H;
         let frame0 = tileId;
         let frame1 = tileId;
+        
         if (animLookup.has(tileId)) {
           const anim = animLookup.get(tileId);
           frame0 = anim[0].tileid;
           frame1 = anim[1]?.tileid ?? anim[0].tileid;
         }
+        
         const sx0 = MARGIN + ((frame0 % cols) * STEP);
         const sy0 = MARGIN + (Math.floor(frame0 / cols) * STEP);
         const sx1 = MARGIN + ((frame1 % cols) * STEP);
         const sy1 = MARGIN + (Math.floor(frame1 / cols) * STEP);
+        
         ctxA.drawImage(tilesetImg, sx0, sy0, TILE_W, TILE_H, dx, dy, TILE_W, TILE_H);
         ctxB.drawImage(tilesetImg, sx1, sy1, TILE_W, TILE_H, dx, dy, TILE_W, TILE_H);
       });
@@ -242,23 +264,30 @@ function render() {
   ctx.clearRect(0, 0, canvas.width, canvas.height);
   const time = performance.now();
   const frame = Math.floor(time / 900) % 2;
+  
   mapData.layers.forEach((layer, lIdx) => {
-    if (!layer.chunks) return;
     const offX = layer.offsetx || 0;
     const offY = layer.offsety || 0;
-    layer.chunks.forEach(chunk => {
+    
+    // Mesma lógica híbrida na hora de desenhar na tela
+    let chunksToProcess = layer.chunks ? layer.chunks : (layer.data ? [{x: 0, y: 0}] : []);
+
+    chunksToProcess.forEach(chunk => {
       const cx = (chunk.x * TILE_W) + offX;
       const cy = (chunk.y * TILE_H) + offY;
       const chunkData = chunkCache.get(`${lIdx}_${chunk.x}_${chunk.y}`);
       if (!chunkData) return;
+      
       const img = frame === 0 ? chunkData.a : chunkData.b;
       const screenX = Math.round((cx + camera.x) * camera.scale + canvas.width / 2);
       const screenY = Math.round((cy + camera.y) * camera.scale + canvas.height / 2);
       const w = Math.ceil(img.width * camera.scale) + 1;
       const h = Math.ceil(img.height * camera.scale) + 1;
+      
       ctx.drawImage(img, screenX, screenY, w, h);
     });
   });
+  
   const centerX = -camera.x;
   const centerY = -camera.y;
   const tileX = Math.floor(centerX / TILE_W) + MAP_OFFSET_X;
@@ -273,7 +302,7 @@ function resize() { canvas.width = window.innerWidth; canvas.height = window.inn
 window.addEventListener("resize", resize);
 resize();
 
-/* ================= EVENTOS DE MOUSE E TOUCH (ORIGINAIS) ================= */
+/* ================= EVENTOS DE MOUSE E TOUCH ================= */
 let dragging = false;
 let lastX = 0, lastY = 0;
 canvas.addEventListener("mousedown", e => { dragging = true; lastX = e.clientX; lastY = e.clientY; });
