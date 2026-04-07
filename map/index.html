@@ -122,6 +122,11 @@
     <canvas id="mapCanvas"></canvas>
 
 <script>
+/* ================= VERIFICAÇÃO DE PLATAFORMA ================= */
+const params = new URLSearchParams(window.location.search);
+const isAppMode = params.get('platform') === 'app';
+if (isAppMode) document.body.classList.add('is-app');
+
 /* ================= MENU ================= */
 function toggleMenu() {
     const d = document.getElementById('drawer'), o = document.getElementById('overlay');
@@ -156,7 +161,6 @@ function initMap(json) {
     tilesetImg.src = "map.png";
     tilesetImg.onload = () => {
         resize();
-        // Centraliza na cidade 130, 281
         camera.x = -((130 - MAP_OFFSET_X) * TILE_W);
         camera.y = -((281 - MAP_OFFSET_Y) * TILE_H);
         mapReady = true;
@@ -208,9 +212,7 @@ function renderLoop() {
     ctx.fillRect(0, 0, canvas.width, canvas.height);
     ctx.imageSmoothingEnabled = false;
 
-    // --- LÓGICA DE ANIMAÇÃO POR ZOOM ---
     const time = performance.now();
-    // Se o zoom for menor que 0.5, frameIdx fica travado no 0
     const frameIdx = (camera.scale >= 0.5) ? (Math.floor(time / 900) % 2) : 0;
 
     const startChunkX = Math.floor((-camera.x - (canvas.width/2)/camera.scale) / (CHUNK_SIZE * TILE_W));
@@ -237,10 +239,15 @@ function renderLoop() {
     requestAnimationFrame(renderLoop);
 }
 
-/* ================= CONTROLES (FIXED) ================= */
+/* ================= CONTROLES COM TRAVA DE ZOOM ================= */
 function applyZoom(m, centerX, centerY) {
     const oldScale = camera.scale;
-    camera.scale = Math.min(Math.max(camera.scale * m, 0.05), 10);
+    
+    // Se for Modo App, o limite mínimo é 0.30. Se for PC/Web, deixamos chegar a 0.05.
+    const minZoomLimit = isAppMode ? 0.30 : 0.05;
+    
+    camera.scale = Math.min(Math.max(camera.scale * m, minZoomLimit), 10);
+    
     const ratio = camera.scale / oldScale;
     camera.x = centerX / camera.scale - (centerX / oldScale - camera.x);
     camera.y = centerY / camera.scale - (centerY / oldScale - camera.y);
@@ -263,7 +270,7 @@ window.addEventListener("mousemove", e => {
 });
 window.addEventListener("mouseup", () => isDragging = false);
 
-// Touch & Pinch
+// Touch & Pinch (Celular)
 let lastDist = 0;
 canvas.addEventListener("touchstart", e => {
     if (e.touches.length === 1) {
@@ -288,15 +295,12 @@ canvas.addEventListener("touchmove", e => {
         lastDist = dist;
     }
 }, { passive: false });
+
 canvas.addEventListener("touchend", () => { isDragging = false; lastDist = 0; });
 
 function resize() { canvas.width = window.innerWidth; canvas.height = window.innerHeight; }
 window.addEventListener("resize", resize);
 resize();
-
-// Check platform
-const params = new URLSearchParams(window.location.search);
-if (params.get('platform') === 'app') document.body.classList.add('is-app');
 </script>
 </body>
 </html>
