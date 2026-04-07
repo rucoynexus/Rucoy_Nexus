@@ -108,7 +108,17 @@
             margin-right: 32px;
             filter: brightness(0) invert(1); /* Deixa os ícones brancos */
         }
+/* --- ESTILO DO SETTINGS NO RODAPÉ --- */
+.settings-highlight {
+    margin-top: auto; /* Joga o botão para o final da lista */
+    border-top: 1px solid rgba(255,255,255,0.1);
+    color: #333 !important; /* Cor da letra (cinza escuro/preto) */
+    font-weight: bold;
+}
 
+.settings-highlight img {
+    filter: brightness(0) !important; /* Deixa o ícone preto */
+}
         /* --- OVERLAY --- */
         #overlay {
             position: fixed;
@@ -139,31 +149,34 @@
             </div>
             <span id="current-page-title">Home</span>
         </div>
-        <a href="#" onclick="logout()" style="color: #ff4d4d; text-decoration: none; display: flex; align-items: center; font-weight: bold; margin-top: 30px;">
-    <img src="/res/icon/exit.png" style="width: 24px; margin-right: 15px; filter: invert(27%) sepia(91%) saturate(2352%) hue-rotate(346deg) brightness(104%) contrast(107%);">
-    Sair da Conta
-</a>
     </header>
 
     <nav id="drawer">
-        <div class="drawer-banner"></div>
-        <div class="drawer-list">
-            <a href="/" class="drawer-item"><img src="/res/icon/home.png"> Home</a>
-            <a href="/settings/" class="drawer-item"><img src="/res/icon/ic_cog.png"> Settings</a>
-            <a href="/profile/" class="drawer-item"><img src="/res/icon/user.png"> Profile</a>
-            <a href="/wiki/" class="drawer-item"><img src="/res/icon/apps.png"> Wiki</a>
-            <a href="/tradeandsales/" class="drawer-item"><img src="/res/icon/change.png"> Trades & Sales</a>
-            <a href="/map/" class="drawer-item"><img src="/res/icon/map.png"> Map</a>
-            <a href="/friends/" class="drawer-item"><img src="/res/icon/friends.png"> Friends</a>
-            <a href="/guild/" class="drawer-item"><img src="/res/icon/guild.png"> Guild</a>
-            <a href="/calculator/" class="drawer-item"><img src="/res/icon/calculator.png"> Calculator</a>
-            <a href="/updates/" class="drawer-item"><img src="/res/icon/update.png"> Updates</a>
-        </div>
-    </nav>
+    <div class="drawer-banner"></div>
+    <div class="drawer-list">
+        <a href="/" class="drawer-item"><img src="/res/icon/home.png"> Home</a>
+        <a href="/profile/" class="drawer-item"><img src="/res/icon/user.png"> Profile</a>
+        <a href="/wiki/" class="drawer-item"><img src="/res/icon/apps.png"> Wiki</a>
+        <a href="/tradeandsales/" class="drawer-item"><img src="/res/icon/change.png"> Trades & Sales</a>
+        <a href="/map/" class="drawer-item"><img src="/res/icon/map.png"> Map</a>
+        <a href="/friends/" class="drawer-item"><img src="/res/icon/friends.png"> Friends</a>
+        <a href="/guild/" class="drawer-item"><img src="/res/icon/guild.png"> Guild</a>
+        <a href="/calculator/" class="drawer-item"><img src="/res/icon/calculator.png"> Calculator</a>
+        <a href="/updates/" class="drawer-item"><img src="/res/icon/update.png"> Updates</a>
+        
+        <a href="/settings/" class="drawer-item settings-highlight">
+            <img src="/res/icon/ic_cog.png"> Settings
+        </a>
+    </div>
+</nav>
 
     <main id="main-content">
         <h1>Settings</h1>
         <p>Bem-vindo ao Nexus!</p>
+        <a href="#" onclick="logout()" style="color: #ff4d4d; text-decoration: none; display: flex; align-items: center; font-weight: bold; margin-top: 30px;">
+    <img src="/res/icon/exit.png" style="width: 24px; margin-right: 15px; filter: invert(27%) sepia(91%) saturate(2352%) hue-rotate(346deg) brightness(104%) contrast(107%);">
+    Sair da Conta
+</a>
     </main>
 
     <script>
@@ -179,6 +192,13 @@
         if (params.get('platform') === 'app') {
             document.body.classList.add('is-app');
         }
+        function logout() {
+    // Remove o token do Google que está salvo no seu navegador
+    localStorage.removeItem("userToken");
+    
+    // Manda o usuário de volta para a tela de login
+    window.location.href = "/account/";
+}
     </script>
 </body>
 </html>
