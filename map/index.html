@@ -194,7 +194,7 @@ function initMap(jsonString) {
 }
 
 // ARQUIVO ATUALIZADO AQUI!
-fetch("cloned_map.tmj")
+fetch("defalt_world.json")
   .then(r => r.text())
   .then(data => { initMap(data); })
   .catch(err => { coordsDisplay.textContent = "Erro ao carregar TMJ"; console.log(err); });
