@@ -4,7 +4,7 @@
     <script src="/auth.js"></script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
-    <title>Rucoy Nexus - Map Viewer</title>
+    <title>Rucoy Nexus - Map</title>
     <style>
         :root {
             --rucoy-blue: #3CBCFC;
@@ -19,27 +19,26 @@
 
         canvas { display: block; background: #000; image-rendering: pixelated; touch-action: none; }
 
-        /* --- UI --- */
+        /* --- UI ELEMENTS --- */
         #coords {
             position: absolute; top: 66px; left: 10px;
-            background: rgba(0, 0, 0, 0.8); color: #0f0;
+            background: rgba(0, 0, 0, 0.7); color: #0f0;
             border: 1px solid #0f0; padding: 8px;
             z-index: 10; font-family: monospace; pointer-events: none;
-            font-size: 14px;
         }
 
         #crosshair {
             position: absolute; top: 50%; left: 50%;
             transform: translate(-50%,-50%); color: #0f0;
-            font-size: 20px; pointer-events: none; z-index: 5; opacity: 0.5;
+            font-size: 18px; pointer-events: none; z-index: 5; opacity: 0.6;
         }
 
-        /* --- MENU LATERAL --- */
+        /* --- HEADER & DRAWER (SEU MENU) --- */
         header {
             background-color: var(--rucoy-blue);
             height: 56px; display: flex; align-items: center;
             padding: 0 16px; position: fixed; top: 0;
-            width: 100%; z-index: 100; box-shadow: 0 2px 5px rgba(0,0,0,0.5);
+            width: 100%; z-index: 100; box-shadow: 0 2px 4px rgba(0,0,0,0.3);
         }
 
         .top-bar-action { display: flex; align-items: center; height: 100%; cursor: pointer; }
@@ -60,19 +59,20 @@
         }
 
         .drawer-item { 
-            padding: 14px 16px; display: flex; align-items: center; 
+            padding: 12px 16px; display: flex; align-items: center; 
             color: white; text-decoration: none; font-size: 16px; 
         }
         .drawer-item img { width: 24px; height: 24px; margin-right: 32px; filter: brightness(0) invert(1); }
         
         .settings-highlight {
-            margin-top: 20px; border-top: 1px solid rgba(255,255,255,0.2);
-            background: rgba(0,0,0,0.1); font-weight: bold;
+            margin-top: 20px; border-top: 1px solid rgba(255,255,255,0.1);
+            color: #000 !important; font-weight: bold; background: rgba(255,255,255,0.05);
         }
+        .settings-highlight img { filter: brightness(0) !important; }
 
         #overlay { 
             position: fixed; top: 0; left: 0; width: 100%; height: 100%; 
-            background: rgba(0,0,0,0.6); display: none; z-index: 150; 
+            background: rgba(0,0,0,0.5); display: none; z-index: 150; 
         }
 
         body.is-app header, body.is-app #drawer, body.is-app #overlay { display: none !important; }
@@ -106,19 +106,17 @@
         </div>
     </nav>
 
-    <div id="coords">Iniciando...</div>
+    <div id="coords">Carregando mapa...</div>
     <div id="crosshair">+</div>
     <canvas id="mapCanvas"></canvas>
 
 <script>
-/* ================= LÓGICA DE INTERFACE ================= */
 function toggleMenu() {
     const d = document.getElementById('drawer'), o = document.getElementById('overlay');
     d.classList.toggle('active');
     o.style.display = d.classList.contains('active') ? 'block' : 'none';
 }
 
-/* ================= MOTOR DO MAPA ================= */
 const canvas = document.getElementById('mapCanvas');
 const ctx = canvas.getContext('2d', { alpha: false });
 const coordsDisplay = document.getElementById('coords');
@@ -134,17 +132,7 @@ let tilesetImg = new Image();
 let camera = { x: 0, y: 0, scale: 2.5 };
 let animLookup = new Map();
 let chunkCache = new Map(); 
-let colorCache = new Map(); // Cache para o modo "Shape" (Zoom < 0.3)
 let mapReady = false;
-
-// Cores aproximadas para o modo Shape
-function getTileColor(tileId) {
-    if (tileId < 100) return "#2c3e50"; // Água
-    if (tileId < 500) return "#27ae60"; // Grama
-    if (tileId < 1000) return "#f1c40f"; // Areia
-    if (tileId < 2000) return "#7f8c8d"; // Montanha/Pedra
-    return `hsl(${(tileId * 137) % 360}, 50%, 40%)`; // Cor única por ID para o resto
-}
 
 function initMap(json) {
     mapData = json;
@@ -164,20 +152,18 @@ function initMap(json) {
 
 fetch("defalt_world.json").then(r => r.json()).then(initMap);
 
-/* Geração de Chunks (Imagens ou Cores) */
-function getChunk(layerIdx, cx, cy, frameIdx, isColorMode) {
-    const key = isColorMode ? `c_${layerIdx}_${cx}_${cy}` : `i_${layerIdx}_${cx}_${cy}_f${frameIdx}`;
-    const cache = isColorMode ? colorCache : chunkCache;
-    
-    if (cache.has(key)) return cache.get(key);
+// Função de Chunk otimizada
+function getCachedChunk(layerIdx, cx, cy, frameIdx) {
+    const key = `${layerIdx}_${cx}_${cy}_f${frameIdx}`;
+    if (chunkCache.has(key)) return chunkCache.get(key);
 
     const layer = mapData.layers[layerIdx];
     const ts = mapData.tilesets[0];
     const cols = ts.columns;
 
     const offCanvas = document.createElement('canvas');
-    offCanvas.width = CHUNK_SIZE * (isColorMode ? 1 : TILE_W);
-    offCanvas.height = CHUNK_SIZE * (isColorMode ? 1 : TILE_H);
+    offCanvas.width = CHUNK_SIZE * TILE_W;
+    offCanvas.height = CHUNK_SIZE * TILE_H;
     const offCtx = offCanvas.getContext('2d');
 
     for (let y = 0; y < CHUNK_SIZE; y++) {
@@ -185,27 +171,19 @@ function getChunk(layerIdx, cx, cy, frameIdx, isColorMode) {
             const mX = cx * CHUNK_SIZE + x;
             const mY = cy * CHUNK_SIZE + y;
             if (mX >= layer.width || mY >= layer.height) continue;
-            
-            const gid = layer.data[mY * layer.width + mX];
+            let gid = layer.data[mY * layer.width + mX];
             if (!gid || gid === 0) continue;
-            
             let tId = gid - ts.firstgid;
-            
-            if (isColorMode) {
-                offCtx.fillStyle = getTileColor(tId);
-                offCtx.fillRect(x, y, 1, 1);
-            } else {
-                if (animLookup.has(tId)) {
-                    const anim = animLookup.get(tId);
-                    tId = anim[frameIdx]?.tileid ?? anim[0].tileid;
-                }
-                const sx = MARGIN + (tId % cols) * STEP;
-                const sy = MARGIN + Math.floor(tId / cols) * STEP;
-                offCtx.drawImage(tilesetImg, sx, sy, TILE_W, TILE_H, x * TILE_W, y * TILE_H, TILE_W, TILE_H);
+            if (animLookup.has(tId)) {
+                const anim = animLookup.get(tId);
+                tId = anim[frameIdx]?.tileid ?? anim[0].tileid;
             }
+            const sx = MARGIN + (tId % cols) * STEP;
+            const sy = MARGIN + Math.floor(tId / cols) * STEP;
+            offCtx.drawImage(tilesetImg, sx, sy, TILE_W, TILE_H, x * TILE_W, y * TILE_H, TILE_W, TILE_H);
         }
     }
-    cache.set(key, offCanvas);
+    chunkCache.set(key, offCanvas);
     return offCanvas;
 }
 
@@ -213,59 +191,57 @@ function renderLoop() {
     if (!mapReady) return;
     ctx.fillStyle = "#000";
     ctx.fillRect(0, 0, canvas.width, canvas.height);
-    
-    const isColorMode = camera.scale < 0.30;
+    ctx.imageSmoothingEnabled = false;
+
     const time = performance.now();
-    // Animação só acima de 0.50
-    const frameIdx = (camera.scale >= 0.50) ? (Math.floor(time / 900) % 2) : 0;
+    // Regra: Sem animação abaixo de 0.50 zoom
+    const frameIdx = (camera.scale >= 0.5) ? (Math.floor(time / 900) % 2) : 0;
 
-    const viewW = (canvas.width / camera.scale);
-    const viewH = (canvas.height / camera.scale);
-    
-    const startCX = Math.floor((-camera.x - viewW/2) / (CHUNK_SIZE * TILE_W));
-    const endCX = Math.ceil((-camera.x + viewW/2) / (CHUNK_SIZE * TILE_W));
-    const startCY = Math.floor((-camera.y - viewH/2) / (CHUNK_SIZE * TILE_H));
-    const endCY = Math.ceil((-camera.y + viewH/2) / (CHUNK_SIZE * TILE_H));
-
-    ctx.imageSmoothingEnabled = !isColorMode; // Desliga suavização no modo shape para ficar nítido
+    const viewW = canvas.width / camera.scale;
+    const viewH = canvas.height / camera.scale;
+    const sCX = Math.floor((-camera.x - viewW/2) / (CHUNK_SIZE * TILE_W));
+    const eCX = Math.ceil((-camera.x + viewW/2) / (CHUNK_SIZE * TILE_W));
+    const sCY = Math.floor((-camera.y - viewH/2) / (CHUNK_SIZE * TILE_H));
+    const eCY = Math.ceil((-camera.y + viewH/2) / (CHUNK_SIZE * TILE_H));
 
     mapData.layers.forEach((layer, lIdx) => {
         if (!layer.visible) return;
-        for (let cy = startCY; cy <= endCY; cy++) {
-            for (let cx = startCX; cx <= endCX; cx++) {
+        
+        // ABAIXO DE 0.30: Otimização máxima (Baixa Qualidade Simulada)
+        // Só desenha as camadas principais para evitar sobrecarga de transparências
+        if (camera.scale < 0.30 && lIdx > 2) return; 
+
+        for (let cy = sCY; cy <= eCY; cy++) {
+            for (let cx = sCX; cx <= eCX; cx++) {
                 if (cx < 0 || cy < 0 || cx >= Math.ceil(layer.width/CHUNK_SIZE) || cy >= Math.ceil(layer.height/CHUNK_SIZE)) continue;
-                
-                const chunkImg = getChunk(lIdx, cx, cy, frameIdx, isColorMode);
+
+                const chunkImg = getCachedChunk(lIdx, cx, cy, frameIdx);
                 const rx = (cx * CHUNK_SIZE * TILE_W + camera.x) * camera.scale + canvas.width / 2;
                 const ry = (cy * CHUNK_SIZE * TILE_H + camera.y) * camera.scale + canvas.height / 2;
                 
-                // No modo cor, o chunk tem apenas 16px, então escalamos ele para cobrir os 384px (16*24)
-                const targetSize = CHUNK_SIZE * TILE_W * camera.scale;
-                ctx.drawImage(chunkImg, Math.round(rx), Math.round(ry), Math.ceil(targetSize), Math.ceil(targetSize));
+                ctx.drawImage(chunkImg, Math.round(rx), Math.round(ry), Math.ceil(chunkImg.width * camera.scale), Math.ceil(chunkImg.height * camera.scale));
             }
         }
     });
 
     const tileX = Math.floor((-camera.x) / TILE_W) + MAP_OFFSET_X;
     const tileY = Math.floor((-camera.y) / TILE_H) + MAP_OFFSET_Y;
-    coordsDisplay.textContent = `X: ${tileX}, Y: ${tileY} | Zoom: ${camera.scale.toFixed(2)}x ${isColorMode ? '(Eco Mode)' : ''}`;
+    coordsDisplay.textContent = `X: ${tileX}, Y: ${tileY} | Zoom: ${camera.scale.toFixed(2)}x`;
     requestAnimationFrame(renderLoop);
 }
 
-/* ================= CONTROLES (SMOOTH PINCH & ZOOM) ================= */
-function handleZoom(m, centerX, centerY) {
+/* ================= CONTROLES ================= */
+function applyZoom(m, centerX, centerY) {
     const oldScale = camera.scale;
-    camera.scale = Math.min(Math.max(camera.scale * m, 0.02), 15);
-    const actualM = camera.scale / oldScale;
-    
-    // Zoom relativo ao ponto (mouse ou centro da pinça)
-    camera.x = (centerX - canvas.width/2) / camera.scale - ((centerX - canvas.width/2) / oldScale - camera.x);
-    camera.y = (centerY - canvas.height/2) / camera.scale - ((centerY - canvas.height/2) / oldScale - camera.y);
+    camera.scale = Math.min(Math.max(camera.scale * m, 0.05), 10);
+    const ratio = camera.scale / oldScale;
+    camera.x = centerX / camera.scale - (centerX / oldScale - camera.x);
+    camera.y = centerY / camera.scale - (centerY / oldScale - camera.y);
 }
 
 canvas.addEventListener("wheel", e => {
     e.preventDefault();
-    handleZoom(e.deltaY < 0 ? 1.15 : 0.85, e.clientX, e.clientY);
+    applyZoom(e.deltaY < 0 ? 1.1 : 0.9, e.clientX - canvas.width/2, e.clientY - canvas.height/2);
 }, { passive: false });
 
 let isDragging = false, lastX, lastY, lastDist = 0;
@@ -296,24 +272,17 @@ canvas.addEventListener("touchmove", e => {
         lastX = e.touches[0].clientX; lastY = e.touches[0].clientY;
     } else if (e.touches.length === 2) {
         const dist = Math.hypot(e.touches[0].clientX - e.touches[1].clientX, e.touches[0].clientY - e.touches[1].clientY);
-        const midX = (e.touches[0].clientX + e.touches[1].clientX) / 2;
-        const midY = (e.touches[0].clientY + e.touches[1].clientY) / 2;
-        handleZoom(dist / lastDist, midX, midY);
+        const midX = (e.touches[0].clientX + e.touches[1].clientX) / 2 - canvas.width/2;
+        const midY = (e.touches[0].clientY + e.touches[1].clientY) / 2 - canvas.height/2;
+        applyZoom(dist / lastDist, midX, midY);
         lastDist = dist;
     }
 }, { passive: false });
-
 canvas.addEventListener("touchend", () => { isDragging = false; lastDist = 0; });
 
-function resize() { 
-    canvas.width = window.innerWidth; 
-    canvas.height = window.innerHeight; 
-}
+function resize() { canvas.width = window.innerWidth; canvas.height = window.innerHeight; }
 window.addEventListener("resize", resize);
 resize();
-
-const params = new URLSearchParams(window.location.search);
-if (params.get('platform') === 'app') document.body.classList.add('is-app');
 </script>
 </body>
 </html>
