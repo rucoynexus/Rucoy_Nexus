@@ -7,34 +7,43 @@
     <script src="https://accounts.google.com/gsi/client" async defer></script>
     <style>
         body { margin: 0; background-color: #121212; color: white; font-family: 'Roboto', sans-serif; display: flex; align-items: center; justify-content: center; height: 100vh; }
-        .login-container { text-align: center; background: #1e1e1e; padding: 40px; border-radius: 10px; border: 1px solid #3cbcfe; width: 90%; max-width: 350px; }
-        h1 { color: #3cbcfe; margin-bottom: 10px; }
-        #buttonDiv { display: flex; justify-content: center; margin-top: 20px; }
+        .login-container { text-align: center; background: #1e1e1e; padding: 40px; border-radius: 10px; border: 1px solid #3cbcfe; width: 90%; max-width: 350px; box-shadow: 0 4px 15px rgba(0,0,0,0.5); }
+        h1 { color: #3cbcfe; margin-bottom: 10px; font-size: 28px; }
+        p { margin-bottom: 30px; color: #bbb; line-height: 1.5; }
+        #buttonDiv { display: flex; justify-content: center; }
     </style>
 </head>
 <body>
     <div class="login-container">
         <h1>Rucoy Nexus</h1>
-        <p>Faça login para acessar o mapa e ferramentas.</p>
+        <p>Bem-vindo! Faça login com sua conta Google para acessar o mapa e ferramentas.</p>
         <div id="buttonDiv"></div>
     </div>
 
     <script>
-        // Pega se é app ou não para devolver o parâmetro depois do login
-        const isApp = new URLSearchParams(window.location.search).get('platform') === 'app';
+        const params = new URLSearchParams(window.location.search);
+        const isApp = params.get('platform') === 'app';
 
         window.onload = function () {
             google.accounts.id.initialize({
                 client_id: "8160958088-tfs0b7l0h81osvt46qsjm55ildrp9itv.apps.googleusercontent.com",
-                ux_mode: 'redirect',
-                // O segredo está aqui: voltamos para a HOME diretamente
-                login_uri: window.location.origin + "/" + (isApp ? "?platform=app" : "")
+                ux_mode: 'redirect', // CRITICAL: Muda de Popup para Redirecionamento
+                login_uri: window.location.origin + "/account/" 
             });
             
             google.accounts.id.renderButton(
                 document.getElementById("buttonDiv"),
-                { theme: "filled_blue", size: "large", shape: "pill" }
+                { theme: "filled_blue", size: "large", text: "continue_with", shape: "pill" }
             );
+        }
+
+        // Captura o token após o redirecionamento do Google
+        if (window.location.hash.includes("credential=")) {
+            const token = new URLSearchParams(window.location.hash.replace("#", "?")).get("credential");
+            if (token) {
+                localStorage.setItem("userToken", token);
+                window.location.href = "/" + (isApp ? "?platform=app" : "");
+            }
         }
     </script>
 </body>
