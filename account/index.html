@@ -7,32 +7,28 @@
     <script src="https://accounts.google.com/gsi/client" async defer></script>
     <style>
         body { margin: 0; background-color: #121212; color: white; font-family: 'Roboto', sans-serif; display: flex; align-items: center; justify-content: center; height: 100vh; }
-        .login-container { text-align: center; background: #1e1e1e; padding: 40px; border-radius: 10px; border: 1px solid #3cbcfe; width: 90%; max-width: 350px; box-shadow: 0 4px 15px rgba(0,0,0,0.5); }
-        h1 { color: #3cbcfe; margin: 0 0 10px 0; font-size: 28px; }
-        p { color: #bbb; margin-bottom: 30px; }
-        #buttonDiv { display: flex; justify-content: center; }
+        .login-container { text-align: center; background: #1e1e1e; padding: 40px; border-radius: 10px; border: 1px solid #3cbcfe; width: 90%; max-width: 350px; }
+        h1 { color: #3cbcfe; margin-bottom: 10px; }
+        #buttonDiv { display: flex; justify-content: center; margin-top: 20px; }
     </style>
 </head>
 <body>
     <div class="login-container">
         <h1>Rucoy Nexus</h1>
-        <p>Faça login com sua conta Google.</p>
+        <p>Faça login para acessar o mapa e ferramentas.</p>
         <div id="buttonDiv"></div>
     </div>
 
     <script>
-        // Se a URL tiver platform=app, salvamos no sistema para não perder após o login
-        const params = new URLSearchParams(window.location.search);
-        if (params.get('platform') === 'app') {
-            localStorage.setItem("isAppMode", "true");
-        }
+        // Pega se é app ou não para devolver o parâmetro depois do login
+        const isApp = new URLSearchParams(window.location.search).get('platform') === 'app';
 
         window.onload = function () {
             google.accounts.id.initialize({
                 client_id: "8160958088-tfs0b7l0h81osvt46qsjm55ildrp9itv.apps.googleusercontent.com",
                 ux_mode: 'redirect',
-                // Enviamos a URL LIMPA para o Google (sem parâmetros)
-                login_uri: window.location.origin + "/" 
+                // O segredo está aqui: voltamos para a HOME diretamente
+                login_uri: window.location.origin + "/" + (isApp ? "?platform=app" : "")
             });
             
             google.accounts.id.renderButton(
