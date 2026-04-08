@@ -5,23 +5,44 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Rucoy Nexus - Login</title>
     <script src="https://accounts.google.com/gsi/client" async defer></script>
+    <style>
+        body { margin: 0; background-color: #121212; color: white; font-family: 'Roboto', sans-serif; display: flex; align-items: center; justify-content: center; height: 100vh; }
+        .login-container { text-align: center; background: #1e1e1e; padding: 40px; border-radius: 10px; border: 1px solid #3cbcfe; width: 90%; max-width: 350px; }
+        h1 { color: #3cbcfe; margin-bottom: 20px; }
+        #buttonDiv { display: flex; justify-content: center; }
+    </style>
 </head>
-<body style="background-color: #121212; color: white; display: flex; justify-content: center; align-items: center; height: 100vh; font-family: Roboto, sans-serif;">
-
-    <div style="text-align: center; background: #1e1e1e; padding: 40px; border-radius: 10px; border: 1px solid #3cbcfe;">
-        <h1 style="color: #3cbcfe;">Rucoy Nexus</h1>
-        <p>Faça login para acessar</p>
+<body>
+    <div class="login-container">
+        <h1>Rucoy Nexus</h1>
+        <p>Faça login para continuar</p>
         <div id="buttonDiv"></div>
     </div>
 
     <script>
+        // Detecta se é app antes de qualquer coisa e salva
+        const params = new URLSearchParams(window.location.search);
+        if (params.get('platform') === 'app') {
+            localStorage.setItem("isAppMode", "true");
+        }
+
+        function handleCredentialResponse(response) {
+            // Salva o token recebido
+            localStorage.setItem("userToken", response.credential);
+            
+            // Redireciona para a Home com ou sem o parâmetro de app
+            const isApp = localStorage.getItem("isAppMode") === "true";
+            window.location.href = "/" + (isApp ? "?platform=app" : "");
+        }
+
         window.onload = function () {
             google.accounts.id.initialize({
                 client_id: "8160958088-tfs0b7l0h81osvt46qsjm55ildrp9itv.apps.googleusercontent.com",
-                ux_mode: 'redirect',
-                // IMPORTANTE: Use a URL EXATA que está no seu Console do Google
-                login_uri: "https://rucoynexus.com/" 
+                callback: handleCredentialResponse, // Usa função em vez de redirect_uri
+                ux_mode: 'popup', // Popup evita o erro de POST no servidor
+                auto_select: true
             });
+            
             google.accounts.id.renderButton(
                 document.getElementById("buttonDiv"),
                 { theme: "filled_blue", size: "large", shape: "pill" }
