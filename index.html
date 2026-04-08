@@ -1,101 +1,146 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Rucoy Nexus</title>
     <style>
-        :root { --rucoy-blue: #3CBCFC; --rucoy-bg: #121212; --rucoy-drawer-bg: #2173b3; --white: #F3F3F3; }
+        :root {
+            --rucoy-blue: #3CBCFC;
+            --rucoy-bg: #121212;
+            --rucoy-drawer-bg: #2173b3;
+            --white: #F3F3F3;
+        }
+
         * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Roboto', sans-serif; }
-        body { background-color: var(--rucoy-bg); color: var(--white); }
+        body { background-color: var(--rucoy-bg); color: var(--white); overflow-x: hidden; }
 
-        /* HEADER */
-        header { background-color: var(--rucoy-blue); height: 56px; display: flex; align-items: center; padding: 0 16px; position: fixed; top: 0; width: 100%; z-index: 100; }
-        .menu-btn img { width: 24px; filter: brightness(0) invert(1); cursor: pointer; }
-        #current-page-title { font-size: 20px; margin-left: 20px; font-weight: 500; }
+        header {
+            background-color: var(--rucoy-blue);
+            height: 56px;
+            display: flex;
+            align-items: center;
+            padding: 0 16px;
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 100;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.3);
+        }
 
-        /* DRAWER */
-        #drawer { position: fixed; top: 0; left: -280px; width: 280px; height: 100%; background-color: var(--rucoy-drawer-bg); z-index: 200; transition: 0.3s; box-shadow: 4px 0 10px rgba(0,0,0,0.5); }
+        .top-bar-action { display: flex; align-items: center; height: 100%; padding-right: 30px; cursor: pointer; }
+        .menu-btn img { width: 24px; filter: brightness(0) invert(1); }
+        #current-page-title { font-size: 20px; font-weight: 500; color: white; margin-left: 10px; }
+
+        #drawer {
+            position: fixed;
+            top: 0;
+            left: -280px;
+            width: 280px;
+            height: 100%;
+            background-color: var(--rucoy-drawer-bg);
+            z-index: 200;
+            transition: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            overflow-y: auto;
+            box-shadow: 4px 0 10px rgba(0,0,0,0.5);
+            display: flex;
+            flex-direction: column;
+        }
+
         #drawer.active { left: 0; }
-        .drawer-banner { width: 100%; height: 150px; background: url('/res/icon/draweBanner.png') no-repeat center/cover; }
-        .drawer-list { padding: 8px 0; }
-        .drawer-item { padding: 12px 16px; display: flex; align-items: center; color: white; text-decoration: none; }
-        .drawer-item img { width: 24px; margin-right: 32px; filter: brightness(0) invert(1); }
+        .drawer-banner { width: 100%; height: 150px; background: url('/res/icon/draweBanner.png') no-repeat center/cover; border-bottom: 1px solid rgba(255,255,255,0.1); }
+        .drawer-list { list-style: none; padding: 8px 0; flex-grow: 1; }
+        .drawer-item { padding: 12px 16px; display: flex; align-items: center; color: white; text-decoration: none; font-size: 16px; }
+        .drawer-item:hover { background-color: rgba(255, 255, 255, 0.1); }
+        .drawer-item img { width: 24px; height: 24px; margin-right: 32px; filter: brightness(0) invert(1); }
 
-        /* MODO APP: ESCONDE TUDO E AJUSTA O TOPO */
-        body.is-app header, body.is-app #drawer, body.is-app #overlay { display: none !important; }
-        body.is-app main { padding-top: 0 !important; }
+        .settings-highlight { margin-top: auto; border-top: 1px solid rgba(255,255,255,0.1); color: #000000 !important; font-weight: bold; background-color: rgba(255,255,255,0.05); }
+        .settings-highlight img { filter: brightness(0) !important; }
 
         #overlay { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.5); display: none; z-index: 150; }
-        main { padding: 76px 20px 20px; }
+        main { padding: 76px 20px 20px 20px; }
+
+        /* CORREÇÃO DO LAYOUT NO APP */
+        body.is-app header, body.is-app #drawer, body.is-app #overlay { display: none !important; }
+        body.is-app main { padding: 0 !important; } /* Remove o espaço do topo no Android */
     </style>
 </head>
 <body>
+
     <script>
-        // Verifica se é APP pelo parâmetro ou pelo que salvamos no login
-        const isApp = new URLSearchParams(window.location.search).get('platform') === 'app' || localStorage.getItem("isAppMode") === "true";
+        // Lógica de Detecção de App e Token
+        const params = new URLSearchParams(window.location.search);
+        const isApp = params.get('platform') === 'app' || localStorage.getItem("isAppMode") === "true";
         
         if (isApp) {
             document.body.classList.add('is-app');
-            localStorage.setItem("isAppMode", "true"); // Garante que continue como app
+            localStorage.setItem("isAppMode", "true");
         }
 
-        // Captura token do Google
+        // Captura o token vindo do redirecionamento do Google
         if (window.location.hash.includes("credential=")) {
             const token = new URLSearchParams(window.location.hash.replace("#", "?")).get("credential");
             if (token) localStorage.setItem("userToken", token);
             window.location.hash = ""; // Limpa a URL
         }
 
+        // Se não tiver token, manda pro login
         if (!localStorage.getItem("userToken")) {
             window.location.href = "/account/" + (isApp ? "?platform=app" : "");
         }
     </script>
 
     <div id="overlay" onclick="toggleMenu()"></div>
+
     <header>
-        <div class="menu-btn" onclick="toggleMenu()"><img src="/res/icon/navnav.png"></div>
-        <span id="current-page-title">Home</span>
+        <div class="top-bar-action" onclick="toggleMenu()">
+            <div class="menu-btn"><img src="/res/icon/navnav.png"></div>
+            <span id="current-page-title">Home</span>
+        </div>
     </header>
 
     <nav id="drawer">
         <div class="drawer-banner"></div>
-        <div class="drawer-list" id="menu-links">
+        <div class="drawer-list" id="menu-items">
             </div>
     </nav>
 
-    <main>
-        <h1>Dashboard</h1>
-        <p>Bem-vindo ao Rucoy Nexus oficial!</p>
+    <main id="main-content">
+        <h1>Wiki</h1>
+        <p>Bem-vindo ao Nexus!</p>
     </main>
 
     <script>
         function toggleMenu() {
-            const d = document.getElementById('drawer');
-            const o = document.getElementById('overlay');
-            d.classList.toggle('active');
-            o.style.display = d.classList.contains('active') ? 'block' : 'none';
+            const drawer = document.getElementById('drawer');
+            const overlay = document.getElementById('overlay');
+            drawer.classList.toggle('active');
+            overlay.style.display = drawer.classList.contains('active') ? 'block' : 'none';
         }
 
-        // Gerar menu em Português
-        const menuItems = [
-            { t: "Home", i: "home.png", h: "/" },
-            { t: "Perfil", i: "user.png", h: "/profile/" },
-            { t: "Wiki", i: "apps.png", h: "/wiki/" },
-            { t: "Trocas e vendas", i: "change.png", h: "/tradeandsales/" },
-            { t: "Mapa", i: "map.png", h: "/map/" },
-            { t: "Configurações", i: "ic_cog.png", h: "/settings/" }
+        // Lista completa do seu Drawer conforme o código que você mandou
+        const menuData = [
+            { name: "Home", icon: "home.png", link: "/" },
+            { name: "Profile", icon: "user.png", link: "/profile/" },
+            { name: "Wiki", icon: "apps.png", link: "/wiki/" },
+            { name: "Trades & Sales", icon: "change.png", link: "/tradeandsales/" },
+            { name: "Map", icon: "map.png", link: "/map/" },
+            { name: "Friends", icon: "friends.png", link: "/friends/" },
+            { name: "Guild", icon: "guild.png", link: "/guild/" },
+            { name: "Calculator", icon: "calculator.png", link: "/calculator/" },
+            { name: "Updates", icon: "update.png", link: "/updates/" },
+            { name: "Settings", icon: "ic_cog.png", link: "/settings/", class: "settings-highlight" }
         ];
 
-        const list = document.getElementById('menu-links');
+        const container = document.getElementById('menu-items');
         const suffix = isApp ? "?platform=app" : "";
-        
-        menuItems.forEach(item => {
+
+        menuData.forEach(item => {
             const a = document.createElement('a');
-            a.href = item.h + suffix;
-            a.className = "drawer-item";
-            a.innerHTML = `<img src="/res/icon/${item.i}"> ${item.t}`;
-            list.appendChild(a);
+            a.href = item.link + suffix;
+            a.className = "drawer-item " + (item.class || "");
+            a.innerHTML = `<img src="/res/icon/${item.icon}"> ${item.name}`;
+            container.appendChild(a);
         });
     </script>
 </body>
