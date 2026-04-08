@@ -68,17 +68,26 @@
 <body>
 
     <script>
-    // 1. Verifica se é APP
+    // 1. Detecta se é APP APENAS pela URL atual
     const params = new URLSearchParams(window.location.search);
-    const isApp = params.get('platform') === 'app' || localStorage.getItem("isAppMode") === "true";
+    const isApp = params.get('platform') === 'app';
     
+    // Aplica a classe is-app apenas se o parâmetro existir na URL
     if (isApp) {
-        document.body.classList.add('is-app');
-        localStorage.setItem("isAppMode", "true");
+        document.documentElement.classList.add('is-app');
     }
 
-    // 2. Verifica se o usuário está logado
-    // Se não tiver token, manda para a página de login
+    // 2. Captura o Token do Google (se acabou de redirecionar)
+    if (window.location.hash.includes("credential=")) {
+        const token = new URLSearchParams(window.location.hash.replace("#", "?")).get("credential");
+        if (token) {
+            localStorage.setItem("userToken", token);
+            // Limpa o hash da URL para não ficar feio
+            window.history.replaceState(null, null, window.location.pathname + (isApp ? "?platform=app" : ""));
+        }
+    }
+
+    // 3. Proteção de Login
     if (!localStorage.getItem("userToken")) {
         window.location.href = "/account/" + (isApp ? "?platform=app" : "");
     }
