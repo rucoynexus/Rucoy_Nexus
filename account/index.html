@@ -20,27 +20,18 @@
     </div>
 
     <script>
-        // Detecta se é app antes de qualquer coisa e salva
         const params = new URLSearchParams(window.location.search);
+        // Se entrou com ?platform=app, salva no navegador para lembrar depois do login
         if (params.get('platform') === 'app') {
             localStorage.setItem("isAppMode", "true");
-        }
-
-        function handleCredentialResponse(response) {
-            // Salva o token recebido
-            localStorage.setItem("userToken", response.credential);
-            
-            // Redireciona para a Home com ou sem o parâmetro de app
-            const isApp = localStorage.getItem("isAppMode") === "true";
-            window.location.href = "/" + (isApp ? "?platform=app" : "");
         }
 
         window.onload = function () {
             google.accounts.id.initialize({
                 client_id: "8160958088-tfs0b7l0h81osvt46qsjm55ildrp9itv.apps.googleusercontent.com",
-                callback: handleCredentialResponse, // Usa função em vez de redirect_uri
-                ux_mode: 'popup', // Popup evita o erro de POST no servidor
-                auto_select: true
+                ux_mode: 'redirect',
+                // Enviamos a URL idêntica ao que está no seu console (sem parâmetros)
+                login_uri: window.location.origin + "/" 
             });
             
             google.accounts.id.renderButton(

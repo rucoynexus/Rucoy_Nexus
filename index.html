@@ -68,21 +68,27 @@
 <body>
 
     <script>
-    // 1. Verifica se é APP
-    const params = new URLSearchParams(window.location.search);
-    const isApp = params.get('platform') === 'app' || localStorage.getItem("isAppMode") === "true";
-    
-    if (isApp) {
-        document.body.classList.add('is-app');
-        localStorage.setItem("isAppMode", "true");
-    }
+        // Lógica de Detecção de App e Token
+        const params = new URLSearchParams(window.location.search);
+        const isApp = params.get('platform') === 'app' || localStorage.getItem("isAppMode") === "true";
+        
+        if (isApp) {
+            document.body.classList.add('is-app');
+            localStorage.setItem("isAppMode", "true");
+        }
 
-    // 2. Verifica se o usuário está logado
-    // Se não tiver token, manda para a página de login
-    if (!localStorage.getItem("userToken")) {
-        window.location.href = "/account/" + (isApp ? "?platform=app" : "");
-    }
-</script>
+        // Captura o token vindo do redirecionamento do Google
+        if (window.location.hash.includes("credential=")) {
+            const token = new URLSearchParams(window.location.hash.replace("#", "?")).get("credential");
+            if (token) localStorage.setItem("userToken", token);
+            window.location.hash = ""; // Limpa a URL
+        }
+
+        // Se não tiver token, manda pro login
+        if (!localStorage.getItem("userToken")) {
+            window.location.href = "/account/" + (isApp ? "?platform=app" : "");
+        }
+    </script>
 
     <div id="overlay" onclick="toggleMenu()"></div>
 
