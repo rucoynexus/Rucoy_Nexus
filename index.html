@@ -101,19 +101,18 @@
             margin-right: 32px;
             filter: brightness(0) invert(1);
         }
-/* --- ESTILO DO SETTINGS NO RODAPÉ --- */
-.settings-highlight {
-    margin-top: auto; /* Joga o botão para o final da lista */
-    border-top: 1px solid rgba(255,255,255,0.1);
-    color: #000000 !important; /* Cor da letra (cinza escuro/preto) */
-    font-weight: bold;
-}
 
-.settings-highlight img {
-    filter: brightness(0) !important; /* Deixa o ícone preto */
-}
+        .settings-highlight {
+            margin-top: auto;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            color: #000000 !important;
+            font-weight: bold;
+        }
 
-        /* --- OVERLAY --- */
+        .settings-highlight img {
+            filter: brightness(0) !important;
+        }
+
         #overlay {
             position: fixed;
             top: 0; left: 0; width: 100%; height: 100%;
@@ -143,31 +142,46 @@
     </header>
 
     <nav id="drawer">
-    <div class="drawer-banner"></div>
-    <div class="drawer-list">
-        <a href="/" class="drawer-item"><img src="/res/icon/home.png"> Home</a>
-        <a href="/profile/" class="drawer-item"><img src="/res/icon/user.png"> Profile</a>
-        <a href="/wiki/" class="drawer-item"><img src="/res/icon/apps.png"> Wiki</a>
-        <a href="/tradeandsales/" class="drawer-item"><img src="/res/icon/change.png"> Trades & Sales</a>
-        <a href="/map/" class="drawer-item"><img src="/res/icon/map.png"> Map</a>
-        <a href="/friends/" class="drawer-item"><img src="/res/icon/friends.png"> Friends</a>
-        <a href="/guild/" class="drawer-item"><img src="/res/icon/guild.png"> Guild</a>
-        <a href="/calculator/" class="drawer-item"><img src="/res/icon/calculator.png"> Calculator</a>
-        <a href="/updates/" class="drawer-item"><img src="/res/icon/update.png"> Updates</a>
-        
-        <a href="/settings/" class="drawer-item settings-highlight">
-            <img src="/res/icon/ic_cog.png"> Settings
-        </a>
-    </div>
-</nav>
+        <div class="drawer-banner"></div>
+        <div class="drawer-list">
+            <a href="/" class="drawer-item"><img src="/res/icon/home.png"> Home</a>
+            <a href="/profile/" class="drawer-item"><img src="/res/icon/user.png"> Profile</a>
+            <a href="/wiki/" class="drawer-item"><img src="/res/icon/apps.png"> Wiki</a>
+            <a href="/tradeandsales/" class="drawer-item"><img src="/res/icon/change.png"> Trades & Sales</a>
+            <a href="/map/" class="drawer-item"><img src="/res/icon/map.png"> Map</a>
+            <a href="/friends/" class="drawer-item"><img src="/res/icon/friends.png"> Friends</a>
+            <a href="/guild/" class="drawer-item"><img src="/res/icon/guild.png"> Guild</a>
+            <a href="/calculator/" class="drawer-item"><img src="/res/icon/calculator.png"> Calculator</a>
+            <a href="/updates/" class="drawer-item"><img src="/res/icon/update.png"> Updates</a>
+            
+            <a href="/settings/" class="drawer-item settings-highlight">
+                <img src="/res/icon/ic_cog.png"> Settings
+            </a>
+        </div>
+    </nav>
 
     <main id="main-content">
         <h1>Dashboard</h1>
-        <p>Bem-vindo ao Rucoy Nexus oficial!</p>
+        <p id="welcome-message">Bem-vindo ao Rucoy Nexus oficial!</p>
     </main>
 
     <script>
-        // 1. DETECTA PLATAFORMA APP (Movido para cima para ser usado no redirecionamento)
+        // Função para decodificar o token do Google (JWT) 🔓
+        function parseJwt(token) {
+            try {
+                const base64Url = token.split('.')[1];
+                const base64 = base64Url.replace(/-/g, '+').replace(/_/g, '/');
+                const jsonPayload = decodeURIComponent(atob(base64).split('').map(function(c) {
+                    return '%' + ('00' + c.charCodeAt(0).toString(16)).slice(-2);
+                }).join(''));
+
+                return JSON.parse(jsonPayload);
+            } catch (e) {
+                return null;
+            }
+        }
+
+        // 1. DETECTA PLATAFORMA APP
         const params = new URLSearchParams(window.location.search);
         const isApp = params.get('platform') === 'app';
         
@@ -175,12 +189,19 @@
             document.body.classList.add('is-app');
         }
 
-        // 2. PROTEÇÃO DE ACESSO
+        // 2. PROTEÇÃO DE ACESSO E EXIBIÇÃO DE DADOS 🛡️
         const token = localStorage.getItem("userToken");
+        
         if (!token && !window.location.pathname.includes('/account/')) {
-            // AJUSTE: Se for app, mantém o parâmetro ao expulsar para o login
             const loginUrl = isApp ? "/account/?platform=app" : "/account/";
             window.location.href = loginUrl;
+        } else if (token) {
+            // Se logado, extraímos os dados para mostrar na tela
+            const userData = parseJwt(token);
+            if (userData && userData.name) {
+                const welcomeElement = document.getElementById('welcome-message');
+                welcomeElement.innerHTML = `Olá, <strong>${userData.name}</strong>! 👋<br><span style="color: #bbb; font-size: 14px;">Logado como: ${userData.email}</span>`;
+            }
         }
 
         // 3. MENU DRAWER
