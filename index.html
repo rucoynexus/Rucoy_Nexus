@@ -167,24 +167,28 @@
     </main>
 
     <script>
-        // 1. PROTEÇÃO DE ACESSO
-        const token = localStorage.getItem("userToken");
-        if (!token && !window.location.pathname.includes('/account/')) {
-            window.location.href = "/account/";
+        // 1. DETECTA PLATAFORMA APP (Movido para cima para ser usado no redirecionamento)
+        const params = new URLSearchParams(window.location.search);
+        const isApp = params.get('platform') === 'app';
+        
+        if (isApp) {
+            document.body.classList.add('is-app');
         }
 
-        // 2. MENU DRAWER
+        // 2. PROTEÇÃO DE ACESSO
+        const token = localStorage.getItem("userToken");
+        if (!token && !window.location.pathname.includes('/account/')) {
+            // AJUSTE: Se for app, mantém o parâmetro ao expulsar para o login
+            const loginUrl = isApp ? "/account/?platform=app" : "/account/";
+            window.location.href = loginUrl;
+        }
+
+        // 3. MENU DRAWER
         function toggleMenu() {
             const drawer = document.getElementById('drawer');
             const overlay = document.getElementById('overlay');
             drawer.classList.toggle('active');
             overlay.style.display = drawer.classList.contains('active') ? 'block' : 'none';
-        }
-
-        // 3. DETECTA PLATAFORMA APP
-        const params = new URLSearchParams(window.location.search);
-        if (params.get('platform') === 'app') {
-            document.body.classList.add('is-app');
         }
     </script>
 </body>
