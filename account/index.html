@@ -4,69 +4,99 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Rucoy Nexus - Login</title>
-    <script src="https://accounts.google.com/gsi/client" async defer></script>
     <style>
-        body {
-            margin: 0;
-            background-color: #121212;
-            color: white;
-            font-family: 'Roboto', sans-serif;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            height: 100vh;
-        }
-        .login-container {
-            text-align: center;
-            background: #1e1e1e;
-            padding: 40px;
-            border-radius: 10px;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.5);
-            border: 1px solid #3cbcfe;
-            max-width: 350px;
-            width: 90%;
-        }
-        h1 { color: #3cbcfe; margin-bottom: 10px; font-size: 28px; }
-        p { margin-bottom: 30px; color: #bbb; line-height: 1.5; }
-        #buttonDiv { display: flex; justify-content: center; }
+        body { margin: 0; background-color: #121212; color: white; font-family: 'Roboto', sans-serif; display: flex; align-items: center; justify-content: center; height: 100vh; }
+        .login-container { text-align: center; background: #1e1e1e; padding: 40px; border-radius: 10px; border: 1px solid #3cbcfe; width: 90%; max-width: 350px; }
+        h1 { color: #3cbcfe; margin-bottom: 10px; }
+        p { color: #bbb; margin-bottom: 30px; }
+        .btn-google { background: #3cbcfe; color: white; border: none; padding: 15px 30px; border-radius: 50px; font-weight: bold; cursor: pointer; width: 100%; font-size: 16px; }
     </style>
 </head>
 <body>
-
     <div class="login-container">
         <h1>Rucoy Nexus</h1>
-        <p>Bem-vindo! Faça login com sua conta Google para acessar o mapa e ferramentas.</p>
-        
-        <div id="buttonDiv"></div>
+        <p>Faça login para continuar</p>
+        <button class="btn-google" onclick="iniciarLogin()">ENTRAR COM GOOGLE</button>
     </div>
 
     <script>
-        function handleCredentialResponse(response) {
-            // Guarda o token no navegador
-            localStorage.setItem("userToken", response.credential);
-            // Manda para a Home
-            window.location.href = "/";
+        const CLIENT_ID = "8160958088-tfs0b7l0h81osvt46qsjm55ildrp9itv.apps.googleusercontent.com";
+        // O link que você autorizou no console do Google
+        const REDIRECT_URI = "https://rucoynexus.com/account/"; 
+
+        function iniciarLogin() {
+            const rootUrl = "https://accounts.google.com/o/oauth2/v2/auth";
+            const options = {
+                client_id: CLIENT_ID,
+                redirect_uri: REDIRECT_URI,
+                response_type: "id_token",
+                scope: "openid profile email",
+                nonce: Math.random().toString(36).substring(2)
+            };
+            const qs = new URLSearchParams(options).toString();
+            window.location.href = `${rootUrl}?${qs}`;
         }
 
         window.onload = function () {
-            google.accounts.id.initialize({
-                // === COLOQUE SEU CLIENT ID ABAIXO ===
-                client_id: "8160958088-tfs0b7l0h81osvt46qsjm55ildrp9itv.apps.googleusercontent.com",
-                callback: handleCredentialResponse
-            });
-            
-            google.accounts.id.renderButton(
-                document.getElementById("buttonDiv"),
-                { 
-                    theme: "filled_blue", 
-                    size: "large", 
-                    text: "continue_with",
-                    shape: "pill"
-                }
-            );
-            
-            google.accounts.id.prompt(); 
+            // Verifica se voltamos do Google com o token na URL
+            const params = new URLSearchParams(window.location.hash.substring(1));
+            const idToken = params.get("id_token");
+
+            if (idToken) {
+                localStorage.setItem("userToken", idToken);
+                window.location.href = "/"; // Volta para a Home logado
+            }
+        }
+    </script>
+</body>
+</html><!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rucoy Nexus - Login</title>
+    <style>
+        body { margin: 0; background-color: #121212; color: white; font-family: 'Roboto', sans-serif; display: flex; align-items: center; justify-content: center; height: 100vh; }
+        .login-container { text-align: center; background: #1e1e1e; padding: 40px; border-radius: 10px; border: 1px solid #3cbcfe; width: 90%; max-width: 350px; }
+        h1 { color: #3cbcfe; margin-bottom: 10px; }
+        p { color: #bbb; margin-bottom: 30px; }
+        .btn-google { background: #3cbcfe; color: white; border: none; padding: 15px 30px; border-radius: 50px; font-weight: bold; cursor: pointer; width: 100%; font-size: 16px; }
+    </style>
+</head>
+<body>
+    <div class="login-container">
+        <h1>Rucoy Nexus</h1>
+        <p>Faça login para continuar</p>
+        <button class="btn-google" onclick="iniciarLogin()">ENTRAR COM GOOGLE</button>
+    </div>
+
+    <script>
+        const CLIENT_ID = "8160958088-tfs0b7l0h81osvt46qsjm55ildrp9itv.apps.googleusercontent.com";
+        // O link que você autorizou no console do Google
+        const REDIRECT_URI = "https://rucoynexus.com/account/"; 
+
+        function iniciarLogin() {
+            const rootUrl = "https://accounts.google.com/o/oauth2/v2/auth";
+            const options = {
+                client_id: CLIENT_ID,
+                redirect_uri: REDIRECT_URI,
+                response_type: "id_token",
+                scope: "openid profile email",
+                nonce: Math.random().toString(36).substring(2)
+            };
+            const qs = new URLSearchParams(options).toString();
+            window.location.href = `${rootUrl}?${qs}`;
+        }
+
+        window.onload = function () {
+            // Verifica se voltamos do Google com o token na URL
+            const params = new URLSearchParams(window.location.hash.substring(1));
+            const idToken = params.get("id_token");
+
+            if (idToken) {
+                localStorage.setItem("userToken", idToken);
+                window.location.href = "/"; // Volta para a Home logado
+            }
         }
     </script>
 </body>
