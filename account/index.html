@@ -56,18 +56,30 @@
         const REDIRECT_URI = window.location.origin + "/account/"; 
 
         function iniciarLogin() {
-            const rootUrl = "https://accounts.google.com/o/oauth2/v2/auth";
-            const options = {
-                client_id: CLIENT_ID,
-                redirect_uri: REDIRECT_URI,
-                response_type: "id_token",
-                scope: "openid profile email",
-                nonce: Math.random().toString(36).substring(2)
-            };
-            
-            const qs = new URLSearchParams(options).toString();
-            window.location.href = `${rootUrl}?${qs}`;
-        }
+    const rootUrl = "https://accounts.google.com/o/oauth2/v2/auth";
+    
+    // 1. Verifica se já estamos no modo app
+    const urlParams = new URLSearchParams(window.location.search);
+    const isApp = urlParams.get('platform') === 'app';
+
+    // 2. Ajusta a REDIRECT_URI para incluir o parâmetro se necessário
+    // Assim, o Google devolve o usuário já com o carimbo de 'app'
+    const finalRedirectUri = isApp 
+        ? window.location.origin + "/account/?platform=app" 
+        : window.location.origin + "/account/";
+
+    const options = {
+        client_id: CLIENT_ID,
+        redirect_uri: finalRedirectUri, // URI dinâmica 🔄
+        response_type: "id_token",
+        scope: "openid profile email",
+        prompt: "select_account", // Força a tela de escolha de conta! 👤
+        nonce: Math.random().toString(36).substring(2)
+    };
+    
+    const qs = new URLSearchParams(options).toString();
+    window.location.href = `${rootUrl}?${qs}`;
+}
 
         window.onload = function () {
     const hash = window.location.hash.substring(1);
