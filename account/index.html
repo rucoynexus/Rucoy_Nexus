@@ -70,17 +70,25 @@
         }
 
         window.onload = function () {
-            // Verifica se voltamos do Google com o token na URL (#id_token=...)
-            const hash = window.location.hash.substring(1);
-            const params = new URLSearchParams(hash);
-            const idToken = params.get("id_token");
+    const hash = window.location.hash.substring(1);
+    const paramsHash = new URLSearchParams(hash);
+    const idToken = paramsHash.get("id_token");
 
-            if (idToken) {
-                // Salva o token no navegador e redireciona para a home
-                localStorage.setItem("userToken", idToken);
-                window.location.href = "/"; 
-            }
+    // Verifica se a URL de login tinha o marcador de app
+    const urlParams = new URLSearchParams(window.location.search);
+    const isApp = urlParams.get('platform') === 'app';
+
+    if (idToken) {
+        localStorage.setItem("userToken", idToken);
+        
+        // Se for app, volta para a home com o parâmetro!
+        if (isApp) {
+            window.location.href = "/?platform=app";
+        } else {
+            window.location.href = "/"; 
         }
+    }
+}
     </script>
 </body>
 </html>
