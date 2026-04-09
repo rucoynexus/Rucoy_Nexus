@@ -180,25 +180,34 @@
     </main>
 
     <script>
-        function toggleMenu() {
-            const drawer = document.getElementById('drawer');
-            const overlay = document.getElementById('overlay');
-            drawer.classList.toggle('active');
-            overlay.style.display = drawer.classList.contains('active') ? 'block' : 'none';
-        }
+    function toggleMenu() {
+        const drawer = document.getElementById('drawer');
+        const overlay = document.getElementById('overlay');
+        drawer.classList.toggle('active');
+        overlay.style.display = drawer.classList.contains('active') ? 'block' : 'none';
+    }
 
-        // Detecta se a página foi aberta com ?platform=app
-        const params = new URLSearchParams(window.location.search);
-        if (params.get('platform') === 'app') {
-            document.body.classList.add('is-app');
+    // 1. Detecta se a página foi aberta com ?platform=app
+    const params = new URLSearchParams(window.location.search);
+    const isApp = params.get('platform') === 'app';
+
+    if (isApp) {
+        document.body.classList.add('is-app');
+    }
+
+    // 2. Função de Logout Inteligente 🚪
+    function logout() {
+        // Remove o token de acesso
+        localStorage.removeItem("userToken");
+        
+        // Se for app, volta para a raiz com o parâmetro. 
+        // Se não, vai para a pasta de conta padrão.
+        if (isApp) {
+            window.location.href = "/?platform=app";
+        } else {
+            window.location.href = "/account/";
         }
-        function logout() {
-    // Remove o token do Google que está salvo no seu navegador
-    localStorage.removeItem("userToken");
-    
-    // Manda o usuário de volta para a tela de login
-    window.location.href = "/account/";
-}
-    </script>
+    }
+</script>
 </body>
 </html>
