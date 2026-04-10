@@ -27,80 +27,92 @@
         }
         h1 { color: #3cbcfe; margin-bottom: 10px; }
         p { color: #bbb; margin-bottom: 30px; }
+
         .btn-google { 
             background: #3cbcfe; 
             color: white; 
             border: none; 
-            padding: 15px 30px; 
+            padding: 12px 20px; 
             border-radius: 50px; 
             font-weight: bold; 
             cursor: pointer; 
             width: 100%; 
-            font-size: 16px;
+            font-size: 15px;
             transition: 0.3s;
+            display: flex; /* Alinha ícone e texto */
+            align-items: center;
+            justify-content: center;
+            gap: 12px; /* Espaço entre ícone e texto */
         }
-        .btn-google:hover { background: #2e9cd1; }
+
+        .btn-google img {
+            width: 24px; /* Tamanho do ícone */
+            height: 24px;
+            background: white; /* Fundo branco circular para o ícone se destacar */
+            padding: 2px;
+            border-radius: 50%;
+        }
+
+        .btn-google:hover { 
+            background: #2e9cd1; 
+            transform: translateY(-2px); /* Pequeno efeito de flutuar */
+        }
     </style>
 </head>
 <body>
 
     <div class="login-container">
         <h1>Rucoy Nexus</h1>
-        <p>Faça login para continuar</p>
-        <button class="btn-google" onclick="iniciarLogin()">ENTRAR COM GOOGLE</button>
+        <p>Log in to access the website.</p>
+        <button class="btn-google" onclick="iniciarLogin()">
+            <img src="google.png" alt="Google Icon">
+            SIGN IN WITH GOOGLE
+        </button>
     </div>
 
     <script>
-        // Declaramos as constantes apenas UMA vez para evitar o erro do VS Code
         const CLIENT_ID = "8160958088-tfs0b7l0h81osvt46qsjm55ildrp9itv.apps.googleusercontent.com";
         const REDIRECT_URI = window.location.origin + "/account/"; 
 
         function iniciarLogin() {
-    const rootUrl = "https://accounts.google.com/o/oauth2/v2/auth";
-    
-    // 1. Verifica se já estamos no modo app
-    const urlParams = new URLSearchParams(window.location.search);
-    const isApp = urlParams.get('platform') === 'app';
+            const rootUrl = "https://accounts.google.com/o/oauth2/v2/auth";
+            const urlParams = new URLSearchParams(window.location.search);
+            const isApp = urlParams.get('platform') === 'app';
 
-    // 2. Ajusta a REDIRECT_URI para incluir o parâmetro se necessário
-    // Assim, o Google devolve o usuário já com o carimbo de 'app'
-    const finalRedirectUri = isApp 
-        ? window.location.origin + "/account/?platform=app" 
-        : window.location.origin + "/account/";
+            const finalRedirectUri = isApp 
+                ? window.location.origin + "/account/?platform=app" 
+                : window.location.origin + "/account/";
 
-    const options = {
-        client_id: CLIENT_ID,
-        redirect_uri: finalRedirectUri, // URI dinâmica 🔄
-        response_type: "id_token",
-        scope: "openid profile email",
-        prompt: "select_account", // Força a tela de escolha de conta! 👤
-        nonce: Math.random().toString(36).substring(2)
-    };
-    
-    const qs = new URLSearchParams(options).toString();
-    window.location.href = `${rootUrl}?${qs}`;
-}
+            const options = {
+                client_id: CLIENT_ID,
+                redirect_uri: finalRedirectUri,
+                response_type: "id_token",
+                scope: "openid profile email",
+                prompt: "select_account",
+                nonce: Math.random().toString(36).substring(2)
+            };
+            
+            const qs = new URLSearchParams(options).toString();
+            window.location.href = `${rootUrl}?${qs}`;
+        }
 
         window.onload = function () {
-    const hash = window.location.hash.substring(1);
-    const paramsHash = new URLSearchParams(hash);
-    const idToken = paramsHash.get("id_token");
+            const hash = window.location.hash.substring(1);
+            const paramsHash = new URLSearchParams(hash);
+            const idToken = paramsHash.get("id_token");
 
-    // Verifica se a URL de login tinha o marcador de app
-    const urlParams = new URLSearchParams(window.location.search);
-    const isApp = urlParams.get('platform') === 'app';
+            const urlParams = new URLSearchParams(window.location.search);
+            const isApp = urlParams.get('platform') === 'app';
 
-    if (idToken) {
-        localStorage.setItem("userToken", idToken);
-        
-        // Se for app, volta para a home com o parâmetro!
-        if (isApp) {
-            window.location.href = "/?platform=app";
-        } else {
-            window.location.href = "/"; 
+            if (idToken) {
+                localStorage.setItem("userToken", idToken);
+                if (isApp) {
+                    window.location.href = "/?platform=app";
+                } else {
+                    window.location.href = "/"; 
+                }
+            }
         }
-    }
-}
     </script>
 </body>
 </html>
