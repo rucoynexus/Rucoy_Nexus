@@ -7543,7 +7543,7 @@
   },
   "item1012": {
     "name": "chicken egg",
-    "rarity": "mythic",
+    "rarity": "commun",
     "stack": 20,
     "description": "increases speed for 20 minutes\ncan only be used during the\nchickenpocalypse"
   },

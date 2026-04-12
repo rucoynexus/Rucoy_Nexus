@@ -16,7 +16,6 @@
         * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Roboto', sans-serif; }
         body { background-color: var(--rucoy-bg); color: var(--white); overflow-x: hidden; min-height: 100vh; }
 
-        /* --- TOP BAR --- */
         header {
             background-color: var(--rucoy-blue);
             height: 56px;
@@ -46,7 +45,6 @@
 
         #current-page-title { font-size: 20px; font-weight: 500; color: white; }
 
-        /* --- DRAWER --- */
         #drawer {
             position: fixed;
             top: 0; left: -280px; width: 280px; height: 100%;
@@ -95,7 +93,6 @@
 
         main { padding: 76px 20px 20px 20px; min-height: 100vh; }
 
-        /* --- WIKI GRID --- */
         #lista {
             display: grid;
             grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
@@ -126,7 +123,6 @@
             z-index: 2;
             padding: 0 4px;
             line-height: 1.1;
-            /* O SEGREDO: drop-shadow funciona com gradiente de texto */
             filter: drop-shadow(1px 1px 1px rgba(0,0,0,1)) drop-shadow(-1px -1px 1px rgba(0,0,0,1));
         }
 
@@ -236,40 +232,43 @@
             return `color: ${getRarityColor(raridade)};`;
         }
 
-        // Remove apenas caracteres especiais, mas MANTÉM o conteúdo dos parênteses
-function normalizar(nome) {
-    return nome.toLowerCase()
-        .replace(/'/g, "") // Remove apóstrofos
-        .replace(/[^a-z0-9() ]/g, "") // Remove símbolos, mas mantém letras, números, espaços e ()
-        .trim();
-}
-
-function acharSprite(nome) {
-    let n = normalizar(nome);
-    
-    // 1. Tenta achar o nome exato (com parênteses)
-    for (let key in sprites) {
-        if (normalizar(key.replace(".png", "")) === n) {
-            return sprites[key];
+        function normalizar(nome) {
+            return nome.toLowerCase()
+                .replace(/'/g, "")
+                .replace(/[^a-z0-9() ]/g, "")
+                .trim();
         }
-    }
-    
-    // 2. Se não achar, tenta uma busca parcial como "fallback"
-    // Isso evita que itens fiquem sem imagem caso o JSON tenha nomes levemente diferentes
-    for (let key in sprites) {
-        let keyClean = normalizar(key.replace(".png", ""));
-        if (keyClean.includes(n) || n.includes(keyClean)) {
-            return sprites[key];
-        }
-    }
-    
-    return null;
-}
 
-        function acharSprite(nome) {
+        function acharSprite(nome, item) {
             let n = normalizar(nome);
+            let raridade = (item["Rarity: "] || item.rarity || "").toLowerCase();
+
+            // Lógica para Key Ring (1-6)
+            if (n === "key ring") {
+                let sufixo = "1";
+                if (raridade === "uncommun") sufixo = "2";
+                else if (raridade === "rare") sufixo = "3";
+                else if (raridade === "ultra rare") sufixo = "4";
+                else if (raridade === "legendary") sufixo = "5";
+                else if (raridade === "mythic") sufixo = "6";
+                
+                let nomeChave = `key ring${sufixo}`;
+                return sprites[nomeChave + ".png"] || sprites[nomeChave];
+            }
+
+            // Busca exata (mantendo parênteses para luvas/botas)
             for (let key in sprites) {
-                if (normalizar(key.replace(".png", "")) === n) return sprites[key];
+                if (normalizar(key.replace(".png", "")) === n) {
+                    return sprites[key];
+                }
+            }
+
+            // Busca parcial (fallback)
+            for (let key in sprites) {
+                let keyClean = normalizar(key.replace(".png", ""));
+                if (keyClean.includes(n) || n.includes(keyClean)) {
+                    return sprites[key];
+                }
             }
             return null;
         }
@@ -277,7 +276,7 @@ function acharSprite(nome) {
         function criarItemHTML(nome, item) {
             let raridade = item["Rarity: "] || item.rarity || "";
             let bg = getBackground(raridade);
-            let sprite = acharSprite(nome);
+            let sprite = acharSprite(nome, item); // Passando item completo
             let spriteHTML = "";
 
             if (sprite) {
@@ -313,7 +312,6 @@ function acharSprite(nome) {
             document.getElementById("lista").innerHTML = "";
             carregarMais();
             
-            // Garantia para telas grandes
             if (document.documentElement.scrollHeight <= window.innerHeight) {
                 carregarMais();
             }
