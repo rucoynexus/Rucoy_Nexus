@@ -1,279 +1,97 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <script src="/auth.js"></script>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Rucoy Nexus</title>
-    <style>
-        :root {
-            /* Cores oficiais baseadas no seu app */
-            --rucoy-blue: #3CBCFC;
-            --rucoy-bg: #121212;
-            --rucoy-drawer-bg: #2173b3;
-            --white: #F3F3F3;
-        }
+<script src="/auth.js"></script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Rucoy Nexus</title>
 
-        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Roboto', sans-serif; }
-        body { background-color: var(--rucoy-bg); color: var(--white); overflow-x: hidden; }
-
-        /* --- TOP BAR --- */
-        header {
-            background-color: var(--rucoy-blue);
-            height: 56px;
-            display: flex;
-            align-items: center;
-            padding: 0 16px;
-            position: fixed;
-            top: 0;
-            width: 100%;
-            z-index: 100;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.3);
-        }
-
-        .top-bar-action {
-            display: flex;
-            align-items: center;
-            height: 100%;
-            padding-right: 30px;
-            cursor: pointer;
-            user-select: none;
-            -webkit-user-select: none;
-        }
-
-        .top-bar-action:active { background-color: rgba(255, 255, 255, 0.1); }
-
-        .menu-btn {
-            background: none;
-            border: none;
-            margin-right: 20px;
-            display: flex;
-            align-items: center;
-            pointer-events: none;
-        }
-
-        .menu-btn img {
-            width: 24px;
-            filter: brightness(0) invert(1); /* Deixa o ícone navnav branco */
-        }
-
-        #current-page-title {
-            font-size: 20px;
-            font-weight: 500;
-            color: white;
-            cursor: pointer;
-        }
-
-        /* --- DRAWER (MENU LATERAL) --- */
-        #drawer {
-            position: fixed;
-            top: 0;
-            left: -280px;
-            width: 280px;
-            height: 100%;
-            background-color: var(--rucoy-drawer-bg);
-            z-index: 200;
-            transition: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-            overflow-y: auto;
-            box-shadow: 4px 0 10px rgba(0,0,0,0.5);
-        }
-
-        #drawer.active { left: 0; }
-
-        .drawer-banner {
-            width: 100%;
-            height: 150px;
-            background: url('/res/icon/draweBanner.png') no-repeat center;
-            background-size: cover;
-            border-bottom: 1px solid rgba(255,255,255,0.1);
-        }
-
-        .drawer-list { list-style: none; padding: 8px 0; }
-
-        .drawer-item {
-            padding: 12px 16px;
-            display: flex;
-            align-items: center;
-            color: white;
-            text-decoration: none;
-            font-size: 16px;
-            cursor: pointer;
-        }
-
-        .drawer-item:hover { background-color: rgba(255, 255, 255, 0.1); }
-
-        .drawer-item img {
-            width: 24px;
-            height: 24px;
-            margin-right: 32px;
-            filter: brightness(0) invert(1); /* Deixa os ícones brancos */
-        }
-/* --- ESTILO DO SETTINGS NO RODAPÉ --- */
-.settings-highlight {
-    margin-top: auto; /* Joga o botão para o final da lista */
-    border-top: 1px solid rgba(255,255,255,0.1);
-    color: #000000 !important; /* Cor da letra (cinza escuro/preto) */
-    font-weight: bold;
+<style>
+:root {
+    --rucoy-blue: #3CBCFC;
+    --rucoy-bg: #121212;
+    --rucoy-drawer-bg: #2173b3;
+    --white: #F3F3F3;
 }
 
-.settings-highlight img {
-    filter: brightness(0) !important; /* Deixa o ícone preto */
-}
-        /* --- OVERLAY --- */
-        #overlay {
-            position: fixed;
-            top: 0; left: 0; width: 100%; height: 100%;
-            background: rgba(0,0,0,0.5);
-            display: none;
-            z-index: 150;
-        }
+* { margin:0; padding:0; box-sizing:border-box; font-family:'Roboto', sans-serif; }
+body { background:var(--rucoy-bg); color:var(--white); }
 
-        /* --- CONTEÚDO --- */
-        main { padding: 76px 20px 20px 20px; }
-
-        /* MODO APP (Esconde menus para exibir apenas conteúdo no Android) */
-        body.is-app header, body.is-app #drawer, body.is-app #overlay {
-            display: none !important;
-        }
-        body.is-app main { padding: 0; }
-
-
-        /*aqui abaixo sao coisas do wiki*/
-        #lista {
+/* -------- GRID DOS ITENS -------- */
+#lista {
   display: grid;
   grid-template-columns: repeat(10, 1fr);
   gap: 10px;
 }
 
+/* CARD */
 .item-card {
   position: relative;
-  width: 100%;
   aspect-ratio: 1/1;
   background-size: cover;
-  background-position: center;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  display:flex;
+  align-items:center;
+  justify-content:center;
 }
 
-.item-card img {
-  max-width: 70%;
-  max-height: 70%;
+/* SPRITE */
+.sprite {
   image-rendering: pixelated;
+  background-repeat: no-repeat;
+  transform: scale(2); /* aumenta sprite */
 }
 
+/* NOME */
 .item-name {
-  position: absolute;
-  bottom: 2px;
-  width: 100%;
-  text-align: center;
-  font-size: 12px;
-  font-weight: bold;
-  text-shadow: 1px 1px 2px #000;
+  position:absolute;
+  bottom:2px;
+  width:100%;
+  text-align:center;
+  font-size:12px;
+  font-weight:bold;
+  text-shadow:1px 1px 2px #000;
 }
-    </style>
+</style>
 </head>
+
 <body>
 
-    <div id="overlay" onclick="toggleMenu()"></div>
+<main>
 
-    <header>
-        <div class="top-bar-action" onclick="toggleMenu()">
-            <div class="menu-btn">
-                <img src="/res/icon/navnav.png" alt="menu">
-            </div>
-            <span id="current-page-title">Wiki</span>
-        </div>
-    </header>
-
-    <nav id="drawer">
-    <div class="drawer-banner"></div>
-    <div class="drawer-list">
-        <a href="/" class="drawer-item"><img src="/res/icon/home.png"> Home</a>
-        <a href="/profile/" class="drawer-item"><img src="/res/icon/user.png"> Profile</a>
-        <a href="/wiki/" class="drawer-item"><img src="/res/icon/apps.png"> Wiki</a>
-        <a href="/tradeandsales/" class="drawer-item"><img src="/res/icon/change.png"> Trades & Sales</a>
-        <a href="/map/" class="drawer-item"><img src="/res/icon/map.png"> Map</a>
-        <a href="/players/" class="drawer-item"><img src="/res/icon/players.png"> Players</a>
-        <a href="/guild/" class="drawer-item"><img src="/res/icon/guild.png"> Guild</a>
-        <a href="/calculator/" class="drawer-item"><img src="/res/icon/calculator.png"> Calculator</a>
-        <a href="/updates/" class="drawer-item"><img src="/res/icon/update.png"> Updates</a>
-        
-        <a href="/settings/" class="drawer-item settings-highlight">
-            <img src="/res/icon/ic_cog.png"> Settings
-        </a>
-    </div>
-</nav>
-
-    <main id="main-content">
-
-<input type="text" id="search" placeholder="Search items..." style="width:100%;padding:10px;margin-bottom:10px;">
+<input id="search" placeholder="Search..." style="width:100%;padding:10px;margin-bottom:10px;">
 
 <select id="rarityFilter" style="width:100%;padding:10px;margin-bottom:10px;">
-  <option value="">All rarities</option>
-  <option value="commun">Commun</option>
-  <option value="uncommun">Uncommun</option>
-  <option value="rare">Rare</option>
-  <option value="ultra rare">Ultra Rare</option>
-  <option value="legendary">Legendary</option>
-  <option value="mythic">Mythic</option>
+<option value="">All</option>
+<option value="commun">Commun</option>
+<option value="uncommun">Uncommun</option>
+<option value="rare">Rare</option>
+<option value="ultra rare">Ultra Rare</option>
+<option value="legendary">Legendary</option>
+<option value="mythic">Mythic</option>
 </select>
 
-<div id="preview"></div>
-<hr>
 <div id="lista"></div>
 
-<button id="loadMore" onclick="carregarMais()" 
-style="width:100%;padding:10px;margin-top:10px;">
-Load more
-</button>
+<button onclick="carregarMais()" id="loadMore">Load more</button>
+
 </main>
 
-    <script>
-        function toggleMenu() {
-            const drawer = document.getElementById('drawer');
-            const overlay = document.getElementById('overlay');
-            drawer.classList.toggle('active');
-            overlay.style.display = drawer.classList.contains('active') ? 'block' : 'none';
-        }
+<script>
 
-        // Detecta se a página foi aberta com ?platform=app
-        const params = new URLSearchParams(window.location.search);
-        if (params.get('platform') === 'app') {
-            document.body.classList.add('is-app');
-        }
-
-
-
-
-
-
-
-
-
-
-
-// aqui abaixo sao coisas do wiki
-        
-let items = {};
+// ============================
+// VARIÁVEIS
+// ============================
+let items = {};        // items.json
+let sprites = {};      // items_png.json
 let listaFiltrada = [];
 
 let pagina = 0;
 const POR_PAGINA = 50;
 
-function getRarityColor(r) {
-  r = (r || "").toLowerCase();
 
-  if (r === "commun") return "rgb(247,243,247)";
-  if (r === "uncommun") return "rgb(0,235,74)";
-  if (r === "rare") return "rgb(66,190,255)";
-  if (r === "ultra rare") return "rgb(230,117,247)";
-  if (r === "legendary") return "rgb(239,255,0)";
-  if (r === "mythic") return "linear-gradient(90deg,#e75931,#ff9229,#ffbe00,#e7ff00)";
-  
-  return "white";
-}
-
+// ============================
+// FUNÇÃO: fundo por raridade
+// ============================
 function getBackground(r) {
   r = (r || "").toLowerCase();
 
@@ -287,41 +105,85 @@ function getBackground(r) {
   return "commun-background.png";
 }
 
-function formatarNomeImagem(nome) {
+
+// ============================
+// NORMALIZA NOME (pra comparar)
+// ============================
+function normalizar(nome) {
   return nome
     .toLowerCase()
     .replace(/'/g, "")
     .replace(/\(.*?\)/g, "")
     .replace(/[^a-z0-9 ]/g, "")
-    .trim()
-    .split(" ")
-    .map(p => p.charAt(0).toUpperCase() + p.slice(1))
-    .join("_") + ".png";
+    .trim();
 }
 
+
+// ============================
+// ACHA SPRITE NO JSON
+// ============================
+function acharSprite(nome) {
+  let n = normalizar(nome);
+
+  for (let key in sprites) {
+    let k = normalizar(key.replace(".png", ""));
+
+    if (k === n) return sprites[key];
+  }
+
+  return null;
+}
+
+
+// ============================
+// CRIA ITEM HTML (COM SPRITE)
+// ============================
 function criarItemHTML(nome, item) {
+
   let raridade = item["Rarity: "] || item.rarity || "";
   let bg = getBackground(raridade);
 
-  let img = item["Img"] || formatarNomeImagem(nome);
+  let sprite = acharSprite(nome);
+
+  let spriteHTML = "";
+
+  if (sprite) {
+    let f = sprite.frame;
+
+    spriteHTML = `
+      <div class="sprite"
+        style="
+          width:${f.w}px;
+          height:${f.h}px;
+          background-image:url('./items.png');
+          background-position:-${f.x}px -${f.y}px;
+        ">
+      </div>
+    `;
+  }
 
   return `
     <div class="item-card" style="background-image:url('${bg}')">
-      <img src="./imgs/${img}" loading="lazy">
+      ${spriteHTML}
       <div class="item-name">${nome}</div>
     </div>
   `;
 }
 
+
+// ============================
+// FILTRO (BUSCA + RARIDADE)
+// ============================
 function aplicarFiltro() {
+
   let busca = document.getElementById("search").value.toLowerCase();
   let raridadeFiltro = document.getElementById("rarityFilter").value;
 
   listaFiltrada = [];
 
   for (let id in items) {
-    let item = items[id];
 
+    let item = items[id];
     let nome = item["Name: "] || item.name || "???";
     let tags = (item["Tags"] || "").toLowerCase();
     let raridade = (item["Rarity: "] || item.rarity || "").toLowerCase();
@@ -342,7 +204,12 @@ function aplicarFiltro() {
   carregarMais();
 }
 
+
+// ============================
+// PAGINAÇÃO (ANTI-LAG)
+// ============================
 function carregarMais() {
+
   let lista = document.getElementById("lista");
 
   let inicio = pagina * POR_PAGINA;
@@ -356,8 +223,8 @@ function carregarMais() {
 
   pagina++;
 
-  // botão aparece só se tiver mais
   let btn = document.getElementById("loadMore");
+
   if (fim >= listaFiltrada.length) {
     btn.style.display = "none";
   } else {
@@ -365,17 +232,37 @@ function carregarMais() {
   }
 }
 
+
+// ============================
+// CARREGAMENTO INICIAL
+// ============================
 async function carregar() {
-  let res = await fetch("./items.json");
-  items = await res.json();
+
+  // 🔹 carrega itens
+  let res1 = await fetch("./items.json");
+  items = await res1.json();
+
+  // 🔹 carrega spritesheet JSON
+  let res2 = await fetch("./items_png.json");
+  let data = await res2.json();
+  sprites = data.frames;
 
   aplicarFiltro();
 }
 
+
+// ============================
+// EVENTOS
+// ============================
 document.getElementById("search").addEventListener("input", aplicarFiltro);
 document.getElementById("rarityFilter").addEventListener("change", aplicarFiltro);
 
+
+// ============================
+// START
+// ============================
 carregar();
-    </script>
+
+</script>
 </body>
 </html>
