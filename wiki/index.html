@@ -1,268 +1,557 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<script src="/auth.js"></script>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Rucoy Nexus</title>
+    <script src="/auth.js"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rucoy Nexus</title>
 
-<style>
-:root {
-    --rucoy-blue: #3CBCFC;
-    --rucoy-bg: #121212;
-    --rucoy-drawer-bg: #2173b3;
-    --white: #F3F3F3;
-}
+    <style>
+        :root {
+            --rucoy-blue: #3CBCFC;
+            --rucoy-bg: #121212;
+            --rucoy-drawer-bg: #2173b3;
+            --white: #F3F3F3;
+        }
 
-* { margin:0; padding:0; box-sizing:border-box; font-family:'Roboto', sans-serif; }
-body { background:var(--rucoy-bg); color:var(--white); }
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Roboto', sans-serif;
+        }
 
-/* -------- GRID DOS ITENS -------- */
-#lista {
-  display: grid;
-  grid-template-columns: repeat(10, 1fr);
-  gap: 10px;
-}
+        body {
+            background-color: var(--rucoy-bg);
+            color: var(--white);
+            overflow-x: hidden;
+        }
 
-/* CARD */
-.item-card {
-  position: relative;
-  aspect-ratio: 1/1;
-  background-size: cover;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-}
+        /* --- TOP BAR --- */
+        header {
+            background-color: var(--rucoy-blue);
+            height: 56px;
+            display: flex;
+            align-items: center;
+            padding: 0 16px;
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 100;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.3);
+        }
 
-/* SPRITE */
-.sprite {
-  image-rendering: pixelated;
-  background-repeat: no-repeat;
-  transform: scale(2); /* aumenta sprite */
-}
+        .top-bar-action {
+            display: flex;
+            align-items: center;
+            height: 100%;
+            padding-right: 30px;
+            cursor: pointer;
+            user-select: none;
+            -webkit-user-select: none;
+        }
 
-/* NOME */
-.item-name {
-  position:absolute;
-  bottom:2px;
-  width:100%;
-  text-align:center;
-  font-size:12px;
-  font-weight:bold;
-  text-shadow:1px 1px 2px #000;
-}
-</style>
+        .top-bar-action:active {
+            background-color: rgba(255, 255, 255, 0.1);
+        }
+
+        .menu-btn {
+            background: none;
+            border: none;
+            margin-right: 20px;
+            display: flex;
+            align-items: center;
+            pointer-events: none;
+        }
+
+        .menu-btn img {
+            width: 24px;
+            filter: brightness(0) invert(1);
+        }
+
+        #current-page-title {
+            font-size: 20px;
+            font-weight: 500;
+            color: white;
+            cursor: pointer;
+        }
+
+        /* --- DRAWER (MENU LATERAL) --- */
+        #drawer {
+            position: fixed;
+            top: 0;
+            left: -280px;
+            width: 280px;
+            height: 100%;
+            background-color: var(--rucoy-drawer-bg);
+            z-index: 200;
+            transition: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            overflow-y: auto;
+            box-shadow: 4px 0 10px rgba(0,0,0,0.5);
+        }
+
+        #drawer.active {
+            left: 0;
+        }
+
+        .drawer-banner {
+            width: 100%;
+            height: 150px;
+            background: url('/res/icon/draweBanner.png') no-repeat center;
+            background-size: cover;
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+        }
+
+        .drawer-list {
+            list-style: none;
+            padding: 8px 0;
+        }
+
+        .drawer-item {
+            padding: 12px 16px;
+            display: flex;
+            align-items: center;
+            color: white;
+            text-decoration: none;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        .drawer-item:hover {
+            background-color: rgba(255, 255, 255, 0.1);
+        }
+
+        .drawer-item img {
+            width: 24px;
+            height: 24px;
+            margin-right: 32px;
+            filter: brightness(0) invert(1);
+        }
+
+        /* --- SETTINGS NO RODAPÉ --- */
+        .settings-highlight {
+            margin-top: auto;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            color: #000000 !important;
+            font-weight: bold;
+        }
+
+        .settings-highlight img {
+            filter: brightness(0) !important;
+        }
+
+        /* --- OVERLAY --- */
+        #overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.5);
+            display: none;
+            z-index: 150;
+        }
+
+        /* --- CONTEÚDO --- */
+        main {
+            padding: 76px 20px 20px 20px;
+        }
+
+        body.is-app header,
+        body.is-app #drawer,
+        body.is-app #overlay {
+            display: none !important;
+        }
+
+        body.is-app main {
+            padding: 0;
+        }
+
+        /* =========================
+           WIKI
+           ========================= */
+
+        #search {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+            border: none;
+            border-radius: 8px;
+            outline: none;
+            background: #1f1f1f;
+            color: #fff;
+        }
+
+        #rarityFilter {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+            border: none;
+            border-radius: 8px;
+            outline: none;
+            background: #1f1f1f;
+            color: #fff;
+        }
+
+        /* 10 itens por linha */
+        #lista {
+            display: grid;
+            grid-template-columns: repeat(10, minmax(0, 1fr));
+            gap: 8px;
+        }
+
+        /* Card principal do item */
+        .item-card {
+            position: relative;
+            width: 100%;
+            aspect-ratio: 1 / 1.05;
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        /* Sprite recortado da spritesheet */
+        .sprite {
+            position: relative;
+            image-rendering: pixelated;
+            background-repeat: no-repeat;
+        }
+
+        /* Nome embaixo */
+        .item-name {
+            position: absolute;
+            bottom: 2px;
+            width: 100%;
+            text-align: center;
+            font-size: 12px;
+            font-weight: bold;
+            text-shadow: 1px 1px 2px #000;
+            padding: 0 2px;
+            line-height: 1.1;
+        }
+
+        /* Texto de carregamento */
+        #loadingMore {
+            text-align: center;
+            padding: 12px 0;
+            color: #aaa;
+            font-size: 14px;
+        }
+
+        /* Área sentinela para carregar mais ao chegar no fim */
+        #sentinel {
+            height: 1px;
+        }
+    </style>
 </head>
-
 <body>
 
-<main>
+    <div id="overlay" onclick="toggleMenu()"></div>
 
-<input id="search" placeholder="Search..." style="width:100%;padding:10px;margin-bottom:10px;">
+    <header>
+        <div class="top-bar-action" onclick="toggleMenu()">
+            <div class="menu-btn">
+                <img src="/res/icon/navnav.png" alt="menu">
+            </div>
+            <span id="current-page-title">Wiki</span>
+        </div>
+    </header>
 
-<select id="rarityFilter" style="width:100%;padding:10px;margin-bottom:10px;">
-<option value="">All</option>
-<option value="commun">Commun</option>
-<option value="uncommun">Uncommun</option>
-<option value="rare">Rare</option>
-<option value="ultra rare">Ultra Rare</option>
-<option value="legendary">Legendary</option>
-<option value="mythic">Mythic</option>
-</select>
+    <nav id="drawer">
+        <div class="drawer-banner"></div>
+        <div class="drawer-list">
+            <a href="/" class="drawer-item"><img src="/res/icon/home.png"> Home</a>
+            <a href="/profile/" class="drawer-item"><img src="/res/icon/user.png"> Profile</a>
+            <a href="/wiki/" class="drawer-item"><img src="/res/icon/apps.png"> Wiki</a>
+            <a href="/tradeandsales/" class="drawer-item"><img src="/res/icon/change.png"> Trades & Sales</a>
+            <a href="/map/" class="drawer-item"><img src="/res/icon/map.png"> Map</a>
+            <a href="/players/" class="drawer-item"><img src="/res/icon/players.png"> Players</a>
+            <a href="/guild/" class="drawer-item"><img src="/res/icon/guild.png"> Guild</a>
+            <a href="/calculator/" class="drawer-item"><img src="/res/icon/calculator.png"> Calculator</a>
+            <a href="/updates/" class="drawer-item"><img src="/res/icon/update.png"> Updates</a>
 
-<div id="lista"></div>
+            <a href="/settings/" class="drawer-item settings-highlight">
+                <img src="/res/icon/ic_cog.png"> Settings
+            </a>
+        </div>
+    </nav>
 
-<button onclick="carregarMais()" id="loadMore">Load more</button>
+    <main id="main-content">
+        <input type="text" id="search" placeholder="Search items...">
 
-</main>
+        <select id="rarityFilter">
+            <option value="">All rarities</option>
+            <option value="commun">Commun</option>
+            <option value="uncommun">Uncommun</option>
+            <option value="rare">Rare</option>
+            <option value="ultra rare">Ultra Rare</option>
+            <option value="legendary">Legendary</option>
+            <option value="mythic">Mythic</option>
+        </select>
 
-<script>
+        <!-- Aqui entra a grade de itens -->
+        <div id="lista"></div>
 
-// ============================
-// VARIÁVEIS
-// ============================
-let items = {};        // items.json
-let sprites = {};      // items_png.json
-let listaFiltrada = [];
+        <!-- Mensagem pequena de carregamento -->
+        <div id="loadingMore">Scroll down to load more...</div>
 
-let pagina = 0;
-const POR_PAGINA = 50;
+        <!-- Sentinela invisível para carregar mais automaticamente -->
+        <div id="sentinel"></div>
+    </main>
 
+    <script>
+        function toggleMenu() {
+            const drawer = document.getElementById('drawer');
+            const overlay = document.getElementById('overlay');
+            drawer.classList.toggle('active');
+            overlay.style.display = drawer.classList.contains('active') ? 'block' : 'none';
+        }
 
-// ============================
-// FUNÇÃO: fundo por raridade
-// ============================
-function getBackground(r) {
-  r = (r || "").toLowerCase();
+        // Detecta se a página foi aberta com ?platform=app
+        const params = new URLSearchParams(window.location.search);
+        if (params.get('platform') === 'app') {
+            document.body.classList.add('is-app');
+        }
 
-  if (r === "commun") return "commun-background.png";
-  if (r === "uncommun") return "uncommun-background.png";
-  if (r === "rare") return "rare-background.png";
-  if (r === "ultra rare") return "ultra-rare-background.png";
-  if (r === "legendary") return "legendary-background.png";
-  if (r === "mythic") return "mythic-background.png";
+        /* =========================================================
+           WIKI
+           ========================================================= */
 
-  return "commun-background.png";
-}
+        let items = {};
+        let sprites = {};
+        let listaFiltrada = [];
 
+        let pagina = 0;
+        const POR_PAGINA = 50;
 
-// ============================
-// NORMALIZA NOME (pra comparar)
-// ============================
-function normalizar(nome) {
-  return nome
-    .toLowerCase()
-    .replace(/'/g, "")
-    .replace(/\(.*?\)/g, "")
-    .replace(/[^a-z0-9 ]/g, "")
-    .trim();
-}
+        let isLoading = false;
+        let observer = null;
 
+        // =========================
+        // CORES / FUNDO POR RARIDADE
+        // =========================
+        function getBackground(r) {
+            r = (r || "").toLowerCase();
 
-// ============================
-// ACHA SPRITE NO JSON
-// ============================
-function acharSprite(nome) {
-  let n = normalizar(nome);
+            if (r === "commun") return "commun-background.png";
+            if (r === "uncommun") return "uncommun-background.png";
+            if (r === "rare") return "rare-background.png";
+            if (r === "ultra rare") return "ultra-rare-background.png";
+            if (r === "legendary") return "legendary-background.png";
+            if (r === "mythic") return "mythic-background.png";
 
-  for (let key in sprites) {
-    let k = normalizar(key.replace(".png", ""));
+            return "commun-background.png";
+        }
 
-    if (k === n) return sprites[key];
-  }
+        function getNameStyle(raridade) {
+            raridade = (raridade || "").toLowerCase();
 
-  return null;
-}
+            if (raridade === "commun") {
+                return "color: rgb(247,243,247); font-weight:bold;";
+            }
 
+            if (raridade === "uncommun") {
+                return "color: rgb(0,235,74); font-weight:bold;";
+            }
 
-// ============================
-// CRIA ITEM HTML (COM SPRITE)
-// ============================
-function criarItemHTML(nome, item) {
+            if (raridade === "rare") {
+                return "color: rgb(66,190,255); font-weight:bold;";
+            }
 
-  let raridade = item["Rarity: "] || item.rarity || "";
-  let bg = getBackground(raridade);
+            if (raridade === "ultra rare") {
+                return "color: rgb(230,117,247); font-weight:bold;";
+            }
 
-  let sprite = acharSprite(nome);
+            if (raridade === "legendary") {
+                return "color: rgb(239,255,0); font-weight:bold;";
+            }
 
-  let spriteHTML = "";
+            if (raridade === "mythic") {
+                return `
+                    background: -webkit-linear-gradient(top, #e75931 40%, #ff9229, #ffbe00, #e7ff00 60%);
+                    -webkit-background-clip: text;
+                    -webkit-text-fill-color: transparent;
+                    font-weight: bold;
+                `;
+            }
 
-  if (sprite) {
-    let f = sprite.frame;
+            return "color: white; font-weight:bold;";
+        }
 
-    spriteHTML = `
-      <div class="sprite"
-        style="
-          width:${f.w}px;
-          height:${f.h}px;
-          background-image:url('./items.png');
-          background-position:-${f.x}px -${f.y}px;
-        ">
-      </div>
-    `;
-  }
+        // =========================
+        // NORMALIZA NOME
+        // =========================
+        function normalizar(nome) {
+            return (nome || "")
+                .toLowerCase()
+                .replace(/'/g, "")
+                .replace(/\(.*?\)/g, "")
+                .replace(/[^a-z0-9 ]/g, "")
+                .trim();
+        }
 
-  return `
-    <div class="item-card" style="background-image:url('${bg}')">
-      ${spriteHTML}
-      <div class="item-name">${nome}</div>
-    </div>
-  `;
-}
+        // =========================
+        // ACHA A SPRITE NO items_png.json
+        // =========================
+        function acharSprite(nome) {
+            let n = normalizar(nome);
 
+            for (let key in sprites) {
+                let k = normalizar(key.replace(".png", ""));
+                if (k === n) return sprites[key];
+            }
 
-// ============================
-// FILTRO (BUSCA + RARIDADE)
-// ============================
-function aplicarFiltro() {
+            return null;
+        }
 
-  let busca = document.getElementById("search").value.toLowerCase();
-  let raridadeFiltro = document.getElementById("rarityFilter").value;
+        // =========================
+        // MONTA O CARD DO ITEM
+        // =========================
+        function criarItemHTML(nome, item) {
+            let raridade = item["Rarity: "] || item.rarity || "";
+            let bg = getBackground(raridade);
+            let sprite = acharSprite(nome);
 
-  listaFiltrada = [];
+            let spriteHTML = "";
+            if (sprite) {
+                let f = sprite.frame;
 
-  for (let id in items) {
+                // AUMENTO DA IMAGEM:
+                // se quiser maior ainda, troque 5 por 6 ou 7
+                const SPRITE_SCALE = 5;
 
-    let item = items[id];
-    let nome = item["Name: "] || item.name || "???";
-    let tags = (item["Tags"] || "").toLowerCase();
-    let raridade = (item["Rarity: "] || item.rarity || "").toLowerCase();
+                spriteHTML = `
+                    <div class="sprite"
+                        style="
+                            width:${f.w * SPRITE_SCALE}px;
+                            height:${f.h * SPRITE_SCALE}px;
+                            background-image:url('./items.png');
+                            background-position:-${f.x}px -${f.y}px;
+                            background-size:auto;
+                        ">
+                    </div>
+                `;
+            }
 
-    if (raridadeFiltro && raridade !== raridadeFiltro) continue;
+            return `
+                <div class="item-card" style="background-image:url('${bg}')">
+                    ${spriteHTML}
+                    <div class="item-name" style="${getNameStyle(raridade)}">${nome}</div>
+                </div>
+            `;
+        }
 
-    if (
-      nome.toLowerCase().includes(busca) ||
-      tags.includes(busca)
-    ) {
-      listaFiltrada.push({ nome, item });
-    }
-  }
+        // =========================
+        // APLICA FILTRO DE BUSCA + RARIDADE
+        // =========================
+        function aplicarFiltro() {
+            let busca = document.getElementById("search").value.toLowerCase();
+            let raridadeFiltro = document.getElementById("rarityFilter").value;
 
-  pagina = 0;
-  document.getElementById("lista").innerHTML = "";
+            listaFiltrada = [];
 
-  carregarMais();
-}
+            for (let id in items) {
+                let item = items[id];
 
+                let nome = item["Name: "] || item.name || "???";
+                let tags = (item["Tags"] || "").toLowerCase();
+                let raridade = (item["Rarity: "] || item.rarity || "").toLowerCase();
 
-// ============================
-// PAGINAÇÃO (ANTI-LAG)
-// ============================
-function carregarMais() {
+                if (raridadeFiltro && raridade !== raridadeFiltro) continue;
 
-  let lista = document.getElementById("lista");
+                if (
+                    nome.toLowerCase().includes(busca) ||
+                    tags.includes(busca)
+                ) {
+                    listaFiltrada.push({ nome, item });
+                }
+            }
 
-  let inicio = pagina * POR_PAGINA;
-  let fim = inicio + POR_PAGINA;
+            pagina = 0;
+            document.getElementById("lista").innerHTML = "";
+            document.getElementById("loadingMore").textContent = "Scroll down to load more...";
 
-  let slice = listaFiltrada.slice(inicio, fim);
+            carregarMais();
+        }
 
-  slice.forEach(e => {
-    lista.innerHTML += criarItemHTML(e.nome, e.item);
-  });
+        // =========================
+        // CARREGA MAIS 50 AO CHEGAR NO FIM
+        // =========================
+        function carregarMais() {
+            if (isLoading) return;
+            if (pagina * POR_PAGINA >= listaFiltrada.length) {
+                document.getElementById("loadingMore").textContent = "No more items.";
+                return;
+            }
 
-  pagina++;
+            isLoading = true;
 
-  let btn = document.getElementById("loadMore");
+            let lista = document.getElementById("lista");
+            let inicio = pagina * POR_PAGINA;
+            let fim = inicio + POR_PAGINA;
 
-  if (fim >= listaFiltrada.length) {
-    btn.style.display = "none";
-  } else {
-    btn.style.display = "block";
-  }
-}
+            let slice = listaFiltrada.slice(inicio, fim);
 
+            slice.forEach(e => {
+                lista.innerHTML += criarItemHTML(e.nome, e.item);
+            });
 
-// ============================
-// CARREGAMENTO INICIAL
-// ============================
-async function carregar() {
+            pagina++;
+            isLoading = false;
 
-  // 🔹 carrega itens
-  let res1 = await fetch("./items.json");
-  items = await res1.json();
+            if (pagina * POR_PAGINA >= listaFiltrada.length) {
+                document.getElementById("loadingMore").textContent = "No more items.";
+            } else {
+                document.getElementById("loadingMore").textContent = "Scroll down to load more...";
+            }
+        }
 
-  // 🔹 carrega spritesheet JSON
-  let res2 = await fetch("./items_png.json");
-  let data = await res2.json();
-  sprites = data.frames;
+        // =========================
+        // OBSERVADOR DO FIM DA PÁGINA
+        // =========================
+        function iniciarObserver() {
+            const sentinel = document.getElementById("sentinel");
 
-  aplicarFiltro();
-}
+            observer = new IntersectionObserver((entries) => {
+                if (entries[0].isIntersecting) {
+                    carregarMais();
+                }
+            }, {
+                root: null,
+                threshold: 0.1
+            });
 
+            observer.observe(sentinel);
+        }
 
-// ============================
-// EVENTOS
-// ============================
-document.getElementById("search").addEventListener("input", aplicarFiltro);
-document.getElementById("rarityFilter").addEventListener("change", aplicarFiltro);
+        // =========================
+        // CARREGA JSONS
+        // =========================
+        async function carregar() {
+            // Arquivo principal dos itens
+            let res1 = await fetch("./items.json");
+            items = await res1.json();
 
+            // JSON da spritesheet
+            let res2 = await fetch("./items_png.json");
+            let data = await res2.json();
+            sprites = data.frames || {};
 
-// ============================
-// START
-// ============================
-carregar();
+            aplicarFiltro();
+            iniciarObserver();
+        }
 
-</script>
+        // =========================
+        // EVENTOS
+        // =========================
+        document.getElementById("search").addEventListener("input", aplicarFiltro);
+        document.getElementById("rarityFilter").addEventListener("change", aplicarFiltro);
+
+        carregar();
+    </script>
 </body>
 </html>
