@@ -1,0 +1,3604 @@
+{"frames": {
+
+"ancient quiver.png":
+{
+	"frame": {"x": 217, "y": 113, "w": 16, "h": 16},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x": 0, "y": 0, "w": 16, "h": 16},
+	"sourceSize": {"w": 16, "h": 16}
+},
+"archer hood.png":
+{
+	"frame": {"x": 233, "y": 113, "w": 14, "h": 16},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x": 0, "y": 0, "w": 14, "h": 16},
+	"sourceSize": {"w": 14, "h": 16}
+},
+"arrow.png":
+{
+	"frame": {"x": 131, "y": 401, "w": 17, "h": 17},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x": 0, "y": 0, "w": 17, "h": 17},
+	"sourceSize": {"w": 17, "h": 17}
+},
+"assassin's key.png":
+{
+	"frame": {"x": 30, "y": 0, "w": 16, "h": 9},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x": 0, "y": 0, "w": 16, "h": 9},
+	"sourceSize": {"w": 16, "h": 9}
+},
+"backpack.png":
+{
+	"frame": {"x": 0, "y": 129, "w": 16, "h": 16},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x": 0, "y": 0, "w": 16, "h": 16},
+	"sourceSize": {"w": 16, "h": 16}
+},
+"bag.png":
+{
+	"frame": {"x": 236, "y": 53, "w": 14, "h": 15},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x": 0, "y": 0, "w": 14, "h": 15},
+	"sourceSize": {"w": 14, "h": 15}
+},
+"bandana.png":
+{
+	"frame": {"x": 0, "y": 68, "w": 14, "h": 15},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x": 0, "y": 0, "w": 14, "h": 15},
+	"sourceSize": {"w": 14, "h": 15}
+},
+"battle shield.png":
+{
+	"frame": {"x": 16, "y": 129, "w": 14, "h": 16},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x": 0, "y": 0, "w": 14, "h": 16},
+	"sourceSize": {"w": 14, "h": 16}
+},
+"beginners town scroll.png":
+{
+	"frame": {"x": 14, "y": 68, "w": 16, "h": 15},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x": 0, "y": 0, "w": 16, "h": 15},
+	"sourceSize": {"w": 16, "h": 15}
+},
+"blue backpack.png":
+{
+	"frame": {"x": 30, "y": 129, "w": 16, "h": 16},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x": 0, "y": 0, "w": 16, "h": 16},
+	"sourceSize": {"w": 16, "h": 16}
+},
+"blue bag.png":
+{
+	"frame": {"x": 30, "y": 68, "w": 14, "h": 15},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x": 0, "y": 0, "w": 14, "h": 15},
+	"sourceSize": {"w": 14, "h": 15}
+},
+"blue easter egg.png":
+{
+	"frame": {"x": 46, "y": 129, "w": 14, "h": 16},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x": 0, "y": 0, "w": 14, "h": 16},
+	"sourceSize": {"w": 14, "h": 16}
+},
+"blue potion bag.png":
+{
+	"frame": {"x": 60, "y": 129, "w": 16, "h": 16},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x": 0, "y": 0, "w": 16, "h": 16},
+	"sourceSize": {"w": 16, "h": 16}
+},
+"bonus jewel.png":
+{
+	"frame": {"x": 133, "y": 0, "w": 11, "h": 11},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x": 0, "y": 0, "w": 11, "h": 11},
+	"sourceSize": {"w": 11, "h": 11}
+},
+"boss jewel.png":
+{
+	"frame": {"x": 188, "y": 0, "w": 12, "h": 12},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x": 0, "y": 0, "w": 12, "h": 12},
+	"sourceSize": {"w": 12, "h": 12}
+},
+"bow.png":
+{
+	"frame": {"x": 76, "y": 129, "w": 16, "h": 16},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x": 0, "y": 0, "w": 16, "h": 16},
+	"sourceSize": {"w": 16, "h": 16}
+},
+"broadsword.png":
+{
+	"frame": {"x": 92, "y": 129, "w": 16, "h": 16},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x": 0, "y": 0, "w": 16, "h": 16},
+	"sourceSize": {"w": 16, "h": 16}
+},
+"brown hat.png":
+{
+	"frame": {"x": 108, "y": 129, "w": 16, "h": 16},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x": 0, "y": 0, "w": 16, "h": 16},
+	"sourceSize": {"w": 16, "h": 16}
+},
+"brown hood.png":
+{
+	"frame": {"x": 124, "y": 129, "w": 14, "h": 16},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x": 0, "y": 0, "w": 14, "h": 16},
+	"sourceSize": {"w": 14, "h": 16}
+},
+"brown robe.png":
+{
+	"frame": {"x": 44, "y": 68, "w": 14, "h": 15},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x": 0, "y": 0, "w": 14, "h": 15},
+	"sourceSize": {"w": 14, "h": 15}
+},
+"chicken egg.png":
+{
+	"frame": {"x": 138, "y": 129, "w": 14, "h": 16},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x": 0, "y": 0, "w": 14, "h": 16},
+	"sourceSize": {"w": 14, "h": 16}
+},
+"chicken feather.png":
+{
+	"frame": {"x": 114, "y": 25, "w": 14, "h": 14},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x": 0, "y": 0, "w": 14, "h": 14},
+	"sourceSize": {"w": 14, "h": 14}
+},
+"chicken pet.png":
+{
+	"frame": {"x": 47, "y": 12, "w": 12, "h": 13},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x": 0, "y": 0, "w": 12, "h": 13},
+	"sourceSize": {"w": 12, "h": 13}
+},
+"christmas candy.png":
+{
+	"frame": {"x": 58, "y": 68, "w": 11, "h": 15},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x": 0, "y": 0, "w": 11, "h": 15},
+	"sourceSize": {"w": 11, "h": 15}
+},
+"Clock.png":
+{
+	"frame": {"x": 152, "y": 129, "w": 14, "h": 16},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x": 0, "y": 0, "w": 14, "h": 16},
+	"sourceSize": {"w": 14, "h": 16}
+},
+"crown.png":
+{
+	"frame": {"x": 0, "y": 0, "w": 10, "h": 6},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x": 0, "y": 0, "w": 10, "h": 6},
+	"sourceSize": {"w": 10, "h": 6}
+},
+"dagger.png":
+{
+	"frame": {"x": 59, "y": 12, "w": 13, "h": 13},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x": 0, "y": 0, "w": 13, "h": 13},
+	"sourceSize": {"w": 13, "h": 13}
+},
+"death charm.png":
+{
+	"frame": {"x": 69, "y": 68, "w": 13, "h": 15},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x": 0, "y": 0, "w": 13, "h": 15},
+	"sourceSize": {"w": 13, "h": 15}
+},
+"defense necklace.png":
+{
+	"frame": {"x": 166, "y": 129, "w": 14, "h": 16},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x": 0, "y": 0, "w": 14, "h": 16},
+	"sourceSize": {"w": 14, "h": 16}
+},
+"defense ring.png":
+{
+	"frame": {"x": 82, "y": 68, "w": 15, "h": 15},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x": 0, "y": 0, "w": 15, "h": 15},
+	"sourceSize": {"w": 15, "h": 15}
+},
+"destination scroll.png":
+{
+	"frame": {"x": 97, "y": 68, "w": 16, "h": 15},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x": 0, "y": 0, "w": 16, "h": 15},
+	"sourceSize": {"w": 16, "h": 15}
+},
+"diamond.png":
+{
+	"frame": {"x": 128, "y": 25, "w": 16, "h": 14},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x": 0, "y": 0, "w": 16, "h": 14},
+	"sourceSize": {"w": 16, "h": 14}
+},
+"distance necklace.png":
+{
+	"frame": {"x": 180, "y": 129, "w": 14, "h": 16},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x": 0, "y": 0, "w": 14, "h": 16},
+	"sourceSize": {"w": 14, "h": 16}
+},
+"distance ring.png":
+{
+	"frame": {"x": 194, "y": 129, "w": 16, "h": 16},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x": 0, "y": 0, "w": 16, "h": 16},
+	"sourceSize": {"w": 16, "h": 16}
+},
+"distance training dummy.png":
+{
+	"frame": {"x": 176, "y": 401, "w": 22, "h": 23},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x": 0, "y": 0, "w": 22, "h": 23},
+	"sourceSize": {"w": 22, "h": 23}
+},
+"dragon armor.png":
+{
+	"frame": {"x": 144, "y": 25, "w": 16, "h": 14},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x": 0, "y": 0, "w": 16, "h": 14},
+	"sourceSize": {"w": 16, "h": 14}
+},
+"dragon backpack.png":
+{
+	"frame": {"x": 210, "y": 129, "w": 16, "h": 16},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x": 0, "y": 0, "w": 16, "h": 16},
+	"sourceSize": {"w": 16, "h": 16}
+},
+"dragon belt.png":
+{
+	"frame": {"x": 72, "y": 12, "w": 16, "h": 13},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x": 0, "y": 0, "w": 16, "h": 13},
+	"sourceSize": {"w": 16, "h": 13}
+},
+"dragon boots.png":
+{
+	"frame": {"x": 113, "y": 68, "w": 14, "h": 15},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x": 0, "y": 0, "w": 14, "h": 15},
+	"sourceSize": {"w": 14, "h": 15}
+},
+"dragon bow.png":
+{
+	"frame": {"x": 226, "y": 129, "w": 16, "h": 16},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x": 0, "y": 0, "w": 16, "h": 16},
+	"sourceSize": {"w": 16, "h": 16}
+},
+"dragon glove (left).png":
+{
+	"frame": {"x": 0, "y": 145, "w": 16, "h": 16},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x": 0, "y": 0, "w": 16, "h": 16},
+	"sourceSize": {"w": 16, "h": 16}
+},
+"dragon glove (right).png":
+{
+	"frame": {"x": 16, "y": 145, "w": 16, "h": 16},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x": 0, "y": 0, "w": 16, "h": 16},
+	"sourceSize": {"w": 16, "h": 16}
+},
+"dragon hat.png":
+{
+	"frame": {"x": 32, "y": 145, "w": 16, "h": 16},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x": 0, "y": 0, "w": 16, "h": 16},
+	"sourceSize": {"w": 16, "h": 16}
+},
+"dragon helmet.png":
+{
+	"frame": {"x": 48, "y": 145, "w": 14, "h": 16},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x": 0, "y": 0, "w": 14, "h": 16},
+	"sourceSize": {"w": 14, "h": 16}
+},
+"dragon hood.png":
+{
+	"frame": {"x": 62, "y": 145, "w": 16, "h": 16},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x": 0, "y": 0, "w": 16, "h": 16},
+	"sourceSize": {"w": 16, "h": 16}
+},
+"dragon jewel.png":
+{
+	"frame": {"x": 200, "y": 0, "w": 10, "h": 12},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x": 0, "y": 0, "w": 10, "h": 12},
+	"sourceSize": {"w": 10, "h": 12}
+},
+"dragon legs.png":
+{
+	"frame": {"x": 78, "y": 145, "w": 16, "h": 16},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x": 0, "y": 0, "w": 16, "h": 16},
+	"sourceSize": {"w": 16, "h": 16}
+},
+"dragon light armor.png":
+{
+	"frame": {"x": 127, "y": 68, "w": 14, "h": 15},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x": 0, "y": 0, "w": 14, "h": 15},
+	"sourceSize": {"w": 14, "h": 15}
+},
+"dragon potion bag.png":
+{
+	"frame": {"x": 94, "y": 145, "w": 16, "h": 16},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x": 0, "y": 0, "w": 16, "h": 16},
+	"sourceSize": {"w": 16, "h": 16}
+},
+"dragon quiver.png":
+{
+	"frame": {"x": 110, "y": 145, "w": 16, "h": 16},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x": 0, "y": 0, "w": 16, "h": 16},
+	"sourceSize": {"w": 16, "h": 16}
+},
+"dragon robe.png":
+{
+	"frame": {"x": 141, "y": 68, "w": 14, "h": 15},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x": 0, "y": 0, "w": 14, "h": 15},
+	"sourceSize": {"w": 14, "h": 15}
+},
+"dragon shield.png":
+{
+	"frame": {"x": 126, "y": 145, "w": 14, "h": 16},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x": 0, "y": 0, "w": 14, "h": 16},
+	"sourceSize": {"w": 14, "h": 16}
+},
+"dragon slayer.png":
+{
+	"frame": {"x": 140, "y": 145, "w": 16, "h": 16},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x": 0, "y": 0, "w": 16, "h": 16},
+	"sourceSize": {"w": 16, "h": 16}
+},
+"dragon wand.png":
+{
+	"frame": {"x": 156, "y": 145, "w": 16, "h": 16},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x": 0, "y": 0, "w": 16, "h": 16},
+	"sourceSize": {"w": 16, "h": 16}
+},
+"drow bow.png":
+{
+	"frame": {"x": 172, "y": 145, "w": 16, "h": 16},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x": 0, "y": 0, "w": 16, "h": 16},
+	"sourceSize": {"w": 16, "h": 16}
+},
+"drow hat.png":
+{
+	"frame": {"x": 188, "y": 145, "w": 16, "h": 16},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x": 0, "y": 0, "w": 16, "h": 16},
+	"sourceSize": {"w": 16, "h": 16}
+},
+"drow hood.png":
+{
+	"frame": {"x": 204, "y": 145, "w": 14, "h": 16},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x": 0, "y": 0, "w": 14, "h": 16},
+	"sourceSize": {"w": 14, "h": 16}
+},
+"drow jewel.png":
+{
+	"frame": {"x": 210, "y": 0, "w": 12, "h": 12},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x": 0, "y": 0, "w": 12, "h": 12},
+	"sourceSize": {"w": 12, "h": 12}
+},
+"drow robe.png":
+{
+	"frame": {"x": 155, "y": 68, "w": 14, "h": 15},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x": 0, "y": 0, "w": 14, "h": 15},
+	"sourceSize": {"w": 14, "h": 15}
+},
+"drow's key.png":
+{
+	"frame": {"x": 46, "y": 0, "w": 16, "h": 9},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x": 0, "y": 0, "w": 16, "h": 9},
+	"sourceSize": {"w": 16, "h": 9}
+},
+"explorers town scroll.png":
+{
+	"frame": {"x": 169, "y": 68, "w": 16, "h": 15},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x": 0, "y": 0, "w": 16, "h": 15},
+	"sourceSize": {"w": 16, "h": 15}
+},
+"frozen armor.png":
+{
+	"frame": {"x": 160, "y": 25, "w": 16, "h": 14},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x": 0, "y": 0, "w": 16, "h": 14},
+	"sourceSize": {"w": 16, "h": 14}
+},
+"frozen backpack.png":
+{
+	"frame": {"x": 218, "y": 145, "w": 16, "h": 16},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x": 0, "y": 0, "w": 16, "h": 16},
+	"sourceSize": {"w": 16, "h": 16}
+},
+"frozen belt.png":
+{
+	"frame": {"x": 88, "y": 12, "w": 16, "h": 13},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x": 0, "y": 0, "w": 16, "h": 13},
+	"sourceSize": {"w": 16, "h": 13}
+},
+"frozen boots.png":
+{
+	"frame": {"x": 185, "y": 68, "w": 14, "h": 15},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x": 0, "y": 0, "w": 14, "h": 15},
+	"sourceSize": {"w": 14, "h": 15}
+},
+"frozen glove (left).png":
+{
+	"frame": {"x": 234, "y": 145, "w": 16, "h": 16},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x": 0, "y": 0, "w": 16, "h": 16},
+	"sourceSize": {"w": 16, "h": 16}
+},
+"frozen glove (right).png":
+{
+	"frame": {"x": 0, "y": 161, "w": 16, "h": 16},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x": 0, "y": 0, "w": 16, "h": 16},
+	"sourceSize": {"w": 16, "h": 16}
+},
+"frozen hat.png":
+{
+	"frame": {"x": 16, "y": 161, "w": 16, "h": 16},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x": 0, "y": 0, "w": 16, "h": 16},
+	"sourceSize": {"w": 16, "h": 16}
+},
+"frozen helmet.png":
+{
+	"frame": {"x": 176, "y": 25, "w": 12, "h": 14},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x": 0, "y": 0, "w": 12, "h": 14},
+	"sourceSize": {"w": 12, "h": 14}
+},
+"frozen hood.png":
+{
+	"frame": {"x": 32, "y": 161, "w": 14, "h": 16},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x": 0, "y": 0, "w": 14, "h": 16},
+	"sourceSize": {"w": 14, "h": 16}
+},
+"frozen jewel.png":
+{
+	"frame": {"x": 144, "y": 0, "w": 11, "h": 11},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x": 0, "y": 0, "w": 11, "h": 11},
+	"sourceSize": {"w": 11, "h": 11}
+},
+"frozen legs.png":
+{
+	"frame": {"x": 46, "y": 161, "w": 16, "h": 16},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x": 0, "y": 0, "w": 16, "h": 16},
+	"sourceSize": {"w": 16, "h": 16}
+},
+"frozen light armor.png":
+{
+	"frame": {"x": 199, "y": 68, "w": 14, "h": 15},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x": 0, "y": 0, "w": 14, "h": 15},
+	"sourceSize": {"w": 14, "h": 15}
+},
+"Frozen_Potion_Bag.png":
+{
+	"frame": {"x": 62, "y": 161, "w": 16, "h": 16},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x": 0, "y": 0, "w": 16, "h": 16},
+	"sourceSize": {"w": 16, "h": 16}
+},
+"frozen quiver.png":
+{
+	"frame": {"x": 78, "y": 161, "w": 16, "h": 16},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x": 0, "y": 0, "w": 16, "h": 16},
+	"sourceSize": {"w": 16, "h": 16}
+},
+"frozen robe.png":
+{
+	"frame": {"x": 213, "y": 68, "w": 14, "h": 15},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x": 0, "y": 0, "w": 14, "h": 15},
+	"sourceSize": {"w": 14, "h": 15}
+},
+"gargoyle armor.png":
+{
+	"frame": {"x": 188, "y": 25, "w": 16, "h": 14},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x": 0, "y": 0, "w": 16, "h": 14},
+	"sourceSize": {"w": 16, "h": 14}
+},
+"gargoyle backpack.png":
+{
+	"frame": {"x": 94, "y": 161, "w": 16, "h": 16},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x": 0, "y": 0, "w": 16, "h": 16},
+	"sourceSize": {"w": 16, "h": 16}
+},
+"gargoyle belt.png":
+{
+	"frame": {"x": 104, "y": 12, "w": 16, "h": 13},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x": 0, "y": 0, "w": 16, "h": 13},
+	"sourceSize": {"w": 16, "h": 13}
+},
+"gargoyle boots.png":
+{
+	"frame": {"x": 227, "y": 68, "w": 14, "h": 15},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x": 0, "y": 0, "w": 14, "h": 15},
+	"sourceSize": {"w": 14, "h": 15}
+},
+"gargoyle bow.png":
+{
+	"frame": {"x": 110, "y": 161, "w": 16, "h": 16},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x": 0, "y": 0, "w": 16, "h": 16},
+	"sourceSize": {"w": 16, "h": 16}
+},
+"gargoyle glove (left).png":
+{
+	"frame": {"x": 126, "y": 161, "w": 16, "h": 16},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x": 0, "y": 0, "w": 16, "h": 16},
+	"sourceSize": {"w": 16, "h": 16}
+},
+"gargoyle glove (right).png":
+{
+	"frame": {"x": 142, "y": 161, "w": 16, "h": 16},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x": 0, "y": 0, "w": 16, "h": 16},
+	"sourceSize": {"w": 16, "h": 16}
+},
+"gargoyle hat.png":
+{
+	"frame": {"x": 158, "y": 161, "w": 16, "h": 16},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x": 0, "y": 0, "w": 16, "h": 16},
+	"sourceSize": {"w": 16, "h": 16}
+},
+"gargoyle helmet.png":
+{
+	"frame": {"x": 204, "y": 25, "w": 12, "h": 14},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x": 0, "y": 0, "w": 12, "h": 14},
+	"sourceSize": {"w": 12, "h": 14}
+},
+"gargoyle hood.png":
+{
+	"frame": {"x": 174, "y": 161, "w": 14, "h": 16},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x": 0, "y": 0, "w": 14, "h": 16},
+	"sourceSize": {"w": 14, "h": 16}
+},
+"gargoyle jewel.png":
+{
+	"frame": {"x": 222, "y": 0, "w": 12, "h": 12},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x": 0, "y": 0, "w": 12, "h": 12},
+	"sourceSize": {"w": 12, "h": 12}
+},
+"gargoyle legs.png":
+{
+	"frame": {"x": 188, "y": 161, "w": 16, "h": 16},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x": 0, "y": 0, "w": 16, "h": 16},
+	"sourceSize": {"w": 16, "h": 16}
+},
+"gargoyle light armor.png":
+{
+	"frame": {"x": 241, "y": 68, "w": 14, "h": 15},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x": 0, "y": 0, "w": 14, "h": 15},
+	"sourceSize": {"w": 14, "h": 15}
+},
+"gargoyle potion bag.png":
+{
+	"frame": {"x": 204, "y": 161, "w": 16, "h": 16},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x": 0, "y": 0, "w": 16, "h": 16},
+	"sourceSize": {"w": 16, "h": 16}
+},
+"gargoyle quiver.png":
+{
+	"frame": {"x": 220, "y": 161, "w": 16, "h": 16},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x": 0, "y": 0, "w": 16, "h": 16},
+	"sourceSize": {"w": 16, "h": 16}
+},
+"gargoyle robe.png":
+{
+	"frame": {"x": 0, "y": 83, "w": 14, "h": 15},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x": 0, "y": 0, "w": 14, "h": 15},
+	"sourceSize": {"w": 14, "h": 15}
+},
+"gargoyle shield.png":
+{
+	"frame": {"x": 236, "y": 161, "w": 14, "h": 16},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x": 0, "y": 0, "w": 14, "h": 16},
+	"sourceSize": {"w": 14, "h": 16}
+},
+"gargoyle slayer.png":
+{
+	"frame": {"x": 0, "y": 177, "w": 16, "h": 16},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x": 0, "y": 0, "w": 16, "h": 16},
+	"sourceSize": {"w": 16, "h": 16}
+},
+"gargoyle wand.png":
+{
+	"frame": {"x": 16, "y": 177, "w": 16, "h": 16},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x": 0, "y": 0, "w": 16, "h": 16},
+	"sourceSize": {"w": 16, "h": 16}
+},
+"gargoyle's key.png":
+{
+	"frame": {"x": 62, "y": 0, "w": 16, "h": 9},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x": 0, "y": 0, "w": 16, "h": 9},
+	"sourceSize": {"w": 16, "h": 9}
+},
+"gold.png":
+{
+	"frame": {"x": 216, "y": 25, "w": 14, "h": 14},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x": 0, "y": 0, "w": 14, "h": 14},
+	"sourceSize": {"w": 14, "h": 14}
+},
+"gold supporter scroll.png":
+{
+	"frame": {"x": 14, "y": 83, "w": 16, "h": 15},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x": 0, "y": 0, "w": 16, "h": 15},
+	"sourceSize": {"w": 16, "h": 15}
+},
+"golden armor.png":
+{
+	"frame": {"x": 32, "y": 177, "w": 16, "h": 16},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x": 0, "y": 0, "w": 16, "h": 16},
+	"sourceSize": {"w": 16, "h": 16}
+},
+"golden backpack.png":
+{
+	"frame": {"x": 48, "y": 177, "w": 16, "h": 16},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x": 0, "y": 0, "w": 16, "h": 16},
+	"sourceSize": {"w": 16, "h": 16}
+},
+"golden belt.png":
+{
+	"frame": {"x": 230, "y": 25, "w": 16, "h": 14},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x": 0, "y": 0, "w": 16, "h": 14},
+	"sourceSize": {"w": 16, "h": 14}
+},
+"golden boots.png":
+{
+	"frame": {"x": 30, "y": 83, "w": 14, "h": 15},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x": 0, "y": 0, "w": 14, "h": 15},
+	"sourceSize": {"w": 14, "h": 15}
+},
+"golden bow.png":
+{
+	"frame": {"x": 64, "y": 177, "w": 16, "h": 16},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x": 0, "y": 0, "w": 16, "h": 16},
+	"sourceSize": {"w": 16, "h": 16}
+},
+"golden broadsword.png":
+{
+	"frame": {"x": 80, "y": 177, "w": 16, "h": 16},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x": 0, "y": 0, "w": 16, "h": 16},
+	"sourceSize": {"w": 16, "h": 16}
+},
+"golden chicken feather.png":
+{
+	"frame": {"x": 0, "y": 39, "w": 14, "h": 14},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x": 0, "y": 0, "w": 14, "h": 14},
+	"sourceSize": {"w": 14, "h": 14}
+},
+"golden chicken pet.png":
+{
+	"frame": {"x": 120, "y": 12, "w": 12, "h": 13},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x": 0, "y": 0, "w": 12, "h": 13},
+	"sourceSize": {"w": 12, "h": 13}
+},
+"golden glove (left).png":
+{
+	"frame": {"x": 96, "y": 177, "w": 16, "h": 16},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x": 0, "y": 0, "w": 16, "h": 16},
+	"sourceSize": {"w": 16, "h": 16}
+},
+"golden glove (right).png":
+{
+	"frame": {"x": 112, "y": 177, "w": 16, "h": 16},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x": 0, "y": 0, "w": 16, "h": 16},
+	"sourceSize": {"w": 16, "h": 16}
+},
+"golden hat.png":
+{
+	"frame": {"x": 128, "y": 177, "w": 16, "h": 16},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x": 0, "y": 0, "w": 16, "h": 16},
+	"sourceSize": {"w": 16, "h": 16}
+},
+"golden helmet.png":
+{
+	"frame": {"x": 144, "y": 177, "w": 16, "h": 16},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x": 0, "y": 0, "w": 16, "h": 16},
+	"sourceSize": {"w": 16, "h": 16}
+},
+"golden hood.png":
+{
+	"frame": {"x": 160, "y": 177, "w": 16, "h": 16},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x": 0, "y": 0, "w": 16, "h": 16},
+	"sourceSize": {"w": 16, "h": 16}
+},
+"golden jewel.png":
+{
+	"frame": {"x": 234, "y": 0, "w": 12, "h": 12},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x": 0, "y": 0, "w": 12, "h": 12},
+	"sourceSize": {"w": 12, "h": 12}
+},
+"golden legs.png":
+{
+	"frame": {"x": 176, "y": 177, "w": 16, "h": 16},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x": 0, "y": 0, "w": 16, "h": 16},
+	"sourceSize": {"w": 16, "h": 16}
+},
+"golden light armor.png":
+{
+	"frame": {"x": 192, "y": 177, "w": 16, "h": 16},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x": 0, "y": 0, "w": 16, "h": 16},
+	"sourceSize": {"w": 16, "h": 16}
+},
+"Golden_Potion_Bag.png":
+{
+	"frame": {"x": 208, "y": 177, "w": 16, "h": 16},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x": 0, "y": 0, "w": 16, "h": 16},
+	"sourceSize": {"w": 16, "h": 16}
+},
+"golden quiver.png":
+{
+	"frame": {"x": 224, "y": 177, "w": 16, "h": 16},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x": 0, "y": 0, "w": 16, "h": 16},
+	"sourceSize": {"w": 16, "h": 16}
+},
+"golden robe.png":
+{
+	"frame": {"x": 240, "y": 177, "w": 16, "h": 16},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x": 0, "y": 0, "w": 16, "h": 16},
+	"sourceSize": {"w": 16, "h": 16}
+},
+"golden shield.png":
+{
+	"frame": {"x": 0, "y": 193, "w": 14, "h": 16},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x": 0, "y": 0, "w": 14, "h": 16},
+	"sourceSize": {"w": 14, "h": 16}
+},
+"golden training bow.png":
+{
+	"frame": {"x": 14, "y": 193, "w": 16, "h": 16},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x": 0, "y": 0, "w": 16, "h": 16},
+	"sourceSize": {"w": 16, "h": 16}
+},
+"golden training dagger.png":
+{
+	"frame": {"x": 132, "y": 12, "w": 13, "h": 13},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x": 0, "y": 0, "w": 13, "h": 13},
+	"sourceSize": {"w": 13, "h": 13}
+},
+"golden training wand.png":
+{
+	"frame": {"x": 30, "y": 193, "w": 16, "h": 16},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x": 0, "y": 0, "w": 16, "h": 16},
+	"sourceSize": {"w": 16, "h": 16}
+},
+"golden wand.png":
+{
+	"frame": {"x": 46, "y": 193, "w": 16, "h": 16},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x": 0, "y": 0, "w": 16, "h": 16},
+	"sourceSize": {"w": 16, "h": 16}
+},
+"greater health potion.png":
+{
+	"frame": {"x": 62, "y": 193, "w": 13, "h": 16},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x": 0, "y": 0, "w": 13, "h": 16},
+	"sourceSize": {"w": 13, "h": 16}
+},
+"greater mana potion.png":
+{
+	"frame": {"x": 75, "y": 193, "w": 13, "h": 16},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x": 0, "y": 0, "w": 13, "h": 16},
+	"sourceSize": {"w": 13, "h": 16}
+},
+"greater skill xp potion.png":
+{
+	"frame": {"x": 88, "y": 193, "w": 13, "h": 16},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x": 0, "y": 0, "w": 13, "h": 16},
+	"sourceSize": {"w": 13, "h": 16}
+},
+"greater xp potion.png":
+{
+	"frame": {"x": 101, "y": 193, "w": 13, "h": 16},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x": 0, "y": 0, "w": 13, "h": 16},
+	"sourceSize": {"w": 13, "h": 16}
+},
+"green backpack.png":
+{
+	"frame": {"x": 114, "y": 193, "w": 16, "h": 16},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x": 0, "y": 0, "w": 16, "h": 16},
+	"sourceSize": {"w": 16, "h": 16}
+},
+"green easter egg.png":
+{
+	"frame": {"x": 130, "y": 193, "w": 14, "h": 16},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x": 0, "y": 0, "w": 14, "h": 16},
+	"sourceSize": {"w": 14, "h": 16}
+},
+"green potion bag.png":
+{
+	"frame": {"x": 144, "y": 193, "w": 16, "h": 16},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x": 0, "y": 0, "w": 16, "h": 16},
+	"sourceSize": {"w": 16, "h": 16}
+},
+"halloween potion.png":
+{
+	"frame": {"x": 160, "y": 193, "w": 9, "h": 16},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x": 0, "y": 0, "w": 9, "h": 16},
+	"sourceSize": {"w": 9, "h": 16}
+},
+"hat.png":
+{
+	"frame": {"x": 169, "y": 193, "w": 16, "h": 16},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x": 0, "y": 0, "w": 16, "h": 16},
+	"sourceSize": {"w": 16, "h": 16}
+},
+"healer armor.png":
+{
+	"frame": {"x": 44, "y": 83, "w": 16, "h": 15},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x": 0, "y": 0, "w": 16, "h": 15},
+	"sourceSize": {"w": 16, "h": 15}
+},
+"healer backpack.png":
+{
+	"frame": {"x": 185, "y": 193, "w": 16, "h": 16},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x": 0, "y": 0, "w": 16, "h": 16},
+	"sourceSize": {"w": 16, "h": 16}
+},
+"healer belt.png":
+{
+	"frame": {"x": 14, "y": 39, "w": 16, "h": 14},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x": 0, "y": 0, "w": 16, "h": 14},
+	"sourceSize": {"w": 16, "h": 14}
+},
+"healer boots.png":
+{
+	"frame": {"x": 60, "y": 83, "w": 14, "h": 15},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x": 0, "y": 0, "w": 14, "h": 15},
+	"sourceSize": {"w": 14, "h": 15}
+},
+"healer glove (left).png":
+{
+	"frame": {"x": 201, "y": 193, "w": 16, "h": 16},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x": 0, "y": 0, "w": 16, "h": 16},
+	"sourceSize": {"w": 16, "h": 16}
+},
+"healer glove (right).png":
+{
+	"frame": {"x": 217, "y": 193, "w": 16, "h": 16},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x": 0, "y": 0, "w": 16, "h": 16},
+	"sourceSize": {"w": 16, "h": 16}
+},
+"healer helmet.png":
+{
+	"frame": {"x": 74, "y": 83, "w": 16, "h": 15},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x": 0, "y": 0, "w": 16, "h": 15},
+	"sourceSize": {"w": 16, "h": 15}
+},
+"healer legs.png":
+{
+	"frame": {"x": 233, "y": 193, "w": 16, "h": 16},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x": 0, "y": 0, "w": 16, "h": 16},
+	"sourceSize": {"w": 16, "h": 16}
+},
+"healer necklace.png":
+{
+	"frame": {"x": 0, "y": 209, "w": 14, "h": 16},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x": 0, "y": 0, "w": 14, "h": 16},
+	"sourceSize": {"w": 14, "h": 16}
+},
+"healer potion bag.png":
+{
+	"frame": {"x": 14, "y": 209, "w": 16, "h": 16},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x": 0, "y": 0, "w": 16, "h": 16},
+	"sourceSize": {"w": 16, "h": 16}
+},
+"healer quiver.png":
+{
+	"frame": {"x": 30, "y": 209, "w": 16, "h": 16},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x": 0, "y": 0, "w": 16, "h": 16},
+	"sourceSize": {"w": 16, "h": 16}
+},
+"healer ring.png":
+{
+	"frame": {"x": 30, "y": 39, "w": 14, "h": 14},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x": 0, "y": 0, "w": 14, "h": 14},
+	"sourceSize": {"w": 14, "h": 14}
+},
+"health potion.png":
+{
+	"frame": {"x": 46, "y": 209, "w": 9, "h": 16},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x": 0, "y": 0, "w": 9, "h": 16},
+	"sourceSize": {"w": 9, "h": 16}
+},
+"hood.png":
+{
+	"frame": {"x": 55, "y": 209, "w": 14, "h": 16},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x": 0, "y": 0, "w": 14, "h": 16},
+	"sourceSize": {"w": 14, "h": 16}
+},
+"icy bow.png":
+{
+	"frame": {"x": 69, "y": 209, "w": 16, "h": 16},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x": 0, "y": 0, "w": 16, "h": 16},
+	"sourceSize": {"w": 16, "h": 16}
+},
+"icy broadsword.png":
+{
+	"frame": {"x": 85, "y": 209, "w": 16, "h": 16},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x": 0, "y": 0, "w": 16, "h": 16},
+	"sourceSize": {"w": 16, "h": 16}
+},
+"icy shield.png":
+{
+	"frame": {"x": 101, "y": 209, "w": 14, "h": 16},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x": 0, "y": 0, "w": 14, "h": 16},
+	"sourceSize": {"w": 14, "h": 16}
+},
+"icy wand.png":
+{
+	"frame": {"x": 115, "y": 209, "w": 16, "h": 16},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x": 0, "y": 0, "w": 16, "h": 16},
+	"sourceSize": {"w": 16, "h": 16}
+},
+"iron armor.png":
+{
+	"frame": {"x": 44, "y": 39, "w": 16, "h": 14},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x": 0, "y": 0, "w": 16, "h": 14},
+	"sourceSize": {"w": 16, "h": 14}
+},
+"iron belt.png":
+{
+	"frame": {"x": 145, "y": 12, "w": 16, "h": 13},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x": 0, "y": 0, "w": 16, "h": 13},
+	"sourceSize": {"w": 16, "h": 13}
+},
+"iron boots.png":
+{
+	"frame": {"x": 90, "y": 83, "w": 14, "h": 15},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x": 0, "y": 0, "w": 14, "h": 15},
+	"sourceSize": {"w": 14, "h": 15}
+},
+"iron bow.png":
+{
+	"frame": {"x": 131, "y": 209, "w": 16, "h": 16},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x": 0, "y": 0, "w": 16, "h": 16},
+	"sourceSize": {"w": 16, "h": 16}
+},
+"iron glove (left).png":
+{
+	"frame": {"x": 147, "y": 209, "w": 16, "h": 16},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x": 0, "y": 0, "w": 16, "h": 16},
+	"sourceSize": {"w": 16, "h": 16}
+},
+"iron glove (right).png":
+{
+	"frame": {"x": 163, "y": 209, "w": 16, "h": 16},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x": 0, "y": 0, "w": 16, "h": 16},
+	"sourceSize": {"w": 16, "h": 16}
+},
+"iron helmet.png":
+{
+	"frame": {"x": 161, "y": 12, "w": 18, "h": 13},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x": 0, "y": 0, "w": 18, "h": 13},
+	"sourceSize": {"w": 18, "h": 13}
+},
+"iron legs.png":
+{
+	"frame": {"x": 179, "y": 209, "w": 16, "h": 16},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x": 0, "y": 0, "w": 16, "h": 16},
+	"sourceSize": {"w": 16, "h": 16}
+},
+"iron light armor.png":
+{
+	"frame": {"x": 104, "y": 83, "w": 14, "h": 15},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x": 0, "y": 0, "w": 14, "h": 15},
+	"sourceSize": {"w": 14, "h": 15}
+},
+"iron potion bag.png":
+{
+	"frame": {"x": 195, "y": 209, "w": 16, "h": 16},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x": 0, "y": 0, "w": 16, "h": 16},
+	"sourceSize": {"w": 16, "h": 16}
+},
+"iron quiver.png":
+{
+	"frame": {"x": 211, "y": 209, "w": 16, "h": 16},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x": 0, "y": 0, "w": 16, "h": 16},
+	"sourceSize": {"w": 16, "h": 16}
+},
+"iron shield.png":
+{
+	"frame": {"x": 118, "y": 83, "w": 15, "h": 15},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x": 0, "y": 0, "w": 15, "h": 15},
+	"sourceSize": {"w": 15, "h": 15}
+},
+"Key_Ring1.png":
+{
+	"frame": {"x": 227, "y": 209, "w": 14, "h": 16},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x": 0, "y": 0, "w": 14, "h": 16},
+	"sourceSize": {"w": 14, "h": 16}
+},
+"Key_Ring2.png":
+{
+	"frame": {"x": 241, "y": 209, "w": 14, "h": 16},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x": 0, "y": 0, "w": 14, "h": 16},
+	"sourceSize": {"w": 14, "h": 16}
+},
+"Key_Ring3.png":
+{
+	"frame": {"x": 0, "y": 225, "w": 14, "h": 16},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x": 0, "y": 0, "w": 14, "h": 16},
+	"sourceSize": {"w": 14, "h": 16}
+},
+"Key_Ring4.png":
+{
+	"frame": {"x": 14, "y": 225, "w": 14, "h": 16},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x": 0, "y": 0, "w": 14, "h": 16},
+	"sourceSize": {"w": 14, "h": 16}
+},
+"Key_Ring5.png":
+{
+	"frame": {"x": 28, "y": 225, "w": 14, "h": 16},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x": 0, "y": 0, "w": 14, "h": 16},
+	"sourceSize": {"w": 14, "h": 16}
+},
+"Key_Ring6.png":
+{
+	"frame": {"x": 42, "y": 225, "w": 14, "h": 16},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x": 0, "y": 0, "w": 14, "h": 16},
+	"sourceSize": {"w": 14, "h": 16}
+},
+"korvak hat.png":
+{
+	"frame": {"x": 56, "y": 225, "w": 16, "h": 16},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x": 0, "y": 0, "w": 16, "h": 16},
+	"sourceSize": {"w": 16, "h": 16}
+},
+"korvak's fragment.png":
+{
+	"frame": {"x": 126, "y": 0, "w": 7, "h": 10},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x": 0, "y": 0, "w": 7, "h": 10},
+	"sourceSize": {"w": 7, "h": 10}
+},
+"lava armor.png":
+{
+	"frame": {"x": 72, "y": 225, "w": 16, "h": 16},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x": 0, "y": 0, "w": 16, "h": 16},
+	"sourceSize": {"w": 16, "h": 16}
+},
+"lava backpack.png":
+{
+	"frame": {"x": 88, "y": 225, "w": 16, "h": 16},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x": 0, "y": 0, "w": 16, "h": 16},
+	"sourceSize": {"w": 16, "h": 16}
+},
+"lava belt.png":
+{
+	"frame": {"x": 60, "y": 39, "w": 16, "h": 14},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x": 0, "y": 0, "w": 16, "h": 14},
+	"sourceSize": {"w": 16, "h": 14}
+},
+"lava boots.png":
+{
+	"frame": {"x": 133, "y": 83, "w": 14, "h": 15},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x": 0, "y": 0, "w": 14, "h": 15},
+	"sourceSize": {"w": 14, "h": 15}
+},
+"lava bow.png":
+{
+	"frame": {"x": 104, "y": 225, "w": 16, "h": 16},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x": 0, "y": 0, "w": 16, "h": 16},
+	"sourceSize": {"w": 16, "h": 16}
+},
+"lava broadsword.png":
+{
+	"frame": {"x": 120, "y": 225, "w": 16, "h": 16},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x": 0, "y": 0, "w": 16, "h": 16},
+	"sourceSize": {"w": 16, "h": 16}
+},
+"lava glove (left).png":
+{
+	"frame": {"x": 136, "y": 225, "w": 16, "h": 16},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x": 0, "y": 0, "w": 16, "h": 16},
+	"sourceSize": {"w": 16, "h": 16}
+},
+"lava glove (right).png":
+{
+	"frame": {"x": 152, "y": 225, "w": 16, "h": 16},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x": 0, "y": 0, "w": 16, "h": 16},
+	"sourceSize": {"w": 16, "h": 16}
+},
+"lava hat.png":
+{
+	"frame": {"x": 168, "y": 225, "w": 16, "h": 16},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x": 0, "y": 0, "w": 16, "h": 16},
+	"sourceSize": {"w": 16, "h": 16}
+},
+"lava helmet.png":
+{
+	"frame": {"x": 184, "y": 225, "w": 16, "h": 16},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x": 0, "y": 0, "w": 16, "h": 16},
+	"sourceSize": {"w": 16, "h": 16}
+},
+"lava hood.png":
+{
+	"frame": {"x": 200, "y": 225, "w": 14, "h": 16},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x": 0, "y": 0, "w": 14, "h": 16},
+	"sourceSize": {"w": 14, "h": 16}
+},
+"lava jewel.png":
+{
+	"frame": {"x": 155, "y": 0, "w": 11, "h": 11},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x": 0, "y": 0, "w": 11, "h": 11},
+	"sourceSize": {"w": 11, "h": 11}
+},
+"lava legs.png":
+{
+	"frame": {"x": 214, "y": 225, "w": 16, "h": 16},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x": 0, "y": 0, "w": 16, "h": 16},
+	"sourceSize": {"w": 16, "h": 16}
+},
+"lava light armor.png":
+{
+	"frame": {"x": 230, "y": 225, "w": 16, "h": 16},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x": 0, "y": 0, "w": 16, "h": 16},
+	"sourceSize": {"w": 16, "h": 16}
+},
+"lava potion bag.png":
+{
+	"frame": {"x": 0, "y": 241, "w": 16, "h": 16},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x": 0, "y": 0, "w": 16, "h": 16},
+	"sourceSize": {"w": 16, "h": 16}
+},
+"lava quiver.png":
+{
+	"frame": {"x": 16, "y": 241, "w": 16, "h": 16},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x": 0, "y": 0, "w": 16, "h": 16},
+	"sourceSize": {"w": 16, "h": 16}
+},
+"lava robe.png":
+{
+	"frame": {"x": 32, "y": 241, "w": 16, "h": 16},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x": 0, "y": 0, "w": 16, "h": 16},
+	"sourceSize": {"w": 16, "h": 16}
+},
+"lava shield.png":
+{
+	"frame": {"x": 48, "y": 241, "w": 16, "h": 16},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x": 0, "y": 0, "w": 16, "h": 16},
+	"sourceSize": {"w": 16, "h": 16}
+},
+"lava wand.png":
+{
+	"frame": {"x": 64, "y": 241, "w": 17, "h": 16},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x": 0, "y": 0, "w": 17, "h": 16},
+	"sourceSize": {"w": 17, "h": 16}
+},
+"leather armor.png":
+{
+	"frame": {"x": 76, "y": 39, "w": 16, "h": 14},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x": 0, "y": 0, "w": 16, "h": 14},
+	"sourceSize": {"w": 16, "h": 14}
+},
+"leather belt.png":
+{
+	"frame": {"x": 179, "y": 12, "w": 16, "h": 13},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x": 0, "y": 0, "w": 16, "h": 13},
+	"sourceSize": {"w": 16, "h": 13}
+},
+"leather boots.png":
+{
+	"frame": {"x": 147, "y": 83, "w": 14, "h": 15},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x": 0, "y": 0, "w": 14, "h": 15},
+	"sourceSize": {"w": 14, "h": 15}
+},
+"leather glove (left).png":
+{
+	"frame": {"x": 81, "y": 241, "w": 16, "h": 16},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x": 0, "y": 0, "w": 16, "h": 16},
+	"sourceSize": {"w": 16, "h": 16}
+},
+"leather glove (right).png":
+{
+	"frame": {"x": 97, "y": 241, "w": 16, "h": 16},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x": 0, "y": 0, "w": 16, "h": 16},
+	"sourceSize": {"w": 16, "h": 16}
+},
+"leather helmet.png":
+{
+	"frame": {"x": 195, "y": 12, "w": 12, "h": 13},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x": 0, "y": 0, "w": 12, "h": 13},
+	"sourceSize": {"w": 12, "h": 13}
+},
+"leather legs.png":
+{
+	"frame": {"x": 113, "y": 241, "w": 16, "h": 16},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x": 0, "y": 0, "w": 16, "h": 16},
+	"sourceSize": {"w": 16, "h": 16}
+},
+"leather light armor.png":
+{
+	"frame": {"x": 161, "y": 83, "w": 14, "h": 15},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x": 0, "y": 0, "w": 14, "h": 15},
+	"sourceSize": {"w": 14, "h": 15}
+},
+"leather potion bag.png":
+{
+	"frame": {"x": 129, "y": 241, "w": 16, "h": 16},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x": 0, "y": 0, "w": 16, "h": 16},
+	"sourceSize": {"w": 16, "h": 16}
+},
+"leather quiver.png":
+{
+	"frame": {"x": 145, "y": 241, "w": 16, "h": 16},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x": 0, "y": 0, "w": 16, "h": 16},
+	"sourceSize": {"w": 16, "h": 16}
+},
+"life pendant.png":
+{
+	"frame": {"x": 161, "y": 241, "w": 14, "h": 16},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x": 0, "y": 0, "w": 14, "h": 16},
+	"sourceSize": {"w": 14, "h": 16}
+},
+"life ring.png":
+{
+	"frame": {"x": 92, "y": 39, "w": 14, "h": 14},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x": 0, "y": 0, "w": 14, "h": 14},
+	"sourceSize": {"w": 14, "h": 14}
+},
+"lizard armor.png":
+{
+	"frame": {"x": 106, "y": 39, "w": 16, "h": 14},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x": 0, "y": 0, "w": 16, "h": 14},
+	"sourceSize": {"w": 16, "h": 14}
+},
+"lizard belt.png":
+{
+	"frame": {"x": 207, "y": 12, "w": 16, "h": 13},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x": 0, "y": 0, "w": 16, "h": 13},
+	"sourceSize": {"w": 16, "h": 13}
+},
+"lizard boots.png":
+{
+	"frame": {"x": 175, "y": 83, "w": 14, "h": 15},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x": 0, "y": 0, "w": 14, "h": 15},
+	"sourceSize": {"w": 14, "h": 15}
+},
+"lizard bow.png":
+{
+	"frame": {"x": 175, "y": 241, "w": 16, "h": 16},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x": 0, "y": 0, "w": 16, "h": 16},
+	"sourceSize": {"w": 16, "h": 16}
+},
+"lizard glove (left).png":
+{
+	"frame": {"x": 191, "y": 241, "w": 16, "h": 16},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x": 0, "y": 0, "w": 16, "h": 16},
+	"sourceSize": {"w": 16, "h": 16}
+},
+"lizard glove (right).png":
+{
+	"frame": {"x": 207, "y": 241, "w": 16, "h": 16},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x": 0, "y": 0, "w": 16, "h": 16},
+	"sourceSize": {"w": 16, "h": 16}
+},
+"lizard hat.png":
+{
+	"frame": {"x": 223, "y": 241, "w": 16, "h": 16},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x": 0, "y": 0, "w": 16, "h": 16},
+	"sourceSize": {"w": 16, "h": 16}
+},
+"lizard helmet.png":
+{
+	"frame": {"x": 122, "y": 39, "w": 18, "h": 14},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x": 0, "y": 0, "w": 18, "h": 14},
+	"sourceSize": {"w": 18, "h": 14}
+},
+"lizard hood.png":
+{
+	"frame": {"x": 239, "y": 241, "w": 14, "h": 16},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x": 0, "y": 0, "w": 14, "h": 16},
+	"sourceSize": {"w": 14, "h": 16}
+},
+"lizard jewel.png":
+{
+	"frame": {"x": 0, "y": 12, "w": 12, "h": 12},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x": 0, "y": 0, "w": 12, "h": 12},
+	"sourceSize": {"w": 12, "h": 12}
+},
+"lizard legs.png":
+{
+	"frame": {"x": 0, "y": 257, "w": 16, "h": 16},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x": 0, "y": 0, "w": 16, "h": 16},
+	"sourceSize": {"w": 16, "h": 16}
+},
+"lizard light armor.png":
+{
+	"frame": {"x": 189, "y": 83, "w": 14, "h": 15},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x": 0, "y": 0, "w": 14, "h": 15},
+	"sourceSize": {"w": 14, "h": 15}
+},
+"lizard quiver.png":
+{
+	"frame": {"x": 16, "y": 257, "w": 16, "h": 16},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x": 0, "y": 0, "w": 16, "h": 16},
+	"sourceSize": {"w": 16, "h": 16}
+},
+"lizard robe.png":
+{
+	"frame": {"x": 203, "y": 83, "w": 14, "h": 15},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x": 0, "y": 0, "w": 14, "h": 15},
+	"sourceSize": {"w": 14, "h": 15}
+},
+"lizard slayer.png":
+{
+	"frame": {"x": 32, "y": 257, "w": 16, "h": 16},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x": 0, "y": 0, "w": 16, "h": 16},
+	"sourceSize": {"w": 16, "h": 16}
+},
+"lizard's key.png":
+{
+	"frame": {"x": 78, "y": 0, "w": 16, "h": 9},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x": 0, "y": 0, "w": 16, "h": 9},
+	"sourceSize": {"w": 16, "h": 9}
+},
+"mage hat.png":
+{
+	"frame": {"x": 48, "y": 257, "w": 16, "h": 16},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x": 0, "y": 0, "w": 16, "h": 16},
+	"sourceSize": {"w": 16, "h": 16}
+},
+"mage robe.png":
+{
+	"frame": {"x": 217, "y": 83, "w": 14, "h": 15},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x": 0, "y": 0, "w": 14, "h": 15},
+	"sourceSize": {"w": 14, "h": 15}
+},
+"magic necklace.png":
+{
+	"frame": {"x": 64, "y": 257, "w": 14, "h": 16},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x": 0, "y": 0, "w": 14, "h": 16},
+	"sourceSize": {"w": 14, "h": 16}
+},
+"magic ring.png":
+{
+	"frame": {"x": 140, "y": 39, "w": 14, "h": 14},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x": 0, "y": 0, "w": 14, "h": 14},
+	"sourceSize": {"w": 14, "h": 14}
+},
+"magic training dummy.png":
+{
+	"frame": {"x": 198, "y": 401, "w": 22, "h": 24},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x": 0, "y": 0, "w": 22, "h": 24},
+	"sourceSize": {"w": 22, "h": 24}
+},
+"mana potion.png":
+{
+	"frame": {"x": 78, "y": 257, "w": 9, "h": 16},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x": 0, "y": 0, "w": 9, "h": 16},
+	"sourceSize": {"w": 9, "h": 16}
+},
+"melee necklace.png":
+{
+	"frame": {"x": 87, "y": 257, "w": 14, "h": 16},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x": 0, "y": 0, "w": 14, "h": 16},
+	"sourceSize": {"w": 14, "h": 16}
+},
+"melee ring.png":
+{
+	"frame": {"x": 101, "y": 257, "w": 14, "h": 16},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x": 0, "y": 0, "w": 14, "h": 16},
+	"sourceSize": {"w": 14, "h": 16}
+},
+"melee training dummy.png":
+{
+	"frame": {"x": 220, "y": 401, "w": 23, "h": 24},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x": 0, "y": 0, "w": 23, "h": 24},
+	"sourceSize": {"w": 23, "h": 24}
+},
+"minotaur armor.png":
+{
+	"frame": {"x": 231, "y": 83, "w": 16, "h": 15},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x": 0, "y": 0, "w": 16, "h": 15},
+	"sourceSize": {"w": 16, "h": 15}
+},
+"minotaur backpack.png":
+{
+	"frame": {"x": 115, "y": 257, "w": 16, "h": 16},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x": 0, "y": 0, "w": 16, "h": 16},
+	"sourceSize": {"w": 16, "h": 16}
+},
+"minotaur belt.png":
+{
+	"frame": {"x": 223, "y": 12, "w": 16, "h": 13},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x": 0, "y": 0, "w": 16, "h": 13},
+	"sourceSize": {"w": 16, "h": 13}
+},
+"minotaur boots.png":
+{
+	"frame": {"x": 0, "y": 98, "w": 14, "h": 15},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x": 0, "y": 0, "w": 14, "h": 15},
+	"sourceSize": {"w": 14, "h": 15}
+},
+"minotaur bow.png":
+{
+	"frame": {"x": 131, "y": 257, "w": 16, "h": 16},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x": 0, "y": 0, "w": 16, "h": 16},
+	"sourceSize": {"w": 16, "h": 16}
+},
+"minotaur glove (left).png":
+{
+	"frame": {"x": 147, "y": 257, "w": 16, "h": 16},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x": 0, "y": 0, "w": 16, "h": 16},
+	"sourceSize": {"w": 16, "h": 16}
+},
+"minotaur glove (right).png":
+{
+	"frame": {"x": 163, "y": 257, "w": 16, "h": 16},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x": 0, "y": 0, "w": 16, "h": 16},
+	"sourceSize": {"w": 16, "h": 16}
+},
+"minotaur hat.png":
+{
+	"frame": {"x": 179, "y": 257, "w": 16, "h": 16},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x": 0, "y": 0, "w": 16, "h": 16},
+	"sourceSize": {"w": 16, "h": 16}
+},
+"minotaur helmet.png":
+{
+	"frame": {"x": 14, "y": 98, "w": 16, "h": 15},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x": 0, "y": 0, "w": 16, "h": 15},
+	"sourceSize": {"w": 16, "h": 15}
+},
+"minotaur hood.png":
+{
+	"frame": {"x": 195, "y": 257, "w": 14, "h": 16},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x": 0, "y": 0, "w": 14, "h": 16},
+	"sourceSize": {"w": 14, "h": 16}
+},
+"minotaur jewel.png":
+{
+	"frame": {"x": 12, "y": 12, "w": 10, "h": 12},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x": 0, "y": 0, "w": 10, "h": 12},
+	"sourceSize": {"w": 10, "h": 12}
+},
+"minotaur legs.png":
+{
+	"frame": {"x": 209, "y": 257, "w": 16, "h": 16},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x": 0, "y": 0, "w": 16, "h": 16},
+	"sourceSize": {"w": 16, "h": 16}
+},
+"minotaur light armor.png":
+{
+	"frame": {"x": 30, "y": 98, "w": 14, "h": 15},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x": 0, "y": 0, "w": 14, "h": 15},
+	"sourceSize": {"w": 14, "h": 15}
+},
+"minotaur potion bag.png":
+{
+	"frame": {"x": 225, "y": 257, "w": 16, "h": 16},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x": 0, "y": 0, "w": 16, "h": 16},
+	"sourceSize": {"w": 16, "h": 16}
+},
+"minotaur quiver.png":
+{
+	"frame": {"x": 0, "y": 273, "w": 16, "h": 16},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x": 0, "y": 0, "w": 16, "h": 16},
+	"sourceSize": {"w": 16, "h": 16}
+},
+"minotaur robe.png":
+{
+	"frame": {"x": 44, "y": 98, "w": 14, "h": 15},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x": 0, "y": 0, "w": 14, "h": 15},
+	"sourceSize": {"w": 14, "h": 15}
+},
+"minotaur shield.png":
+{
+	"frame": {"x": 16, "y": 273, "w": 16, "h": 16},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x": 0, "y": 0, "w": 16, "h": 16},
+	"sourceSize": {"w": 16, "h": 16}
+},
+"minotaur slayer.png":
+{
+	"frame": {"x": 32, "y": 273, "w": 16, "h": 16},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x": 0, "y": 0, "w": 16, "h": 16},
+	"sourceSize": {"w": 16, "h": 16}
+},
+"minotaur wand.png":
+{
+	"frame": {"x": 48, "y": 273, "w": 16, "h": 16},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x": 0, "y": 0, "w": 16, "h": 16},
+	"sourceSize": {"w": 16, "h": 16}
+},
+"minotaur's key.png":
+{
+	"frame": {"x": 94, "y": 0, "w": 16, "h": 9},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x": 0, "y": 0, "w": 16, "h": 9},
+	"sourceSize": {"w": 16, "h": 9}
+},
+"Naked_Dummy.png":
+{
+	"frame": {"x": 64, "y": 273, "w": 14, "h": 16},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x": 0, "y": 0, "w": 14, "h": 16},
+	"sourceSize": {"w": 14, "h": 16}
+},
+"necklace.png":
+{
+	"frame": {"x": 154, "y": 39, "w": 14, "h": 14},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x": 0, "y": 0, "w": 14, "h": 14},
+	"sourceSize": {"w": 14, "h": 14}
+},
+"nose ring.png":
+{
+	"frame": {"x": 22, "y": 12, "w": 14, "h": 12},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x": 0, "y": 0, "w": 14, "h": 12},
+	"sourceSize": {"w": 14, "h": 12}
+},
+"novice wand.png":
+{
+	"frame": {"x": 78, "y": 273, "w": 16, "h": 16},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x": 0, "y": 0, "w": 16, "h": 16},
+	"sourceSize": {"w": 16, "h": 16}
+},
+"Old_Gold.png":
+{
+	"frame": {"x": 168, "y": 39, "w": 15, "h": 14},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x": 0, "y": 0, "w": 15, "h": 14},
+	"sourceSize": {"w": 15, "h": 14}
+},
+"outfit jewel.png":
+{
+	"frame": {"x": 166, "y": 0, "w": 11, "h": 11},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x": 0, "y": 0, "w": 11, "h": 11},
+	"sourceSize": {"w": 11, "h": 11}
+},
+"owl feather.png":
+{
+	"frame": {"x": 183, "y": 39, "w": 14, "h": 14},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x": 0, "y": 0, "w": 14, "h": 14},
+	"sourceSize": {"w": 14, "h": 14}
+},
+"owl pet.png":
+{
+	"frame": {"x": 239, "y": 12, "w": 11, "h": 13},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x": 0, "y": 0, "w": 11, "h": 13},
+	"sourceSize": {"w": 11, "h": 13}
+},
+"piece of cloth.png":
+{
+	"frame": {"x": 16, "y": 0, "w": 14, "h": 7},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x": 0, "y": 0, "w": 14, "h": 7},
+	"sourceSize": {"w": 14, "h": 7}
+},
+"piece of crown.png":
+{
+	"frame": {"x": 10, "y": 0, "w": 6, "h": 6},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x": 0, "y": 0, "w": 6, "h": 6},
+	"sourceSize": {"w": 6, "h": 6}
+},
+"priest wand.png":
+{
+	"frame": {"x": 94, "y": 273, "w": 16, "h": 16},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x": 0, "y": 0, "w": 16, "h": 16},
+	"sourceSize": {"w": 16, "h": 16}
+},
+"purple bow.png":
+{
+	"frame": {"x": 110, "y": 273, "w": 8, "h": 16},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x": 0, "y": 0, "w": 8, "h": 16},
+	"sourceSize": {"w": 8, "h": 16}
+},
+"purple cobra pet.png":
+{
+	"frame": {"x": 197, "y": 39, "w": 12, "h": 14},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x": 0, "y": 0, "w": 12, "h": 14},
+	"sourceSize": {"w": 12, "h": 14}
+},
+"purple easter egg.png":
+{
+	"frame": {"x": 118, "y": 273, "w": 14, "h": 16},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x": 0, "y": 0, "w": 14, "h": 16},
+	"sourceSize": {"w": 14, "h": 16}
+},
+"purple quiver.png":
+{
+	"frame": {"x": 132, "y": 273, "w": 16, "h": 16},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x": 0, "y": 0, "w": 16, "h": 16},
+	"sourceSize": {"w": 16, "h": 16}
+},
+"purple shield.png":
+{
+	"frame": {"x": 36, "y": 12, "w": 11, "h": 12},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x": 0, "y": 0, "w": 11, "h": 12},
+	"sourceSize": {"w": 11, "h": 12}
+},
+"purple sword.png":
+{
+	"frame": {"x": 148, "y": 273, "w": 10, "h": 16},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x": 0, "y": 0, "w": 10, "h": 16},
+	"sourceSize": {"w": 10, "h": 16}
+},
+"purple wand.png":
+{
+	"frame": {"x": 158, "y": 273, "w": 7, "h": 16},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x": 0, "y": 0, "w": 7, "h": 16},
+	"sourceSize": {"w": 7, "h": 16}
+},
+"recovery armor.png":
+{
+	"frame": {"x": 58, "y": 98, "w": 16, "h": 15},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x": 0, "y": 0, "w": 16, "h": 15},
+	"sourceSize": {"w": 16, "h": 15}
+},
+"recovery backpack.png":
+{
+	"frame": {"x": 165, "y": 273, "w": 16, "h": 16},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x": 0, "y": 0, "w": 16, "h": 16},
+	"sourceSize": {"w": 16, "h": 16}
+},
+"recovery belt.png":
+{
+	"frame": {"x": 209, "y": 39, "w": 16, "h": 14},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x": 0, "y": 0, "w": 16, "h": 14},
+	"sourceSize": {"w": 16, "h": 14}
+},
+"recovery boots.png":
+{
+	"frame": {"x": 74, "y": 98, "w": 14, "h": 15},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x": 0, "y": 0, "w": 14, "h": 15},
+	"sourceSize": {"w": 14, "h": 15}
+},
+"recovery glove (left).png":
+{
+	"frame": {"x": 181, "y": 273, "w": 16, "h": 16},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x": 0, "y": 0, "w": 16, "h": 16},
+	"sourceSize": {"w": 16, "h": 16}
+},
+"recovery glove (right).png":
+{
+	"frame": {"x": 197, "y": 273, "w": 16, "h": 16},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x": 0, "y": 0, "w": 16, "h": 16},
+	"sourceSize": {"w": 16, "h": 16}
+},
+"recovery helmet.png":
+{
+	"frame": {"x": 88, "y": 98, "w": 16, "h": 15},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x": 0, "y": 0, "w": 16, "h": 15},
+	"sourceSize": {"w": 16, "h": 15}
+},
+"recovery legs.png":
+{
+	"frame": {"x": 213, "y": 273, "w": 16, "h": 16},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x": 0, "y": 0, "w": 16, "h": 16},
+	"sourceSize": {"w": 16, "h": 16}
+},
+"recovery necklace.png":
+{
+	"frame": {"x": 229, "y": 273, "w": 14, "h": 16},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x": 0, "y": 0, "w": 14, "h": 16},
+	"sourceSize": {"w": 14, "h": 16}
+},
+"recovery potion bag.png":
+{
+	"frame": {"x": 0, "y": 289, "w": 16, "h": 16},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x": 0, "y": 0, "w": 16, "h": 16},
+	"sourceSize": {"w": 16, "h": 16}
+},
+"recovery quiver.png":
+{
+	"frame": {"x": 16, "y": 289, "w": 16, "h": 16},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x": 0, "y": 0, "w": 16, "h": 16},
+	"sourceSize": {"w": 16, "h": 16}
+},
+"recovery ring.png":
+{
+	"frame": {"x": 225, "y": 39, "w": 14, "h": 14},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x": 0, "y": 0, "w": 14, "h": 14},
+	"sourceSize": {"w": 14, "h": 14}
+},
+"reinforced ring.png":
+{
+	"frame": {"x": 239, "y": 39, "w": 14, "h": 14},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x": 0, "y": 0, "w": 14, "h": 14},
+	"sourceSize": {"w": 14, "h": 14}
+},
+"return scroll.png":
+{
+	"frame": {"x": 104, "y": 98, "w": 16, "h": 15},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x": 0, "y": 0, "w": 16, "h": 15},
+	"sourceSize": {"w": 16, "h": 15}
+},
+"reward jewel.png":
+{
+	"frame": {"x": 177, "y": 0, "w": 11, "h": 11},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x": 0, "y": 0, "w": 11, "h": 11},
+	"sourceSize": {"w": 11, "h": 11}
+},
+"ring.png":
+{
+	"frame": {"x": 0, "y": 53, "w": 14, "h": 14},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x": 0, "y": 0, "w": 14, "h": 14},
+	"sourceSize": {"w": 14, "h": 14}
+},
+"robe.png":
+{
+	"frame": {"x": 120, "y": 98, "w": 14, "h": 15},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x": 0, "y": 0, "w": 14, "h": 15},
+	"sourceSize": {"w": 14, "h": 15}
+},
+"royal priest wand.png":
+{
+	"frame": {"x": 32, "y": 289, "w": 16, "h": 16},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x": 0, "y": 0, "w": 16, "h": 16},
+	"sourceSize": {"w": 16, "h": 16}
+},
+"rusted golden armor.png":
+{
+	"frame": {"x": 48, "y": 289, "w": 16, "h": 16},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x": 0, "y": 0, "w": 16, "h": 16},
+	"sourceSize": {"w": 16, "h": 16}
+},
+"rusted golden backpack.png":
+{
+	"frame": {"x": 64, "y": 289, "w": 16, "h": 16},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x": 0, "y": 0, "w": 16, "h": 16},
+	"sourceSize": {"w": 16, "h": 16}
+},
+"rusted golden belt.png":
+{
+	"frame": {"x": 14, "y": 53, "w": 16, "h": 14},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x": 0, "y": 0, "w": 16, "h": 14},
+	"sourceSize": {"w": 16, "h": 14}
+},
+"rusted golden boots.png":
+{
+	"frame": {"x": 134, "y": 98, "w": 14, "h": 15},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x": 0, "y": 0, "w": 14, "h": 15},
+	"sourceSize": {"w": 14, "h": 15}
+},
+"rusted golden bow.png":
+{
+	"frame": {"x": 80, "y": 289, "w": 16, "h": 16},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x": 0, "y": 0, "w": 16, "h": 16},
+	"sourceSize": {"w": 16, "h": 16}
+},
+"rusted golden broadsword.png":
+{
+	"frame": {"x": 96, "y": 289, "w": 16, "h": 16},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x": 0, "y": 0, "w": 16, "h": 16},
+	"sourceSize": {"w": 16, "h": 16}
+},
+"rusted golden glove (left).png":
+{
+	"frame": {"x": 112, "y": 289, "w": 16, "h": 16},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x": 0, "y": 0, "w": 16, "h": 16},
+	"sourceSize": {"w": 16, "h": 16}
+},
+"rusted golden glove (right).png":
+{
+	"frame": {"x": 128, "y": 289, "w": 16, "h": 16},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x": 0, "y": 0, "w": 16, "h": 16},
+	"sourceSize": {"w": 16, "h": 16}
+},
+"rusted golden grimoire.png":
+{
+	"frame": {"x": 144, "y": 289, "w": 14, "h": 16},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x": 0, "y": 0, "w": 14, "h": 16},
+	"sourceSize": {"w": 14, "h": 16}
+},
+"rusted golden hat.png":
+{
+	"frame": {"x": 158, "y": 289, "w": 16, "h": 16},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x": 0, "y": 0, "w": 16, "h": 16},
+	"sourceSize": {"w": 16, "h": 16}
+},
+"rusted golden helmet.png":
+{
+	"frame": {"x": 174, "y": 289, "w": 16, "h": 16},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x": 0, "y": 0, "w": 16, "h": 16},
+	"sourceSize": {"w": 16, "h": 16}
+},
+"rusted golden hood.png":
+{
+	"frame": {"x": 190, "y": 289, "w": 16, "h": 16},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x": 0, "y": 0, "w": 16, "h": 16},
+	"sourceSize": {"w": 16, "h": 16}
+},
+"rusted golden legs.png":
+{
+	"frame": {"x": 206, "y": 289, "w": 16, "h": 16},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x": 0, "y": 0, "w": 16, "h": 16},
+	"sourceSize": {"w": 16, "h": 16}
+},
+"rusted golden light armor.png":
+{
+	"frame": {"x": 222, "y": 289, "w": 16, "h": 16},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x": 0, "y": 0, "w": 16, "h": 16},
+	"sourceSize": {"w": 16, "h": 16}
+},
+"Rusted_Golden_Potion_Bag.png":
+{
+	"frame": {"x": 238, "y": 289, "w": 16, "h": 16},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x": 0, "y": 0, "w": 16, "h": 16},
+	"sourceSize": {"w": 16, "h": 16}
+},
+"rusted golden quiver.png":
+{
+	"frame": {"x": 0, "y": 305, "w": 16, "h": 16},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x": 0, "y": 0, "w": 16, "h": 16},
+	"sourceSize": {"w": 16, "h": 16}
+},
+"rusted golden robe.png":
+{
+	"frame": {"x": 16, "y": 305, "w": 16, "h": 16},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x": 0, "y": 0, "w": 16, "h": 16},
+	"sourceSize": {"w": 16, "h": 16}
+},
+"rusted golden shield.png":
+{
+	"frame": {"x": 32, "y": 305, "w": 14, "h": 16},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x": 0, "y": 0, "w": 14, "h": 16},
+	"sourceSize": {"w": 14, "h": 16}
+},
+"rusted golden wand.png":
+{
+	"frame": {"x": 46, "y": 305, "w": 16, "h": 16},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x": 0, "y": 0, "w": 16, "h": 16},
+	"sourceSize": {"w": 16, "h": 16}
+},
+"rusted healer armor.png":
+{
+	"frame": {"x": 148, "y": 98, "w": 16, "h": 15},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x": 0, "y": 0, "w": 16, "h": 15},
+	"sourceSize": {"w": 16, "h": 15}
+},
+"rusted healer backpack.png":
+{
+	"frame": {"x": 62, "y": 305, "w": 16, "h": 16},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x": 0, "y": 0, "w": 16, "h": 16},
+	"sourceSize": {"w": 16, "h": 16}
+},
+"rusted healer belt.png":
+{
+	"frame": {"x": 30, "y": 53, "w": 16, "h": 14},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x": 0, "y": 0, "w": 16, "h": 14},
+	"sourceSize": {"w": 16, "h": 14}
+},
+"rusted healer boots.png":
+{
+	"frame": {"x": 164, "y": 98, "w": 14, "h": 15},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x": 0, "y": 0, "w": 14, "h": 15},
+	"sourceSize": {"w": 14, "h": 15}
+},
+"rusted healer glove (left).png":
+{
+	"frame": {"x": 78, "y": 305, "w": 16, "h": 16},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x": 0, "y": 0, "w": 16, "h": 16},
+	"sourceSize": {"w": 16, "h": 16}
+},
+"rusted healer glove (right).png":
+{
+	"frame": {"x": 94, "y": 305, "w": 16, "h": 16},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x": 0, "y": 0, "w": 16, "h": 16},
+	"sourceSize": {"w": 16, "h": 16}
+},
+"rusted healer helmet.png":
+{
+	"frame": {"x": 178, "y": 98, "w": 16, "h": 15},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x": 0, "y": 0, "w": 16, "h": 15},
+	"sourceSize": {"w": 16, "h": 15}
+},
+"rusted healer legs.png":
+{
+	"frame": {"x": 110, "y": 305, "w": 16, "h": 16},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x": 0, "y": 0, "w": 16, "h": 16},
+	"sourceSize": {"w": 16, "h": 16}
+},
+"Rusted_Healer_Potion_Bag.png":
+{
+	"frame": {"x": 126, "y": 305, "w": 16, "h": 16},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x": 0, "y": 0, "w": 16, "h": 16},
+	"sourceSize": {"w": 16, "h": 16}
+},
+"rusted healer quiver.png":
+{
+	"frame": {"x": 142, "y": 305, "w": 16, "h": 16},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x": 0, "y": 0, "w": 16, "h": 16},
+	"sourceSize": {"w": 16, "h": 16}
+},
+"rusted recovery armor.png":
+{
+	"frame": {"x": 194, "y": 98, "w": 16, "h": 15},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x": 0, "y": 0, "w": 16, "h": 15},
+	"sourceSize": {"w": 16, "h": 15}
+},
+"rusted recovery backpack.png":
+{
+	"frame": {"x": 158, "y": 305, "w": 16, "h": 16},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x": 0, "y": 0, "w": 16, "h": 16},
+	"sourceSize": {"w": 16, "h": 16}
+},
+"rusted recovery belt.png":
+{
+	"frame": {"x": 46, "y": 53, "w": 16, "h": 14},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x": 0, "y": 0, "w": 16, "h": 14},
+	"sourceSize": {"w": 16, "h": 14}
+},
+"rusted recovery boots.png":
+{
+	"frame": {"x": 210, "y": 98, "w": 14, "h": 15},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x": 0, "y": 0, "w": 14, "h": 15},
+	"sourceSize": {"w": 14, "h": 15}
+},
+"rusted recovery glove (left).png":
+{
+	"frame": {"x": 174, "y": 305, "w": 16, "h": 16},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x": 0, "y": 0, "w": 16, "h": 16},
+	"sourceSize": {"w": 16, "h": 16}
+},
+"rusted recovery glove (right).png":
+{
+	"frame": {"x": 190, "y": 305, "w": 16, "h": 16},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x": 0, "y": 0, "w": 16, "h": 16},
+	"sourceSize": {"w": 16, "h": 16}
+},
+"rusted recovery helmet.png":
+{
+	"frame": {"x": 224, "y": 98, "w": 16, "h": 15},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x": 0, "y": 0, "w": 16, "h": 15},
+	"sourceSize": {"w": 16, "h": 15}
+},
+"rusted recovery legs.png":
+{
+	"frame": {"x": 206, "y": 305, "w": 16, "h": 16},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x": 0, "y": 0, "w": 16, "h": 16},
+	"sourceSize": {"w": 16, "h": 16}
+},
+"Rusted_Recovery_Potion_Bag.png":
+{
+	"frame": {"x": 222, "y": 305, "w": 16, "h": 16},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x": 0, "y": 0, "w": 16, "h": 16},
+	"sourceSize": {"w": 16, "h": 16}
+},
+"rusted recovery quiver.png":
+{
+	"frame": {"x": 238, "y": 305, "w": 16, "h": 16},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x": 0, "y": 0, "w": 16, "h": 16},
+	"sourceSize": {"w": 16, "h": 16}
+},
+"rusted santa's backpack.png":
+{
+	"frame": {"x": 0, "y": 321, "w": 16, "h": 16},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x": 0, "y": 0, "w": 16, "h": 16},
+	"sourceSize": {"w": 16, "h": 16}
+},
+"rusted santa's potion bag.png":
+{
+	"frame": {"x": 16, "y": 321, "w": 16, "h": 16},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x": 0, "y": 0, "w": 16, "h": 16},
+	"sourceSize": {"w": 16, "h": 16}
+},
+"rusted santa's quiver.png":
+{
+	"frame": {"x": 32, "y": 321, "w": 16, "h": 16},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x": 0, "y": 0, "w": 16, "h": 16},
+	"sourceSize": {"w": 16, "h": 16}
+},
+"rusted sup. defense necklace.png":
+{
+	"frame": {"x": 48, "y": 321, "w": 14, "h": 16},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x": 0, "y": 0, "w": 14, "h": 16},
+	"sourceSize": {"w": 14, "h": 16}
+},
+"rusted sup. defense ring.png":
+{
+	"frame": {"x": 62, "y": 321, "w": 16, "h": 16},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x": 0, "y": 0, "w": 16, "h": 16},
+	"sourceSize": {"w": 16, "h": 16}
+},
+"rusted sup. distance necklace.png":
+{
+	"frame": {"x": 78, "y": 321, "w": 14, "h": 16},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x": 0, "y": 0, "w": 14, "h": 16},
+	"sourceSize": {"w": 14, "h": 16}
+},
+"rusted sup. distance ring.png":
+{
+	"frame": {"x": 92, "y": 321, "w": 16, "h": 16},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x": 0, "y": 0, "w": 16, "h": 16},
+	"sourceSize": {"w": 16, "h": 16}
+},
+"rusted sup. healer necklace.png":
+{
+	"frame": {"x": 108, "y": 321, "w": 14, "h": 16},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x": 0, "y": 0, "w": 14, "h": 16},
+	"sourceSize": {"w": 14, "h": 16}
+},
+"rusted sup. healer ring.png":
+{
+	"frame": {"x": 62, "y": 53, "w": 14, "h": 14},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x": 0, "y": 0, "w": 14, "h": 14},
+	"sourceSize": {"w": 14, "h": 14}
+},
+"rusted sup. magic necklace.png":
+{
+	"frame": {"x": 122, "y": 321, "w": 14, "h": 16},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x": 0, "y": 0, "w": 14, "h": 16},
+	"sourceSize": {"w": 14, "h": 16}
+},
+"rusted sup. magic ring.png":
+{
+	"frame": {"x": 136, "y": 321, "w": 16, "h": 16},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x": 0, "y": 0, "w": 16, "h": 16},
+	"sourceSize": {"w": 16, "h": 16}
+},
+"rusted sup. melee necklace.png":
+{
+	"frame": {"x": 152, "y": 321, "w": 14, "h": 16},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x": 0, "y": 0, "w": 14, "h": 16},
+	"sourceSize": {"w": 14, "h": 16}
+},
+"rusted sup. melee ring.png":
+{
+	"frame": {"x": 166, "y": 321, "w": 16, "h": 16},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x": 0, "y": 0, "w": 16, "h": 16},
+	"sourceSize": {"w": 16, "h": 16}
+},
+"rusted sup. recovery necklace.png":
+{
+	"frame": {"x": 182, "y": 321, "w": 14, "h": 16},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x": 0, "y": 0, "w": 14, "h": 16},
+	"sourceSize": {"w": 14, "h": 16}
+},
+"rusted sup. recovery ring.png":
+{
+	"frame": {"x": 76, "y": 53, "w": 14, "h": 14},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x": 0, "y": 0, "w": 14, "h": 14},
+	"sourceSize": {"w": 14, "h": 14}
+},
+"rusted swift boots.png":
+{
+	"frame": {"x": 240, "y": 98, "w": 15, "h": 15},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x": 0, "y": 0, "w": 15, "h": 15},
+	"sourceSize": {"w": 15, "h": 15}
+},
+"rusted void distance necklace.png":
+{
+	"frame": {"x": 196, "y": 321, "w": 14, "h": 16},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x": 0, "y": 0, "w": 14, "h": 16},
+	"sourceSize": {"w": 14, "h": 16}
+},
+"rusted void distance ring.png":
+{
+	"frame": {"x": 210, "y": 321, "w": 16, "h": 16},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x": 0, "y": 0, "w": 16, "h": 16},
+	"sourceSize": {"w": 16, "h": 16}
+},
+"rusted void magic necklace.png":
+{
+	"frame": {"x": 226, "y": 321, "w": 14, "h": 16},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x": 0, "y": 0, "w": 14, "h": 16},
+	"sourceSize": {"w": 14, "h": 16}
+},
+"rusted void magic ring.png":
+{
+	"frame": {"x": 240, "y": 321, "w": 16, "h": 16},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x": 0, "y": 0, "w": 16, "h": 16},
+	"sourceSize": {"w": 16, "h": 16}
+},
+"rusted void melee necklace.png":
+{
+	"frame": {"x": 0, "y": 337, "w": 14, "h": 16},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x": 0, "y": 0, "w": 14, "h": 16},
+	"sourceSize": {"w": 14, "h": 16}
+},
+"rusted void melee ring.png":
+{
+	"frame": {"x": 14, "y": 337, "w": 16, "h": 16},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x": 0, "y": 0, "w": 16, "h": 16},
+	"sourceSize": {"w": 16, "h": 16}
+},
+"santa's backpack.png":
+{
+	"frame": {"x": 30, "y": 337, "w": 16, "h": 16},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x": 0, "y": 0, "w": 16, "h": 16},
+	"sourceSize": {"w": 16, "h": 16}
+},
+"santa's potion bag.png":
+{
+	"frame": {"x": 46, "y": 337, "w": 16, "h": 16},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x": 0, "y": 0, "w": 16, "h": 16},
+	"sourceSize": {"w": 16, "h": 16}
+},
+"santa's quiver.png":
+{
+	"frame": {"x": 62, "y": 337, "w": 16, "h": 16},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x": 0, "y": 0, "w": 16, "h": 16},
+	"sourceSize": {"w": 16, "h": 16}
+},
+"shaman wand.png":
+{
+	"frame": {"x": 78, "y": 337, "w": 16, "h": 16},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x": 0, "y": 0, "w": 16, "h": 16},
+	"sourceSize": {"w": 16, "h": 16}
+},
+"short sword.png":
+{
+	"frame": {"x": 0, "y": 25, "w": 13, "h": 13},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x": 0, "y": 0, "w": 13, "h": 13},
+	"sourceSize": {"w": 13, "h": 13}
+},
+"silver backpack.png":
+{
+	"frame": {"x": 94, "y": 337, "w": 16, "h": 16},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x": 0, "y": 0, "w": 16, "h": 16},
+	"sourceSize": {"w": 16, "h": 16}
+},
+"silver bag.png":
+{
+	"frame": {"x": 0, "y": 113, "w": 14, "h": 15},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x": 0, "y": 0, "w": 14, "h": 15},
+	"sourceSize": {"w": 14, "h": 15}
+},
+"silver potion bag.png":
+{
+	"frame": {"x": 110, "y": 337, "w": 16, "h": 16},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x": 0, "y": 0, "w": 16, "h": 16},
+	"sourceSize": {"w": 16, "h": 16}
+},
+"skill xp potion.png":
+{
+	"frame": {"x": 126, "y": 337, "w": 9, "h": 16},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x": 0, "y": 0, "w": 9, "h": 16},
+	"sourceSize": {"w": 9, "h": 16}
+},
+"soldier armor.png":
+{
+	"frame": {"x": 90, "y": 53, "w": 16, "h": 14},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x": 0, "y": 0, "w": 16, "h": 14},
+	"sourceSize": {"w": 16, "h": 14}
+},
+"soldier belt.png":
+{
+	"frame": {"x": 13, "y": 25, "w": 16, "h": 13},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x": 0, "y": 0, "w": 16, "h": 13},
+	"sourceSize": {"w": 16, "h": 13}
+},
+"soldier boots.png":
+{
+	"frame": {"x": 14, "y": 113, "w": 14, "h": 15},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x": 0, "y": 0, "w": 14, "h": 15},
+	"sourceSize": {"w": 14, "h": 15}
+},
+"soldier glove (left).png":
+{
+	"frame": {"x": 135, "y": 337, "w": 16, "h": 16},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x": 0, "y": 0, "w": 16, "h": 16},
+	"sourceSize": {"w": 16, "h": 16}
+},
+"soldier glove (right).png":
+{
+	"frame": {"x": 151, "y": 337, "w": 16, "h": 16},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x": 0, "y": 0, "w": 16, "h": 16},
+	"sourceSize": {"w": 16, "h": 16}
+},
+"soldier hat.png":
+{
+	"frame": {"x": 167, "y": 337, "w": 16, "h": 16},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x": 0, "y": 0, "w": 16, "h": 16},
+	"sourceSize": {"w": 16, "h": 16}
+},
+"soldier helmet.png":
+{
+	"frame": {"x": 29, "y": 25, "w": 12, "h": 13},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x": 0, "y": 0, "w": 12, "h": 13},
+	"sourceSize": {"w": 12, "h": 13}
+},
+"soldier hood.png":
+{
+	"frame": {"x": 183, "y": 337, "w": 14, "h": 16},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x": 0, "y": 0, "w": 14, "h": 16},
+	"sourceSize": {"w": 14, "h": 16}
+},
+"soldier legs.png":
+{
+	"frame": {"x": 197, "y": 337, "w": 16, "h": 16},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x": 0, "y": 0, "w": 16, "h": 16},
+	"sourceSize": {"w": 16, "h": 16}
+},
+"soldier light armor.png":
+{
+	"frame": {"x": 28, "y": 113, "w": 14, "h": 15},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x": 0, "y": 0, "w": 14, "h": 15},
+	"sourceSize": {"w": 14, "h": 15}
+},
+"soldier potion bag.png":
+{
+	"frame": {"x": 213, "y": 337, "w": 16, "h": 16},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x": 0, "y": 0, "w": 16, "h": 16},
+	"sourceSize": {"w": 16, "h": 16}
+},
+"soldier quiver.png":
+{
+	"frame": {"x": 229, "y": 337, "w": 16, "h": 16},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x": 0, "y": 0, "w": 16, "h": 16},
+	"sourceSize": {"w": 16, "h": 16}
+},
+"soldier robe.png":
+{
+	"frame": {"x": 42, "y": 113, "w": 14, "h": 15},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x": 0, "y": 0, "w": 14, "h": 15},
+	"sourceSize": {"w": 14, "h": 15}
+},
+"soldier shield.png":
+{
+	"frame": {"x": 56, "y": 113, "w": 15, "h": 15},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x": 0, "y": 0, "w": 15, "h": 15},
+	"sourceSize": {"w": 15, "h": 15}
+},
+"soul pendant.png":
+{
+	"frame": {"x": 0, "y": 353, "w": 14, "h": 16},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x": 0, "y": 0, "w": 14, "h": 16},
+	"sourceSize": {"w": 14, "h": 16}
+},
+"soul ring.png":
+{
+	"frame": {"x": 106, "y": 53, "w": 14, "h": 14},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x": 0, "y": 0, "w": 14, "h": 14},
+	"sourceSize": {"w": 14, "h": 14}
+},
+"spiked ring.png":
+{
+	"frame": {"x": 71, "y": 113, "w": 15, "h": 15},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x": 0, "y": 0, "w": 15, "h": 15},
+	"sourceSize": {"w": 15, "h": 15}
+},
+"steel armor.png":
+{
+	"frame": {"x": 120, "y": 53, "w": 16, "h": 14},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x": 0, "y": 0, "w": 16, "h": 14},
+	"sourceSize": {"w": 16, "h": 14}
+},
+"steel belt.png":
+{
+	"frame": {"x": 41, "y": 25, "w": 16, "h": 13},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x": 0, "y": 0, "w": 16, "h": 13},
+	"sourceSize": {"w": 16, "h": 13}
+},
+"steel boots.png":
+{
+	"frame": {"x": 86, "y": 113, "w": 14, "h": 15},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x": 0, "y": 0, "w": 14, "h": 15},
+	"sourceSize": {"w": 14, "h": 15}
+},
+"steel glove (left).png":
+{
+	"frame": {"x": 14, "y": 353, "w": 16, "h": 16},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x": 0, "y": 0, "w": 16, "h": 16},
+	"sourceSize": {"w": 16, "h": 16}
+},
+"steel glove (right).png":
+{
+	"frame": {"x": 30, "y": 353, "w": 16, "h": 16},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x": 0, "y": 0, "w": 16, "h": 16},
+	"sourceSize": {"w": 16, "h": 16}
+},
+"steel helmet.png":
+{
+	"frame": {"x": 136, "y": 53, "w": 12, "h": 14},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x": 0, "y": 0, "w": 12, "h": 14},
+	"sourceSize": {"w": 12, "h": 14}
+},
+"steel legs.png":
+{
+	"frame": {"x": 46, "y": 353, "w": 16, "h": 16},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x": 0, "y": 0, "w": 16, "h": 16},
+	"sourceSize": {"w": 16, "h": 16}
+},
+"steel light armor.png":
+{
+	"frame": {"x": 100, "y": 113, "w": 14, "h": 15},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x": 0, "y": 0, "w": 14, "h": 15},
+	"sourceSize": {"w": 14, "h": 15}
+},
+"steel quiver.png":
+{
+	"frame": {"x": 62, "y": 353, "w": 16, "h": 16},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x": 0, "y": 0, "w": 16, "h": 16},
+	"sourceSize": {"w": 16, "h": 16}
+},
+"stone pendant.png":
+{
+	"frame": {"x": 78, "y": 353, "w": 14, "h": 16},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x": 0, "y": 0, "w": 14, "h": 16},
+	"sourceSize": {"w": 14, "h": 16}
+},
+"studded armor.png":
+{
+	"frame": {"x": 148, "y": 53, "w": 16, "h": 14},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x": 0, "y": 0, "w": 16, "h": 14},
+	"sourceSize": {"w": 16, "h": 14}
+},
+"studded belt.png":
+{
+	"frame": {"x": 57, "y": 25, "w": 16, "h": 13},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x": 0, "y": 0, "w": 16, "h": 13},
+	"sourceSize": {"w": 16, "h": 13}
+},
+"studded boots.png":
+{
+	"frame": {"x": 114, "y": 113, "w": 14, "h": 15},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x": 0, "y": 0, "w": 14, "h": 15},
+	"sourceSize": {"w": 14, "h": 15}
+},
+"studded bow.png":
+{
+	"frame": {"x": 92, "y": 353, "w": 16, "h": 16},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x": 0, "y": 0, "w": 16, "h": 16},
+	"sourceSize": {"w": 16, "h": 16}
+},
+"studded glove (left).png":
+{
+	"frame": {"x": 108, "y": 353, "w": 16, "h": 16},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x": 0, "y": 0, "w": 16, "h": 16},
+	"sourceSize": {"w": 16, "h": 16}
+},
+"studded glove (right).png":
+{
+	"frame": {"x": 124, "y": 353, "w": 16, "h": 16},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x": 0, "y": 0, "w": 16, "h": 16},
+	"sourceSize": {"w": 16, "h": 16}
+},
+"studded helmet.png":
+{
+	"frame": {"x": 73, "y": 25, "w": 12, "h": 13},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x": 0, "y": 0, "w": 12, "h": 13},
+	"sourceSize": {"w": 12, "h": 13}
+},
+"studded legs.png":
+{
+	"frame": {"x": 140, "y": 353, "w": 16, "h": 16},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x": 0, "y": 0, "w": 16, "h": 16},
+	"sourceSize": {"w": 16, "h": 16}
+},
+"studded light armor.png":
+{
+	"frame": {"x": 128, "y": 113, "w": 14, "h": 15},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x": 0, "y": 0, "w": 14, "h": 15},
+	"sourceSize": {"w": 14, "h": 15}
+},
+"studded potion bag.png":
+{
+	"frame": {"x": 156, "y": 353, "w": 16, "h": 16},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x": 0, "y": 0, "w": 16, "h": 16},
+	"sourceSize": {"w": 16, "h": 16}
+},
+"studded quiver.png":
+{
+	"frame": {"x": 172, "y": 353, "w": 16, "h": 16},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x": 0, "y": 0, "w": 16, "h": 16},
+	"sourceSize": {"w": 16, "h": 16}
+},
+"studded shield.png":
+{
+	"frame": {"x": 142, "y": 113, "w": 15, "h": 15},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x": 0, "y": 0, "w": 15, "h": 15},
+	"sourceSize": {"w": 15, "h": 15}
+},
+"super health potion.png":
+{
+	"frame": {"x": 188, "y": 353, "w": 15, "h": 16},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x": 0, "y": 0, "w": 15, "h": 16},
+	"sourceSize": {"w": 15, "h": 16}
+},
+"super mana potion.png":
+{
+	"frame": {"x": 203, "y": 353, "w": 15, "h": 16},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x": 0, "y": 0, "w": 15, "h": 16},
+	"sourceSize": {"w": 15, "h": 16}
+},
+"super skill xp potion.png":
+{
+	"frame": {"x": 218, "y": 353, "w": 15, "h": 16},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x": 0, "y": 0, "w": 15, "h": 16},
+	"sourceSize": {"w": 15, "h": 16}
+},
+"super xp potion.png":
+{
+	"frame": {"x": 233, "y": 353, "w": 15, "h": 16},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x": 0, "y": 0, "w": 15, "h": 16},
+	"sourceSize": {"w": 15, "h": 16}
+},
+"superior defense necklace.png":
+{
+	"frame": {"x": 0, "y": 369, "w": 14, "h": 16},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x": 0, "y": 0, "w": 14, "h": 16},
+	"sourceSize": {"w": 14, "h": 16}
+},
+"superior defense ring.png":
+{
+	"frame": {"x": 14, "y": 369, "w": 16, "h": 16},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x": 0, "y": 0, "w": 16, "h": 16},
+	"sourceSize": {"w": 16, "h": 16}
+},
+"superior distance necklace.png":
+{
+	"frame": {"x": 30, "y": 369, "w": 14, "h": 16},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x": 0, "y": 0, "w": 14, "h": 16},
+	"sourceSize": {"w": 14, "h": 16}
+},
+"superior distance ring.png":
+{
+	"frame": {"x": 44, "y": 369, "w": 16, "h": 16},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x": 0, "y": 0, "w": 16, "h": 16},
+	"sourceSize": {"w": 16, "h": 16}
+},
+"superior healer necklace.png":
+{
+	"frame": {"x": 60, "y": 369, "w": 14, "h": 16},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x": 0, "y": 0, "w": 14, "h": 16},
+	"sourceSize": {"w": 14, "h": 16}
+},
+"superior healer ring.png":
+{
+	"frame": {"x": 164, "y": 53, "w": 14, "h": 14},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x": 0, "y": 0, "w": 14, "h": 14},
+	"sourceSize": {"w": 14, "h": 14}
+},
+"superior magic necklace.png":
+{
+	"frame": {"x": 74, "y": 369, "w": 14, "h": 16},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x": 0, "y": 0, "w": 14, "h": 16},
+	"sourceSize": {"w": 14, "h": 16}
+},
+"superior magic ring.png":
+{
+	"frame": {"x": 88, "y": 369, "w": 16, "h": 16},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x": 0, "y": 0, "w": 16, "h": 16},
+	"sourceSize": {"w": 16, "h": 16}
+},
+"superior melee necklace.png":
+{
+	"frame": {"x": 104, "y": 369, "w": 14, "h": 16},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x": 0, "y": 0, "w": 14, "h": 16},
+	"sourceSize": {"w": 14, "h": 16}
+},
+"superior melee ring.png":
+{
+	"frame": {"x": 118, "y": 369, "w": 16, "h": 16},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x": 0, "y": 0, "w": 16, "h": 16},
+	"sourceSize": {"w": 16, "h": 16}
+},
+"superior recovery necklace.png":
+{
+	"frame": {"x": 134, "y": 369, "w": 14, "h": 16},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x": 0, "y": 0, "w": 14, "h": 16},
+	"sourceSize": {"w": 14, "h": 16}
+},
+"superior recovery ring.png":
+{
+	"frame": {"x": 178, "y": 53, "w": 14, "h": 14},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x": 0, "y": 0, "w": 14, "h": 14},
+	"sourceSize": {"w": 14, "h": 14}
+},
+"swift boots.png":
+{
+	"frame": {"x": 157, "y": 113, "w": 15, "h": 15},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x": 0, "y": 0, "w": 15, "h": 15},
+	"sourceSize": {"w": 15, "h": 15}
+},
+"swift defense necklace.png":
+{
+	"frame": {"x": 148, "y": 401, "w": 14, "h": 17},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x": 0, "y": 0, "w": 14, "h": 17},
+	"sourceSize": {"w": 14, "h": 17}
+},
+"swift defense ring.png":
+{
+	"frame": {"x": 148, "y": 369, "w": 16, "h": 16},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x": 0, "y": 0, "w": 16, "h": 16},
+	"sourceSize": {"w": 16, "h": 16}
+},
+"swift distance necklace.png":
+{
+	"frame": {"x": 164, "y": 369, "w": 14, "h": 16},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x": 0, "y": 0, "w": 14, "h": 16},
+	"sourceSize": {"w": 14, "h": 16}
+},
+"swift distance ring.png":
+{
+	"frame": {"x": 178, "y": 369, "w": 16, "h": 16},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x": 0, "y": 0, "w": 16, "h": 16},
+	"sourceSize": {"w": 16, "h": 16}
+},
+"swift magic necklace.png":
+{
+	"frame": {"x": 194, "y": 369, "w": 14, "h": 16},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x": 0, "y": 0, "w": 14, "h": 16},
+	"sourceSize": {"w": 14, "h": 16}
+},
+"swift magic ring.png":
+{
+	"frame": {"x": 208, "y": 369, "w": 16, "h": 16},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x": 0, "y": 0, "w": 16, "h": 16},
+	"sourceSize": {"w": 16, "h": 16}
+},
+"swift melee necklace.png":
+{
+	"frame": {"x": 224, "y": 369, "w": 14, "h": 16},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x": 0, "y": 0, "w": 14, "h": 16},
+	"sourceSize": {"w": 14, "h": 16}
+},
+"swift melee ring.png":
+{
+	"frame": {"x": 238, "y": 369, "w": 16, "h": 16},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x": 0, "y": 0, "w": 16, "h": 16},
+	"sourceSize": {"w": 16, "h": 16}
+},
+"swift necklace.png":
+{
+	"frame": {"x": 192, "y": 53, "w": 14, "h": 14},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x": 0, "y": 0, "w": 14, "h": 14},
+	"sourceSize": {"w": 14, "h": 14}
+},
+"swift ring.png":
+{
+	"frame": {"x": 206, "y": 53, "w": 14, "h": 14},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x": 0, "y": 0, "w": 14, "h": 14},
+	"sourceSize": {"w": 14, "h": 14}
+},
+"sword.png":
+{
+	"frame": {"x": 0, "y": 385, "w": 16, "h": 16},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x": 0, "y": 0, "w": 16, "h": 16},
+	"sourceSize": {"w": 16, "h": 16}
+},
+"titan belt.png":
+{
+	"frame": {"x": 85, "y": 25, "w": 16, "h": 13},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x": 0, "y": 0, "w": 16, "h": 13},
+	"sourceSize": {"w": 16, "h": 13}
+},
+"titan boots.png":
+{
+	"frame": {"x": 172, "y": 113, "w": 14, "h": 15},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x": 0, "y": 0, "w": 14, "h": 15},
+	"sourceSize": {"w": 14, "h": 15}
+},
+"titan glove (left).png":
+{
+	"frame": {"x": 16, "y": 385, "w": 16, "h": 16},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x": 0, "y": 0, "w": 16, "h": 16},
+	"sourceSize": {"w": 16, "h": 16}
+},
+"titan glove (right).png":
+{
+	"frame": {"x": 32, "y": 385, "w": 16, "h": 16},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x": 0, "y": 0, "w": 16, "h": 16},
+	"sourceSize": {"w": 16, "h": 16}
+},
+"titan hat.png":
+{
+	"frame": {"x": 48, "y": 385, "w": 16, "h": 16},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x": 0, "y": 0, "w": 16, "h": 16},
+	"sourceSize": {"w": 16, "h": 16}
+},
+"titan helmet.png":
+{
+	"frame": {"x": 64, "y": 385, "w": 16, "h": 16},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x": 0, "y": 0, "w": 16, "h": 16},
+	"sourceSize": {"w": 16, "h": 16}
+},
+"titan hood.png":
+{
+	"frame": {"x": 80, "y": 385, "w": 16, "h": 16},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x": 0, "y": 0, "w": 16, "h": 16},
+	"sourceSize": {"w": 16, "h": 16}
+},
+"titan legs.png":
+{
+	"frame": {"x": 96, "y": 385, "w": 16, "h": 16},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x": 0, "y": 0, "w": 16, "h": 16},
+	"sourceSize": {"w": 16, "h": 16}
+},
+"tracker scroll.png":
+{
+	"frame": {"x": 186, "y": 113, "w": 16, "h": 15},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x": 0, "y": 0, "w": 16, "h": 15},
+	"sourceSize": {"w": 16, "h": 15}
+},
+"training bow.png":
+{
+	"frame": {"x": 112, "y": 385, "w": 16, "h": 16},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x": 0, "y": 0, "w": 16, "h": 16},
+	"sourceSize": {"w": 16, "h": 16}
+},
+"training dagger.png":
+{
+	"frame": {"x": 101, "y": 25, "w": 13, "h": 13},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x": 0, "y": 0, "w": 13, "h": 13},
+	"sourceSize": {"w": 13, "h": 13}
+},
+"training wand.png":
+{
+	"frame": {"x": 128, "y": 385, "w": 16, "h": 16},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x": 0, "y": 0, "w": 16, "h": 16},
+	"sourceSize": {"w": 16, "h": 16}
+},
+"ultimate health potion.png":
+{
+	"frame": {"x": 144, "y": 385, "w": 15, "h": 16},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x": 0, "y": 0, "w": 15, "h": 16},
+	"sourceSize": {"w": 15, "h": 16}
+},
+"ultimate mana potion.png":
+{
+	"frame": {"x": 159, "y": 385, "w": 15, "h": 16},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x": 0, "y": 0, "w": 15, "h": 16},
+	"sourceSize": {"w": 15, "h": 16}
+},
+"ultimate skill xp potion.png":
+{
+	"frame": {"x": 174, "y": 385, "w": 15, "h": 16},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x": 0, "y": 0, "w": 15, "h": 16},
+	"sourceSize": {"w": 15, "h": 16}
+},
+"ultimate xp potion.png":
+{
+	"frame": {"x": 189, "y": 385, "w": 15, "h": 16},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x": 0, "y": 0, "w": 15, "h": 16},
+	"sourceSize": {"w": 15, "h": 16}
+},
+"vampire's key.png":
+{
+	"frame": {"x": 110, "y": 0, "w": 16, "h": 9},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x": 0, "y": 0, "w": 16, "h": 9},
+	"sourceSize": {"w": 16, "h": 9}
+},
+"void backpack.png":
+{
+	"frame": {"x": 204, "y": 385, "w": 16, "h": 16},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x": 0, "y": 0, "w": 16, "h": 16},
+	"sourceSize": {"w": 16, "h": 16}
+},
+"void belt.png":
+{
+	"frame": {"x": 220, "y": 53, "w": 16, "h": 14},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x": 0, "y": 0, "w": 16, "h": 14},
+	"sourceSize": {"w": 16, "h": 14}
+},
+"Void_Defense_Necklace.png":
+{
+	"frame": {"x": 162, "y": 401, "w": 14, "h": 17},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x": 0, "y": 0, "w": 14, "h": 17},
+	"sourceSize": {"w": 14, "h": 17}
+},
+"void distance necklace.png":
+{
+	"frame": {"x": 220, "y": 385, "w": 14, "h": 16},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x": 0, "y": 0, "w": 14, "h": 16},
+	"sourceSize": {"w": 14, "h": 16}
+},
+"void distance ring.png":
+{
+	"frame": {"x": 234, "y": 385, "w": 16, "h": 16},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x": 0, "y": 0, "w": 16, "h": 16},
+	"sourceSize": {"w": 16, "h": 16}
+},
+"void magic necklace.png":
+{
+	"frame": {"x": 0, "y": 401, "w": 14, "h": 16},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x": 0, "y": 0, "w": 14, "h": 16},
+	"sourceSize": {"w": 14, "h": 16}
+},
+"void magic ring.png":
+{
+	"frame": {"x": 14, "y": 401, "w": 16, "h": 16},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x": 0, "y": 0, "w": 16, "h": 16},
+	"sourceSize": {"w": 16, "h": 16}
+},
+"void melee necklace.png":
+{
+	"frame": {"x": 30, "y": 401, "w": 14, "h": 16},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x": 0, "y": 0, "w": 14, "h": 16},
+	"sourceSize": {"w": 14, "h": 16}
+},
+"void melee ring.png":
+{
+	"frame": {"x": 44, "y": 401, "w": 16, "h": 16},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x": 0, "y": 0, "w": 16, "h": 16},
+	"sourceSize": {"w": 16, "h": 16}
+},
+"Void_Potion_Bag.png":
+{
+	"frame": {"x": 60, "y": 401, "w": 16, "h": 16},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x": 0, "y": 0, "w": 16, "h": 16},
+	"sourceSize": {"w": 16, "h": 16}
+},
+"void quiver.png":
+{
+	"frame": {"x": 76, "y": 401, "w": 16, "h": 16},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x": 0, "y": 0, "w": 16, "h": 16},
+	"sourceSize": {"w": 16, "h": 16}
+},
+"wooden shield.png":
+{
+	"frame": {"x": 202, "y": 113, "w": 15, "h": 15},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x": 0, "y": 0, "w": 15, "h": 15},
+	"sourceSize": {"w": 15, "h": 15}
+},
+"wooden wand.png":
+{
+	"frame": {"x": 92, "y": 401, "w": 16, "h": 16},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x": 0, "y": 0, "w": 16, "h": 16},
+	"sourceSize": {"w": 16, "h": 16}
+},
+"xp potion.png":
+{
+	"frame": {"x": 108, "y": 401, "w": 9, "h": 16},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x": 0, "y": 0, "w": 9, "h": 16},
+	"sourceSize": {"w": 9, "h": 16}
+},
+"yellow easter egg.png":
+{
+	"frame": {"x": 117, "y": 401, "w": 14, "h": 16},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x": 0, "y": 0, "w": 14, "h": 16},
+	"sourceSize": {"w": 14, "h": 16}
+}
+
+}}

@@ -171,9 +171,24 @@
 </nav>
 
     <main id="main-content">
-        <h1>Wiki</h1>
-        <p>Bem-vindo ao Nexus!</p>
-    </main>
+
+<input type="text" id="search" placeholder="Search items..." style="width:100%;padding:10px;margin-bottom:10px;">
+
+<select id="rarityFilter" style="width:100%;padding:10px;margin-bottom:10px;">
+  <option value="">All rarities</option>
+  <option value="commun">Commun</option>
+  <option value="uncommun">Uncommun</option>
+  <option value="rare">Rare</option>
+  <option value="ultra rare">Ultra Rare</option>
+  <option value="legendary">Legendary</option>
+  <option value="mythic">Mythic</option>
+</select>
+
+<div id="preview"></div>
+<hr>
+<div id="lista"></div>
+
+</main>
 
     <script>
         function toggleMenu() {
@@ -188,6 +203,98 @@
         if (params.get('platform') === 'app') {
             document.body.classList.add('is-app');
         }
+        let items = {};
+let imagens = {};
+
+function getRarityColor(r) {
+  r = (r || "").toLowerCase();
+
+  if (r === "commun") return "rgb(247,243,247)";
+  if (r === "uncommun") return "rgb(0,235,74)";
+  if (r === "rare") return "rgb(66,190,255)";
+  if (r === "ultra rare") return "rgb(230,117,247)";
+  if (r === "legendary") return "rgb(239,255,0)";
+  if (r === "mythic") return "linear-gradient(90deg,#e75931,#ff9229,#ffbe00,#e7ff00)";
+  
+  return "white";
+}
+
+function criarItemHTML(nome, item, imagemNome) {
+  let raridade = item["Rarity: "] || item.rarity || "";
+
+  let cor = getRarityColor(raridade);
+
+  let style = cor.includes("gradient")
+    ? `background:${cor};-webkit-background-clip:text;color:transparent;`
+    : `color:${cor}`;
+
+  let imgHTML = imagemNome 
+    ? `<img src="/sprites.png" style="width:32px;height:32px;object-fit:none;">`
+    : "";
+
+  return `
+    <div style="display:flex;align-items:center;gap:10px;padding:5px;border-bottom:1px solid #333;">
+      ${imgHTML}
+      <span style="${style}">${nome}</span>
+    </div>
+  `;
+}
+
+function filtrar() {
+  let busca = document.getElementById("search").value.toLowerCase();
+  let raridadeFiltro = document.getElementById("rarityFilter").value;
+
+  let preview = document.getElementById("preview");
+  let lista = document.getElementById("lista");
+
+  preview.innerHTML = "";
+  lista.innerHTML = "";
+
+  let encontrados = [];
+
+  for (let id in items) {
+    let item = items[id];
+
+    let nome = item["Name: "] || item.name || "???";
+    let tags = (item["Tags"] || "").toLowerCase();
+
+    let raridade = (item["Rarity: "] || item.rarity || "").toLowerCase();
+
+    if (raridadeFiltro && raridade !== raridadeFiltro) continue;
+
+    if (
+      nome.toLowerCase().includes(busca) ||
+      tags.includes(busca)
+    ) {
+      encontrados.push({ nome, item });
+    }
+  }
+
+  // 🔹 preview (5 max)
+  encontrados.slice(0, 5).forEach(e => {
+    preview.innerHTML += criarItemHTML(e.nome, e.item);
+  });
+
+  // 🔹 lista completa
+  encontrados.forEach(e => {
+    lista.innerHTML += criarItemHTML(e.nome, e.item);
+  });
+}
+
+async function carregar() {
+  let res1 = await fetch("./items.json");
+  items = await res1.json();
+
+  let res2 = await fetch("./items_png.json");
+  imagens = await res2.json();
+
+  filtrar();
+}
+
+document.getElementById("search").addEventListener("input", filtrar);
+document.getElementById("rarityFilter").addEventListener("change", filtrar);
+
+carregar();
     </script>
 </body>
 </html>

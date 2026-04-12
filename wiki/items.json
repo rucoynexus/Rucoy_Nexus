@@ -1,0 +1,8177 @@
+{
+  "item1": {
+    "Name: ": "health potion",
+    "Rarity: ": "commun",
+    "Tags": "Potions,Consumables",
+    "Buy NPC: ": 50,
+    "Sell NPC: ": 25,
+    "Stack: ": 200,
+    "More information: ": "You start with 15 life potions and can buy more from the [entity id=entity1 name='Gear Merchant'] in [location id=location1 name='Town 1']. The potion regenerates 70 to 130 [ui id=ui1 name='HP'].\nThis potion has no minimum [ui id=ui3 name='level'] requirement."
+  },
+  "item2": {
+    "name": "mana potion",
+    "rarity": "commun",
+    "Tags": "Potions,Consumables",
+    "Buy NPC: ": 50,
+    "Sell NPC: ": 25,
+    "Stack: ": 200,
+    "More information: ": "You start with 15 mana potions and can buy more from the [entity id=entity1 name='Gear Merchant'] in [location id=location1 name='Town 1']. The potion regenerates 70 to 130 [ui id=ui2 name='MP'].\nThis potion has no minimum [ui id=ui3 name='level'] requirement."
+  },
+  "item3": {
+    "name": "arrow",
+    "rarity": "commun",
+    "stack": 500
+  },
+  "item4": {
+    "name": "gold",
+    "rarity": "commun",
+    "stack": "n/a"
+  },
+  "item5": {
+    "name": "leather helmet",
+    "rarity": "commun",
+    "stack": 1,
+    "armor": 4
+  },
+  "item6": {
+    "name": "studded helmet",
+    "rarity": "commun",
+    "stack": 1,
+    "armor": 8,
+    "level": 25
+  },
+  "item7": {
+    "name": "iron helmet",
+    "rarity": "commun",
+    "stack": 1,
+    "armor": 12,
+    "level": 65
+  },
+  "item8": {
+    "name": "soldier helmet",
+    "rarity": "commun",
+    "stack": 1,
+    "armor": 16,
+    "level": 100
+  },
+  "item9": {
+    "name": "steel helmet",
+    "rarity": "commun",
+    "stack": 1,
+    "armor": 20,
+    "level": 125
+  },
+  "item10": {
+    "name": "leather armor",
+    "rarity": "commun",
+    "stack": 1,
+    "armor": 6
+  },
+  "item11": {
+    "name": "studded armor",
+    "rarity": "commun",
+    "stack": 1,
+    "armor": 12,
+    "level": 35
+  },
+  "item12": {
+    "name": "iron armor",
+    "rarity": "commun",
+    "stack": 1,
+    "armor": 18,
+    "level": 75
+  },
+  "item13": {
+    "name": "soldier armor",
+    "rarity": "commun",
+    "stack": 1,
+    "armor": 24,
+    "level": 100
+  },
+  "item14": {
+    "name": "steel armor",
+    "rarity": "commun",
+    "stack": 1,
+    "armor": 30,
+    "level": 125
+  },
+  "item15": {
+    "name": "leather belt",
+    "rarity": "commun",
+    "stack": 1,
+    "armor": 3
+  },
+  "item16": {
+    "name": "studded belt",
+    "rarity": "commun",
+    "stack": 1,
+    "armor": 6,
+    "level": 25
+  },
+  "item17": {
+    "name": "iron belt",
+    "rarity": "commun",
+    "stack": 1,
+    "armor": 9,
+    "level": 75
+  },
+  "item18": {
+    "name": "soldier belt",
+    "rarity": "commun",
+    "stack": 1,
+    "armor": 12,
+    "level": 100
+  },
+  "item19": {
+    "name": "steel belt",
+    "rarity": "commun",
+    "stack": 1,
+    "armor": 15,
+    "level": 125
+  },
+  "item20": {
+    "name": "leather legs",
+    "rarity": "commun",
+    "stack": 1,
+    "armor": 5
+  },
+  "item21": {
+    "name": "studded legs",
+    "rarity": "commun",
+    "stack": 1,
+    "armor": 10,
+    "level": 25
+  },
+  "item22": {
+    "name": "iron legs",
+    "rarity": "commun",
+    "stack": 1,
+    "armor": 15,
+    "level": 75
+  },
+  "item23": {
+    "name": "soldier legs",
+    "rarity": "commun",
+    "stack": 1,
+    "armor": 20,
+    "level": 100
+  },
+  "item24": {
+    "name": "steel legs",
+    "rarity": "commun",
+    "stack": 1,
+    "armor": 25,
+    "level": 125
+  },
+  "item25": {
+    "name": "leather boots",
+    "rarity": "commun",
+    "stack": 1,
+    "armor": 3
+  },
+  "item26": {
+    "name": "studded boots",
+    "rarity": "commun",
+    "stack": 1,
+    "armor": 6,
+    "level": 25
+  },
+  "item27": {
+    "name": "iron boots",
+    "rarity": "commun",
+    "stack": 1,
+    "armor": 9,
+    "level": 75
+  },
+  "item28": {
+    "name": "soldier boots",
+    "rarity": "commun",
+    "stack": 1,
+    "armor": 12,
+    "level": 100
+  },
+  "item29": {
+    "name": "steel boots",
+    "rarity": "commun",
+    "stack": 1,
+    "armor": 15,
+    "level": 120
+  },
+  "item30": {
+    "name": "leather glove (left)",
+    "rarity": "commun",
+    "stack": 1,
+    "armor": 2
+  },
+  "item31": {
+    "name": "studded glove (left)",
+    "rarity": "commun",
+    "stack": 1,
+    "armor": 4,
+    "level": 25
+  },
+  "item32": {
+    "name": "iron glove (left)",
+    "rarity": "commun",
+    "stack": 1,
+    "armor": 6,
+    "level": 65
+  },
+  "item33": {
+    "name": "soldier glove (left)",
+    "rarity": "commun",
+    "stack": 1,
+    "armor": 8,
+    "level": 100
+  },
+  "item34": {
+    "name": "steel glove (left)",
+    "rarity": "commun",
+    "stack": 1,
+    "armor": 10,
+    "level": 120
+  },
+  "item35": {
+    "name": "leather glove (right)",
+    "rarity": "commun",
+    "stack": 1,
+    "armor": 2
+  },
+  "item36": {
+    "name": "studded glove (right)",
+    "rarity": "commun",
+    "stack": 1,
+    "armor": 4,
+    "level": 25
+  },
+  "item37": {
+    "name": "iron glove (right)",
+    "rarity": "commun",
+    "stack": 1,
+    "armor": 6,
+    "level": 65
+  },
+  "item38": {
+    "name": "soldier glove (right)",
+    "rarity": "commun",
+    "stack": 1,
+    "armor": 8,
+    "level": 100
+  },
+  "item39": {
+    "name": "steel glove (right)",
+    "rarity": "commun",
+    "stack": 1,
+    "armor": 10,
+    "level": 120
+  },
+  "item40": {
+    "name": "dagger",
+    "rarity": "commun",
+    "stack": 1,
+    "attack": 15
+  },
+  "item41": {
+    "name": "short sword",
+    "rarity": "commun",
+    "stack": 1,
+    "attack": 20,
+    "level": 25
+  },
+  "item42": {
+    "name": "sword",
+    "rarity": "commun",
+    "stack": 1,
+    "attack": 25,
+    "level": 75
+  },
+  "item43": {
+    "name": "broadsword",
+    "rarity": "commun",
+    "stack": 1,
+    "attack": 30,
+    "level": 125
+  },
+  "item44": {
+    "name": "wooden shield",
+    "rarity": "commun",
+    "stack": 1,
+    "armor": 16
+  },
+  "item45": {
+    "name": "studded shield",
+    "rarity": "commun",
+    "stack": 1,
+    "armor": 22,
+    "level": 25
+  },
+  "item46": {
+    "name": "iron shield",
+    "rarity": "commun",
+    "stack": 1,
+    "armor": 28,
+    "level": 75
+  },
+  "item47": {
+    "name": "soldier shield",
+    "rarity": "commun",
+    "stack": 1,
+    "armor": 35,
+    "level": 125
+  },
+  "item48": {
+    "name": "bow",
+    "rarity": "commun",
+    "stack": 1,
+    "attack": 15
+  },
+  "item49": {
+    "name": "studded bow",
+    "rarity": "commun",
+    "stack": 1,
+    "attack": 20,
+    "level": 25
+  },
+  "item50": {
+    "name": "iron bow",
+    "rarity": "commun",
+    "stack": 1,
+    "attack": 25,
+    "level": 75
+  },
+  "item51": {
+    "name": "drow bow",
+    "rarity": "commun",
+    "stack": 1,
+    "attack": 30,
+    "level": 125
+  },
+  "item52": {
+    "name": "wooden wand",
+    "rarity": "commun",
+    "stack": 1,
+    "attack": 15
+  },
+  "item53": {
+    "name": "novice wand",
+    "rarity": "commun",
+    "stack": 1,
+    "attack": 20,
+    "level": 25
+  },
+  "item54": {
+    "name": "priest wand",
+    "rarity": "commun",
+    "stack": 1,
+    "attack": 25,
+    "level": 75
+  },
+  "item55": {
+    "name": "royal priest wand",
+    "rarity": "commun",
+    "stack": 1,
+    "attack": 30,
+    "level": 125
+  },
+  "item56": {
+    "name": "bag",
+    "rarity": "commun",
+    "stack": 1,
+    "capacity": 20
+  },
+  "item57": {
+    "name": "silver bag",
+    "rarity": "commun",
+    "stack": 1,
+    "capacity": 26,
+    "level": 25
+  },
+  "item58": {
+    "name": "blue bag",
+    "rarity": "commun",
+    "stack": 1,
+    "capacity": 32,
+    "level": 50
+  },
+  "item59": {
+    "name": "backpack",
+    "rarity": "commun",
+    "stack": 1,
+    "capacity": 38,
+    "level": 75
+  },
+  "item60": {
+    "name": "silver backpack",
+    "rarity": "commun",
+    "stack": 1,
+    "capacity": 44,
+    "level": 100
+  },
+  "item61": {
+    "name": "blue backpack",
+    "rarity": "commun",
+    "stack": 1,
+    "capacity": 50,
+    "level": 125
+  },
+  "item62": {
+    "name": "dagger",
+    "rarity": "uncommun",
+    "stack": 1,
+    "attack": 17
+  },
+  "item63": {
+    "name": "dagger",
+    "rarity": "rare",
+    "stack": 1,
+    "attack": 19
+  },
+  "item64": {
+    "name": "short sword",
+    "rarity": "uncommun",
+    "stack": 1,
+    "attack": 22,
+    "level": 25
+  },
+  "item65": {
+    "name": "short sword",
+    "rarity": "rare",
+    "stack": 1,
+    "attack": 24,
+    "level": 25
+  },
+  "item66": {
+    "name": "sword",
+    "rarity": "uncommun",
+    "stack": 1,
+    "attack": 27,
+    "level": 75
+  },
+  "item67": {
+    "name": "sword",
+    "rarity": "rare",
+    "stack": 1,
+    "attack": 29,
+    "level": 75
+  },
+  "item68": {
+    "name": "broadsword",
+    "rarity": "uncommun",
+    "stack": 1,
+    "attack": 32,
+    "level": 125
+  },
+  "item69": {
+    "name": "broadsword",
+    "rarity": "rare",
+    "stack": 1,
+    "attack": 34,
+    "level": 125
+  },
+  "item70": {
+    "name": "bow",
+    "rarity": "uncommun",
+    "stack": 1,
+    "attack": 17
+  },
+  "item71": {
+    "name": "bow",
+    "rarity": "rare",
+    "stack": 1,
+    "attack": 19
+  },
+  "item72": {
+    "name": "studded bow",
+    "rarity": "uncommun",
+    "stack": 1,
+    "attack": 22,
+    "level": 25
+  },
+  "item73": {
+    "name": "studded bow",
+    "rarity": "rare",
+    "stack": 1,
+    "attack": 24,
+    "level": 25
+  },
+  "item74": {
+    "name": "iron bow",
+    "rarity": "uncommun",
+    "stack": 1,
+    "attack": 27,
+    "level": 75
+  },
+  "item75": {
+    "name": "iron bow",
+    "rarity": "rare",
+    "stack": 1,
+    "attack": 29,
+    "level": 75
+  },
+  "item76": {
+    "name": "drow bow",
+    "rarity": "uncommun",
+    "stack": 1,
+    "attack": 32,
+    "level": 125
+  },
+  "item77": {
+    "name": "drow bow",
+    "rarity": "rare",
+    "stack": 1,
+    "attack": 34,
+    "level": 125
+  },
+  "item78": {
+    "name": "wooden wand",
+    "rarity": "uncommun",
+    "stack": 1,
+    "attack": 17
+  },
+  "item79": {
+    "name": "wooden wand",
+    "rarity": "rare",
+    "stack": 1,
+    "attack": 19
+  },
+  "item80": {
+    "name": "novice wand",
+    "rarity": "uncommun",
+    "stack": 1,
+    "attack": 22,
+    "level": 25
+  },
+  "item81": {
+    "name": "novice wand",
+    "rarity": "rare",
+    "stack": 1,
+    "attack": 24,
+    "level": 25
+  },
+  "item82": {
+    "name": "priest wand",
+    "rarity": "uncommun",
+    "stack": 1,
+    "attack": 27,
+    "level": 75
+  },
+  "item83": {
+    "name": "priest wand",
+    "rarity": "rare",
+    "stack": 1,
+    "attack": 29,
+    "level": 75
+  },
+  "item84": {
+    "name": "royal priest wand",
+    "rarity": "uncommun",
+    "stack": 1,
+    "attack": 32,
+    "level": 125
+  },
+  "item85": {
+    "name": "royal priest wand",
+    "rarity": "rare",
+    "stack": 1,
+    "attack": 34,
+    "level": 125
+  },
+  "item86": {
+    "name": "lizard helmet",
+    "rarity": "commun",
+    "stack": 1,
+    "armor": 24,
+    "level": 160
+  },
+  "item87": {
+    "name": "lizard armor",
+    "rarity": "commun",
+    "stack": 1,
+    "armor": 36,
+    "level": 175
+  },
+  "item88": {
+    "name": "lizard belt",
+    "rarity": "commun",
+    "stack": 1,
+    "armor": 18,
+    "level": 175
+  },
+  "item89": {
+    "name": "lizard legs",
+    "rarity": "commun",
+    "stack": 1,
+    "armor": 30,
+    "level": 175
+  },
+  "item90": {
+    "name": "lizard boots",
+    "rarity": "commun",
+    "stack": 1,
+    "armor": 18,
+    "level": 150,
+    "speed": 1
+  },
+  "item91": {
+    "name": "lizard glove (left)",
+    "rarity": "commun",
+    "stack": 1,
+    "armor": 12,
+    "level": 150
+  },
+  "item92": {
+    "name": "lizard glove (right)",
+    "rarity": "commun",
+    "stack": 1,
+    "armor": 12,
+    "level": 150
+  },
+  "item93": {
+    "name": "green backpack",
+    "rarity": "commun",
+    "stack": 1,
+    "armor": 56,
+    "level": 150
+  },
+  "item94": {
+    "name": "lizard slayer",
+    "rarity": "commun",
+    "stack": 1,
+    "attack": 35,
+    "level": 175
+  },
+  "item95": {
+    "name": "lizard slayer",
+    "rarity": "uncommun",
+    "stack": 1,
+    "attack": 37,
+    "level": 175
+  },
+  "item96": {
+    "name": "lizard slayer",
+    "rarity": "rare",
+    "stack": 1,
+    "attack": 39,
+    "level": 175
+  },
+  "item97": {
+    "name": "battle shield",
+    "rarity": "commun",
+    "stack": 1,
+    "armor": 42,
+    "level": 175
+  },
+  "item98": {
+    "name": "lizard bow",
+    "rarity": "commun",
+    "stack": 1,
+    "attack": 35,
+    "level": 175
+  },
+  "item99": {
+    "name": "lizard bow",
+    "rarity": "uncommun",
+    "stack": 1,
+    "attack": 37,
+    "level": 175
+  },
+  "item100": {
+    "name": "lizard bow",
+    "rarity": "rare",
+    "stack": 1,
+    "attack": 39,
+    "level": 175
+  },
+  "item101": {
+    "name": "shaman wand",
+    "rarity": "commun",
+    "stack": 1,
+    "attack": 35,
+    "level": 175
+  },
+  "item102": {
+    "name": "shaman wand",
+    "rarity": "uncommun",
+    "stack": 1,
+    "attack": 37,
+    "level": 175
+  },
+  "item103": {
+    "name": "shaman wand",
+    "rarity": "rare",
+    "stack": 1,
+    "attack": 39,
+    "level": 175
+  },
+  "item104": {
+    "name": "greater health potion",
+    "rarity": "commun",
+    "stack": 200,
+    "level": 75,
+    "More information: ": "You can buy them from the [entity id=entity1 name='Gear Merchant'] in both [location id=location1 name='Town 1'] and [location id=location2 name='Town 2'], the potion regenerates 200 to 300 [ui id=ui1 name='HP']."
+  },
+  "item105": {
+    "name": "super health potion",
+    "rarity": "commun",
+    "stack": 200,
+    "level": 150,
+    "More information: ": "You can buy them from the [entity id=entity1 name='Gear Merchant'] in both [location id=location1 name='Town 1'] and [location id=location2 name='Town 2'], the potion regenerates 200 to 300 [ui id=ui2 name='MP']."
+  },
+  "item106": {
+    "name": "training dagger",
+    "rarity": "ultra rare",
+    "stack": 1,
+    "attack": 5
+  },
+  "item107": {
+    "name": "training bow",
+    "rarity": "ultra rare",
+    "stack": 1,
+    "attack": 5
+  },
+  "item108": {
+    "name": "training wand",
+    "rarity": "ultra rare",
+    "stack": 1,
+    "attack": 5
+  },
+  "item109": {
+    "name": "beginners town scroll",
+    "rarity": "commun",
+    "stack": 20
+  },
+  "item110": {
+    "name": "greater mana potion",
+    "rarity": "commun",
+    "stack": 200,
+    "level": 75
+  },
+  "item111": {
+    "name": "super mana potion",
+    "rarity": "commun",
+    "stack": 200,
+    "level": 150
+  },
+  "item112": {
+    "name": "diamond",
+    "rarity": "commun",
+    "stack": "n/a"
+  },
+  "item113": {
+    "name": "swift boots",
+    "rarity": "legendary",
+    "stack": 1,
+    "armor": 11,
+    "speed": 25
+  },
+  "item114": {
+    "name": "magic ring",
+    "rarity": "ultra rare",
+    "stack": 1,
+    "armor": 1,
+    "magic": 5
+  },
+  "item115": {
+    "name": "melee ring",
+    "rarity": "ultra rare",
+    "stack": 1,
+    "armor": 1,
+    "melee": 5
+  },
+  "item116": {
+    "name": "distance ring",
+    "rarity": "ultra rare",
+    "stack": 1,
+    "armor": 1,
+    "distance": 5
+  },
+  "item117": {
+    "name": "spiked ring",
+    "rarity": "ultra rare",
+    "stack": 1,
+    "level": 45,
+    "armor": 1,
+    "critical_chance": "2,5%",
+    "critical_damage": "2,5%"
+  },
+  "item118": {
+    "name": "life ring",
+    "rarity": "rare",
+    "stack": 1,
+    "health_regen": 1,
+    "level": 20
+  },
+  "item119": {
+    "name": "soul ring",
+    "rarity": "rare",
+    "stack": 1,
+    "mana_regen": 1,
+    "level": 20
+  },
+  "item120": {
+    "name": "defense ring",
+    "rarity": "ultra rare",
+    "stack": 1,
+    "armor": 1,
+    "defense": 5
+  },
+  "item121": {
+    "name": "broadsword",
+    "rarity": "ultra rare",
+    "stack": 1,
+    "attack": 34,
+    "melee": 1,
+    "level": 125
+  },
+  "item122": {
+    "name": "lizard slayer",
+    "rarity": "ultra rare",
+    "stack": 1,
+    "attack": 41,
+    "melee": 1,
+    "level": 175
+  },
+  "item123": {
+    "name": "soldier shield",
+    "rarity": "uncommun",
+    "stack": 1,
+    "armor": 35,
+    "defense": 1,
+    "level": 125
+  },
+  "item124": {
+    "name": "battle shield",
+    "rarity": "uncommun",
+    "stack": 1,
+    "armor": 43,
+    "defense": 1,
+    "level": 175
+  },
+  "item125": {
+    "name": "drow bow",
+    "rarity": "ultra rare",
+    "stack": 1,
+    "attack": 34,
+    "distance": 1,
+    "level": 125
+  },
+  "item126": {
+    "name": "lizard bow",
+    "rarity": "ultra rare",
+    "stack": 1,
+    "attack": 41,
+    "distance": 1,
+    "level": 175
+  },
+  "item127": {
+    "name": "royal priest wand",
+    "rarity": "ultra rare",
+    "stack": 1,
+    "attack": 34,
+    "magic": 1,
+    "level": 125
+  },
+  "item128": {
+    "name": "shaman wand",
+    "rarity": "ultra rare",
+    "stack": 1,
+    "attack": 41,
+    "magic": 1,
+    "level": 175
+  },
+  "item129": {
+    "name": "ring",
+    "rarity": "commun",
+    "stack": 1,
+    "armor": 1,
+    "level": 15
+  },
+  "item130": {
+    "name": "reinforced ring",
+    "rarity": "uncommun",
+    "stack": 1,
+    "armor": 2,
+    "level": 30
+  },
+  "item131": {
+    "name": "life pendant",
+    "rarity": "rare",
+    "stack": 1,
+    "health_regen": 1,
+    "level": 45
+  },
+  "item132": {
+    "name": "soul pendant",
+    "rarity": "rare",
+    "stack": 1,
+    "mana_regen": 1,
+    "level": 45
+  },
+  "item133": {
+    "name": "halloween potion",
+    "rarity": "commun",
+    "stack": 1,
+    "description": "Increases HP and MP\nregeneration for 20 minutes\nduring the halloween event"
+  },
+  "item134": {
+    "name": "superior magic ring",
+    "rarity": "legendary",
+    "stack": 1,
+    "armor": 1,
+    "magic": 10
+  },
+  "item135": {
+    "name": "superior melee ring",
+    "rarity": "legendary",
+    "stack": 1,
+    "armor": 1,
+    "melee": 10
+  },
+  "item136": {
+    "name": "superior distance ring",
+    "rarity": "legendary",
+    "stack": 1,
+    "armor": 1,
+    "distance": 10
+  },
+  "item137": {
+    "name": "superior defense ring",
+    "rarity": "legendary",
+    "stack": 1,
+    "armor": 1,
+    "defense": 10
+  },
+  "item138": {
+    "name": "stone pendant",
+    "rarity": "commun",
+    "stack": 1,
+    "armor": 5
+  },
+  "item139": {
+    "name": "dragon slayer",
+    "rarity": "commun",
+    "stack": 1,
+    "attack": 40,
+    "melee": 1,
+    "level": 275
+  },
+  "item140": {
+    "name": "dragon slayer",
+    "rarity": "uncommun",
+    "stack": 1,
+    "attack": 42,
+    "melee": 2,
+    "level": 275
+  },
+  "item141": {
+    "name": "dragon slayer",
+    "rarity": "rare",
+    "stack": 1,
+    "attack": 44,
+    "melee": 3,
+    "level": 275
+  },
+  "item142": {
+    "name": "dragon bow",
+    "rarity": "commun",
+    "stack": 1,
+    "attack": 40,
+    "distance": 1,
+    "level": 275
+  },
+  "item143": {
+    "name": "dragon bow",
+    "rarity": "uncommun",
+    "stack": 1,
+    "attack": 42,
+    "distance": 2,
+    "level": 275
+  },
+  "item144": {
+    "name": "dragon bow",
+    "rarity": "rare",
+    "stack": 1,
+    "attack": 44,
+    "distance": 3,
+    "level": 275
+  },
+  "item145": {
+    "name": "dragon wand",
+    "rarity": "commun",
+    "stack": 1,
+    "attack": 40,
+    "magic": 1,
+    "level": 275
+  },
+  "item146": {
+    "name": "dragon wand",
+    "rarity": "uncommun",
+    "stack": 1,
+    "attack": 42,
+    "magic": 2,
+    "level": 275
+  },
+  "item147": {
+    "name": "dragon wand",
+    "rarity": "rare",
+    "stack": 1,
+    "attack": 44,
+    "magic": 3,
+    "level": 275
+  },
+  "item148": {
+    "name": "dragon shield",
+    "rarity": "commun",
+    "stack": 1,
+    "armor": 48,
+    "defense": 1,
+    "level": 275
+  },
+  "item149": {
+    "name": "dragon shield",
+    "rarity": "uncommun",
+    "stack": 1,
+    "armor": 49,
+    "defense": 2,
+    "level": 275
+  },
+  "item150": {
+    "name": "dragon shield",
+    "rarity": "rare",
+    "stack": 1,
+    "armor": 50,
+    "aggro": 1,
+    "defense": 3,
+    "level": 275
+  },
+  "item151": {
+    "name": "dragon helmet",
+    "rarity": "commun",
+    "stack": 1,
+    "armor": 28,
+    "level": 260
+  },
+  "item152": {
+    "name": "dragon armor",
+    "rarity": "commun",
+    "stack": 1,
+    "armor": 42,
+    "level": 275
+  },
+  "item153": {
+    "name": "dragon belt",
+    "rarity": "commun",
+    "stack": 1,
+    "armor": 21,
+    "level": 275
+  },
+  "item154": {
+    "name": "dragon legs",
+    "rarity": "commun",
+    "stack": 1,
+    "armor": 35,
+    "level": 275
+  },
+  "item155": {
+    "name": "dragon boots",
+    "rarity": "commun",
+    "stack": 1,
+    "armor": 21,
+    "speed": 1,
+    "level": 250
+  },
+  "item156": {
+    "name": "dragon glove (left)",
+    "rarity": "commun",
+    "stack": 1,
+    "armor": 14,
+    "level": 250
+  },
+  "item157": {
+    "name": "dragon glove (right)",
+    "rarity": "commun",
+    "stack": 1,
+    "armor": 14,
+    "level": 250
+  },
+  "item158": {
+    "name": "dragon backpack",
+    "rarity": "commun",
+    "stack": 1,
+    "capacity": 64,
+    "level": 225
+  },
+  "item159": {
+    "name": "christmas candy",
+    "rarity": "commun",
+    "stack": 1,
+    "description": "Increases HP and MP\nregeneration for 20 minutes\nduring the christmas event"
+  },
+  "item160": {
+    "name": "dragon light armor",
+    "rarity": "commun",
+    "stack": 1,
+    "armor": 21,
+    "speed": 9,
+    "distance": 5,
+    "level": 275
+  },
+  "item161": {
+    "name": "lizard light armor",
+    "rarity": "commun",
+    "stack": 1,
+    "armor": 18,
+    "speed": 8,
+    "distance": 4,
+    "level": 175
+  },
+  "item162": {
+    "name": "steel light armor",
+    "rarity": "commun",
+    "stack": 1,
+    "armor": 15,
+    "speed": 7,
+    "distance": 3,
+    "level": 125
+  },
+  "item163": {
+    "name": "soldier light armor",
+    "rarity": "commun",
+    "stack": 1,
+    "armor": 12,
+    "speed": 6,
+    "distance": 2,
+    "level": 100
+  },
+  "item164": {
+    "name": "iron light armor",
+    "rarity": "commun",
+    "stack": 1,
+    "armor": 9,
+    "speed": 5,
+    "distance": 1,
+    "level": 75
+  },
+  "item165": {
+    "name": "studded light armor",
+    "rarity": "commun",
+    "stack": 1,
+    "armor": 6,
+    "speed": 4,
+    "level": 35
+  },
+  "item166": {
+    "name": "leather light armor",
+    "rarity": "commun",
+    "stack": 1,
+    "armor": 3,
+    "speed": 3
+  },
+  "item167": {
+    "name": "dragon robe",
+    "rarity": "commun",
+    "stack": 1,
+    "armor": 14,
+    "magic": 9,
+    "level": 275
+  },
+  "item168": {
+    "name": "lizard robe",
+    "rarity": "commun",
+    "stack": 1,
+    "armor": 12,
+    "magic": 8,
+    "level": 175
+  },
+  "item169": {
+    "name": "drow robe",
+    "rarity": "commun",
+    "stack": 1,
+    "armor": 10,
+    "magic": 7,
+    "level": 125
+  },
+  "item170": {
+    "name": "soldier robe",
+    "rarity": "commun",
+    "stack": 1,
+    "armor": 8,
+    "magic": 6,
+    "level": 100
+  },
+  "item171": {
+    "name": "mage robe",
+    "rarity": "commun",
+    "stack": 1,
+    "armor": 6,
+    "magic": 5,
+    "level": 75
+  },
+  "item172": {
+    "name": "brown robe",
+    "rarity": "commun",
+    "stack": 1,
+    "armor": 4,
+    "magic": 4,
+    "level": 35
+  },
+  "item173": {
+    "name": "robe",
+    "rarity": "commun",
+    "stack": 1,
+    "armor": 2,
+    "magic": 3
+  },
+  "item174": {
+    "name": "hood",
+    "rarity": "commun",
+    "stack": 1,
+    "armor": 2,
+    "speed": 1
+  },
+  "item175": {
+    "name": "brown hood",
+    "rarity": "commun",
+    "stack": 1,
+    "armor": 4,
+    "speed": 2,
+    "level": 25
+  },
+  "item176": {
+    "name": "archer hood",
+    "rarity": "commun",
+    "stack": 1,
+    "armor": 6,
+    "speed": 3,
+    "level": 65
+  },
+  "item177": {
+    "name": "soldier hood",
+    "rarity": "commun",
+    "stack": 1,
+    "armor": 8,
+    "speed": 4,
+    "level": 100
+  },
+  "item178": {
+    "name": "drow hood",
+    "rarity": "commun",
+    "stack": 1,
+    "armor": 10,
+    "speed": 5,
+    "level": 125
+  },
+  "item179": {
+    "name": "lizard hood",
+    "rarity": "commun",
+    "stack": 1,
+    "armor": 12,
+    "speed": 6,
+    "level": 160
+  },
+  "item180": {
+    "name": "dragon hood",
+    "rarity": "commun",
+    "stack": 1,
+    "armor": 14,
+    "speed": 7,
+    "level": 260
+  },
+  "item181": {
+    "name": "hat",
+    "rarity": "commun",
+    "stack": 1,
+    "armor": 1,
+    "magic": 1
+  },
+  "item182": {
+    "name": "brown hat",
+    "rarity": "commun",
+    "stack": 1,
+    "armor": 2,
+    "magic": 2,
+    "level": 25
+  },
+  "item183": {
+    "name": "mage hat",
+    "rarity": "commun",
+    "stack": 1,
+    "armor": 3,
+    "magic": 3,
+    "level": 65
+  },
+  "item184": {
+    "name": "soldier hat",
+    "rarity": "commun",
+    "stack": 1,
+    "armor": 4,
+    "magic": 4,
+    "level": 100
+  },
+  "item185": {
+    "name": "drow hat",
+    "rarity": "commun",
+    "stack": 1,
+    "armor": 5,
+    "magic": 5,
+    "level": 125
+  },
+  "item186": {
+    "name": "lizard hat",
+    "rarity": "commun",
+    "stack": 1,
+    "armor": 6,
+    "magic": 6,
+    "level": 160
+  },
+  "item187": {
+    "name": "dragon hat",
+    "rarity": "commun",
+    "stack": 1,
+    "armor": 7,
+    "magic": 7,
+    "level": 260
+  },
+  "item188": {
+    "name": "frozen helmet",
+    "rarity": "commun",
+    "stack": 1,
+    "armor": 32,
+    "level": 350
+  },
+  "item189": {
+    "name": "frozen hood",
+    "rarity": "commun",
+    "stack": 1,
+    "armor": 16,
+    "speed": 8,
+    "level": 350
+  },
+  "item190": {
+    "name": "frozen hat",
+    "rarity": "commun",
+    "stack": 1,
+    "armor": 8,
+    "magic": 8,
+    "level": 350
+  },
+  "item191": {
+    "name": "frozen armor",
+    "rarity": "commun",
+    "stack": 1,
+    "armor": 48,
+    "level": 350
+  },
+  "item192": {
+    "name": "frozen light armor",
+    "rarity": "commun",
+    "stack": 1,
+    "armor": 24,
+    "speed": 10,
+    "distance": 6,
+    "level": 350
+  },
+  "item193": {
+    "name": "frozen robe",
+    "rarity": "commun",
+    "stack": 1,
+    "armor": 16,
+    "magic": 10,
+    "level": 350
+  },
+  "item194": {
+    "name": "frozen legs",
+    "rarity": "commun",
+    "stack": 1,
+    "armor": 40,
+    "level": 350
+  },
+  "item195": {
+    "name": "frozen belt",
+    "rarity": "commun",
+    "stack": 1,
+    "armor": 24,
+    "level": 325
+  },
+  "item196": {
+    "name": "frozen boots",
+    "rarity": "commun",
+    "stack": 1,
+    "armor": 24,
+    "speed": 1,
+    "level": 325
+  },
+  "item197": {
+    "name": "frozen glove (left)",
+    "rarity": "commun",
+    "stack": 1,
+    "armor": 16,
+    "level": 300
+  },
+  "item198": {
+    "name": "frozen glove (right)",
+    "rarity": "commun",
+    "stack": 1,
+    "armor": 16,
+    "level": 300
+  },
+  "item199": {
+    "name": "frozen backpack",
+    "rarity": "commun",
+    "stack": 1,
+    "capacity": 72,
+    "level": 300
+  },
+  "item200": {
+    "name": "icy broadsword",
+    "rarity": "commun",
+    "stack": 1,
+    "attack": 45,
+    "melee": 1,
+    "level": 375
+  },
+  "item201": {
+    "name": "icy broadsword",
+    "rarity": "uncommun",
+    "stack": 1,
+    "attack": 47,
+    "melee": 2,
+    "level": 375
+  },
+  "item202": {
+    "name": "icy broadsword",
+    "rarity": "rare",
+    "stack": 1,
+    "attack": 49,
+    "melee": 3,
+    "level": 375
+  },
+  "item203": {
+    "name": "icy bow",
+    "rarity": "commun",
+    "stack": 1,
+    "attack": 45,
+    "distance": 1,
+    "level": 375
+  },
+  "item204": {
+    "name": "icy bow",
+    "rarity": "uncommun",
+    "stack": 1,
+    "attack": 47,
+    "distance": 2,
+    "level": 375
+  },
+  "item205": {
+    "name": "icy bow",
+    "rarity": "rare",
+    "stack": 1,
+    "attack": 49,
+    "distance": 3,
+    "level": 375
+  },
+  "item206": {
+    "name": "icy wand",
+    "rarity": "commun",
+    "stack": 1,
+    "attack": 45,
+    "magic": 1,
+    "level": 375
+  },
+  "item207": {
+    "name": "icy wand",
+    "rarity": "uncommun",
+    "stack": 1,
+    "attack": 47,
+    "magic": 2,
+    "level": 375
+  },
+  "item208": {
+    "name": "icy wand",
+    "rarity": "rare",
+    "stack": 1,
+    "attack": 49,
+    "magic": 3,
+    "level": 375
+  },
+  "item209": {
+    "name": "icy shield",
+    "rarity": "commun",
+    "stack": 1,
+    "armor": 54,
+    "defense": 1,
+    "level": 375
+  },
+  "item210": {
+    "name": "icy shield",
+    "rarity": "uncommun",
+    "stack": 1,
+    "armor": 55,
+    "defense": 2,
+    "level": 375
+  },
+  "item211": {
+    "name": "icy shield",
+    "rarity": "rare",
+    "stack": 1,
+    "armor": 56,
+    "aggro": 1,
+    "defense": 3,
+    "level": 375
+  },
+  "item212": {
+    "name": "defense necklace",
+    "rarity": "ultra rare",
+    "stack": 1,
+    "armor": 1,
+    "defense": 5
+  },
+  "item213": {
+    "name": "magic necklace",
+    "rarity": "ultra rare",
+    "stack": 1,
+    "armor": 1,
+    "magic": 5
+  },
+  "item214": {
+    "name": "melee necklace",
+    "rarity": "ultra rare",
+    "stack": 1,
+    "armor": 1,
+    "melee": 5
+  },
+  "item215": {
+    "name": "distance necklace",
+    "rarity": "ultra rare",
+    "stack": 1,
+    "armor": 1,
+    "distance": 5
+  },
+  "item216": {
+    "name": "lizard armor",
+    "rarity": "uncommun",
+    "stack": 1,
+    "armor": 38,
+    "level": 175
+  },
+  "item217": {
+    "name": "lizard armor",
+    "rarity": "rare",
+    "stack": 1,
+    "armor": 40,
+    "aggro": 1,
+    "lizard xp": "1%",
+    "level": 175
+  },
+  "item218": {
+    "name": "lizard light armor",
+    "rarity": "uncommun",
+    "stack": 1,
+    "armor": 19,
+    "speed": 8,
+    "distance": 5,
+    "level": 175
+  },
+  "item219": {
+    "name": "lizard light armor",
+    "rarity": "rare",
+    "stack": 1,
+    "armor": 20,
+    "speed": 8,
+    "distance": 6,
+    "lizard xp": "1%",
+    "level": 175
+  },
+  "item220": {
+    "name": "lizard robe",
+    "rarity": "uncommun",
+    "stack": 1,
+    "armor": 13,
+    "magic": 9,
+    "level": 175
+  },
+  "item221": {
+    "name": "lizard robe",
+    "rarity": "rare",
+    "stack": 1,
+    "armor": 14,
+    "magic": 10,
+    "lizard xp": "1%",
+    "level": 175
+  },
+  "item222": {
+    "name": "lizard helmet",
+    "rarity": "uncommun",
+    "stack": 1,
+    "armor": 25,
+    "level": 160
+  },
+  "item223": {
+    "name": "lizard helmet",
+    "rarity": "rare",
+    "stack": 1,
+    "armor": 26,
+    "aggro": 1,
+    "lizard xp": "1%",
+    "level": 160
+  },
+  "item224": {
+    "name": "lizard hood",
+    "rarity": "uncommun",
+    "stack": 1,
+    "armor": 13,
+    "speed": 6,
+    "level": 160
+  },
+  "item225": {
+    "name": "lizard hood",
+    "rarity": "rare",
+    "stack": 1,
+    "armor": 14,
+    "speed": 6,
+    "lizard xp": "1%",
+    "level": 160
+  },
+  "item226": {
+    "name": "lizard hat",
+    "rarity": "uncommun",
+    "stack": 1,
+    "armor": 7,
+    "magic": 6,
+    "level": 160
+  },
+  "item227": {
+    "name": "lizard hat",
+    "rarity": "rare",
+    "stack": 1,
+    "armor": 8,
+    "magic": 6,
+    "lizard xp": "1%",
+    "level": 160
+  },
+  "item228": {
+    "name": "lizard belt",
+    "rarity": "uncommun",
+    "stack": 1,
+    "armor": 19,
+    "level": 175
+  },
+  "item229": {
+    "name": "lizard belt",
+    "rarity": "rare",
+    "stack": 1,
+    "armor": 20,
+    "lizard xp": "1%",
+    "level": 175
+  },
+  "item230": {
+    "name": "lizard legs",
+    "rarity": "uncommun",
+    "stack": 1,
+    "armor": 32,
+    "level": 175
+  },
+  "item231": {
+    "name": "lizard legs",
+    "rarity": "rare",
+    "stack": 1,
+    "armor": 34,
+    "lizard xp": "1%",
+    "level": 175
+  },
+  "item232": {
+    "name": "lizard boots",
+    "rarity": "uncommun",
+    "stack": 1,
+    "armor": 19,
+    "speed": 2,
+    "level": 150
+  },
+  "item233": {
+    "name": "lizard boots",
+    "rarity": "rare",
+    "stack": 1,
+    "armor": 20,
+    "speed": 3,
+    "lizard xp": "1%",
+    "level": 150
+  },
+  "item234": {
+    "name": "lizard glove (left)",
+    "rarity": "uncommun",
+    "stack": 1,
+    "armor": 13,
+    "level": 150
+  },
+  "item235": {
+    "name": "lizard glove (left)",
+    "rarity": "rare",
+    "stack": 1,
+    "armor": 14,
+    "lizard xp": "1%",
+    "level": 150
+  },
+  "item236": {
+    "name": "lizard glove (right)",
+    "rarity": "uncommun",
+    "stack": 1,
+    "armor": 13,
+    "level": 150
+  },
+  "item237": {
+    "name": "lizard glove (right)",
+    "rarity": "rare",
+    "stack": 1,
+    "armor": 14,
+    "lizard xp": "1%",
+    "level": 150
+  },
+  "item238": {
+    "name": "green backpack",
+    "rarity": "uncommun",
+    "stack": 1,
+    "capacity": 58,
+    "level": 150
+  },
+  "item239": {
+    "name": "green backpack",
+    "rarity": "rare",
+    "stack": 1,
+    "capacity": 60,
+    "level": 150
+  },
+  "item240": {
+    "name": "dragon armor",
+    "rarity": "uncommun",
+    "stack": 1,
+    "armor": 44,
+    "level": 275
+  },
+  "item241": {
+    "name": "dragon armor",
+    "rarity": "rare",
+    "stack": 1,
+    "armor": 46,
+    "aggro": 1,
+    "dragon xp": "1%",
+    "level": 275
+  },
+  "item242": {
+    "name": "dragon light armor",
+    "rarity": "uncommun",
+    "stack": 1,
+    "armor": 22,
+    "speed": 9,
+    "distance": 6,
+    "level": 275
+  },
+  "item243": {
+    "name": "dragon light armor",
+    "rarity": "rare",
+    "stack": 1,
+    "armor": 23,
+    "speed": 9,
+    "distance": 7,
+    "dragon xp": "1%",
+    "level": 275
+  },
+  "item244": {
+    "name": "dragon robe",
+    "rarity": "uncommun",
+    "stack": 1,
+    "armor": 15,
+    "magic": 10,
+    "level": 275
+  },
+  "item245": {
+    "name": "dragon robe",
+    "rarity": "rare",
+    "stack": 1,
+    "armor": 16,
+    "magic": 11,
+    "dragon xp": "1%",
+    "level": 275
+  },
+  "item246": {
+    "name": "dragon helmet",
+    "rarity": "uncommun",
+    "stack": 1,
+    "armor": 29,
+    "level": 260
+  },
+  "item247": {
+    "name": "dragon helmet",
+    "rarity": "rare",
+    "stack": 1,
+    "armor": 30,
+    "aggro": 1,
+    "dragon xp": "1%",
+    "level": 260
+  },
+  "item248": {
+    "name": "dragon hood",
+    "rarity": "uncommun",
+    "stack": 1,
+    "armor": 15,
+    "speed": 7,
+    "level": 260
+  },
+  "item249": {
+    "name": "dragon hood",
+    "rarity": "rare",
+    "stack": 1,
+    "armor": 16,
+    "speed": 7,
+    "dragon xp": "1%",
+    "level": 260
+  },
+  "item250": {
+    "name": "dragon hat",
+    "rarity": "uncommun",
+    "stack": 1,
+    "armor": 8,
+    "magic": 7,
+    "level": 260
+  },
+  "item251": {
+    "name": "dragon hat",
+    "rarity": "rare",
+    "stack": 1,
+    "armor": 9,
+    "magic": 7,
+    "dragon xp": "1%",
+    "level": 260
+  },
+  "item252": {
+    "name": "dragon belt",
+    "rarity": "uncommun",
+    "stack": 1,
+    "armor": 22,
+    "level": 275
+  },
+  "item253": {
+    "name": "dragon belt",
+    "rarity": "rare",
+    "stack": 1,
+    "armor": 23,
+    "dragon xp": "1%",
+    "level": 275
+  },
+  "item254": {
+    "name": "dragon legs",
+    "rarity": "uncommun",
+    "stack": 1,
+    "armor": 37,
+    "level": 275
+  },
+  "item255": {
+    "name": "dragon legs",
+    "rarity": "rare",
+    "stack": 1,
+    "armor": 39,
+    "dragon xp": "1%",
+    "level": 275
+  },
+  "item256": {
+    "name": "dragon boots",
+    "rarity": "uncommun",
+    "stack": 1,
+    "armor": 22,
+    "speed": 2,
+    "level": 250
+  },
+  "item257": {
+    "name": "dragon boots",
+    "rarity": "rare",
+    "stack": 1,
+    "armor": 23,
+    "speed": 3,
+    "dragon xp": "1%",
+    "level": 250
+  },
+  "item258": {
+    "name": "dragon glove (left)",
+    "rarity": "uncommun",
+    "stack": 1,
+    "armor": 15,
+    "level": 250
+  },
+  "item259": {
+    "name": "dragon glove (left)",
+    "rarity": "rare",
+    "stack": 1,
+    "armor": 16,
+    "dragon xp": "1%",
+    "level": 250
+  },
+  "item260": {
+    "name": "dragon glove (right)",
+    "rarity": "uncommun",
+    "stack": 1,
+    "armor": 15,
+    "level": 250
+  },
+  "item261": {
+    "name": "dragon glove (right)",
+    "rarity": "rare",
+    "stack": 1,
+    "armor": 16,
+    "dragon xp": "1%",
+    "level": 250
+  },
+  "item262": {
+    "name": "dragon backpack",
+    "rarity": "uncommun",
+    "stack": 1,
+    "capacity": 66,
+    "level": 225
+  },
+  "item263": {
+    "name": "dragon backpack",
+    "rarity": "rare",
+    "stack": 1,
+    "capacity": 68,
+    "level": 250
+  },
+  "item264": {
+    "name": "frozen armor",
+    "rarity": "uncommun",
+    "stack": 1,
+    "armor": 50,
+    "level": 350
+  },
+  "item265": {
+    "name": "frozen armor",
+    "rarity": "rare",
+    "stack": 1,
+    "armor": 52,
+    "aggro": 1,
+    "ice xp": "1%",
+    "level": 350
+  },
+  "item266": {
+    "name": "frozen light armor",
+    "rarity": "uncommun",
+    "stack": 1,
+    "armor": 25,
+    "speed": 10,
+    "distance": 7,
+    "level": 350
+  },
+  "item267": {
+    "name": "frozen light armor",
+    "rarity": "rare",
+    "stack": 1,
+    "armor": 26,
+    "speed": 10,
+    "distance": 8,
+    "ice xp": "1%",
+    "level": 350
+  },
+  "item268": {
+    "name": "frozen robe",
+    "rarity": "uncommun",
+    "stack": 1,
+    "armor": 17,
+    "magic": 11,
+    "level": 350
+  },
+  "item269": {
+    "name": "frozen robe",
+    "rarity": "rare",
+    "stack": 1,
+    "armor": 18,
+    "magic": 12,
+    "ice xp": "1%",
+    "level": 350
+  },
+  "item270": {
+    "name": "frozen helmet",
+    "rarity": "uncommun",
+    "stack": 1,
+    "armor": 33,
+    "level": 350
+  },
+  "item271": {
+    "name": "frozen helmet",
+    "rarity": "rare",
+    "stack": 1,
+    "armor": 34,
+    "aggro": 1,
+    "ice xp": "1%",
+    "level": 350
+  },
+  "item272": {
+    "name": "frozen hood",
+    "rarity": "uncommun",
+    "stack": 1,
+    "armor": 17,
+    "speed": 8,
+    "level": 350
+  },
+  "item273": {
+    "name": "frozen hood",
+    "rarity": "rare",
+    "stack": 1,
+    "armor": 18,
+    "speed": 8,
+    "ice xp": "1%",
+    "level": 350
+  },
+  "item274": {
+    "name": "frozen hat",
+    "rarity": "uncommun",
+    "stack": 1,
+    "armor": 9,
+    "magic": 8,
+    "level": 350
+  },
+  "item275": {
+    "name": "frozen hat",
+    "rarity": "rare",
+    "stack": 1,
+    "armor": 10,
+    "magic": 8,
+    "ice xp": "1%",
+    "level": 350
+  },
+  "item276": {
+    "name": "frozen belt",
+    "rarity": "uncommun",
+    "stack": 1,
+    "armor": 25,
+    "level": 325
+  },
+  "item277": {
+    "name": "frozen belt",
+    "rarity": "rare",
+    "stack": 1,
+    "armor": 26,
+    "ice xp": "1%",
+    "level": 325
+  },
+  "item278": {
+    "name": "frozen legs",
+    "rarity": "uncommun",
+    "stack": 1,
+    "armor": 42,
+    "level": 350
+  },
+  "item279": {
+    "name": "frozen legs",
+    "rarity": "rare",
+    "stack": 1,
+    "armor": 44,
+    "ice xp": "1%",
+    "level": 350
+  },
+  "item280": {
+    "name": "frozen boots",
+    "rarity": "uncommun",
+    "stack": 1,
+    "armor": 25,
+    "speed": 2,
+    "level": 325
+  },
+  "item281": {
+    "name": "frozen boots",
+    "rarity": "rare",
+    "stack": 1,
+    "armor": 26,
+    "speed": 3,
+    "ice xp": "1%",
+    "level": 325
+  },
+  "item282": {
+    "name": "frozen glove (left)",
+    "rarity": "uncommun",
+    "stack": 1,
+    "armor": 17,
+    "level": 300
+  },
+  "item283": {
+    "name": "frozen glove (left)",
+    "rarity": "rare",
+    "stack": 1,
+    "armor": 18,
+    "ice xp": "1%",
+    "level": 300
+  },
+  "item284": {
+    "name": "frozen glove (right)",
+    "rarity": "uncommun",
+    "stack": 1,
+    "armor": 17,
+    "level": 300
+  },
+  "item285": {
+    "name": "frozen glove (right)",
+    "rarity": "rare",
+    "stack": 1,
+    "armor": 18,
+    "ice xp": "1%",
+    "level": 300
+  },
+  "item286": {
+    "name": "frozen backpack",
+    "rarity": "uncommun",
+    "stack": 1,
+    "capacity": 74,
+    "level": 300
+  },
+  "item287": {
+    "name": "frozen backpack",
+    "rarity": "rare",
+    "stack": 1,
+    "capacity": 76,
+    "level": 300
+  },
+  "item288": {
+    "name": "golden glove (left)",
+    "rarity": "legendary",
+    "stack": 1,
+    "armor": 22,
+    "demon_xp": "2%",
+    "level": 400
+  },
+  "item289": {
+    "name": "golden glove (right)",
+    "rarity": "legendary",
+    "stack": 1,
+    "armor": 22,
+    "demon_xp": "2%",
+    "level": 400
+  },
+  "item291": {
+    "name": "superior magic necklace",
+    "rarity": "legendary",
+    "stack": 1,
+    "armor": 1,
+    "magic": 10
+  },
+  "item292": {
+    "name": "superior melee necklace",
+    "rarity": "legendary",
+    "stack": 1,
+    "armor": 1,
+    "melee": 10
+  },
+  "item293": {
+    "name": "superior distance necklace",
+    "rarity": "legendary",
+    "stack": 1,
+    "armor": 1,
+    "distance": 10
+  },
+  "item294": {
+    "name": "explorers town scroll",
+    "rarity": "commun",
+    "stack": 20,
+    "level": 150
+  },
+  "item295": {
+    "name": "assassin's key",
+    "rarity": "commun",
+    "stack": 1
+  },
+  "item296": {
+    "name": "vampire's key",
+    "rarity": "commun",
+    "stack": 1
+  },
+  "item297": {
+    "name": "drow's key",
+    "rarity": "commun",
+    "stack": 1
+  },
+  "item298": {
+    "name": "lizard's key",
+    "rarity": "commun",
+    "stack": 1
+  },
+  "item299": {
+    "name": "gargoyle helmet",
+    "rarity": "commun",
+    "stack": 1,
+    "armor": 24,
+    "level": 160
+  },
+  "item300": {
+    "name": "gargoyle helmet",
+    "rarity": "uncommun",
+    "stack": 1,
+    "armor": 25,
+    "level": 160
+  },
+  "item301": {
+    "name": "gargoyle helmet",
+    "rarity": "rare",
+    "stack": 1,
+    "armor": 26,
+    "aggro": 1,
+    "gargoyle xp": "1%",
+    "level": 160
+  },
+  "item302": {
+    "name": "gargoyle hood",
+    "rarity": "commun",
+    "stack": 1,
+    "armor": 12,
+    "speed": 6,
+    "level": 160
+  },
+  "item303": {
+    "name": "gargoyle hood",
+    "rarity": "uncommun",
+    "stack": 1,
+    "armor": 13,
+    "speed": 6,
+    "level": 160
+  },
+  "item304": {
+    "name": "gargoyle hood",
+    "rarity": "rare",
+    "stack": 1,
+    "armor": 14,
+    "speed": 6,
+    "gargoyle xp": "1%",
+    "level": 160
+  },
+  "item305": {
+    "name": "gargoyle hat",
+    "rarity": "commun",
+    "stack": 1,
+    "armor": 6,
+    "magic": 6,
+    "level": 160
+  },
+  "item306": {
+    "name": "gargoyle hat",
+    "rarity": "uncommun",
+    "stack": 1,
+    "armor": 7,
+    "magic": 6,
+    "level": 160
+  },
+  "item307": {
+    "name": "gargoyle hat",
+    "rarity": "rare",
+    "stack": 1,
+    "armor": 8,
+    "magic": 6,
+    "gargoyle xp": "1%",
+    "level": 160
+  },
+  "item308": {
+    "name": "gargoyle armor",
+    "rarity": "commun",
+    "stack": 1,
+    "armor": 36,
+    "level": 175
+  },
+  "item309": {
+    "name": "gargoyle armor",
+    "rarity": "uncommun",
+    "stack": 1,
+    "armor": 38,
+    "level": 175
+  },
+  "item310": {
+    "name": "gargoyle armor",
+    "rarity": "rare",
+    "stack": 1,
+    "armor": 40,
+    "aggro": 1,
+    "gargoyle xp": "1%",
+    "level": 175
+  },
+  "item311": {
+    "name": "gargoyle light armor",
+    "rarity": "commun",
+    "stack": 1,
+    "armor": 18,
+    "speed": 8,
+    "distance": 4,
+    "level": 175
+  },
+  "item312": {
+    "name": "gargoyle light armor",
+    "rarity": "uncommun",
+    "stack": 1,
+    "armor": 19,
+    "speed": 8,
+    "distance": 5,
+    "level": 175
+  },
+  "item313": {
+    "name": "gargoyle light armor",
+    "rarity": "rare",
+    "stack": 1,
+    "armor": 20,
+    "speed": 8,
+    "distance": 6,
+    "gargoyle xp": "1%",
+    "level": 175
+  },
+  "item314": {
+    "name": "gargoyle robe",
+    "rarity": "commun",
+    "stack": 1,
+    "armor": 12,
+    "magic": 8,
+    "level": 175
+  },
+  "item315": {
+    "name": "gargoyle robe",
+    "rarity": "uncommun",
+    "stack": 1,
+    "armor": 13,
+    "magic": 9,
+    "level": 175
+  },
+  "item316": {
+    "name": "gargoyle robe",
+    "rarity": "rare",
+    "stack": 1,
+    "armor": 14,
+    "magic": 10,
+    "gargoyle xp": "1%",
+    "level": 175
+  },
+  "item317": {
+    "name": "gargoyle glove (left)",
+    "rarity": "commun",
+    "stack": 1,
+    "armor": 12,
+    "level": 150
+  },
+  "item318": {
+    "name": "gargoyle glove (left)",
+    "rarity": "uncommun",
+    "stack": 1,
+    "armor": 13,
+    "level": 150
+  },
+  "item319": {
+    "name": "gargoyle glove (left)",
+    "rarity": "rare",
+    "stack": 1,
+    "armor": 14,
+    "gargoyle xp": "1%",
+    "level": 150
+  },
+  "item320": {
+    "name": "gargoyle glove (right)",
+    "rarity": "commun",
+    "stack": 1,
+    "armor": 12,
+    "level": 150
+  },
+  "item321": {
+    "name": "gargoyle glove (right)",
+    "rarity": "uncommun",
+    "stack": 1,
+    "armor": 13,
+    "level": 150
+  },
+  "item322": {
+    "name": "gargoyle glove (right)",
+    "rarity": "rare",
+    "stack": 1,
+    "armor": 14,
+    "gargoyle xp": "1%",
+    "level": 150
+  },
+  "item323": {
+    "name": "gargoyle belt",
+    "rarity": "commun",
+    "stack": 1,
+    "armor": 18,
+    "level": 175
+  },
+  "item324": {
+    "name": "gargoyle belt",
+    "rarity": "uncommun",
+    "stack": 1,
+    "armor": 19,
+    "level": 175
+  },
+  "item325": {
+    "name": "gargoyle belt",
+    "rarity": "rare",
+    "stack": 1,
+    "armor": 20,
+    "gargoyle xp": "1%",
+    "level": 175
+  },
+  "item326": {
+    "name": "gargoyle legs",
+    "rarity": "commun",
+    "stack": 1,
+    "armor": 30,
+    "level": 175
+  },
+  "item327": {
+    "name": "gargoyle legs",
+    "rarity": "uncommun",
+    "stack": 1,
+    "armor": 32,
+    "level": 175
+  },
+  "item328": {
+    "name": "gargoyle legs",
+    "rarity": "rare",
+    "stack": 1,
+    "armor": 34,
+    "gargoyle xp": "1%",
+    "level": 175
+  },
+  "item329": {
+    "name": "gargoyle boots",
+    "rarity": "commun",
+    "stack": 1,
+    "armor": 18,
+    "speed": 1,
+    "level": 150
+  },
+  "item330": {
+    "name": "gargoyle boots",
+    "rarity": "uncommun",
+    "stack": 1,
+    "armor": 19,
+    "speed": 2,
+    "level": 150
+  },
+  "item331": {
+    "name": "gargoyle boots",
+    "rarity": "rare",
+    "stack": 1,
+    "armor": 20,
+    "speed": 3,
+    "gargoyle xp": "1%",
+    "level": 150
+  },
+  "item332": {
+    "name": "gargoyle backpack",
+    "rarity": "commun",
+    "stack": 1,
+    "capacity": 56,
+    "level": 150
+  },
+  "item333": {
+    "name": "gargoyle backpack",
+    "rarity": "uncommun",
+    "stack": 1,
+    "capacity": 58,
+    "level": 150
+  },
+  "item334": {
+    "name": "gargoyle backpack",
+    "rarity": "rare",
+    "stack": 1,
+    "capacity": 60,
+    "level": 150
+  },
+  "item335": {
+    "name": "gargoyle slayer",
+    "rarity": "commun",
+    "stack": 1,
+    "attack": 35,
+    "level": 175
+  },
+  "item336": {
+    "name": "gargoyle slayer",
+    "rarity": "uncommun",
+    "stack": 1,
+    "attack": 37,
+    "level": 175
+  },
+  "item337": {
+    "name": "gargoyle slayer",
+    "rarity": "rare",
+    "stack": 1,
+    "attack": 39,
+    "level": 175
+  },
+  "item338": {
+    "name": "gargoyle shield",
+    "rarity": "commun",
+    "stack": 1,
+    "armor": 42,
+    "level": 175
+  },
+  "item339": {
+    "name": "gargoyle shield",
+    "rarity": "uncommun",
+    "stack": 1,
+    "armor": 43,
+    "defense": 1,
+    "level": 175
+  },
+  "item340": {
+    "name": "gargoyle shield",
+    "rarity": "rare",
+    "stack": 1,
+    "armor": 44,
+    "defense": 2,
+    "aggro": 1,
+    "level": 175
+  },
+  "item341": {
+    "name": "gargoyle bow",
+    "rarity": "commun",
+    "stack": 1,
+    "attack": 35,
+    "level": 175
+  },
+  "item342": {
+    "name": "gargoyle bow",
+    "rarity": "uncommun",
+    "stack": 1,
+    "attack": 37,
+    "level": 175
+  },
+  "item343": {
+    "name": "gargoyle bow",
+    "rarity": "rare",
+    "stack": 1,
+    "attack": 39,
+    "level": 175
+  },
+  "item344": {
+    "name": "gargoyle wand",
+    "rarity": "commun",
+    "stack": 1,
+    "attack": 35,
+    "level": 175
+  },
+  "item345": {
+    "name": "gargoyle wand",
+    "rarity": "uncommun",
+    "stack": 1,
+    "attack": 37,
+    "level": 175
+  },
+  "item346": {
+    "name": "gargoyle wand",
+    "rarity": "rare",
+    "stack": 1,
+    "attack": 39,
+    "level": 175
+  },
+  "item347": {
+    "name": "death charm",
+    "rarity": "commun",
+    "stack": 1,
+    "description": "Avoid experience death\npenalties, one use only"
+  },
+  "item348": {
+    "name": "return scroll",
+    "rarity": "commun",
+    "stack": 20,
+    "description": "Teleports you to the last place\nwhere you used a town scroll"
+  },
+  "item349": {
+    "name": "gargoyle's key",
+    "rarity": "commun",
+    "stack": 1
+  },
+  "item350": {
+    "name": "golden belt",
+    "rarity": "legendary",
+    "stack": 1,
+    "armor": 31,
+    "demon_xp": "2%",
+    "level": 400
+  },
+  "item351": {
+    "name": "healer helmet",
+    "rarity": "rare",
+    "stack": 1,
+    "armor": 12,
+    "healer": "10%"
+  },
+  "item352": {
+    "name": "healer helmet",
+    "rarity": "ultra rare",
+    "stack": 1,
+    "armor": 12,
+    "healer": "13%"
+  },
+  "item353": {
+    "name": "healer helmet",
+    "rarity": "legendary",
+    "stack": 1,
+    "armor": 12,
+    "healer": "15%"
+  },
+  "item354": {
+    "name": "healer armor",
+    "rarity": "rare",
+    "stack": 1,
+    "armor": 18,
+    "healer": "15%"
+  },
+  "item355": {
+    "name": "healer armor",
+    "rarity": "ultra rare",
+    "stack": 1,
+    "armor": 18,
+    "healer": "17%"
+  },
+  "item356": {
+    "name": "healer armor",
+    "rarity": "legendary",
+    "stack": 1,
+    "armor": 18,
+    "healer": "20%"
+  },
+  "item357": {
+    "name": "healer legs",
+    "rarity": "rare",
+    "stack": 1,
+    "armor": 15,
+    "healer": "10%"
+  },
+  "item358": {
+    "name": "healer legs",
+    "rarity": "ultra rare",
+    "stack": 1,
+    "armor": 15,
+    "healer": "13%"
+  },
+  "item359": {
+    "name": "healer legs",
+    "rarity": "legendary",
+    "stack": 1,
+    "armor": 15,
+    "healer": "15%"
+  },
+  "item360": {
+    "name": "healer boots",
+    "rarity": "rare",
+    "stack": 1,
+    "armor": 9,
+    "healer": "5%"
+  },
+  "item361": {
+    "name": "healer boots",
+    "rarity": "ultra rare",
+    "stack": 1,
+    "armor": 9,
+    "healer": "8%"
+  },
+  "item362": {
+    "name": "healer boots",
+    "rarity": "legendary",
+    "stack": 1,
+    "armor": 9,
+    "healer": "10%"
+  },
+  "item363": {
+    "name": "healer glove (right)",
+    "rarity": "rare",
+    "stack": 1,
+    "armor": 6,
+    "healer": "3%"
+  },
+  "item364": {
+    "name": "healer glove (right)",
+    "rarity": "ultra rare",
+    "stack": 1,
+    "armor": 6,
+    "healer": "4%"
+  },
+  "item365": {
+    "name": "healer glove (right)",
+    "rarity": "legendary",
+    "stack": 1,
+    "armor": 6,
+    "healer": "5%"
+  },
+  "item366": {
+    "name": "healer glove (left)",
+    "rarity": "rare",
+    "stack": 1,
+    "armor": 6,
+    "healer": "3%"
+  },
+  "item367": {
+    "name": "healer glove (left)",
+    "rarity": "ultra rare",
+    "stack": 1,
+    "armor": 6,
+    "healer": "4%"
+  },
+  "item368": {
+    "name": "healer glove (left)",
+    "rarity": "legendary",
+    "stack": 1,
+    "armor": 6,
+    "healer": "5%"
+  },
+  "item369": {
+    "name": "healer belt",
+    "rarity": "rare",
+    "stack": 1,
+    "armor": 9,
+    "healer": "5%"
+  },
+  "item370": {
+    "name": "healer belt",
+    "rarity": "ultra rare",
+    "stack": 1,
+    "armor": 9,
+    "healer": "8%"
+  },
+  "item371": {
+    "name": "healer belt",
+    "rarity": "legendary",
+    "stack": 1,
+    "armor": 9,
+    "healer": "10%"
+  },
+  "item372": {
+    "name": "healer backpack",
+    "rarity": "rare",
+    "stack": 1,
+    "capacity": 80,
+    "level": 300
+  },
+  "item373": {
+    "name": "healer backpack",
+    "rarity": "ultra rare",
+    "stack": 1,
+    "capacity": 82,
+    "level": 300
+  },
+  "item374": {
+    "name": "healer backpack",
+    "rarity": "legendary",
+    "stack": 1,
+    "capacity": 84,
+    "level": 300
+  },
+  "item375": {
+    "name": "healer necklace",
+    "rarity": "ultra rare",
+    "stack": 1,
+    "healer": "5%"
+  },
+  "item376": {
+    "name": "superior healer necklace",
+    "rarity": "legendary",
+    "stack": 1,
+    "healer": "10%"
+  },
+  "item377": {
+    "name": "healer ring",
+    "rarity": "ultra rare",
+    "stack": 1,
+    "healer": "5%"
+  },
+  "item378": {
+    "name": "superior healer ring",
+    "rarity": "legendary",
+    "stack": 1,
+    "healer": "10%"
+  },
+  "item379": {
+    "name": "recovery helmet",
+    "rarity": "rare",
+    "stack": 1,
+    "armor": 20,
+    "aggro": 1,
+    "recovery": "10%"
+  },
+  "item380": {
+    "name": "recovery helmet",
+    "rarity": "ultra rare",
+    "stack": 1,
+    "armor": 20,
+    "aggro": 2,
+    "recovery": "13%"
+  },
+  "item381": {
+    "name": "recovery helmet",
+    "rarity": "legendary",
+    "stack": 1,
+    "armor": 20,
+    "aggro": 3,
+    "recovery": "15%"
+  },
+  "item382": {
+    "name": "recovery armor",
+    "rarity": "rare",
+    "stack": 1,
+    "armor": 30,
+    "aggro": 1,
+    "recovery": "15%"
+  },
+  "item383": {
+    "name": "recovery armor",
+    "rarity": "ultra rare",
+    "stack": 1,
+    "armor": 30,
+    "aggro": 2,
+    "recovery": "17%"
+  },
+  "item384": {
+    "name": "recovery armor",
+    "rarity": "legendary",
+    "stack": 1,
+    "aggro": 3,
+    "armor": 30,
+    "recovery": "20%"
+  },
+  "item385": {
+    "name": "recovery legs",
+    "rarity": "rare",
+    "stack": 1,
+    "armor": 25,
+    "recovery": "10%"
+  },
+  "item386": {
+    "name": "recovery legs",
+    "rarity": "ultra rare",
+    "stack": 1,
+    "armor": 25,
+    "recovery": "13%"
+  },
+  "item387": {
+    "name": "recovery legs",
+    "rarity": "legendary",
+    "stack": 1,
+    "armor": 25,
+    "recovery": "15%"
+  },
+  "item388": {
+    "name": "recovery boots",
+    "rarity": "rare",
+    "stack": 1,
+    "armor": 15,
+    "recovery": "5%"
+  },
+  "item389": {
+    "name": "recovery boots",
+    "rarity": "ultra rare",
+    "stack": 1,
+    "armor": 15,
+    "recovery": "8%"
+  },
+  "item390": {
+    "name": "recovery boots",
+    "rarity": "legendary",
+    "stack": 1,
+    "armor": 15,
+    "recovery": "10%"
+  },
+  "item391": {
+    "name": "recovery glove (right)",
+    "rarity": "rare",
+    "stack": 1,
+    "armor": 10,
+    "recovery": "3%"
+  },
+  "item392": {
+    "name": "recovery glove (right)",
+    "rarity": "ultra rare",
+    "stack": 1,
+    "armor": 10,
+    "recovery": "4%"
+  },
+  "item393": {
+    "name": "recovery glove (right)",
+    "rarity": "legendary",
+    "stack": 1,
+    "armor": 10,
+    "recovery": "5%"
+  },
+  "item394": {
+    "name": "recovery glove (left)",
+    "rarity": "rare",
+    "stack": 1,
+    "armor": 10,
+    "recovery": "3%"
+  },
+  "item395": {
+    "name": "recovery glove (left)",
+    "rarity": "ultra rare",
+    "stack": 1,
+    "armor": 10,
+    "recovery": "4%"
+  },
+  "item396": {
+    "name": "recovery glove (left)",
+    "rarity": "legendary",
+    "stack": 1,
+    "armor": 10,
+    "recovery": "5%"
+  },
+  "item397": {
+    "name": "recovery belt",
+    "rarity": "rare",
+    "stack": 1,
+    "armor": 15,
+    "recovery": "5%"
+  },
+  "item398": {
+    "name": "recovery belt",
+    "rarity": "ultra rare",
+    "stack": 1,
+    "armor": 15,
+    "recovery": "8%"
+  },
+  "item399": {
+    "name": "recovery belt",
+    "rarity": "legendary",
+    "stack": 1,
+    "armor": 15,
+    "recovery": "10%"
+  },
+  "item400": {
+    "name": "recovery backpack",
+    "rarity": "rare",
+    "stack": 1,
+    "capacity": 80,
+    "level": 300
+  },
+  "item401": {
+    "name": "recovery backpack",
+    "rarity": "ultra rare",
+    "stack": 1,
+    "capacity": 82,
+    "level": 300
+  },
+  "item402": {
+    "name": "recovery backpack",
+    "rarity": "legendary",
+    "stack": 1,
+    "capacity": 84,
+    "level": 300
+  },
+  "item403": {
+    "name": "recovery necklace",
+    "rarity": "ultra rare",
+    "stack": 1,
+    "recovery": "5%"
+  },
+  "item404": {
+    "name": "superior recovery necklace",
+    "rarity": "legendary",
+    "stack": 1,
+    "recovery": "10%"
+  },
+  "item405": {
+    "name": "recovery ring",
+    "rarity": "ultra rare",
+    "stack": 1,
+    "recovery": "5%"
+  },
+  "item406": {
+    "name": "superior recovery ring",
+    "rarity": "legendary",
+    "stack": 1,
+    "recovery": "10%"
+  },
+  "item407": {
+    "name": "minotaur helmet",
+    "rarity": "commun",
+    "stack": 1,
+    "armor": 28,
+    "level": 260
+  },
+  "item408": {
+    "name": "minotaur helmet",
+    "rarity": "uncommun",
+    "stack": 1,
+    "armor": 29,
+    "level": 260
+  },
+  "item409": {
+    "name": "minotaur helmet",
+    "rarity": "rare",
+    "stack": 1,
+    "armor": 30,
+    "aggro": 1,
+    "minotaur xp": "1%",
+    "level": 260
+  },
+  "item410": {
+    "name": "minotaur hood",
+    "rarity": "commun",
+    "stack": 1,
+    "armor": 14,
+    "speed": 7,
+    "level": 260
+  },
+  "item411": {
+    "name": "minotaur hood",
+    "rarity": "uncommun",
+    "stack": 1,
+    "armor": 15,
+    "speed": 7,
+    "level": 260
+  },
+  "item412": {
+    "name": "minotaur hood",
+    "rarity": "rare",
+    "stack": 1,
+    "armor": 16,
+    "speed": 7,
+    "minotaur xp": "1%",
+    "level": 260
+  },
+  "item413": {
+    "name": "minotaur hat",
+    "rarity": "commun",
+    "stack": 1,
+    "armor": 7,
+    "magic": 7,
+    "level": 260
+  },
+  "item414": {
+    "name": "minotaur hat",
+    "rarity": "uncommun",
+    "stack": 1,
+    "armor": 8,
+    "magic": 7,
+    "level": 260
+  },
+  "item415": {
+    "name": "minotaur hat",
+    "rarity": "rare",
+    "stack": 1,
+    "armor": 9,
+    "magic": 7,
+    "minotaur xp": "1%",
+    "level": 260
+  },
+  "item416": {
+    "name": "minotaur armor",
+    "rarity": "commun",
+    "stack": 1,
+    "armor": 42,
+    "level": 275
+  },
+  "item417": {
+    "name": "minotaur armor",
+    "rarity": "uncommun",
+    "stack": 1,
+    "armor": 44,
+    "level": 275
+  },
+  "item418": {
+    "name": "minotaur armor",
+    "rarity": "rare",
+    "stack": 1,
+    "armor": 46,
+    "aggro": 1,
+    "minotaur xp": "1%",
+    "level": 275
+  },
+  "item419": {
+    "name": "minotaur light armor",
+    "rarity": "commun",
+    "stack": 1,
+    "armor": 21,
+    "speed": 9,
+    "distance": 5,
+    "level": 275
+  },
+  "item420": {
+    "name": "minotaur light armor",
+    "rarity": "uncommun",
+    "stack": 1,
+    "armor": 22,
+    "speed": 9,
+    "distance": 6,
+    "level": 275
+  },
+  "item421": {
+    "name": "minotaur light armor",
+    "rarity": "rare",
+    "stack": 1,
+    "armor": 23,
+    "speed": 9,
+    "distance": 7,
+    "minotaur xp": "1%",
+    "level": 275
+  },
+  "item422": {
+    "name": "minotaur robe",
+    "rarity": "commun",
+    "stack": 1,
+    "armor": 14,
+    "magic": 9,
+    "level": 275
+  },
+  "item423": {
+    "name": "minotaur robe",
+    "rarity": "uncommun",
+    "stack": 1,
+    "armor": 15,
+    "magic": 10,
+    "level": 275
+  },
+  "item424": {
+    "name": "minotaur robe",
+    "rarity": "rare",
+    "stack": 1,
+    "armor": 16,
+    "magic": 11,
+    "minotaur xp": "1%",
+    "level": 275
+  },
+  "item425": {
+    "name": "minotaur belt",
+    "rarity": "commun",
+    "stack": 1,
+    "armor": 21,
+    "level": 275
+  },
+  "item426": {
+    "name": "minotaur belt",
+    "rarity": "uncommun",
+    "stack": 1,
+    "armor": 22,
+    "level": 275
+  },
+  "item427": {
+    "name": "minotaur belt",
+    "rarity": "rare",
+    "stack": 1,
+    "armor": 23,
+    "minotaur xp": "1%",
+    "level": 275
+  },
+  "item428": {
+    "name": "minotaur legs",
+    "rarity": "commun",
+    "stack": 1,
+    "armor": 35,
+    "level": 275
+  },
+  "item429": {
+    "name": "minotaur legs",
+    "rarity": "uncommun",
+    "stack": 1,
+    "armor": 37,
+    "level": 275
+  },
+  "item430": {
+    "name": "minotaur legs",
+    "rarity": "rare",
+    "stack": 1,
+    "armor": 39,
+    "minotaur xp": "1%",
+    "level": 275
+  },
+  "item431": {
+    "name": "minotaur boots",
+    "rarity": "commun",
+    "stack": 1,
+    "armor": 21,
+    "speed": 1,
+    "level": 250
+  },
+  "item432": {
+    "name": "minotaur boots",
+    "rarity": "uncommun",
+    "stack": 1,
+    "armor": 22,
+    "speed": 2,
+    "level": 250
+  },
+  "item433": {
+    "name": "minotaur boots",
+    "rarity": "rare",
+    "stack": 1,
+    "armor": 23,
+    "speed": 3,
+    "minotaur xp": "1%",
+    "level": 250
+  },
+  "item434": {
+    "name": "minotaur glove (right)",
+    "rarity": "commun",
+    "stack": 1,
+    "armor": 14,
+    "level": 250
+  },
+  "item435": {
+    "name": "minotaur glove (right)",
+    "rarity": "uncommun",
+    "stack": 1,
+    "armor": 15,
+    "level": 250
+  },
+  "item436": {
+    "name": "minotaur glove (right)",
+    "rarity": "rare",
+    "stack": 1,
+    "armor": 16,
+    "minotaur xp": "1%",
+    "level": 250
+  },
+  "item437": {
+    "name": "minotaur glove (left)",
+    "rarity": "commun",
+    "stack": 1,
+    "armor": 14,
+    "level": 250
+  },
+  "item438": {
+    "name": "minotaur glove (left)",
+    "rarity": "uncommun",
+    "stack": 1,
+    "armor": 15,
+    "level": 250
+  },
+  "item439": {
+    "name": "minotaur glove (left)",
+    "rarity": "rare",
+    "stack": 1,
+    "armor": 16,
+    "minotaur xp": "1%",
+    "level": 250
+  },
+  "item440": {
+    "name": "minotaur backpack",
+    "rarity": "commun",
+    "stack": 1,
+    "capacity": 64,
+    "level": 225
+  },
+  "item441": {
+    "name": "minotaur backpack",
+    "rarity": "uncommun",
+    "stack": 1,
+    "capacity": 66,
+    "level": 225
+  },
+  "item442": {
+    "name": "minotaur backpack",
+    "rarity": "rare",
+    "stack": 1,
+    "capacity": 68,
+    "level": 225
+  },
+  "item443": {
+    "name": "minotaur slayer",
+    "rarity": "commun",
+    "stack": 1,
+    "attack": 40,
+    "melee": 1,
+    "level": 275
+  },
+  "item444": {
+    "name": "minotaur slayer",
+    "rarity": "uncommun",
+    "stack": 1,
+    "attack": 42,
+    "melee": 2,
+    "level": 275
+  },
+  "item445": {
+    "name": "minotaur slayer",
+    "rarity": "rare",
+    "stack": 1,
+    "attack": 44,
+    "melee": 3,
+    "level": 275
+  },
+  "item446": {
+    "name": "minotaur bow",
+    "rarity": "commun",
+    "stack": 1,
+    "attack": 40,
+    "distance": 1,
+    "level": 275
+  },
+  "item447": {
+    "name": "minotaur bow",
+    "rarity": "uncommun",
+    "stack": 1,
+    "attack": 42,
+    "distance": 2,
+    "level": 275
+  },
+  "item448": {
+    "name": "minotaur bow",
+    "rarity": "rare",
+    "stack": 1,
+    "attack": 44,
+    "distance": 3,
+    "level": 275
+  },
+  "item449": {
+    "name": "minotaur wand",
+    "rarity": "commun",
+    "stack": 1,
+    "attack": 40,
+    "magic": 1,
+    "level": 275
+  },
+  "item450": {
+    "name": "minotaur wand",
+    "rarity": "uncommun",
+    "stack": 1,
+    "attack": 42,
+    "magic": 2,
+    "level": 275
+  },
+  "item451": {
+    "name": "minotaur wand",
+    "rarity": "rare",
+    "stack": 1,
+    "attack": 44,
+    "magic": 3,
+    "level": 275
+  },
+  "item452": {
+    "name": "minotaur shield",
+    "rarity": "commun",
+    "stack": 1,
+    "armor": 48,
+    "defense": 1,
+    "level": 275
+  },
+  "item453": {
+    "name": "minotaur shield",
+    "rarity": "uncommun",
+    "stack": 1,
+    "armor": 49,
+    "defense": 2,
+    "level": 275
+  },
+  "item454": {
+    "name": "minotaur shield",
+    "rarity": "rare",
+    "stack": 1,
+    "armor": 50,
+    "defense": 3,
+    "aggro": 1,
+    "level": 275
+  },
+  "item455": {
+    "name": "golden training dagger",
+    "rarity": "legendary",
+    "stack": 1,
+    "attack": 4
+  },
+  "item456": {
+    "name": "golden training bow",
+    "rarity": "legendary",
+    "stack": 1,
+    "attack": 4
+  },
+  "item457": {
+    "name": "golden training wand",
+    "rarity": "legendary",
+    "stack": 1,
+    "attack": 4
+  },
+  "item458": {
+    "name": "destination scroll",
+    "rarity": "commun",
+    "stack": 20,
+    "description": "Teleports you to your chosen\ndestination"
+  },
+  "item459": {
+    "name": "nose ring",
+    "rarity": "commun",
+    "stack": 1,
+    "description": "Can be used as key ring."
+  },
+  "item460": {
+    "name": "key ring",
+    "rarity": "commun",
+    "stack": 1,
+    "description": "Assassin's key."
+  },
+  "item461": {
+    "name": "key ring",
+    "rarity": "uncommun",
+    "stack": 1,
+    "description": "Assassin's key\nVampire's key"
+  },
+  "item462": {
+    "name": "key ring",
+    "rarity": "rare",
+    "stack": 1,
+    "description": "Assassin's key\nVampire's key\nDrow's key"
+  },
+  "item463": {
+    "name": "key ring",
+    "rarity": "ultra rare",
+    "stack": 1,
+    "description": "Assassin's key\nVampire's key\nDrow's key\nLizard's key"
+  },
+  "item464": {
+    "name": "key ring",
+    "rarity": "legendary",
+    "stack": 1,
+    "description": "Assassin's key\nVampire's key\nDrow's key\nLizard's key\nGargoyle's key"
+  },
+  "item465": {
+    "name": "santa's backpack",
+    "rarity": "legendary",
+    "stack": 1,
+    "capacity": 88,
+    "level": 450
+  },
+  "item466": {
+    "name": "tracker scroll",
+    "rarity": "commun",
+    "stack": 20,
+    "description": "Helps your track a character for\na short period of time"
+  },
+  "item467": {
+    "name": "lava helmet",
+    "rarity": "commun",
+    "stack": 1,
+    "armor": 32,
+    "level": 350
+  },
+  "item468": {
+    "name": "lava helmet",
+    "rarity": "uncommun",
+    "stack": 1,
+    "armor": 44,
+    "level": 350
+  },
+  "item469": {
+    "name": "lava helmet",
+    "rarity": "rare",
+    "stack": 1,
+    "armor": 34,
+    "aggro": 1,
+    "lava xp": "1%",
+    "level": 350
+  },
+  "item470": {
+    "name": "lava hood",
+    "rarity": "commun",
+    "stack": 1,
+    "armor": 16,
+    "speed": 8,
+    "level": 350
+  },
+  "item471": {
+    "name": "lava hood",
+    "rarity": "uncommun",
+    "stack": 1,
+    "armor": 17,
+    "speed": 8,
+    "level": 350
+  },
+  "item472": {
+    "name": "lava hood",
+    "rarity": "rare",
+    "stack": 1,
+    "armor": 18,
+    "speed": 8,
+    "lava xp": "1%",
+    "level": 350
+  },
+  "item473": {
+    "name": "lava hat",
+    "rarity": "commun",
+    "stack": 1,
+    "armor": 8,
+    "magic": 8,
+    "level": 350
+  },
+  "item474": {
+    "name": "lava hat",
+    "rarity": "uncommun",
+    "stack": 1,
+    "armor": 9,
+    "magic": 8,
+    "level": 350
+  },
+  "item475": {
+    "name": "lava hat",
+    "rarity": "rare",
+    "stack": 1,
+    "armor": 10,
+    "magic": 8,
+    "lava xp": "1%",
+    "level": 350
+  },
+  "item476": {
+    "name": "lava armor",
+    "rarity": "commun",
+    "stack": 1,
+    "armor": 48,
+    "level": 350
+  },
+  "item477": {
+    "name": "lava armor",
+    "rarity": "uncommun",
+    "stack": 1,
+    "armor": 50,
+    "level": 350
+  },
+  "item478": {
+    "name": "lava armor",
+    "rarity": "rare",
+    "stack": 1,
+    "armor": 52,
+    "aggro": 1,
+    "lava xp": "1%",
+    "level": 350
+  },
+  "item479": {
+    "name": "lava light armor",
+    "rarity": "commun",
+    "stack": 1,
+    "armor": 24,
+    "speed": 10,
+    "distance": 6,
+    "level": 350
+  },
+  "item480": {
+    "name": "lava light armor",
+    "rarity": "uncommun",
+    "stack": 1,
+    "armor": 25,
+    "speed": 10,
+    "distance": 7,
+    "level": 350
+  },
+  "item481": {
+    "name": "lava light armor",
+    "rarity": "rare",
+    "stack": 1,
+    "armor": 26,
+    "speed": 10,
+    "distance": 8,
+    "lava xp": "1%",
+    "level": 350
+  },
+  "item482": {
+    "name": "lava robe",
+    "rarity": "commun",
+    "stack": 1,
+    "armor": 16,
+    "magic": 10,
+    "level": 350
+  },
+  "item483": {
+    "name": "lava robe",
+    "rarity": "uncommun",
+    "stack": 1,
+    "armor": 17,
+    "magic": 11,
+    "level": 350
+  },
+  "item484": {
+    "name": "lava robe",
+    "rarity": "rare",
+    "stack": 1,
+    "armor": 18,
+    "magic": 12,
+    "lava xp": "1%",
+    "level": 350
+  },
+  "item485": {
+    "name": "lava belt",
+    "rarity": "commun",
+    "stack": 1,
+    "armor": 24,
+    "level": 325
+  },
+  "item486": {
+    "name": "lava belt",
+    "rarity": "uncommun",
+    "stack": 1,
+    "armor": 25,
+    "level": 325
+  },
+  "item487": {
+    "name": "lava belt",
+    "rarity": "rare",
+    "stack": 1,
+    "armor": 26,
+    "lava xp": "1%",
+    "level": 325
+  },
+  "item488": {
+    "name": "lava legs",
+    "rarity": "commun",
+    "stack": 1,
+    "armor": 40,
+    "level": 350
+  },
+  "item489": {
+    "name": "lava legs",
+    "rarity": "uncommun",
+    "stack": 1,
+    "armor": 42,
+    "level": 350
+  },
+  "item490": {
+    "name": "lava legs",
+    "rarity": "rare",
+    "stack": 1,
+    "armor": 44,
+    "lava xp": "1%",
+    "level": 350
+  },
+  "item491": {
+    "name": "lava boots",
+    "rarity": "commun",
+    "stack": 1,
+    "armor": 24,
+    "speed": 1,
+    "level": 325
+  },
+  "item492": {
+    "name": "lava boots",
+    "rarity": "uncommun",
+    "stack": 1,
+    "armor": 25,
+    "speed": 2,
+    "level": 325
+  },
+  "item493": {
+    "name": "lava boots",
+    "rarity": "rare",
+    "stack": 1,
+    "armor": 26,
+    "speed": 3,
+    "lava xp": "1%",
+    "level": 325
+  },
+  "item494": {
+    "name": "lava glove (right)",
+    "rarity": "commun",
+    "stack": 1,
+    "armor": 16,
+    "level": 300
+  },
+  "item495": {
+    "name": "lava glove (right)",
+    "rarity": "uncommun",
+    "stack": 1,
+    "armor": 17,
+    "level": 300
+  },
+  "item496": {
+    "name": "lava glove (right)",
+    "rarity": "rare",
+    "stack": 1,
+    "armor": 18,
+    "lava xp": "1%",
+    "level": 300
+  },
+  "item497": {
+    "name": "lava glove (left)",
+    "rarity": "commun",
+    "stack": 1,
+    "armor": 16,
+    "level": 300
+  },
+  "item498": {
+    "name": "lava glove (left)",
+    "rarity": "uncommun",
+    "stack": 1,
+    "armor": 17,
+    "level": 300
+  },
+  "item499": {
+    "name": "lava glove (left)",
+    "rarity": "rare",
+    "stack": 1,
+    "armor": 18,
+    "lava xp": "1%",
+    "level": 300
+  },
+  "item500": {
+    "name": "lava backpack",
+    "rarity": "commun",
+    "stack": 1,
+    "capacity": 72,
+    "level": 300
+  },
+  "item501": {
+    "name": "lava backpack",
+    "rarity": "uncommun",
+    "stack": 1,
+    "capacity": 74,
+    "level": 300
+  },
+  "item502": {
+    "name": "lava backpack",
+    "rarity": "rare",
+    "stack": 1,
+    "capacity": 76,
+    "level": 300
+  },
+  "item503": {
+    "name": "lava broadsword",
+    "rarity": "commun",
+    "stack": 1,
+    "attack": 45,
+    "melee": 1,
+    "level": 375
+  },
+  "item504": {
+    "name": "lava broadsword",
+    "rarity": "uncommun",
+    "stack": 1,
+    "attack": 47,
+    "melee": 2,
+    "level": 375
+  },
+  "item505": {
+    "name": "lava broadsword",
+    "rarity": "rare",
+    "stack": 1,
+    "attack": 49,
+    "melee": 3,
+    "level": 375
+  },
+  "item506": {
+    "name": "lava bow",
+    "rarity": "commun",
+    "stack": 1,
+    "attack": 45,
+    "distance": 1,
+    "level": 375
+  },
+  "item507": {
+    "name": "lava bow",
+    "rarity": "uncommun",
+    "stack": 1,
+    "attack": 47,
+    "distance": 2,
+    "level": 375
+  },
+  "item508": {
+    "name": "lava bow",
+    "rarity": "rare",
+    "stack": 1,
+    "attack": 49,
+    "distance": 3,
+    "level": 375
+  },
+  "item509": {
+    "name": "lava wand",
+    "rarity": "commun",
+    "stack": 1,
+    "attack": 45,
+    "magic": 1,
+    "level": 375
+  },
+  "item510": {
+    "name": "lava wand",
+    "rarity": "uncommun",
+    "stack": 1,
+    "attack": 47,
+    "magic": 2,
+    "level": 375
+  },
+  "item511": {
+    "name": "lava wand",
+    "rarity": "rare",
+    "stack": 1,
+    "attack": 49,
+    "magic": 3,
+    "level": 375
+  },
+  "item512": {
+    "name": "lava shield",
+    "rarity": "commun",
+    "stack": 1,
+    "armor": 54,
+    "defense": 1,
+    "level": 375
+  },
+  "item513": {
+    "name": "lava shield",
+    "rarity": "uncommun",
+    "stack": 1,
+    "armor": 55,
+    "defense": 2,
+    "level": 375
+  },
+  "item514": {
+    "name": "lava shield",
+    "rarity": "rare",
+    "stack": 1,
+    "armor": 56,
+    "defense": 3,
+    "aggro": 1,
+    "level": 375
+  },
+  "item515": {
+    "name": "golden helmet",
+    "rarity": "commun",
+    "stack": 1,
+    "armor": 34,
+    "level": 425
+  },
+  "item516": {
+    "name": "golden helmet",
+    "rarity": "uncommun",
+    "stack": 1,
+    "armor": 35,
+    "level": 425
+  },
+  "item517": {
+    "name": "golden helmet",
+    "rarity": "rare",
+    "stack": 1,
+    "armor": 36,
+    "aggro": 1,
+    "demon_xp": "1%",
+    "level": 425
+  },
+  "item518": {
+    "name": "golden hood",
+    "rarity": "commun",
+    "stack": 1,
+    "armor": 18,
+    "speed": 8,
+    "level": 425
+  },
+  "item519": {
+    "name": "golden hood",
+    "rarity": "uncommun",
+    "stack": 1,
+    "armor": 19,
+    "speed": 8,
+    "level": 425
+  },
+  "item520": {
+    "name": "golden hood",
+    "rarity": "rare",
+    "stack": 1,
+    "armor": 20,
+    "speed": 8,
+    "demon_xp": "1%",
+    "level": 425
+  },
+  "item521": {
+    "name": "golden hat",
+    "rarity": "commun",
+    "stack": 1,
+    "armor": 9,
+    "magic": 8,
+    "level": 425
+  },
+  "item522": {
+    "name": "golden hat",
+    "rarity": "uncommun",
+    "stack": 1,
+    "armor": 10,
+    "magic": 8,
+    "level": 425
+  },
+  "item523": {
+    "name": "golden hat",
+    "rarity": "rare",
+    "stack": 1,
+    "armor": 11,
+    "magic": 8,
+    "demon_xp": "1%",
+    "level": 425
+  },
+  "item524": {
+    "name": "golden armor",
+    "rarity": "commun",
+    "stack": 1,
+    "armor": 54,
+    "level": 450
+  },
+  "item525": {
+    "name": "golden armor",
+    "rarity": "uncommun",
+    "stack": 1,
+    "armor": 56,
+    "level": 450
+  },
+  "item526": {
+    "name": "golden armor",
+    "rarity": "rare",
+    "stack": 1,
+    "armor": 58,
+    "aggro": 1,
+    "demon_xp": "1%",
+    "level": 450
+  },
+  "item527": {
+    "name": "golden light armor",
+    "rarity": "commun",
+    "stack": 1,
+    "armor": 27,
+    "speed": 10,
+    "distance": 6,
+    "level": 450
+  },
+  "item528": {
+    "name": "golden light armor",
+    "rarity": "uncommun",
+    "stack": 1,
+    "armor": 28,
+    "speed": 10,
+    "distance": 7,
+    "level": 450
+  },
+  "item529": {
+    "name": "golden light armor",
+    "rarity": "rare",
+    "stack": 1,
+    "armor": 29,
+    "speed": 10,
+    "distance": 8,
+    "demon_xp": "1%",
+    "level": 450
+  },
+  "item530": {
+    "name": "golden robe",
+    "rarity": "commun",
+    "stack": 1,
+    "armor": 18,
+    "magic": 10,
+    "level": 450
+  },
+  "item531": {
+    "name": "golden robe",
+    "rarity": "uncommun",
+    "stack": 1,
+    "armor": 19,
+    "magic": 11,
+    "level": 450
+  },
+  "item532": {
+    "name": "golden robe",
+    "rarity": "rare",
+    "stack": 1,
+    "armor": 20,
+    "magic": 12,
+    "demon_xp": "1%",
+    "level": 450
+  },
+  "item533": {
+    "name": "golden belt",
+    "rarity": "commun",
+    "stack": 1,
+    "armor": 27,
+    "level": 400
+  },
+  "item534": {
+    "name": "golden belt",
+    "rarity": "uncommun",
+    "stack": 1,
+    "armor": 28,
+    "level": 400
+  },
+  "item535": {
+    "name": "golden belt",
+    "rarity": "rare",
+    "stack": 1,
+    "armor": 29,
+    "demon_xp": "1%",
+    "level": 400
+  },
+  "item536": {
+    "name": "golden legs",
+    "rarity": "commun",
+    "stack": 1,
+    "armor": 45,
+    "level": 425
+  },
+  "item537": {
+    "name": "golden legs",
+    "rarity": "uncommun",
+    "stack": 1,
+    "armor": 47,
+    "level": 425
+  },
+  "item538": {
+    "name": "golden legs",
+    "rarity": "rare",
+    "stack": 1,
+    "armor": 49,
+    "demon_xp": "1%",
+    "level": 425
+  },
+  "item539": {
+    "name": "golden boots",
+    "rarity": "commun",
+    "stack": 1,
+    "armor": 27,
+    "speed": 1,
+    "level": 425
+  },
+  "item540": {
+    "name": "golden boots",
+    "rarity": "uncommun",
+    "stack": 1,
+    "armor": 28,
+    "speed": 2,
+    "level": 425
+  },
+  "item541": {
+    "name": "golden boots",
+    "rarity": "rare",
+    "stack": 1,
+    "armor": 29,
+    "speed": 3,
+    "demon_xp": "1%",
+    "level": 425
+  },
+  "item542": {
+    "name": "golden glove (right)",
+    "rarity": "commun",
+    "stack": 1,
+    "armor": 18,
+    "level": 400
+  },
+  "item543": {
+    "name": "golden glove (right)",
+    "rarity": "uncommun",
+    "stack": 1,
+    "armor": 19,
+    "level": 400
+  },
+  "item544": {
+    "name": "golden glove (right)",
+    "rarity": "rare",
+    "stack": 1,
+    "armor": 20,
+    "demon_xp": "1%",
+    "level": 400
+  },
+  "item545": {
+    "name": "golden glove (left)",
+    "rarity": "commun",
+    "stack": 1,
+    "armor": 18,
+    "level": 400
+  },
+  "item546": {
+    "name": "golden glove (left)",
+    "rarity": "uncommun",
+    "stack": 1,
+    "armor": 19,
+    "level": 400
+  },
+  "item547": {
+    "name": "golden glove (left)",
+    "rarity": "rare",
+    "stack": 1,
+    "armor": 20,
+    "demon_xp": "1%",
+    "level": 400
+  },
+  "item548": {
+    "name": "golden backpack",
+    "rarity": "commun",
+    "stack": 1,
+    "capacity": 78,
+    "level": 400
+  },
+  "item549": {
+    "name": "golden backpack",
+    "rarity": "uncommun",
+    "stack": 1,
+    "capacity": 80,
+    "level": 400
+  },
+  "item550": {
+    "name": "golden backpack",
+    "rarity": "rare",
+    "stack": 1,
+    "capacity": 82,
+    "level": 400
+  },
+  "item551": {
+    "name": "golden broadsword",
+    "rarity": "commun",
+    "stack": 1,
+    "attack": 50,
+    "melee": 1,
+    "level": 450
+  },
+  "item552": {
+    "name": "golden broadsword",
+    "rarity": "uncommun",
+    "stack": 1,
+    "attack": 52,
+    "melee": 2,
+    "level": 450
+  },
+  "item553": {
+    "name": "golden broadsword",
+    "rarity": "rare",
+    "stack": 1,
+    "attack": 54,
+    "melee": 3,
+    "level": 450
+  },
+  "item554": {
+    "name": "golden bow",
+    "rarity": "commun",
+    "stack": 1,
+    "attack": 50,
+    "distance": 1,
+    "level": 450
+  },
+  "item555": {
+    "name": "golden bow",
+    "rarity": "uncommun",
+    "stack": 1,
+    "attack": 52,
+    "distance": 2,
+    "level": 450
+  },
+  "item556": {
+    "name": "golden bow",
+    "rarity": "rare",
+    "stack": 1,
+    "attack": 54,
+    "distance": 3,
+    "level": 450
+  },
+  "item557": {
+    "name": "golden wand",
+    "rarity": "commun",
+    "stack": 1,
+    "attack": 50,
+    "magic": 1,
+    "level": 450
+  },
+  "item558": {
+    "name": "golden wand",
+    "rarity": "uncommun",
+    "stack": 1,
+    "attack": 52,
+    "magic": 2,
+    "level": 450
+  },
+  "item559": {
+    "name": "golden wand",
+    "rarity": "rare",
+    "stack": 1,
+    "attack": 54,
+    "magic": 3,
+    "level": 450
+  },
+  "item560": {
+    "name": "golden shield",
+    "rarity": "commun",
+    "stack": 1,
+    "armor": 60,
+    "defense": 1,
+    "level": 450
+  },
+  "item561": {
+    "name": "golden shield",
+    "rarity": "uncommun",
+    "stack": 1,
+    "armor": 61,
+    "defense": 2,
+    "level": 450
+  },
+  "item562": {
+    "name": "golden shield",
+    "rarity": "rare",
+    "stack": 1,
+    "armor": 62,
+    "defense": 3,
+    "aggro": 1,
+    "level": 450
+  },
+  "item563": {
+    "name": "golden training dagger",
+    "rarity": "commun",
+    "stack": 1,
+    "attack": 13
+  },
+  "item564": {
+    "name": "golden training dagger",
+    "rarity": "uncommun",
+    "stack": 1,
+    "attack": 11
+  },
+  "item565": {
+    "name": "golden training dagger",
+    "rarity": "rare",
+    "stack": 1,
+    "attack": 9
+  },
+  "item566": {
+    "name": "golden training dagger",
+    "rarity": "ultra rare",
+    "stack": 1,
+    "attack": 7
+  },
+  "item567": {
+    "name": "golden training bow",
+    "rarity": "commun",
+    "stack": 1,
+    "attack": 13
+  },
+  "item568": {
+    "name": "golden training bow",
+    "rarity": "uncommun",
+    "stack": 1,
+    "attack": 11
+  },
+  "item569": {
+    "name": "golden training bow",
+    "rarity": "rare",
+    "stack": 1,
+    "attack": 9
+  },
+  "item570": {
+    "name": "golden training bow",
+    "rarity": "ultra rare",
+    "stack": 1,
+    "attack": 7
+  },
+  "item571": {
+    "name": "golden training wand",
+    "rarity": "commun",
+    "stack": 1,
+    "attack": 13
+  },
+  "item572": {
+    "name": "golden training wand",
+    "rarity": "uncommun",
+    "stack": 1,
+    "attack": 11
+  },
+  "item573": {
+    "name": "golden training wand",
+    "rarity": "rare",
+    "stack": 1,
+    "attack": 9
+  },
+  "item574": {
+    "name": "golden training wand",
+    "rarity": "ultra rare",
+    "stack": 1,
+    "attack": 7
+  },
+  "item575": {
+    "name": "ultimate health potion",
+    "rarity": "commun",
+    "stack": 200,
+    "level": 250
+  },
+  "item576": {
+    "name": "ultimate mana potion",
+    "rarity": "commun",
+    "stack": 200,
+    "level": 250
+  },
+  "item577": {
+    "name": "golden legs",
+    "rarity": "ultra rare",
+    "stack": 1,
+    "armor": 51,
+    "demon_xp": "1%",
+    "level": 425
+  },
+  "item578": {
+    "name": "golden legs",
+    "rarity": "legendary",
+    "stack": 1,
+    "armor": 53,
+    "demon_xp": "2%",
+    "level": 425
+  },
+  "item579": {
+    "name": "golden armor",
+    "rarity": "ultra rare",
+    "stack": 1,
+    "armor": 60,
+    "aggro": 2,
+    "demon_xp": "1%",
+    "level": 450
+  },
+  "item580": {
+    "name": "golden armor",
+    "rarity": "legendary",
+    "stack": 1,
+    "armor": 62,
+    "aggro": 3,
+    "demon_xp": "2%",
+    "level": 450
+  },
+  "item581": {
+    "name": "golden light armor",
+    "rarity": "ultra rare",
+    "stack": 1,
+    "armor": 30,
+    "distance": 9,
+    "speed": 10,
+    "demon_xp": "1%",
+    "level": 450
+  },
+  "item582": {
+    "name": "golden light armor",
+    "rarity": "legendary",
+    "stack": 1,
+    "armor": 31,
+    "distance": 10,
+    "speed": 10,
+    "demon_xp": "2%",
+    "level": 450
+  },
+  "item583": {
+    "name": "golden robe",
+    "rarity": "ultra rare",
+    "stack": 1,
+    "armor": 21,
+    "magic": 13,
+    "demon_xp": "1%",
+    "level": 450
+  },
+  "item584": {
+    "name": "golden robe",
+    "rarity": "legendary",
+    "stack": 1,
+    "armor": 22,
+    "magic": 14,
+    "demon_xp": "2%",
+    "level": 450
+  },
+  "item585": {
+    "name": "melee training dummy",
+    "rarity": "legendary",
+    "stack": 1,
+    "description": "Keep in your inventory to train\nmelee and defese while offline"
+  },
+  "item586": {
+    "name": "distance training dummy",
+    "rarity": "legendary",
+    "stack": 1,
+    "description": "Keep in your inventory to train\ndistance and defese while offline"
+  },
+  "item587": {
+    "name": "magic training dummy",
+    "rarity": "legendary",
+    "stack": 1,
+    "description": "Keep in your inventory to train\nmagic and defese while offline"
+  },
+  "item588": {
+    "name": "drow jewel",
+    "rarity": "commun",
+    "stack": 50
+  },
+  "item589": {
+    "name": "gargoyle jewel",
+    "rarity": "uncommun",
+    "stack": 50
+  },
+  "item590": {
+    "name": "lizard jewel",
+    "rarity": "uncommun",
+    "stack": 50
+  },
+  "item591": {
+    "name": "minotaur jewel",
+    "rarity": "rare",
+    "stack": 50
+  },
+  "item592": {
+    "name": "dragon jewel",
+    "rarity": "rare",
+    "stack": 50
+  },
+  "item593": {
+    "name": "frozen jewel",
+    "rarity": "ultra rare",
+    "stack": 50
+  },
+  "item594": {
+    "name": "lava jewel",
+    "rarity": "ultra rare",
+    "stack": 50
+  },
+  "item595": {
+    "name": "golden jewel",
+    "rarity": "legendary",
+    "stack": 50
+  },
+  "item596": {
+    "name": "boss jewel",
+    "rarity": "mythic",
+    "stack": 50
+  },
+  "item597": {
+    "name": "golden helmet",
+    "rarity": "ultra rare",
+    "stack": 1,
+    "armor": 37,
+    "aggro": 2,
+    "demon_xp": "1%",
+    "level": 425
+  },
+  "item598": {
+    "name": "golden helmet",
+    "rarity": "legendary",
+    "stack": 1,
+    "armor": 38,
+    "aggro": 3,
+    "demon_xp": "2%",
+    "level": 425
+  },
+  "item599": {
+    "name": "golden helmet",
+    "rarity": "mythic",
+    "stack": 1,
+    "armor": 45,
+    "aggro": 3,
+    "demon_xp": "2%",
+    "level": 425
+  },
+  "item600": {
+    "name": "golden hood",
+    "rarity": "ultra rare",
+    "stack": 1,
+    "armor": 21,
+    "speed": 8,
+    "demon_xp": "1%",
+    "level": 425
+  },
+  "item601": {
+    "name": "golden hood",
+    "rarity": "legendary",
+    "stack": 1,
+    "armor": 22,
+    "speed": 8,
+    "demon_xp": "2%",
+    "level": 425
+  },
+  "item602": {
+    "name": "golden hood",
+    "rarity": "mythic",
+    "stack": 1,
+    "armor": 29,
+    "speed": 15,
+    "demon_xp": "2%",
+    "level": 425
+  },
+  "item603": {
+    "name": "golden hat",
+    "rarity": "ultra rare",
+    "stack": 1,
+    "armor": 12,
+    "magic": 8,
+    "demon_xp": "1%",
+    "level": 425
+  },
+  "item604": {
+    "name": "golden hat",
+    "rarity": "legendary",
+    "stack": 1,
+    "armor": 13,
+    "magic": 8,
+    "demon_xp": "2%",
+    "level": 425
+  },
+  "item605": {
+    "name": "golden hat",
+    "rarity": "mythic",
+    "stack": 1,
+    "armor": 29,
+    "magic": 15,
+    "demon_xp": "2%",
+    "level": 425
+  },
+  "item606": {
+    "name": "golden armor",
+    "rarity": "mythic",
+    "stack": 1,
+    "armor": 69,
+    "aggro": 3,
+    "demon_xp": "2%",
+    "level": 450
+  },
+  "item607": {
+    "name": "golden light armor",
+    "rarity": "mythic",
+    "stack": 1,
+    "armor": 38,
+    "speed": 17,
+    "distance": 17,
+    "demon_xp": "2%",
+    "level": 450
+  },
+  "item608": {
+    "name": "golden robe",
+    "rarity": "mythic",
+    "stack": 1,
+    "armor": 29,
+    "magic": 21,
+    "demon_xp": "2%",
+    "level": 450
+  },
+  "item609": {
+    "name": "golden belt",
+    "rarity": "ultra rare",
+    "stack": 1,
+    "armor": 30,
+    "demon_xp": "1%",
+    "level": 400
+  },
+  "item610": {
+    "name": "golden belt",
+    "rarity": "mythic",
+    "stack": 1,
+    "armor": 38,
+    "demon_xp": "2%",
+    "level": 400
+  },
+  "item611": {
+    "name": "golden legs",
+    "rarity": "mythic",
+    "stack": 1,
+    "armor": 60,
+    "demon_xp": "2%",
+    "level": 425
+  },
+  "item612": {
+    "name": "golden boots",
+    "rarity": "ultra rare",
+    "stack": 1,
+    "armor": 30,
+    "speed": 4,
+    "demon_xp": "1%",
+    "level": 425
+  },
+  "item613": {
+    "name": "golden boots",
+    "rarity": "legendary",
+    "stack": 1,
+    "armor": 31,
+    "speed": 5,
+    "demon_xp": "2%",
+    "level": 425
+  },
+  "item614": {
+    "name": "golden boots",
+    "rarity": "mythic",
+    "stack": 1,
+    "armor": 38,
+    "speed": 10,
+    "demon_xp": "2%",
+    "level": 425
+  },
+  "item615": {
+    "name": "golden glove (left)",
+    "rarity": "ultra rare",
+    "stack": 1,
+    "armor": 21,
+    "demon_xp": "1%",
+    "level": 400
+  },
+  "item616": {
+    "name": "golden glove (left)",
+    "rarity": "mythic",
+    "stack": 1,
+    "armor": 29,
+    "demon_xp": "2%",
+    "level": 400
+  },
+  "item617": {
+    "name": "golden glove (right)",
+    "rarity": "ultra rare",
+    "stack": 1,
+    "armor": 21,
+    "demon_xp": "1%",
+    "level": 400
+  },
+  "item618": {
+    "name": "golden glove (right)",
+    "rarity": "mythic",
+    "stack": 1,
+    "armor": 29,
+    "demon_xp": "2%",
+    "level": 400
+  },
+  "item619": {
+    "name": "golden broadsword",
+    "rarity": "ultra rare",
+    "stack": 1,
+    "attack": 56,
+    "melee": 4,
+    "level": 450
+  },
+  "item620": {
+    "name": "golden broadsword",
+    "rarity": "legendary",
+    "stack": 1,
+    "attack": 58,
+    "melee": 5,
+    "level": 450
+  },
+  "item621": {
+    "name": "golden broadsword",
+    "rarity": "mythic",
+    "stack": 1,
+    "attack": 60,
+    "melee": 10,
+    "level": 450
+  },
+  "item622": {
+    "name": "golden shield",
+    "rarity": "ultra rare",
+    "stack": 1,
+    "attack": 63,
+    "aggro": 2,
+    "defense": 4,
+    "level": 450
+  },
+  "item623": {
+    "name": "golden shield",
+    "rarity": "legendary",
+    "stack": 1,
+    "attack": 64,
+    "aggro": 3,
+    "defense": 5,
+    "level": 450
+  },
+  "item624": {
+    "name": "golden shield",
+    "rarity": "mythic",
+    "stack": 1,
+    "attack": 65,
+    "aggro": 3,
+    "defense": 10,
+    "level": 450
+  },
+  "item625": {
+    "name": "golden bow",
+    "rarity": "ultra rare",
+    "stack": 1,
+    "attack": 56,
+    "distance": 4,
+    "level": 450
+  },
+  "item626": {
+    "name": "golden bow",
+    "rarity": "legendary",
+    "stack": 1,
+    "attack": 58,
+    "distance": 5,
+    "level": 450
+  },
+  "item627": {
+    "name": "golden bow",
+    "rarity": "mythic",
+    "stack": 1,
+    "attack": 60,
+    "distance": 10,
+    "level": 450
+  },
+  "item628": {
+    "name": "golden wand",
+    "rarity": "ultra rare",
+    "stack": 1,
+    "attack": 56,
+    "magic": 4,
+    "level": 450
+  },
+  "item629": {
+    "name": "golden wand",
+    "rarity": "legendary",
+    "stack": 1,
+    "attack": 58,
+    "magic": 5,
+    "level": 450
+  },
+  "item630": {
+    "name": "golden wand",
+    "rarity": "mythic",
+    "stack": 1,
+    "attack": 60,
+    "magic": 10,
+    "level": 450
+  },
+  "item631": {
+    "name": "golden backpack",
+    "rarity": "ultra rare",
+    "stack": 1,
+    "capacity": 84,
+    "level": 400
+  },
+  "item632": {
+    "name": "golden backpack",
+    "rarity": "legendary",
+    "stack": 1,
+    "capacity": 86,
+    "level": 400
+  },
+  "item633": {
+    "name": "golden backpack",
+    "rarity": "ultra rare",
+    "stack": 1,
+    "capacity": 94,
+    "level": 400
+  },
+  "item634": {
+    "name": "rusted golden helmet",
+    "rarity": "mythic",
+    "stack": 1
+  },
+  "item635": {
+    "name": "rusted golden hood",
+    "rarity": "mythic",
+    "stack": 1
+  },
+  "item636": {
+    "name": "rusted golden hat",
+    "rarity": "mythic",
+    "stack": 1
+  },
+  "item637": {
+    "name": "rusted golden armor",
+    "rarity": "mythic",
+    "stack": 1
+  },
+  "item638": {
+    "name": "rusted golden light armor",
+    "rarity": "mythic",
+    "stack": 1
+  },
+  "item639": {
+    "name": "rusted golden robe",
+    "rarity": "mythic",
+    "stack": 1
+  },
+  "item640": {
+    "name": "rusted golden belt",
+    "rarity": "mythic",
+    "stack": 1
+  },
+  "item641": {
+    "name": "rusted golden legs",
+    "rarity": "mythic",
+    "stack": 1
+  },
+  "item642": {
+    "name": "rusted golden boots",
+    "rarity": "mythic",
+    "stack": 1
+  },
+  "item643": {
+    "name": "rusted golden glove (left)",
+    "rarity": "mythic",
+    "stack": 1
+  },
+  "item644": {
+    "name": "rusted golden glove (right)",
+    "rarity": "mythic",
+    "stack": 1
+  },
+  "item645": {
+    "name": "rusted golden broadsword",
+    "rarity": "mythic",
+    "stack": 1
+  },
+  "item646": {
+    "name": "rusted golden shield",
+    "rarity": "mythic",
+    "stack": 1
+  },
+  "item647": {
+    "name": "rusted golden bow",
+    "rarity": "mythic",
+    "stack": 1
+  },
+  "item648": {
+    "name": "rusted golden wand",
+    "rarity": "mythic",
+    "stack": 1
+  },
+  "item649": {
+    "name": "rusted golden backpack",
+    "rarity": "mythic",
+    "stack": 1
+  },
+  "item650": {
+    "name": "rusted healer helmet",
+    "rarity": "mythic",
+    "stack": 1
+  },
+  "item651": {
+    "name": "rusted healer armor",
+    "rarity": "mythic",
+    "stack": 1
+  },
+  "item652": {
+    "name": "rusted healer belt",
+    "rarity": "mythic",
+    "stack": 1
+  },
+  "item653": {
+    "name": "rusted healer legs",
+    "rarity": "mythic",
+    "stack": 1
+  },
+  "item654": {
+    "name": "rusted healer boots",
+    "rarity": "mythic",
+    "stack": 1
+  },
+  "item655": {
+    "name": "rusted healer glove (left)",
+    "rarity": "mythic",
+    "stack": 1
+  },
+  "item656": {
+    "name": "rusted healer glove (right)",
+    "rarity": "mythic",
+    "stack": 1
+  },
+  "item657": {
+    "name": "rusted healer backpack",
+    "rarity": "mythic",
+    "stack": 1
+  },
+  "item658": {
+    "name": "rusted sup. healer necklace",
+    "rarity": "mythic",
+    "stack": 1
+  },
+  "item659": {
+    "name": "rusted sup. healer ring",
+    "rarity": "mythic",
+    "stack": 1
+  },
+  "item660": {
+    "name": "rusted recovery helmet",
+    "rarity": "mythic",
+    "stack": 1
+  },
+  "item661": {
+    "name": "rusted recovery armor",
+    "rarity": "mythic",
+    "stack": 1
+  },
+  "item662": {
+    "name": "rusted recovery belt",
+    "rarity": "mythic",
+    "stack": 1
+  },
+  "item663": {
+    "name": "rusted recovery legs",
+    "rarity": "mythic",
+    "stack": 1
+  },
+  "item664": {
+    "name": "rusted recovery boots",
+    "rarity": "mythic",
+    "stack": 1
+  },
+  "item665": {
+    "name": "rusted recovery glove (left)",
+    "rarity": "mythic",
+    "stack": 1
+  },
+  "item666": {
+    "name": "rusted recovery glove (right)",
+    "rarity": "mythic",
+    "stack": 1
+  },
+  "item667": {
+    "name": "rusted recovery backpack",
+    "rarity": "mythic",
+    "stack": 1
+  },
+  "item668": {
+    "name": "rusted sup. recovery necklace",
+    "rarity": "mythic",
+    "stack": 1
+  },
+  "item669": {
+    "name": "rusted sup. recovery ring",
+    "rarity": "mythic",
+    "stack": 1
+  },
+  "item670": {
+    "name": "healer helmet",
+    "rarity": "mythic",
+    "armor": 12,
+    "healer": "17%",
+    "stack": 1
+  },
+  "item671": {
+    "name": "healer armor",
+    "rarity": "mythic",
+    "armor": 18,
+    "healer": "22%",
+    "stack": 1
+  },
+  "item672": {
+    "name": "healer legs",
+    "rarity": "mythic",
+    "armor": 15,
+    "healer": "17%",
+    "stack": 1
+  },
+  "item673": {
+    "name": "healer boots",
+    "rarity": "mythic",
+    "armor": 9,
+    "healer": "12%",
+    "stack": 1
+  },
+  "item674": {
+    "name": "healer glove (right)",
+    "rarity": "mythic",
+    "armor": 6,
+    "healer": "6%",
+    "stack": 1
+  },
+  "item675": {
+    "name": "healer glove (left)",
+    "rarity": "mythic",
+    "armor": 6,
+    "healer": "6%",
+    "stack": 1
+  },
+  "item676": {
+    "name": "healer belt",
+    "rarity": "mythic",
+    "armor": 9,
+    "healer": "12%",
+    "stack": 1
+  },
+  "item677": {
+    "name": "healer backpack",
+    "rarity": "mythic",
+    "capacity": 92,
+    "level": 300,
+    "stack": 1
+  },
+  "item678": {
+    "name": "superior healer necklace",
+    "rarity": "mythic",
+    "healer": "12%",
+    "stack": 1
+  },
+  "item679": {
+    "name": "superior healer ring",
+    "rarity": "mythic",
+    "healer": "12%",
+    "stack": 1
+  },
+  "item680": {
+    "name": "recovery helmet",
+    "rarity": "mythic",
+    "armor": 20,
+    "aggro": 3,
+    "recovery": "17%",
+    "stack": 1
+  },
+  "item681": {
+    "name": "recovery armor",
+    "rarity": "mythic",
+    "armor": 30,
+    "aggro": 3,
+    "recovery": "22%",
+    "stack": 1
+  },
+  "item682": {
+    "name": "recovery legs",
+    "rarity": "mythic",
+    "armor": 25,
+    "recovery": "17%",
+    "stack": 1
+  },
+  "item683": {
+    "name": "recovery boots",
+    "rarity": "mythic",
+    "armor": 15,
+    "recovery": "12%",
+    "stack": 1
+  },
+  "item684": {
+    "name": "recovery glove (right)",
+    "rarity": "mythic",
+    "armor": 10,
+    "recovery": "6%",
+    "stack": 1
+  },
+  "item685": {
+    "name": "recovery glove (left)",
+    "rarity": "mythic",
+    "armor": 10,
+    "recovery": "6%",
+    "stack": 1
+  },
+  "item686": {
+    "name": "recovery belt",
+    "rarity": "mythic",
+    "armor": 14,
+    "recovery": "12%",
+    "stack": 1
+  },
+  "item687": {
+    "name": "recovery backpack",
+    "rarity": "mythic",
+    "capacity": 92,
+    "level": 300,
+    "stack": 1
+  },
+  "item688": {
+    "name": "superior recovery necklace",
+    "rarity": "mythic",
+    "recovery": "12%",
+    "stack": 1
+  },
+  "item689": {
+    "name": "superior recovery ring",
+    "rarity": "mythic",
+    "recovery": "12%",
+    "stack": 1
+  },
+  "item690": {
+    "name": "superior defense necklace",
+    "rarity": "mythic",
+    "armor": 1,
+    "defense": 15,
+    "stack": 1
+  },
+  "item691": {
+    "name": "superior magic necklace",
+    "rarity": "mythic",
+    "armor": 1,
+    "magic": 15,
+    "stack": 1
+  },
+  "item692": {
+    "name": "superior melee necklace",
+    "rarity": "mythic",
+    "armor": 1,
+    "melee": 15,
+    "stack": 1
+  },
+  "item693": {
+    "name": "superior distance necklace",
+    "rarity": "mythic",
+    "armor": 1,
+    "distance": 15,
+    "stack": 1
+  },
+  "item694": {
+    "name": "superior magic ring",
+    "rarity": "mythic",
+    "armor": 1,
+    "magic": 15,
+    "stack": 1
+  },
+  "item695": {
+    "name": "superior melee ring",
+    "rarity": "mythic",
+    "armor": 1,
+    "melee": 15,
+    "stack": 1
+  },
+  "item696": {
+    "name": "superior distance ring",
+    "rarity": "mythic",
+    "armor": 1,
+    "distance": 15,
+    "stack": 1
+  },
+  "item697": {
+    "name": "superior defense ring",
+    "rarity": "mythic",
+    "armor": 1,
+    "defense": 15,
+    "stack": 1
+  },
+  "item698": {
+    "name": "rusted sup. defense necklace",
+    "rarity": "mythic",
+    "stack": 1
+  },
+  "item699": {
+    "name": "rusted sup. magic necklace",
+    "rarity": "mythic",
+    "stack": 1
+  },
+  "item700": {
+    "name": "rusted sup. melee necklace",
+    "rarity": "mythic",
+    "stack": 1
+  },
+  "item701": {
+    "name": "rusted sup. distance necklace",
+    "rarity": "mythic",
+    "stack": 1
+  },
+  "item702": {
+    "name": "rusted sup. magic ring",
+    "rarity": "mythic",
+    "stack": 1
+  },
+  "item703": {
+    "name": "rusted sup. melee ring",
+    "rarity": "mythic",
+    "stack": 1
+  },
+  "item704": {
+    "name": "rusted sup. distance ring",
+    "rarity": "mythic",
+    "stack": 1
+  },
+  "item705": {
+    "name": "rusted sup. defense ring",
+    "rarity": "mythic",
+    "stack": 1
+  },
+  "item706": {
+    "name": "rusted swift boots",
+    "rarity": "mythic",
+    "stack": 1
+  },
+  "item707": {
+    "name": "rusted santa's backpack",
+    "rarity": "mythic",
+    "stack": 1
+  },
+  "item708": {
+    "name": "swift boots",
+    "rarity": "mythic",
+    "armor": 11,
+    "speed": 35,
+    "stack": 1
+  },
+  "item709": {
+    "name": "santa's backpack",
+    "rarity": "mythic",
+    "capacity": 96,
+    "level": 450,
+    "stack": 1
+  },
+  "item710": {
+    "name": "swift boots",
+    "rarity": "ultra rare",
+    "armor": 11,
+    "speed": 15,
+    "stack": 1
+  },
+  "item711": {
+    "name": "lizard helmet",
+    "rarity": "ultra rare",
+    "armor": 27,
+    "aggro": 2,
+    "lizard xp": "1%",
+    "level": 160,
+    "stack": 1
+  },
+  "item712": {
+    "name": "lizard helmet",
+    "rarity": "legendary",
+    "armor": 28,
+    "aggro": 3,
+    "lizard xp": "2%",
+    "level": 160,
+    "stack": 1
+  },
+  "item713": {
+    "name": "lizard hood",
+    "rarity": "ultra rare",
+    "armor": 15,
+    "speed": 6,
+    "lizard xp": "1%",
+    "level": 160,
+    "stack": 1
+  },
+  "item714": {
+    "name": "lizard hood",
+    "rarity": "legendary",
+    "armor": 16,
+    "speed": 6,
+    "lizard xp": "2%",
+    "level": 160,
+    "stack": 1
+  },
+  "item715": {
+    "name": "lizard hat",
+    "rarity": "ultra rare",
+    "armor": 9,
+    "magic": 6,
+    "lizard xp": "1%",
+    "level": 160,
+    "stack": 1
+  },
+  "item716": {
+    "name": "lizard hat",
+    "rarity": "legendary",
+    "armor": 10,
+    "magic": 6,
+    "lizard xp": "2%",
+    "level": 160,
+    "stack": 1
+  },
+  "item717": {
+    "name": "lizard armor",
+    "rarity": "ultra rare",
+    "armor": 42,
+    "aggro": 2,
+    "lizard xp": "1%",
+    "level": 175,
+    "stack": 1
+  },
+  "item718": {
+    "name": "lizard armor",
+    "rarity": "legendary",
+    "armor": 44,
+    "aggro": 3,
+    "lizard xp": "2%",
+    "level": 175,
+    "stack": 1
+  },
+  "item719": {
+    "name": "lizard light armor",
+    "rarity": "ultra rare",
+    "armor": 21,
+    "speed": 8,
+    "distance": 7,
+    "lizard xp": "1%",
+    "level": 175,
+    "stack": 1
+  },
+  "item720": {
+    "name": "lizard light armor",
+    "rarity": "legendary",
+    "armor": 22,
+    "speed": 8,
+    "distance": 8,
+    "lizard xp": "2%",
+    "level": 175,
+    "stack": 1
+  },
+  "item721": {
+    "name": "lizard robe",
+    "rarity": "ultra rare",
+    "armor": 15,
+    "magic": 11,
+    "lizard xp": "1%",
+    "level": 175,
+    "stack": 1
+  },
+  "item722": {
+    "name": "lizard robe",
+    "rarity": "legendary",
+    "armor": 16,
+    "magic": 12,
+    "lizard xp": "2%",
+    "level": 175,
+    "stack": 1
+  },
+  "item723": {
+    "name": "lizard belt",
+    "rarity": "ultra rare",
+    "armor": 21,
+    "lizard xp": "1%",
+    "level": 175,
+    "stack": 1
+  },
+  "item724": {
+    "name": "lizard belt",
+    "rarity": "legendary",
+    "armor": 22,
+    "lizard xp": "2%",
+    "level": 175,
+    "stack": 1
+  },
+  "item725": {
+    "name": "lizard legs",
+    "rarity": "ultra rare",
+    "armor": 36,
+    "lizard xp": "1%",
+    "level": 175,
+    "stack": 1
+  },
+  "item726": {
+    "name": "lizard legs",
+    "rarity": "legendary",
+    "armor": 38,
+    "lizard xp": "2%",
+    "level": 175,
+    "stack": 1
+  },
+  "item727": {
+    "name": "lizard boots",
+    "rarity": "ultra rare",
+    "armor": 21,
+    "speed": 4,
+    "lizard xp": "1%",
+    "level": 150,
+    "stack": 1
+  },
+  "item728": {
+    "name": "lizard boots",
+    "rarity": "legendary",
+    "armor": 22,
+    "speed": 5,
+    "lizard xp": "2%",
+    "level": 150,
+    "stack": 1
+  },
+  "item729": {
+    "name": "lizard glove (left)",
+    "rarity": "ultra rare",
+    "armor": 15,
+    "lizard xp": "1%",
+    "level": 150,
+    "stack": 1
+  },
+  "item730": {
+    "name": "lizard glove (left)",
+    "rarity": "legendary",
+    "armor": 16,
+    "lizard xp": "2%",
+    "level": 150,
+    "stack": 1
+  },
+  "item731": {
+    "name": "lizard glove (right)",
+    "rarity": "ultra rare",
+    "armor": 15,
+    "lizard xp": "1%",
+    "level": 150,
+    "stack": 1
+  },
+  "item732": {
+    "name": "lizard glove (right)",
+    "rarity": "legendary",
+    "armor": 16,
+    "lizard xp": "2%",
+    "level": 150,
+    "stack": 1
+  },
+  "item733": {
+    "name": "lizard slayer",
+    "rarity": "legendary",
+    "armor": 43,
+    "melee": 2,
+    "level": 175,
+    "stack": 1
+  },
+  "item734": {
+    "name": "battle shield",
+    "rarity": "rare",
+    "armor": 44,
+    "aggro": 1,
+    "defense": 2,
+    "level": 175,
+    "stack": 1
+  },
+  "item735": {
+    "name": "battle shield",
+    "rarity": "ultra rare",
+    "armor": 45,
+    "aggro": 2,
+    "defense": 3,
+    "level": 175,
+    "stack": 1
+  },
+  "item736": {
+    "name": "battle shield",
+    "rarity": "legendary",
+    "armor": 46,
+    "aggro": 3,
+    "defense": 4,
+    "level": 175,
+    "stack": 1
+  },
+  "item737": {
+    "name": "lizard bow",
+    "rarity": "legendary",
+    "armor": 43,
+    "distance": 2,
+    "level": 175,
+    "stack": 1
+  },
+  "item738": {
+    "name": "shaman wand",
+    "rarity": "legendary",
+    "armor": 43,
+    "magic": 2,
+    "level": 175,
+    "stack": 1
+  },
+  "item739": {
+    "name": "green backpack",
+    "rarity": "ultra rare",
+    "capacity": 62,
+    "level": 150,
+    "stack": 1
+  },
+  "item740": {
+    "name": "green backpack",
+    "rarity": "legendary",
+    "capacity": 64,
+    "level": 150,
+    "stack": 1
+  },
+  "item741": {
+    "name": "gargoyle helmet",
+    "rarity": "ultra rare",
+    "armor": 27,
+    "aggro": 2,
+    "gargoyle xp": "1%",
+    "level": 160,
+    "stack": 1
+  },
+  "item742": {
+    "name": "gargoyle helmet",
+    "rarity": "legendary",
+    "armor": 28,
+    "aggro": 3,
+    "gargoyle xp": "2%",
+    "level": 160,
+    "stack": 1
+  },
+  "item743": {
+    "name": "gargoyle hood",
+    "rarity": "ultra rare",
+    "armor": 15,
+    "speed": 6,
+    "gargoyle xp": "1%",
+    "level": 160,
+    "stack": 1
+  },
+  "item744": {
+    "name": "gargoyle hood",
+    "rarity": "legendary",
+    "armor": 16,
+    "speed": 6,
+    "gargoyle xp": "2%",
+    "level": 160,
+    "stack": 1
+  },
+  "item745": {
+    "name": "gargoyle hat",
+    "rarity": "ultra rare",
+    "armor": 9,
+    "magic": 6,
+    "gargoyle xp": "1%",
+    "level": 160,
+    "stack": 1
+  },
+  "item746": {
+    "name": "gargoyle hat",
+    "rarity": "legendary",
+    "armor": 10,
+    "magic": 6,
+    "gargoyle xp": "2%",
+    "level": 160,
+    "stack": 1
+  },
+  "item747": {
+    "name": "gargoyle armor",
+    "rarity": "ultra rare",
+    "armor": 42,
+    "aggro": 2,
+    "gargoyle xp": "1%",
+    "level": 175,
+    "stack": 1
+  },
+  "item748": {
+    "name": "gargoyle armor",
+    "rarity": "legendary",
+    "armor": 44,
+    "aggro": 3,
+    "gargoyle xp": "2%",
+    "level": 175,
+    "stack": 1
+  },
+  "item749": {
+    "name": "gargoyle light armor",
+    "rarity": "ultra rare",
+    "armor": 21,
+    "speed": 8,
+    "distance": 7,
+    "gargoyle xp": "1%",
+    "level": 175,
+    "stack": 1
+  },
+  "item750": {
+    "name": "gargoyle light armor",
+    "rarity": "legendary",
+    "armor": 22,
+    "speed": 8,
+    "distance": 8,
+    "gargoyle xp": "2%",
+    "level": 175,
+    "stack": 1
+  },
+  "item751": {
+    "name": "gargoyle robe",
+    "rarity": "ultra rare",
+    "armor": 15,
+    "magic": 11,
+    "gargoyle xp": "1%",
+    "level": 175,
+    "stack": 1
+  },
+  "item752": {
+    "name": "gargoyle robe",
+    "rarity": "legendary",
+    "armor": 16,
+    "magic": 12,
+    "gargoyle xp": "2%",
+    "level": 175,
+    "stack": 1
+  },
+  "item753": {
+    "name": "gargoyle belt",
+    "rarity": "ultra rare",
+    "armor": 21,
+    "gargoyle xp": "1%",
+    "level": 175,
+    "stack": 1
+  },
+  "item754": {
+    "name": "gargoyle belt",
+    "rarity": "legendary",
+    "armor": 22,
+    "gargoyle xp": "2%",
+    "level": 175,
+    "stack": 1
+  },
+  "item755": {
+    "name": "gargoyle legs",
+    "rarity": "ultra rare",
+    "armor": 36,
+    "gargoyle xp": "1%",
+    "level": 175,
+    "stack": 1
+  },
+  "item756": {
+    "name": "gargoyle legs",
+    "rarity": "legendary",
+    "armor": 38,
+    "gargoyle xp": "2%",
+    "level": 175,
+    "stack": 1
+  },
+  "item757": {
+    "name": "gargoyle boots",
+    "rarity": "ultra rare",
+    "armor": 21,
+    "speed": 4,
+    "gargoyle xp": "1%",
+    "level": 150,
+    "stack": 1
+  },
+  "item758": {
+    "name": "gargoyle boots",
+    "rarity": "legendary",
+    "armor": 22,
+    "speed": 5,
+    "gargoyle xp": "2%",
+    "level": 150,
+    "stack": 1
+  },
+  "item759": {
+    "name": "gargoyle glove (left)",
+    "rarity": "ultra rare",
+    "armor": 15,
+    "gargoyle xp": "1%",
+    "level": 150,
+    "stack": 1
+  },
+  "item760": {
+    "name": "gargoyle glove (left)",
+    "rarity": "legendary",
+    "armor": 16,
+    "gargoyle xp": "2%",
+    "level": 150,
+    "stack": 1
+  },
+  "item761": {
+    "name": "gargoyle glove (right)",
+    "rarity": "ultra rare",
+    "armor": 15,
+    "gargoyle xp": "1%",
+    "level": 150,
+    "stack": 1
+  },
+  "item762": {
+    "name": "gargoyle glove (right)",
+    "rarity": "legendary",
+    "armor": 16,
+    "gargoyle xp": "2%",
+    "level": 150,
+    "stack": 1
+  },
+  "item763": {
+    "name": "gargoyle slayer",
+    "rarity": "ultra rare",
+    "armor": 41,
+    "melee": 1,
+    "level": 175,
+    "stack": 1
+  },
+  "item764": {
+    "name": "gargoyle slayer",
+    "rarity": "legendary",
+    "armor": 43,
+    "melee": 2,
+    "level": 175,
+    "stack": 1
+  },
+  "item765": {
+    "name": "battle shield",
+    "rarity": "ultra rare",
+    "armor": 45,
+    "aggro": 2,
+    "defense": 3,
+    "level": 175,
+    "stack": 1
+  },
+  "item766": {
+    "name": "battle shield",
+    "rarity": "legendary",
+    "armor": 46,
+    "aggro": 3,
+    "defense": 4,
+    "level": 175,
+    "stack": 1
+  },
+  "item767": {
+    "name": "gargoyle bow",
+    "rarity": "ultra rare",
+    "armor": 41,
+    "distance": 1,
+    "level": 175,
+    "stack": 1
+  },
+  "item768": {
+    "name": "gargoyle bow",
+    "rarity": "legendary",
+    "armor": 43,
+    "distance": 2,
+    "level": 175,
+    "stack": 1
+  },
+  "item769": {
+    "name": "gargoyle wand",
+    "rarity": "ultra rare",
+    "armor": 41,
+    "magic": 1,
+    "level": 175,
+    "stack": 1
+  },
+  "item770": {
+    "name": "gargoyle wand",
+    "rarity": "legendary",
+    "armor": 43,
+    "magic": 2,
+    "level": 175,
+    "stack": 1
+  },
+  "item771": {
+    "name": "gargoyle backpack",
+    "rarity": "ultra rare",
+    "capacity": 62,
+    "level": 150,
+    "stack": 1
+  },
+  "item772": {
+    "name": "gargoyle backpack",
+    "rarity": "legendary",
+    "capacity": 64,
+    "level": 150,
+    "stack": 1
+  },
+  "item773": {
+    "name": "minotaur helmet",
+    "rarity": "ultra rare",
+    "armor": 31,
+    "aggro": 2,
+    "minotaur xp": "1%",
+    "level": 260,
+    "stack": 1
+  },
+  "item774": {
+    "name": "minotaur helmet",
+    "rarity": "legendary",
+    "armor": 32,
+    "aggro": 2,
+    "minotaur xp": "2%",
+    "level": 260,
+    "stack": 1
+  },
+  "item775": {
+    "name": "minotaur hood",
+    "rarity": "ultra rare",
+    "armor": 17,
+    "speed": 7,
+    "minotaur xp": "1%",
+    "level": 260,
+    "stack": 1
+  },
+  "item776": {
+    "name": "minotaur hood",
+    "rarity": "legendary",
+    "armor": 18,
+    "speed": 7,
+    "minotaur xp": "2%",
+    "level": 260,
+    "stack": 1
+  },
+  "item777": {
+    "name": "minotaur hat",
+    "rarity": "ultra rare",
+    "armor": 10,
+    "magic": 7,
+    "minotaur xp": "1%",
+    "level": 260,
+    "stack": 1
+  },
+  "item778": {
+    "name": "minotaur hat",
+    "rarity": "legendary",
+    "armor": 11,
+    "magic": 7,
+    "minotaur xp": "2%",
+    "level": 260,
+    "stack": 1
+  },
+  "item779": {
+    "name": "minotaur armor",
+    "rarity": "ultra rare",
+    "armor": 48,
+    "aggro": 2,
+    "minotaur xp": "1%",
+    "level": 275,
+    "stack": 1
+  },
+  "item780": {
+    "name": "minotaur armor",
+    "rarity": "legendary",
+    "armor": 50,
+    "aggro": 3,
+    "minotaur xp": "2%",
+    "level": 275,
+    "stack": 1
+  },
+  "item781": {
+    "name": "minotaur light armor",
+    "rarity": "ultra rare",
+    "armor": 24,
+    "speed": 9,
+    "distance": 8,
+    "minotaur xp": "1%",
+    "level": 275,
+    "stack": 1
+  },
+  "item782": {
+    "name": "minotaur light armor",
+    "rarity": "legendary",
+    "armor": 25,
+    "speed": 9,
+    "distance": 9,
+    "minotaur xp": "2%",
+    "level": 275,
+    "stack": 1
+  },
+  "item783": {
+    "name": "minotaur robe",
+    "rarity": "ultra rare",
+    "armor": 17,
+    "magic": 12,
+    "minotaur xp": "1%",
+    "level": 275,
+    "stack": 1
+  },
+  "item784": {
+    "name": "minotaur robe",
+    "rarity": "legendary",
+    "armor": 18,
+    "magic": 13,
+    "minotaur xp": "2%",
+    "level": 275,
+    "stack": 1
+  },
+  "item785": {
+    "name": "minotaur belt",
+    "rarity": "ultra rare",
+    "armor": 24,
+    "minotaur xp": "1%",
+    "level": 275,
+    "stack": 1
+  },
+  "item786": {
+    "name": "minotaur belt",
+    "rarity": "legendary",
+    "armor": 25,
+    "minotaur xp": "2%",
+    "level": 275,
+    "stack": 1
+  },
+  "item787": {
+    "name": "minotaur legs",
+    "rarity": "ultra rare",
+    "armor": 41,
+    "minotaur xp": "1%",
+    "level": 275,
+    "stack": 1
+  },
+  "item788": {
+    "name": "minotaur legs",
+    "rarity": "legendary",
+    "armor": 43,
+    "minotaur xp": "2%",
+    "level": 275,
+    "stack": 1
+  },
+  "item789": {
+    "name": "minotaur boots",
+    "rarity": "ultra rare",
+    "armor": 24,
+    "speed": 4,
+    "minotaur xp": "1%",
+    "level": 250,
+    "stack": 1
+  },
+  "item790": {
+    "name": "minotaur boots",
+    "rarity": "legendary",
+    "armor": 25,
+    "speed": 5,
+    "minotaur xp": "2%",
+    "level": 250,
+    "stack": 1
+  },
+  "item791": {
+    "name": "minotaur glove (left)",
+    "rarity": "ultra rare",
+    "armor": 17,
+    "minotaur xp": "1%",
+    "level": 250,
+    "stack": 1
+  },
+  "item792": {
+    "name": "minotaur glove (left)",
+    "rarity": "legendary",
+    "armor": 18,
+    "minotaur xp": "2%",
+    "level": 250,
+    "stack": 1
+  },
+  "item793": {
+    "name": "minotaur glove (right)",
+    "rarity": "ultra rare",
+    "armor": 17,
+    "minotaur xp": "1%",
+    "level": 250,
+    "stack": 1
+  },
+  "item794": {
+    "name": "minotaur glove (right)",
+    "rarity": "legendary",
+    "armor": 18,
+    "minotaur xp": "2%",
+    "level": 250,
+    "stack": 1
+  },
+  "item795": {
+    "name": "minotaur slayer",
+    "rarity": "ultra rare",
+    "armor": 46,
+    "melee": 4,
+    "minotaur xp": "2%",
+    "level": 275,
+    "stack": 1
+  },
+  "item796": {
+    "name": "minotaur slayer",
+    "rarity": "legendary",
+    "armor": 48,
+    "melee": 5,
+    "minotaur xp": "2%",
+    "level": 275,
+    "stack": 1
+  },
+  "item797": {
+    "name": "minotaur shield",
+    "rarity": "ultra rare",
+    "armor": 51,
+    "aggro": 2,
+    "defense": 4,
+    "minotaur xp": "2%",
+    "level": 275,
+    "stack": 1
+  },
+  "item798": {
+    "name": "minotaur shield",
+    "rarity": "legendary",
+    "armor": 52,
+    "aggro": 3,
+    "defense": 5,
+    "minotaur xp": "2%",
+    "level": 275,
+    "stack": 1
+  },
+  "item799": {
+    "name": "minotaur bow",
+    "rarity": "ultra rare",
+    "armor": 46,
+    "distance": 4,
+    "minotaur xp": "2%",
+    "level": 275,
+    "stack": 1
+  },
+  "item800": {
+    "name": "minotaur bow",
+    "rarity": "legendary",
+    "armor": 48,
+    "distance": 5,
+    "minotaur xp": "2%",
+    "level": 275,
+    "stack": 1
+  },
+  "item801": {
+    "name": "minotaur wand",
+    "rarity": "ultra rare",
+    "armor": 46,
+    "magic": 4,
+    "minotaur xp": "2%",
+    "level": 275,
+    "stack": 1
+  },
+  "item802": {
+    "name": "minotaur wand",
+    "rarity": "legendary",
+    "armor": 48,
+    "magic": 5,
+    "minotaur xp": "2%",
+    "level": 275,
+    "stack": 1
+  },
+  "item803": {
+    "name": "minotaur backpack",
+    "rarity": "ultra rare",
+    "capacity": 70,
+    "level": 225,
+    "stack": 1
+  },
+  "item804": {
+    "name": "minotaur backpack",
+    "rarity": "legendary",
+    "capacity": 72,
+    "level": 225,
+    "stack": 1
+  },
+  "item805": {
+    "name": "dragon helmet",
+    "rarity": "ultra rare",
+    "armor": 31,
+    "aggro": 2,
+    "dragon xp": "1%",
+    "level": 260,
+    "stack": 1
+  },
+  "item806": {
+    "name": "dragon helmet",
+    "rarity": "legendary",
+    "armor": 32,
+    "aggro": 2,
+    "dragon xp": "2%",
+    "level": 260,
+    "stack": 1
+  },
+  "item807": {
+    "name": "dragon hood",
+    "rarity": "ultra rare",
+    "armor": 17,
+    "speed": 7,
+    "dragon xp": "1%",
+    "level": 260,
+    "stack": 1
+  },
+  "item808": {
+    "name": "dragon hood",
+    "rarity": "legendary",
+    "armor": 18,
+    "speed": 7,
+    "dragon xp": "2%",
+    "level": 260,
+    "stack": 1
+  },
+  "item809": {
+    "name": "dragon hat",
+    "rarity": "ultra rare",
+    "armor": 10,
+    "magic": 7,
+    "dragon xp": "1%",
+    "level": 260,
+    "stack": 1
+  },
+  "item810": {
+    "name": "dragon hat",
+    "rarity": "legendary",
+    "armor": 11,
+    "magic": 7,
+    "dragon xp": "2%",
+    "level": 260,
+    "stack": 1
+  },
+  "item811": {
+    "name": "dragon armor",
+    "rarity": "ultra rare",
+    "armor": 48,
+    "aggro": 2,
+    "dragon xp": "1%",
+    "level": 275,
+    "stack": 1
+  },
+  "item812": {
+    "name": "dragon armor",
+    "rarity": "legendary",
+    "armor": 50,
+    "aggro": 3,
+    "dragon xp": "2%",
+    "level": 275,
+    "stack": 1
+  },
+  "item813": {
+    "name": "dragon light armor",
+    "rarity": "ultra rare",
+    "armor": 24,
+    "speed": 9,
+    "distance": 8,
+    "dragon xp": "1%",
+    "level": 275,
+    "stack": 1
+  },
+  "item814": {
+    "name": "dragon light armor",
+    "rarity": "legendary",
+    "armor": 25,
+    "speed": 9,
+    "distance": 9,
+    "dragon xp": "2%",
+    "level": 275,
+    "stack": 1
+  },
+  "item815": {
+    "name": "dragon robe",
+    "rarity": "ultra rare",
+    "armor": 17,
+    "magic": 12,
+    "dragon xp": "1%",
+    "level": 275,
+    "stack": 1
+  },
+  "item816": {
+    "name": "dragon robe",
+    "rarity": "legendary",
+    "armor": 18,
+    "magic": 13,
+    "dragon xp": "2%",
+    "level": 275,
+    "stack": 1
+  },
+  "item817": {
+    "name": "dragon belt",
+    "rarity": "ultra rare",
+    "armor": 24,
+    "dragon xp": "1%",
+    "level": 275,
+    "stack": 1
+  },
+  "item818": {
+    "name": "dragon belt",
+    "rarity": "legendary",
+    "armor": 25,
+    "dragon xp": "2%",
+    "level": 275,
+    "stack": 1
+  },
+  "item819": {
+    "name": "dragon legs",
+    "rarity": "ultra rare",
+    "armor": 41,
+    "dragon xp": "1%",
+    "level": 275,
+    "stack": 1
+  },
+  "item820": {
+    "name": "dragon legs",
+    "rarity": "legendary",
+    "armor": 43,
+    "dragon xp": "2%",
+    "level": 275,
+    "stack": 1
+  },
+  "item821": {
+    "name": "dragon boots",
+    "rarity": "ultra rare",
+    "armor": 24,
+    "speed": 4,
+    "dragon xp": "1%",
+    "level": 250,
+    "stack": 1
+  },
+  "item822": {
+    "name": "dragon boots",
+    "rarity": "legendary",
+    "armor": 25,
+    "speed": 5,
+    "dragon xp": "2%",
+    "level": 250,
+    "stack": 1
+  },
+  "item823": {
+    "name": "dragon glove (left)",
+    "rarity": "ultra rare",
+    "armor": 17,
+    "dragon xp": "1%",
+    "level": 250,
+    "stack": 1
+  },
+  "item824": {
+    "name": "dragon glove (left)",
+    "rarity": "legendary",
+    "armor": 18,
+    "dragon xp": "2%",
+    "level": 250,
+    "stack": 1
+  },
+  "item825": {
+    "name": "dragon glove (right)",
+    "rarity": "ultra rare",
+    "armor": 17,
+    "dragon xp": "1%",
+    "level": 250,
+    "stack": 1
+  },
+  "item826": {
+    "name": "dragon glove (right)",
+    "rarity": "legendary",
+    "armor": 18,
+    "dragon xp": "2%",
+    "level": 250,
+    "stack": 1
+  },
+  "item827": {
+    "name": "dragon slayer",
+    "rarity": "ultra rare",
+    "armor": 46,
+    "melee": 4,
+    "dragon xp": "2%",
+    "level": 275,
+    "stack": 1
+  },
+  "item828": {
+    "name": "dragon slayer",
+    "rarity": "legendary",
+    "armor": 48,
+    "melee": 5,
+    "dragon xp": "2%",
+    "level": 275,
+    "stack": 1
+  },
+  "item829": {
+    "name": "dragon shield",
+    "rarity": "ultra rare",
+    "armor": 51,
+    "aggro": 2,
+    "defense": 4,
+    "dragon xp": "2%",
+    "level": 275,
+    "stack": 1
+  },
+  "item830": {
+    "name": "dragon shield",
+    "rarity": "legendary",
+    "armor": 52,
+    "aggro": 3,
+    "defense": 5,
+    "dragon xp": "2%",
+    "level": 275,
+    "stack": 1
+  },
+  "item831": {
+    "name": "dragon bow",
+    "rarity": "ultra rare",
+    "armor": 46,
+    "distance": 4,
+    "dragon xp": "2%",
+    "level": 275,
+    "stack": 1
+  },
+  "item832": {
+    "name": "dragon bow",
+    "rarity": "legendary",
+    "armor": 48,
+    "distance": 5,
+    "dragon xp": "2%",
+    "level": 275,
+    "stack": 1
+  },
+  "item833": {
+    "name": "dragon wand",
+    "rarity": "ultra rare",
+    "armor": 46,
+    "magic": 4,
+    "dragon xp": "2%",
+    "level": 275,
+    "stack": 1
+  },
+  "item834": {
+    "name": "dragon wand",
+    "rarity": "legendary",
+    "armor": 48,
+    "magic": 5,
+    "dragon xp": "2%",
+    "level": 275,
+    "stack": 1
+  },
+  "item835": {
+    "name": "dragon backpack",
+    "rarity": "ultra rare",
+    "capacity": 70,
+    "level": 225,
+    "stack": 1
+  },
+  "item836": {
+    "name": "dragon backpack",
+    "rarity": "legendary",
+    "capacity": 72,
+    "level": 225,
+    "stack": 1
+  },
+  "item837": {
+    "name": "frozen helmet",
+    "rarity": "ultra rare",
+    "armor": 35,
+    "aggro": 2,
+    "ice xp": "1%",
+    "level": 350,
+    "stack": 1
+  },
+  "item838": {
+    "name": "frozen helmet",
+    "rarity": "legendary",
+    "armor": 36,
+    "aggro": 3,
+    "ice xp": "2%",
+    "level": 350,
+    "stack": 1
+  },
+  "item839": {
+    "name": "frozen hood",
+    "rarity": "ultra rare",
+    "armor": 19,
+    "speed": 8,
+    "ice xp": "1%",
+    "level": 350,
+    "stack": 1
+  },
+  "item840": {
+    "name": "frozen hood",
+    "rarity": "legendary",
+    "armor": 20,
+    "speed": 8,
+    "ice xp": "2%",
+    "level": 350,
+    "stack": 1
+  },
+  "item841": {
+    "name": "frozen hat",
+    "rarity": "ultra rare",
+    "armor": 11,
+    "magic": 8,
+    "ice xp": "1%",
+    "level": 350,
+    "stack": 1
+  },
+  "item842": {
+    "name": "frozen hat",
+    "rarity": "legendary",
+    "armor": 12,
+    "magic": 8,
+    "ice xp": "2%",
+    "level": 350,
+    "stack": 1
+  },
+  "item843": {
+    "name": "frozen armor",
+    "rarity": "ultra rare",
+    "armor": 54,
+    "aggro": 2,
+    "ice xp": "1%",
+    "level": 350,
+    "stack": 1
+  },
+  "item844": {
+    "name": "frozen armor",
+    "rarity": "legendary",
+    "armor": 56,
+    "aggro": 3,
+    "ice xp": "2%",
+    "level": 350,
+    "stack": 1
+  },
+  "item845": {
+    "name": "frozen light armor",
+    "rarity": "ultra rare",
+    "armor": 27,
+    "speed": 10,
+    "distance": 9,
+    "ice xp": "1%",
+    "level": 350,
+    "stack": 1
+  },
+  "item846": {
+    "name": "frozen light armor",
+    "rarity": "legendary",
+    "armor": 28,
+    "speed": 10,
+    "distance": 10,
+    "ice xp": "2%",
+    "level": 350,
+    "stack": 1
+  },
+  "item847": {
+    "name": "frozen robe",
+    "rarity": "ultra rare",
+    "armor": 19,
+    "magic": 13,
+    "ice xp": "1%",
+    "level": 350,
+    "stack": 1
+  },
+  "item848": {
+    "name": "frozen robe",
+    "rarity": "legendary",
+    "armor": 20,
+    "magic": 14,
+    "ice xp": "2%",
+    "level": 350,
+    "stack": 1
+  },
+  "item849": {
+    "name": "frozen belt",
+    "rarity": "ultra rare",
+    "armor": 27,
+    "ice xp": "1%",
+    "level": 325,
+    "stack": 1
+  },
+  "item850": {
+    "name": "frozen belt",
+    "rarity": "legendary",
+    "armor": 28,
+    "ice xp": "2%",
+    "level": 325,
+    "stack": 1
+  },
+  "item851": {
+    "name": "frozen legs",
+    "rarity": "ultra rare",
+    "armor": 46,
+    "ice xp": "1%",
+    "level": 350,
+    "stack": 1
+  },
+  "item852": {
+    "name": "frozen legs",
+    "rarity": "legendary",
+    "armor": 48,
+    "ice xp": "2%",
+    "level": 350,
+    "stack": 1
+  },
+  "item853": {
+    "name": "frozen boots",
+    "rarity": "ultra rare",
+    "armor": 27,
+    "speed": 4,
+    "ice xp": "1%",
+    "level": 325,
+    "stack": 1
+  },
+  "item854": {
+    "name": "frozen boots",
+    "rarity": "legendary",
+    "armor": 28,
+    "speed": 5,
+    "ice xp": "2%",
+    "level": 325,
+    "stack": 1
+  },
+  "item855": {
+    "name": "frozen glove (left)",
+    "rarity": "ultra rare",
+    "armor": 19,
+    "ice xp": "1%",
+    "level": 300,
+    "stack": 1
+  },
+  "item856": {
+    "name": "frozen glove (left)",
+    "rarity": "legendary",
+    "armor": 20,
+    "ice xp": "2%",
+    "level": 300,
+    "stack": 1
+  },
+  "item857": {
+    "name": "frozen glove (right)",
+    "rarity": "ultra rare",
+    "armor": 19,
+    "ice xp": "1%",
+    "level": 300,
+    "stack": 1
+  },
+  "item858": {
+    "name": "frozen glove (right)",
+    "rarity": "legendary",
+    "armor": 20,
+    "ice xp": "2%",
+    "level": 300,
+    "stack": 1
+  },
+  "item859": {
+    "name": "icy broadsword",
+    "rarity": "ultra rare",
+    "armor": 51,
+    "melee": 4,
+    "ice xp": "2%",
+    "level": 375,
+    "stack": 1
+  },
+  "item860": {
+    "name": "icy broadsword",
+    "rarity": "legendary",
+    "armor": 53,
+    "melee": 5,
+    "ice xp": "2%",
+    "level": 375,
+    "stack": 1
+  },
+  "item861": {
+    "name": "icy shield",
+    "rarity": "ultra rare",
+    "armor": 58,
+    "aggro": 2,
+    "defense": 4,
+    "ice xp": "2%",
+    "level": 275,
+    "stack": 1
+  },
+  "item862": {
+    "name": "icy shield",
+    "rarity": "legendary",
+    "armor": 60,
+    "aggro": 3,
+    "defense": 5,
+    "ice xp": "2%",
+    "level": 275,
+    "stack": 1
+  },
+  "item863": {
+    "name": "icy bow",
+    "rarity": "ultra rare",
+    "armor": 51,
+    "distance": 4,
+    "ice xp": "2%",
+    "level": 375,
+    "stack": 1
+  },
+  "item864": {
+    "name": "icy bow",
+    "rarity": "legendary",
+    "armor": 53,
+    "distance": 5,
+    "ice xp": "2%",
+    "level": 375,
+    "stack": 1
+  },
+  "item865": {
+    "name": "icy wand",
+    "rarity": "ultra rare",
+    "armor": 51,
+    "magic": 4,
+    "ice xp": "2%",
+    "level": 375,
+    "stack": 1
+  },
+  "item866": {
+    "name": "icy wand",
+    "rarity": "legendary",
+    "armor": 53,
+    "magic": 5,
+    "ice xp": "2%",
+    "level": 375,
+    "stack": 1
+  },
+  "item867": {
+    "name": "frozen backpack",
+    "rarity": "ultra rare",
+    "capacity": 78,
+    "level": 300,
+    "stack": 1
+  },
+  "item868": {
+    "name": "frozen backpack",
+    "rarity": "legendary",
+    "capacity": 80,
+    "level": 300,
+    "stack": 1
+  },
+  "item869": {
+    "name": "lava helmet",
+    "rarity": "ultra rare",
+    "armor": 35,
+    "aggro": 2,
+    "lava xp": "1%",
+    "level": 350,
+    "stack": 1
+  },
+  "item870": {
+    "name": "lava helmet",
+    "rarity": "legendary",
+    "armor": 36,
+    "aggro": 3,
+    "lava xp": "2%",
+    "level": 350,
+    "stack": 1
+  },
+  "item871": {
+    "name": "lava hood",
+    "rarity": "ultra rare",
+    "armor": 19,
+    "speed": 8,
+    "lava xp": "1%",
+    "level": 350,
+    "stack": 1
+  },
+  "item872": {
+    "name": "lava hood",
+    "rarity": "legendary",
+    "armor": 20,
+    "speed": 8,
+    "lava xp": "2%",
+    "level": 350,
+    "stack": 1
+  },
+  "item873": {
+    "name": "lava hat",
+    "rarity": "ultra rare",
+    "armor": 11,
+    "magic": 8,
+    "lava xp": "1%",
+    "level": 350,
+    "stack": 1
+  },
+  "item874": {
+    "name": "lava hat",
+    "rarity": "legendary",
+    "armor": 12,
+    "magic": 8,
+    "lava xp": "2%",
+    "level": 350,
+    "stack": 1
+  },
+  "item875": {
+    "name": "lava armor",
+    "rarity": "ultra rare",
+    "armor": 54,
+    "aggro": 2,
+    "lava xp": "1%",
+    "level": 350,
+    "stack": 1
+  },
+  "item876": {
+    "name": "lava armor",
+    "rarity": "legendary",
+    "armor": 56,
+    "aggro": 3,
+    "lava xp": "2%",
+    "level": 350,
+    "stack": 1
+  },
+  "item877": {
+    "name": "lava light armor",
+    "rarity": "ultra rare",
+    "armor": 27,
+    "speed": 10,
+    "distance": 9,
+    "lava xp": "1%",
+    "level": 350,
+    "stack": 1
+  },
+  "item878": {
+    "name": "lava light armor",
+    "rarity": "legendary",
+    "armor": 28,
+    "speed": 10,
+    "distance": 10,
+    "lava xp": "2%",
+    "level": 350,
+    "stack": 1
+  },
+  "item879": {
+    "name": "lava robe",
+    "rarity": "ultra rare",
+    "armor": 19,
+    "magic": 13,
+    "lava xp": "1%",
+    "level": 350,
+    "stack": 1
+  },
+  "item880": {
+    "name": "lava robe",
+    "rarity": "legendary",
+    "armor": 20,
+    "magic": 14,
+    "lava xp": "2%",
+    "level": 350,
+    "stack": 1
+  },
+  "item881": {
+    "name": "lava belt",
+    "rarity": "ultra rare",
+    "armor": 27,
+    "lava xp": "1%",
+    "level": 325,
+    "stack": 1
+  },
+  "item882": {
+    "name": "lava belt",
+    "rarity": "legendary",
+    "armor": 28,
+    "lava xp": "2%",
+    "level": 325,
+    "stack": 1
+  },
+  "item883": {
+    "name": "lava legs",
+    "rarity": "ultra rare",
+    "armor": 46,
+    "lava xp": "1%",
+    "level": 350,
+    "stack": 1
+  },
+  "item884": {
+    "name": "lava legs",
+    "rarity": "legendary",
+    "armor": 48,
+    "lava xp": "2%",
+    "level": 350,
+    "stack": 1
+  },
+  "item885": {
+    "name": "lava boots",
+    "rarity": "ultra rare",
+    "armor": 27,
+    "speed": 4,
+    "lava xp": "1%",
+    "level": 325,
+    "stack": 1
+  },
+  "item886": {
+    "name": "lava boots",
+    "rarity": "legendary",
+    "armor": 28,
+    "speed": 5,
+    "lava xp": "2%",
+    "level": 325,
+    "stack": 1
+  },
+  "item887": {
+    "name": "lava glove (left)",
+    "rarity": "ultra rare",
+    "armor": 19,
+    "lava xp": "1%",
+    "level": 300,
+    "stack": 1
+  },
+  "item888": {
+    "name": "lava glove (left)",
+    "rarity": "legendary",
+    "armor": 20,
+    "lava xp": "2%",
+    "level": 300,
+    "stack": 1
+  },
+  "item889": {
+    "name": "lava glove (right)",
+    "rarity": "ultra rare",
+    "armor": 19,
+    "lava xp": "1%",
+    "level": 300,
+    "stack": 1
+  },
+  "item890": {
+    "name": "lava glove (right)",
+    "rarity": "legendary",
+    "armor": 20,
+    "lava xp": "2%",
+    "level": 300,
+    "stack": 1
+  },
+  "item891": {
+    "name": "lava broadsword",
+    "rarity": "ultra rare",
+    "armor": 51,
+    "melee": 4,
+    "lava xp": "2%",
+    "level": 375,
+    "stack": 1
+  },
+  "item892": {
+    "name": "lava broadsword",
+    "rarity": "legendary",
+    "armor": 53,
+    "melee": 5,
+    "lava xp": "2%",
+    "level": 375,
+    "stack": 1
+  },
+  "item893": {
+    "name": "lava shield",
+    "rarity": "ultra rare",
+    "armor": 58,
+    "aggro": 2,
+    "defense": 4,
+    "lava xp": "2%",
+    "level": 275,
+    "stack": 1
+  },
+  "item894": {
+    "name": "lava shield",
+    "rarity": "legendary",
+    "armor": 60,
+    "aggro": 3,
+    "defense": 5,
+    "lava xp": "2%",
+    "level": 275,
+    "stack": 1
+  },
+  "item895": {
+    "name": "lava bow",
+    "rarity": "ultra rare",
+    "armor": 51,
+    "distance": 4,
+    "lava xp": "2%",
+    "level": 375,
+    "stack": 1
+  },
+  "item896": {
+    "name": "lava bow",
+    "rarity": "legendary",
+    "armor": 53,
+    "distance": 5,
+    "lava xp": "2%",
+    "level": 375,
+    "stack": 1
+  },
+  "item897": {
+    "name": "lava wand",
+    "rarity": "ultra rare",
+    "armor": 51,
+    "magic": 4,
+    "lava xp": "2%",
+    "level": 375,
+    "stack": 1
+  },
+  "item898": {
+    "name": "lava wand",
+    "rarity": "legendary",
+    "armor": 53,
+    "magic": 5,
+    "lava xp": "2%",
+    "level": 375,
+    "stack": 1
+  },
+  "item899": {
+    "name": "lava backpack",
+    "rarity": "ultra rare",
+    "capacity": 78,
+    "level": 300,
+    "stack": 1
+  },
+  "item900": {
+    "name": "lava backpack",
+    "rarity": "legendary",
+    "capacity": 80,
+    "level": 300,
+    "stack": 1
+  },
+  "item901": {
+    "name": "blue easter egg",
+    "rarity": "rare",
+    "stack": 1,
+    "description": "Unlocks an outfit"
+  },
+  "item902": {
+    "name": "green easter egg",
+    "rarity": "rare",
+    "stack": 1,
+    "description": "Unlocks an outfit"
+  },
+  "item903": {
+    "name": "purple easter egg",
+    "rarity": "rare",
+    "stack": 1,
+    "description": "Unlocks an outfit"
+  },
+  "item904": {
+    "name": "yellow easter egg",
+    "rarity": "commun",
+    "stack": 1,
+    "description": "Increases HP and MP\nregeneration for 20 minutes\nduring the easter event"
+  },
+  "item905": {
+    "name": "void melee ring",
+    "rarity": "legendary",
+    "armor": 1,
+    "melee": -25.0,
+    "stack": 1
+  },
+  "item906": {
+    "name": "void distance ring",
+    "rarity": "legendary",
+    "armor": 1,
+    "distance": -25.0,
+    "stack": 1
+  },
+  "item907": {
+    "name": "void magic ring",
+    "rarity": "legendary",
+    "armor": 1,
+    "magic": -25.0,
+    "stack": 1
+  },
+  "item908": {
+    "name": "void melee necklace",
+    "rarity": "legendary",
+    "armor": 1,
+    "melee": -25.0,
+    "stack": 1
+  },
+  "item909": {
+    "name": "void distance necklace",
+    "rarity": "legendary",
+    "armor": 1,
+    "distance": -25.0,
+    "stack": 1
+  },
+  "item910": {
+    "name": "void magic necklace",
+    "rarity": "legendary",
+    "armor": 1,
+    "magic": -25.0,
+    "stack": 1
+  },
+  "item911": {
+    "name": "void belt",
+    "rarity": "legendary",
+    "stack": 1,
+    "armor": 22,
+    "description": "Stops base experience gains"
+  },
+  "item912": {
+    "name": "leather quiver",
+    "rarity": "commun",
+    "capacity": 2000,
+    "stack": 1
+  },
+  "item913": {
+    "name": "ancient quiver",
+    "rarity": "commun",
+    "capacity": 4000,
+    "stack": 1,
+    "level": 25
+  },
+  "item914": {
+    "name": "studded quiver",
+    "rarity": "commun",
+    "capacity": 6000,
+    "stack": 1,
+    "level": 50
+  },
+  "item915": {
+    "name": "iron quiver",
+    "rarity": "commun",
+    "capacity": 8000,
+    "stack": 1,
+    "level": 75
+  },
+  "item916": {
+    "name": "soldier quiver",
+    "rarity": "commun",
+    "capacity": 10000,
+    "stack": 1,
+    "level": 100
+  },
+  "item917": {
+    "name": "steel quiver",
+    "rarity": "commun",
+    "capacity": 12000,
+    "stack": 1,
+    "level": 125
+  },
+  "item918": {
+    "name": "lizard quiver",
+    "rarity": "commun",
+    "capacity": 14000,
+    "stack": 1,
+    "level": 150
+  },
+  "item919": {
+    "name": "lizard quiver",
+    "rarity": "uncommun",
+    "capacity": 14400,
+    "stack": 1,
+    "level": 150
+  },
+  "item920": {
+    "name": "lizard quiver",
+    "rarity": "rare",
+    "capacity": 15000,
+    "stack": 1,
+    "level": 150
+  },
+  "item921": {
+    "name": "lizard quiver",
+    "rarity": "ultra rare",
+    "capacity": 15500,
+    "stack": 1,
+    "level": 150
+  },
+  "item922": {
+    "name": "lizard quiver",
+    "rarity": "legendary",
+    "capacity": 16000,
+    "stack": 1,
+    "level": 150
+  },
+  "item923": {
+    "name": "gargoyle quiver",
+    "rarity": "commun",
+    "capacity": 14000,
+    "stack": 1,
+    "level": 150
+  },
+  "item924": {
+    "name": "gargoyle quiver",
+    "rarity": "uncommun",
+    "capacity": 14400,
+    "stack": 1,
+    "level": 150
+  },
+  "item925": {
+    "name": "gargoyle quiver",
+    "rarity": "rare",
+    "capacity": 15000,
+    "stack": 1,
+    "level": 150
+  },
+  "item926": {
+    "name": "gargoyle quiver",
+    "rarity": "ultra rare",
+    "capacity": 15500,
+    "stack": 1,
+    "level": 150
+  },
+  "item927": {
+    "name": "gargoyle quiver",
+    "rarity": "legendary",
+    "capacity": 16000,
+    "stack": 1,
+    "level": 150
+  },
+  "item928": {
+    "name": "dragon quiver",
+    "rarity": "commun",
+    "capacity": 16000,
+    "stack": 1,
+    "level": 225
+  },
+  "item929": {
+    "name": "dragon quiver",
+    "rarity": "uncommun",
+    "capacity": 16500,
+    "stack": 1,
+    "level": 225
+  },
+  "item930": {
+    "name": "dragon quiver",
+    "rarity": "rare",
+    "capacity": 17000,
+    "stack": 1,
+    "level": 225
+  },
+  "item931": {
+    "name": "dragon quiver",
+    "rarity": "ultra rare",
+    "capacity": 17500,
+    "stack": 1,
+    "level": 225
+  },
+  "item932": {
+    "name": "dragon quiver",
+    "rarity": "legendary",
+    "capacity": 18000,
+    "stack": 1,
+    "level": 225
+  },
+  "item933": {
+    "name": "minotaur quiver",
+    "rarity": "commun",
+    "capacity": 16000,
+    "stack": 1,
+    "level": 225
+  },
+  "item934": {
+    "name": "minotaur quiver",
+    "rarity": "uncommun",
+    "capacity": 16500,
+    "stack": 1,
+    "level": 225
+  },
+  "item935": {
+    "name": "minotaur quiver",
+    "rarity": "rare",
+    "capacity": 17000,
+    "stack": 1,
+    "level": 225
+  },
+  "item936": {
+    "name": "minotaur quiver",
+    "rarity": "ultra rare",
+    "capacity": 17500,
+    "stack": 1,
+    "level": 225
+  },
+  "item937": {
+    "name": "minotaur quiver",
+    "rarity": "legendary",
+    "capacity": 18000,
+    "stack": 1,
+    "level": 225
+  },
+  "item938": {
+    "name": "minotaur quiver",
+    "rarity": "commun",
+    "capacity": 18000,
+    "stack": 1,
+    "level": 225
+  },
+  "item939": {
+    "name": "frozen quiver",
+    "rarity": "uncommun",
+    "capacity": 18500,
+    "stack": 1,
+    "level": 300
+  },
+  "item940": {
+    "name": "frozen quiver",
+    "rarity": "rare",
+    "capacity": 19000,
+    "stack": 1,
+    "level": 300
+  },
+  "item941": {
+    "name": "frozen quiver",
+    "rarity": "ultra rare",
+    "capacity": 19500,
+    "stack": 1,
+    "level": 300
+  },
+  "item942": {
+    "name": "frozen quiver",
+    "rarity": "legendary",
+    "capacity": 20000,
+    "stack": 1,
+    "level": 300
+  },
+  "item943": {
+    "name": "lava quiver",
+    "rarity": "commun",
+    "capacity": 18000,
+    "stack": 1,
+    "level": 300
+  },
+  "item944": {
+    "name": "lava quiver",
+    "rarity": "uncommun",
+    "capacity": 18500,
+    "stack": 1,
+    "level": 300
+  },
+  "item945": {
+    "name": "lava quiver",
+    "rarity": "rare",
+    "capacity": 19000,
+    "stack": 1,
+    "level": 300
+  },
+  "item946": {
+    "name": "lava quiver",
+    "rarity": "ultra rare",
+    "capacity": 19500,
+    "stack": 1,
+    "level": 300
+  },
+  "item947": {
+    "name": "lava quiver",
+    "rarity": "legendary",
+    "capacity": 20000,
+    "stack": 1,
+    "level": 300
+  },
+  "item948": {
+    "name": "golden quiver",
+    "rarity": "commun",
+    "capacity": 19500,
+    "stack": 1,
+    "level": 400
+  },
+  "item949": {
+    "name": "golden quiver",
+    "rarity": "uncommun",
+    "capacity": 20000,
+    "stack": 1,
+    "level": 400
+  },
+  "item950": {
+    "name": "golden quiver",
+    "rarity": "rare",
+    "capacity": 20500,
+    "stack": 1,
+    "level": 400
+  },
+  "item951": {
+    "name": "golden quiver",
+    "rarity": "ultra rare",
+    "capacity": 21000,
+    "stack": 1,
+    "level": 400
+  },
+  "item952": {
+    "name": "golden quiver",
+    "rarity": "legendary",
+    "capacity": 21500,
+    "stack": 1,
+    "level": 400
+  },
+  "item953": {
+    "name": "golden quiver",
+    "rarity": "mythic",
+    "capacity": 25000,
+    "stack": 1,
+    "level": 400
+  },
+  "item954": {
+    "name": "rusted golden quiver",
+    "rarity": "mythic",
+    "stack": 1
+  },
+  "item955": {
+    "name": "healer quiver",
+    "rarity": "rare",
+    "capacity": 20000,
+    "stack": 1,
+    "level": 300
+  },
+  "item956": {
+    "name": "healer quiver",
+    "rarity": "ultra rare",
+    "capacity": 20500,
+    "stack": 1,
+    "level": 300
+  },
+  "item957": {
+    "name": "healer quiver",
+    "rarity": "legendary",
+    "capacity": 21000,
+    "stack": 1,
+    "level": 300
+  },
+  "item958": {
+    "name": "healer quiver",
+    "rarity": "mythic",
+    "capacity": 24000,
+    "stack": 1,
+    "level": 300
+  },
+  "item959": {
+    "name": "rusted healer quiver",
+    "rarity": "mythic",
+    "stack": 1
+  },
+  "item960": {
+    "name": "recovery quiver",
+    "rarity": "rare",
+    "capacity": 20000,
+    "stack": 1,
+    "level": 300
+  },
+  "item961": {
+    "name": "recovery quiver",
+    "rarity": "ultra rare",
+    "capacity": 20500,
+    "stack": 1,
+    "level": 300
+  },
+  "item962": {
+    "name": "recovery quiver",
+    "rarity": "legendary",
+    "capacity": 21000,
+    "stack": 1,
+    "level": 300
+  },
+  "item963": {
+    "name": "recovery quiver",
+    "rarity": "mythic",
+    "capacity": 24000,
+    "stack": 1,
+    "level": 300
+  },
+  "item964": {
+    "name": "rusted recovery quiver",
+    "rarity": "mythic",
+    "stack": 1
+  },
+  "item965": {
+    "name": "rusted void melee ring",
+    "rarity": "mythic",
+    "stack": 1
+  },
+  "item966": {
+    "name": "rusted void distance ring",
+    "rarity": "mythic",
+    "stack": 1
+  },
+  "item967": {
+    "name": "rusted void magic ring",
+    "rarity": "mythic",
+    "stack": 1
+  },
+  "item968": {
+    "name": "rusted void melee ring",
+    "armor": 1,
+    "melee": -40.0,
+    "rarity": "mythic",
+    "stack": 1
+  },
+  "item969": {
+    "name": "rusted void distance ring",
+    "armor": 1,
+    "distance": -40.0,
+    "rarity": "mythic",
+    "stack": 1
+  },
+  "item970": {
+    "name": "rusted void magic ring",
+    "armor": 1,
+    "magic": -40.0,
+    "rarity": "mythic",
+    "stack": 1
+  },
+  "item971": {
+    "name": "titan legs",
+    "armor": 58,
+    "titan xp": "2%",
+    "rarity": "legendary",
+    "stack": 1,
+    "level": 625
+  },
+  "item972": {
+    "name": "bandana",
+    "rarity": "legendary",
+    "stack": 1,
+    "description": "Unlocks an outfit"
+  },
+  "item973": {
+    "name": "rusted void melee necklace",
+    "rarity": "mythic",
+    "stack": 1
+  },
+  "item974": {
+    "name": "rusted void distance necklace",
+    "rarity": "mythic",
+    "stack": 1
+  },
+  "item975": {
+    "name": "rusted void magic necklace",
+    "rarity": "mythic",
+    "stack": 1
+  },
+  "item976": {
+    "name": "void melee necklace",
+    "armor": 1,
+    "melee": -40.0,
+    "rarity": "mythic",
+    "stack": 1
+  },
+  "item977": {
+    "name": "void distance necklace",
+    "armor": 1,
+    "distance": -40.0,
+    "rarity": "mythic",
+    "stack": 1
+  },
+  "item978": {
+    "name": "void magic necklace",
+    "armor": 1,
+    "magic": -40.0,
+    "rarity": "mythic",
+    "stack": 1
+  },
+  "item979": {
+    "name": "piece of crown",
+    "rarity": "uncommun",
+    "stack": 20
+  },
+  "item980": {
+    "name": "crown",
+    "rarity": "legendary",
+    "stack": 1,
+    "description": "Unlocks an outfit"
+  },
+  "item981": {
+    "name": "piece of cloth",
+    "rarity": "uncommun",
+    "stack": 20
+  },
+  "item982": {
+    "name": "titan glove (right)",
+    "armor": 23,
+    "titan xp": "1%",
+    "rarity": "ultra rare",
+    "stack": 1,
+    "level": 600
+  },
+  "item983": {
+    "name": "titan belt",
+    "armor": 33,
+    "titan xp": "1%",
+    "rarity": "ultra rare",
+    "stack": 1,
+    "level": 600
+  },
+  "item984": {
+    "name": "owl feather",
+    "rarity": "uncommun",
+    "stack": 20
+  },
+  "item985": {
+    "name": "owl pet",
+    "rarity": "legendary",
+    "stack": 1,
+    "description": "Unlocks an outfit"
+  },
+  "item986": {
+    "name": "health potion",
+    "rarity": "uncommun",
+    "stack": 200,
+    "description": "Non transferable"
+  },
+  "item987": {
+    "name": "greater health potion",
+    "rarity": "uncommun",
+    "stack": 200,
+    "description": "Non transferable",
+    "level": 75
+  },
+  "item988": {
+    "name": "super health potion",
+    "rarity": "uncommun",
+    "stack": 200,
+    "description": "Non transferable",
+    "level": 150
+  },
+  "item989": {
+    "name": "ultimate health potion",
+    "rarity": "uncommun",
+    "stack": 200,
+    "description": "Non transferable",
+    "level": 250
+  },
+  "item990": {
+    "name": "mana potion",
+    "rarity": "uncommun",
+    "stack": 200,
+    "description": "Non transferable"
+  },
+  "item991": {
+    "name": "greater mana potion",
+    "rarity": "uncommun",
+    "stack": 200,
+    "description": "Non transferable",
+    "level": 75
+  },
+  "item992": {
+    "name": "super mana potion",
+    "rarity": "uncommun",
+    "stack": 200,
+    "description": "Non transferable",
+    "level": 150
+  },
+  "item993": {
+    "name": "ultimate mana potion",
+    "rarity": "uncommun",
+    "stack": 200,
+    "description": "Non transferable",
+    "level": 250
+  },
+  "item994": {
+    "name": "gold supporter scroll",
+    "rarity": "commun",
+    "stack": 20,
+    "description": "1 hour gold supporter\nNon transferable"
+  },
+  "item995": {
+    "name": "gold supporter scroll",
+    "rarity": "uncommun",
+    "stack": 20,
+    "description": "3 hour golds supporter\nNon transferable"
+  },
+  "item996": {
+    "name": "gold supporter scroll",
+    "rarity": "rare",
+    "stack": 20,
+    "description": "6 hours gold supporter\nNon transferable"
+  },
+  "item997": {
+    "name": "gold supporter scroll",
+    "rarity": "ultra rare",
+    "stack": 20,
+    "description": "12 hours gold supporter\nNon transferable"
+  },
+  "item998": {
+    "name": "gold supporter scroll",
+    "rarity": "legendary",
+    "stack": 20,
+    "description": "1 day gold supporter\nNon transferable"
+  },
+  "item999": {
+    "name": "bonus jewel",
+    "rarity": "commun",
+    "stack": 500,
+    "description": "Non transferable"
+  },
+  "item1000": {
+    "name": "xp potion",
+    "rarity": "commun",
+    "stack": 200,
+    "description": "1 hour double xp\nNon transferable"
+  },
+  "item1001": {
+    "name": "greater xp potion",
+    "rarity": "commun",
+    "stack": 200,
+    "description": "2 hours double xp\nNon transferable"
+  },
+  "item1002": {
+    "name": "super xp potion",
+    "rarity": "commun",
+    "stack": 200,
+    "description": "4 hours double xp\nNon transferable"
+  },
+  "item1003": {
+    "name": "ultimate xp potion",
+    "rarity": "commun",
+    "stack": 200,
+    "description": "8 hours double xp\nNon transferable"
+  },
+  "item1004": {
+    "name": "skill xp potion",
+    "rarity": "commun",
+    "stack": 200,
+    "description": "1 hour double xp\nNon transferable"
+  },
+  "item1005": {
+    "name": "greater skill xp potion",
+    "rarity": "commun",
+    "stack": 200,
+    "description": "2 hours double xp\nNon transferable"
+  },
+  "item1006": {
+    "name": "super skill xp potion",
+    "rarity": "commun",
+    "stack": 200,
+    "description": "4 hours double xp\nNon transferable"
+  },
+  "item1007": {
+    "name": "ultimate skill xp potion",
+    "rarity": "commun",
+    "stack": 200,
+    "description": "8 hours double xp\nNon transferable"
+  },
+  "item1008": {
+    "name": "gold supporter scroll",
+    "rarity": "mythic",
+    "stack": 20,
+    "description": "7 days gold supporter\nNon transferable"
+  },
+  "item1009": {
+    "name": "titan boots",
+    "armor": 33,
+    "speed": 4,
+    "titan xp": "1%",
+    "rarity": "ultra rare",
+    "stack": 1,
+    "level": 625
+  },
+  "item1010": {
+    "name": "minotaur's key",
+    "stack": 1
+  },
+  "item1011": {
+    "name": "key ring",
+    "rarity": "mythic",
+    "stack": 1,
+    "description": "Assassin's key\nVampire's key\nDrow's key\nLizard's key\nGargoyle's key\nminotaur's key"
+  },
+  "item1012": {
+    "name": "chicken egg",
+    "rarity": "mythic",
+    "stack": 20,
+    "description": "increases speed for 20 minutes\ncan only be used during the\nchickenpocalypse"
+  },
+  "item1013": {
+    "name": "chicken feather",
+    "rarity": "rare",
+    "stack": 20
+  },
+  "item1014": {
+    "name": "golden chicken feather",
+    "rarity": "legendary",
+    "stack": 20
+  },
+  "item1015": {
+    "name": "chicken pet",
+    "rarity": "legendary",
+    "stack": 1,
+    "description": "Unlocks an outfit"
+  },
+  "item1016": {
+    "name": "golden chicken pet",
+    "rarity": "legendary",
+    "stack": 1,
+    "description": "Unlocks an outfit"
+  },
+  "item1017": {
+    "name": "titan glove (left)",
+    "armor": 23,
+    "titan xp": "1%",
+    "rarity": "ultra rare",
+    "stack": 1,
+    "level": 600
+  },
+  "item1018": {
+    "name": "outfit jewel",
+    "rarity": "commun",
+    "stack": 500,
+    "description": "Non transferable"
+  },
+  "item1019": {
+    "name": "reward jewel",
+    "rarity": "commun",
+    "stack": 500,
+    "description": "Non transferable"
+  },
+  "item1020": {
+    "name": "purple sword",
+    "rarity": "legendary",
+    "stack": 1,
+    "description": "Unlocks an outfit\nNon transferable"
+  },
+  "item1021": {
+    "name": "purple shield",
+    "rarity": "legendary",
+    "stack": 1,
+    "description": "Unlocks an outfit\nNon transferable"
+  },
+  "item1022": {
+    "name": "purple bow",
+    "rarity": "legendary",
+    "stack": 1,
+    "description": "Unlocks an outfit\nNon transferable"
+  },
+  "item1023": {
+    "name": "purple quiver",
+    "rarity": "legendary",
+    "stack": 1,
+    "description": "Unlocks an outfit\nNon transferable"
+  },
+  "item1024": {
+    "name": "purple wand",
+    "rarity": "legendary",
+    "stack": 1,
+    "description": "Unlocks an outfit\nNon transferable"
+  },
+  "item1025": {
+    "name": "purple cobra pet",
+    "rarity": "legendary",
+    "stack": 1,
+    "description": "Unlocks an outfit\nNon transferable"
+  },
+  "item1026": {
+    "name": "swift ring",
+    "rarity": "ultra rare",
+    "stack": 1,
+    "armor": 1,
+    "speed": 5,
+    "description": "Non transferable"
+  },
+  "item1027": {
+    "name": "swift ring",
+    "rarity": "legendary",
+    "stack": 1,
+    "armor": 1,
+    "speed": 10,
+    "description": "Non transferable"
+  },
+  "item1028": {
+    "name": "swift ring",
+    "rarity": "mythic",
+    "stack": 1,
+    "armor": 1,
+    "speed": 15,
+    "description": "Non transferable"
+  },
+  "item1029": {
+    "name": "swift melee ring",
+    "rarity": "mythic",
+    "stack": 1,
+    "armor": 1,
+    "speed": 15,
+    "melee": 15,
+    "description": "Non transferable"
+  },
+  "item1030": {
+    "name": "swift distance ring",
+    "rarity": "mythic",
+    "stack": 1,
+    "armor": 1,
+    "speed": 15,
+    "distance": 15,
+    "description": "Non transferable"
+  },
+  "item1031": {
+    "name": "swift magic ring",
+    "rarity": "mythic",
+    "stack": 1,
+    "armor": 1,
+    "speed": 15,
+    "magic": 15,
+    "description": "Non transferable"
+  },
+  "item1032": {
+    "name": "swift defense ring",
+    "rarity": "mythic",
+    "stack": 1,
+    "armor": 1,
+    "speed": 15,
+    "defense": 15,
+    "description": "Non transferable"
+  },
+  "item1033": {
+    "name": "necklace",
+    "rarity": "commun",
+    "stack": 1,
+    "armor": 1,
+    "level": 15
+  },
+  "item1034": {
+    "name": "swift necklace",
+    "rarity": "ultra rare",
+    "stack": 1,
+    "armor": 1,
+    "speed": 5,
+    "description": "Non transferable"
+  },
+  "item1035": {
+    "name": "swift necklace",
+    "rarity": "legendary",
+    "stack": 1,
+    "armor": 1,
+    "speed": 10,
+    "description": "Non transferable"
+  },
+  "item1036": {
+    "name": "swift necklace",
+    "rarity": "mythic",
+    "stack": 1,
+    "armor": 1,
+    "speed": 15,
+    "description": "Non transferable"
+  },
+  "item1037": {
+    "name": "swift melee necklace",
+    "rarity": "mythic",
+    "stack": 1,
+    "armor": 1,
+    "speed": 15,
+    "melee": 15,
+    "description": "Non transferable"
+  },
+  "item1038": {
+    "name": "swift distance necklace",
+    "rarity": "mythic",
+    "stack": 1,
+    "armor": 1,
+    "speed": 15,
+    "distance": 15,
+    "description": "Non transferable"
+  },
+  "item1039": {
+    "name": "swift magic necklace",
+    "rarity": "mythic",
+    "stack": 1,
+    "armor": 1,
+    "speed": 15,
+    "magic": 15,
+    "description": "Non transferable"
+  },
+  "item1040": {
+    "name": "swift defense necklace",
+    "rarity": "mythic",
+    "stack": 1,
+    "armor": 1,
+    "speed": 15,
+    "defense": 15,
+    "description": "Non transferable"
+  },
+  "item1041": {
+    "name": "titan helmet",
+    "rarity": "ultra rare",
+    "stack": 1,
+    "armor": 40,
+    "aggro": 2,
+    "titan xp": "1%",
+    "level": 625
+  },
+  "item1042": {
+    "name": "titan hood",
+    "rarity": "ultra rare",
+    "stack": 1,
+    "armor": 24,
+    "speed": 9,
+    "titan xp": "1%",
+    "level": 625
+  },
+  "item1043": {
+    "name": "titan hat",
+    "rarity": "ultra rare",
+    "stack": 1,
+    "armor": 15,
+    "magic": 10,
+    "titan xp": "1%",
+    "level": 625
+  },
+  "item1044": {
+    "name": "korvak's fragment",
+    "rarity": "uncommun",
+    "stack": 20
+  },
+  "item1045": {
+    "name": "santa's quiver",
+    "rarity": "ultra rare",
+    "stack": 1,
+    "capacity": 22000,
+    "level": 450
+  },
+  "item1046": {
+    "name": "santa's quiver",
+    "rarity": "legendary",
+    "stack": 1,
+    "capacity": 22500,
+    "level": 450
+  },
+  "item1047": {
+    "name": "santa's quiver",
+    "rarity": "mythic",
+    "stack": 1,
+    "capacity": 26000,
+    "level": 450
+  },
+  "item1048": {
+    "name": "rusted santa's quiver",
+    "rarity": "mythic",
+    "stack": 1
+  },
+  "item1049": {
+    "name": "korvak hat",
+    "rarity": "legendary",
+    "stack": 1,
+    "description": "Unlocks an outfit"
+  },
+  "item1050": {
+    "name": "rusted golden grimoire",
+    "rarity": "mythic",
+    "stack": 1,
+    "description": "This item cannot be used yet.\nsave it for a future update."
+  },
+  "item1051": {
+    "name": "santa's backpack",
+    "rarity": "ultra rare",
+    "stack": 1,
+    "capacity": 86,
+    "level": 450
+  },
+  "item1052": {
+    "name": "santa's potion bag",
+    "rarity": "ultra rare",
+    "stack": 1,
+    "capacity": 43,
+    "level": 450
+  },
+  "item1053": {
+    "name": "santa's potion bag",
+    "rarity": "legendary",
+    "stack": 1,
+    "capacity": 44,
+    "level": 450
+  },
+  "item1054": {
+    "name": "santa's potion bag",
+    "rarity": "mythic",
+    "stack": 1,
+    "capacity": 48,
+    "level": 450
+  },
+  "item1055": {
+    "name": "rusted santa's potion bag",
+    "rarity": "mythic",
+    "stack": 1
+  },
+  "item1056": {
+    "name": "leather potion bag",
+    "rarity": "commun",
+    "stack": 1,
+    "capacity": 10
+  },
+  "item1057": {
+    "name": "studded potion bag",
+    "rarity": "commun",
+    "stack": 1,
+    "capacity": 13,
+    "level": 25
+  },
+  "item1058": {
+    "name": "iron potion bag",
+    "rarity": "commun",
+    "stack": 1,
+    "capacity": 16,
+    "level": 50
+  },
+  "item1059": {
+    "name": "soldier potion bag",
+    "rarity": "commun",
+    "stack": 1,
+    "capacity": 19,
+    "level": 75
+  },
+  "item1060": {
+    "name": "silver potion bag",
+    "rarity": "commun",
+    "stack": 1,
+    "capacity": 22,
+    "level": 100
+  },
+  "item1061": {
+    "name": "blue potion bag",
+    "rarity": "commun",
+    "stack": 1,
+    "capacity": 25,
+    "level": 125
+  },
+  "item1062": {
+    "name": "healer potion bag",
+    "rarity": "rare",
+    "stack": 1,
+    "capacity": 40,
+    "level": 300
+  },
+  "item1063": {
+    "name": "healer potion bag",
+    "rarity": "ultra rare",
+    "stack": 1,
+    "capacity": 41,
+    "level": 300
+  },
+  "item1064": {
+    "name": "healer potion bag",
+    "rarity": "legendary",
+    "stack": 1,
+    "capacity": 42,
+    "level": 300
+  },
+  "item1065": {
+    "name": "healer potion bag",
+    "rarity": "mythic",
+    "stack": 1,
+    "capacity": 46,
+    "level": 300
+  },
+  "item1066": {
+    "name": "recovery potion bag",
+    "rarity": "rare",
+    "stack": 1,
+    "capacity": 40,
+    "level": 300
+  },
+  "item1067": {
+    "name": "recovery potion bag",
+    "rarity": "ultra rare",
+    "stack": 1,
+    "capacity": 41,
+    "level": 300
+  },
+  "item1068": {
+    "name": "recovery potion bag",
+    "rarity": "legendary",
+    "stack": 1,
+    "capacity": 42,
+    "level": 300
+  },
+  "item1069": {
+    "name": "recovery potion bag",
+    "rarity": "mythic",
+    "stack": 1,
+    "capacity": 46,
+    "level": 300
+  },
+  "item1070": {
+    "name": "gargoyle potion bag",
+    "rarity": "commun",
+    "stack": 1,
+    "capacity": 28,
+    "level": 150
+  },
+  "item1071": {
+    "name": "gargoyle potion bag",
+    "rarity": "uncommun",
+    "stack": 1,
+    "capacity": 29,
+    "level": 150
+  },
+  "item1072": {
+    "name": "gargoyle potion bag",
+    "rarity": "rare",
+    "stack": 1,
+    "capacity": 30,
+    "level": 150
+  },
+  "item1073": {
+    "name": "gargoyle potion bag",
+    "rarity": "ultra rare",
+    "stack": 1,
+    "capacity": 31,
+    "level": 150
+  },
+  "item1074": {
+    "name": "gargoyle potion bag",
+    "rarity": "legendary",
+    "stack": 1,
+    "capacity": 32,
+    "level": 150
+  },
+  "item1075": {
+    "name": "green potion bag",
+    "rarity": "commun",
+    "stack": 1,
+    "capacity": 28,
+    "level": 150
+  },
+  "item1076": {
+    "name": "green potion bag",
+    "rarity": "uncommun",
+    "stack": 1,
+    "capacity": 29,
+    "level": 150
+  },
+  "item1077": {
+    "name": "green potion bag",
+    "rarity": "rare",
+    "stack": 1,
+    "capacity": 30,
+    "level": 150
+  },
+  "item1078": {
+    "name": "green potion bag",
+    "rarity": "ultra rare",
+    "stack": 1,
+    "capacity": 31,
+    "level": 150
+  },
+  "item1079": {
+    "name": "green potion bag",
+    "rarity": "legendary",
+    "stack": 1,
+    "capacity": 32,
+    "level": 150
+  },
+  "item1080": {
+    "name": "dragon potion bag",
+    "rarity": "commun",
+    "stack": 1,
+    "capacity": 32,
+    "level": 225
+  },
+  "item1081": {
+    "name": "dragon potion bag",
+    "rarity": "uncommun",
+    "stack": 1,
+    "capacity": 33,
+    "level": 225
+  },
+  "item1082": {
+    "name": "dragon potion bag",
+    "rarity": "rare",
+    "stack": 1,
+    "capacity": 34,
+    "level": 225
+  },
+  "item1083": {
+    "name": "dragon potion bag",
+    "rarity": "ultra rare",
+    "stack": 1,
+    "capacity": 35,
+    "level": 225
+  },
+  "item1084": {
+    "name": "dragon potion bag",
+    "rarity": "legendary",
+    "stack": 1,
+    "capacity": 36,
+    "level": 225
+  },
+  "item1085": {
+    "name": "minotaur potion bag",
+    "rarity": "commun",
+    "stack": 1,
+    "capacity": 32,
+    "level": 225
+  },
+  "item1086": {
+    "name": "minotaur potion bag",
+    "rarity": "uncommun",
+    "stack": 1,
+    "capacity": 33,
+    "level": 225
+  },
+  "item1087": {
+    "name": "minotaur potion bag",
+    "rarity": "rare",
+    "stack": 1,
+    "capacity": 34,
+    "level": 225
+  },
+  "item1088": {
+    "name": "minotaur potion bag",
+    "rarity": "ultra rare",
+    "stack": 1,
+    "capacity": 35,
+    "level": 225
+  },
+  "item1089": {
+    "name": "minotaur potion bag",
+    "rarity": "legendary",
+    "stack": 1,
+    "capacity": 36,
+    "level": 225
+  },
+  "item1090": {
+    "name": "minotaur potion bag",
+    "rarity": "commun",
+    "stack": 1,
+    "capacity": 36,
+    "level": 300
+  },
+  "item1091": {
+    "name": "minotaur potion bag",
+    "rarity": "uncommun",
+    "stack": 1,
+    "capacity": 37,
+    "level": 300
+  },
+  "item1092": {
+    "name": "minotaur potion bag",
+    "rarity": "rare",
+    "stack": 1,
+    "capacity": 38,
+    "level": 300
+  },
+  "item1093": {
+    "name": "minotaur potion bag",
+    "rarity": "ultra rare",
+    "stack": 1,
+    "capacity": 39,
+    "level": 300
+  },
+  "item1094": {
+    "name": "minotaur potion bag",
+    "rarity": "legendary",
+    "stack": 1,
+    "capacity": 40,
+    "level": 300
+  },
+  "item1095": {
+    "name": "lava potion bag",
+    "rarity": "commun",
+    "stack": 1,
+    "capacity": 36,
+    "level": 300
+  },
+  "item1096": {
+    "name": "lava potion bag",
+    "rarity": "uncommun",
+    "stack": 1,
+    "capacity": 37,
+    "level": 300
+  },
+  "item1097": {
+    "name": "lava potion bag",
+    "rarity": "rare",
+    "stack": 1,
+    "capacity": 38,
+    "level": 300
+  },
+  "item1098": {
+    "name": "lava potion bag",
+    "rarity": "ultra rare",
+    "stack": 1,
+    "capacity": 39,
+    "level": 300
+  },
+  "item1099": {
+    "name": "lava potion bag",
+    "rarity": "legendary",
+    "stack": 1,
+    "capacity": 40,
+    "level": 300
+  },
+  "item1110": {
+    "name": "void backpack",
+    "rarity": "legendary",
+    "stack": 1,
+    "capacity": 76
+  },
+  "item1111": {
+    "name": "void quiver",
+    "rarity": "legendary",
+    "stack": 1,
+    "capacity": 17000
+  }
+}
