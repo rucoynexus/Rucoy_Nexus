@@ -236,9 +236,35 @@
             return `color: ${getRarityColor(raridade)};`;
         }
 
-        function normalizar(nome) {
-            return nome.toLowerCase().replace(/'/g, "").replace(/\(.*?\)/g, "").replace(/[^a-z0-9 ]/g, "").trim();
+        // Remove apenas caracteres especiais, mas MANTÉM o conteúdo dos parênteses
+function normalizar(nome) {
+    return nome.toLowerCase()
+        .replace(/'/g, "") // Remove apóstrofos
+        .replace(/[^a-z0-9() ]/g, "") // Remove símbolos, mas mantém letras, números, espaços e ()
+        .trim();
+}
+
+function acharSprite(nome) {
+    let n = normalizar(nome);
+    
+    // 1. Tenta achar o nome exato (com parênteses)
+    for (let key in sprites) {
+        if (normalizar(key.replace(".png", "")) === n) {
+            return sprites[key];
         }
+    }
+    
+    // 2. Se não achar, tenta uma busca parcial como "fallback"
+    // Isso evita que itens fiquem sem imagem caso o JSON tenha nomes levemente diferentes
+    for (let key in sprites) {
+        let keyClean = normalizar(key.replace(".png", ""));
+        if (keyClean.includes(n) || n.includes(keyClean)) {
+            return sprites[key];
+        }
+    }
+    
+    return null;
+}
 
         function acharSprite(nome) {
             let n = normalizar(nome);
