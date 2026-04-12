@@ -14,7 +14,7 @@
         }
 
         * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Roboto', sans-serif; }
-        body { background-color: var(--rucoy-bg); color: var(--white); overflow-x: hidden; }
+        body { background-color: var(--rucoy-bg); color: var(--white); overflow-x: hidden; min-height: 100vh; }
 
         /* --- TOP BAR --- */
         header {
@@ -79,7 +79,6 @@
 
         .drawer-item img { width: 24px; height: 24px; margin-right: 32px; filter: brightness(0) invert(1); }
 
-        /* Settings destacado no rodapé com letra preta */
         .settings-highlight {
             margin-top: auto;
             border-top: 1px solid rgba(255,255,255,0.1);
@@ -94,24 +93,27 @@
             background: rgba(0,0,0,0.5); display: none; z-index: 150;
         }
 
-        main { padding: 76px 20px 20px 20px; }
+        main { padding: 76px 20px 20px 20px; min-height: 100vh; }
 
         /* --- WIKI GRID --- */
         #lista {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(80px, 1fr));
+            grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
             gap: 10px;
+            padding-bottom: 50px; /* Espaço para o scroll disparar */
         }
 
         .item-card {
             position: relative;
             width: 100%;
             aspect-ratio: 1/1;
-            background-size: 100% 100%;
+            background-size: cover;
+            background-position: center;
             display: flex;
             align-items: center;
             justify-content: center;
             overflow: hidden;
+            image-rendering: pixelated;
         }
 
         .item-name {
@@ -119,24 +121,25 @@
             bottom: 2px;
             width: 100%;
             text-align: center;
-            font-size: 11px;
+            font-size: 12px;
             font-weight: bold;
             z-index: 2;
+            padding: 0 2px;
+            line-height: 1;
         }
 
-        /* Ajuste do Sprite para 90% do card */
         .sprite-wrap {
             position: absolute;
             display: flex;
             align-items: center;
             justify-content: center;
-            transform: scale(3); /* Ajuste o scale base aqui se precisar de mais zoom */
+            transform: scale(3.5); /* Zoom do item */
             image-rendering: pixelated;
         }
         
-        /* Escala mobile/pequena */
         @media (max-width: 600px) {
-            .sprite-wrap { transform: scale(2.2); }
+            #lista { grid-template-columns: repeat(4, 1fr); gap: 5px; }
+            .sprite-wrap { transform: scale(2.5); }
             .item-name { font-size: 10px; }
         }
 
@@ -204,7 +207,7 @@
         let sprites = {};
         let listaFiltrada = [];
         let pagina = 0;
-        const POR_PAGINA = 40;
+        const POR_PAGINA = 52; // Multiplo de 4 para a grid ficar certinha
         let isLoading = false;
 
         function getRarityColor(r) {
@@ -217,23 +220,18 @@
             return "white";
         }
 
+        // Função corrigida para usar os fundos na pasta correta
         function getBackground(r) {
-            r = (r || "").toLowerCase();
-            return `${r.replace(" ", "-") || "commun"}-background.png`;
+            r = (r || "").toLowerCase().replace(" ", "-");
+            if (!r) r = "commun";
+            return `${r}-background.png`;
         }
 
         function getNameStyle(raridade) {
             raridade = (raridade || "").toLowerCase();
             if (raridade === "mythic") {
-                // Gradiente corrigido (sem shadow para não ficar preto)
-                return `
-                    background: -webkit-linear-gradient(#e75931, #ff9229, #ffbe00, #e7ff00);
-                    -webkit-background-clip: text;
-                    -webkit-text-fill-color: transparent;
-                    font-weight: bold;
-                `;
+                return `background: -webkit-linear-gradient(#e75931, #ff9229, #ffbe00, #e7ff00); -webkit-background-clip: text; -webkit-text-fill-color: transparent; font-weight: bold;`;
             }
-            // Para os outros, usamos sombra para ler melhor sobre o fundo
             return `color: ${getRarityColor(raridade)}; text-shadow: 1px 1px 2px black;`;
         }
 
@@ -257,14 +255,12 @@
 
             if (sprite) {
                 let f = sprite.frame;
-                spriteHTML = `
-                    <div class="sprite-wrap">
-                        <div class="sprite" style="width:${f.w}px;height:${f.h}px;background-image:url('./items.png');background-position:-${f.x}px -${f.y}px;"></div>
-                    </div>`;
+                spriteHTML = `<div class="sprite-wrap"><div class="sprite" style="width:${f.w}px;height:${f.h}px;background-image:url('./items.png');background-position:-${f.x}px -${f.y}px;"></div></div>`;
             }
 
+            // VOLTANDO O FUNDO ORIGINAL
             return `
-                <div class="item-card" style="background-image:url('./res/backgrounds/${bg}')">
+                <div class="item-card" style="background-image:url('${bg}')">
                     ${spriteHTML}
                     <div class="item-name" style="${getNameStyle(raridade)}">${nome}</div>
                 </div>`;
@@ -290,6 +286,13 @@
             pagina = 0;
             document.getElementById("lista").innerHTML = "";
             carregarMais();
+            
+            // Se a tela for muito grande e não criar scroll, carrega mais uma leva
+            setTimeout(() => {
+                if (document.documentElement.scrollHeight <= window.innerHeight) {
+                    carregarMais();
+                }
+            }, 300);
         }
 
         function carregarMais() {
@@ -301,20 +304,23 @@
             let fim = inicio + POR_PAGINA;
             let slice = listaFiltrada.slice(inicio, fim);
 
+            let htmlBuffer = "";
             slice.forEach(e => {
-                container.innerHTML += criarItemHTML(e.nome, e.item);
+                htmlBuffer += criarItemHTML(e.nome, e.item);
             });
+            container.innerHTML += htmlBuffer;
 
             pagina++;
             isLoading = false;
         }
 
-        // Scroll Infinito melhorado para Android
+        // Scroll Infinito Universal (PC e Mobile)
         window.addEventListener("scroll", () => {
-            const scrollTotal = document.documentElement.scrollHeight;
-            const scrollAtual = window.innerHeight + window.pageYOffset;
-            // Se chegar a 150px do fim, carrega mais
-            if (scrollAtual >= scrollTotal - 150) {
+            const scrollHeight = document.documentElement.scrollHeight;
+            const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+            const clientHeight = window.innerHeight;
+
+            if (scrollTop + clientHeight >= scrollHeight - 300) {
                 carregarMais();
             }
         });
@@ -329,7 +335,7 @@
                 let data = await resSprites.json();
                 sprites = data.frames || {};
                 aplicarFiltro();
-            } catch (e) { console.error("Erro ao carregar dados:", e); }
+            } catch (e) { console.error("Erro:", e); }
         }
 
         document.getElementById("search").addEventListener("input", aplicarFiltro);
