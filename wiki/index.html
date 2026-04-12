@@ -226,6 +226,19 @@ let listaFiltrada = [];
 let pagina = 0;
 const POR_PAGINA = 50;
 
+function getRarityColor(r) {
+  r = (r || "").toLowerCase();
+
+  if (r === "commun") return "rgb(247,243,247)";
+  if (r === "uncommun") return "rgb(0,235,74)";
+  if (r === "rare") return "rgb(66,190,255)";
+  if (r === "ultra rare") return "rgb(230,117,247)";
+  if (r === "legendary") return "rgb(239,255,0)";
+  if (r === "mythic") return "linear-gradient(90deg,#e75931,#ff9229,#ffbe00,#e7ff00)";
+  
+  return "white";
+}
+
 function criarItemHTML(nome, item) {
   let raridade = item["Rarity: "] || item.rarity || "";
   let cor = getRarityColor(raridade);
@@ -242,21 +255,6 @@ function criarItemHTML(nome, item) {
   } else {
     style = `color:${cor}; font-weight:bold;`;
   }
-
-  return `
-    <div style="padding:8px;border-bottom:1px solid #333;">
-      <span style="${style}">${nome}</span>
-    </div>
-  `;
-}
-
-function criarItemHTML(nome, item) {
-  let raridade = item["Rarity: "] || item.rarity || "";
-  let cor = getRarityColor(raridade);
-
-  let style = cor.includes("gradient")
-    ? `background:${cor};-webkit-background-clip:text;color:transparent;`
-    : `color:${cor}`;
 
   return `
     <div style="padding:8px;border-bottom:1px solid #333;">
