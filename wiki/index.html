@@ -17,14 +17,78 @@
 * { margin:0; padding:0; box-sizing:border-box; font-family:'Roboto', sans-serif; }
 body { background:var(--rucoy-bg); color:var(--white); }
 
-/* -------- GRID DOS ITENS -------- */
+/* ===== TOP BAR ===== */
+header {
+    background-color: var(--rucoy-blue);
+    height: 56px;
+    display: flex;
+    align-items: center;
+    padding: 0 16px;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 100;
+}
+
+.top-bar-action {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+}
+
+.menu-btn img {
+    width: 24px;
+    filter: brightness(0) invert(1);
+    margin-right: 15px;
+}
+
+/* ===== DRAWER ===== */
+#drawer {
+    position: fixed;
+    top: 0;
+    left: -280px;
+    width: 280px;
+    height: 100%;
+    background-color: var(--rucoy-drawer-bg);
+    z-index: 200;
+    transition: 0.3s;
+}
+
+#drawer.active { left: 0; }
+
+.drawer-list a {
+    display: block;
+    padding: 12px;
+    color: white;
+    text-decoration: none;
+}
+
+.drawer-list a:hover {
+    background: rgba(255,255,255,0.1);
+}
+
+/* overlay */
+#overlay {
+    position: fixed;
+    top:0; left:0;
+    width:100%; height:100%;
+    background: rgba(0,0,0,0.5);
+    display:none;
+    z-index:150;
+}
+
+/* ===== CONTEÚDO ===== */
+main {
+    padding: 70px 10px 10px 10px;
+}
+
+/* ===== GRID ===== */
 #lista {
   display: grid;
   grid-template-columns: repeat(10, 1fr);
   gap: 10px;
 }
 
-/* CARD */
 .item-card {
   position: relative;
   aspect-ratio: 1/1;
@@ -34,14 +98,12 @@ body { background:var(--rucoy-bg); color:var(--white); }
   justify-content:center;
 }
 
-/* SPRITE */
 .sprite {
   image-rendering: pixelated;
   background-repeat: no-repeat;
-  transform: scale(2); /* aumenta sprite */
+  transform: scale(2);
 }
 
-/* NOME */
 .item-name {
   position:absolute;
   bottom:2px;
@@ -55,6 +117,35 @@ body { background:var(--rucoy-bg); color:var(--white); }
 </head>
 
 <body>
+
+<!-- OVERLAY -->
+<div id="overlay" onclick="toggleMenu()"></div>
+
+<!-- HEADER -->
+<header>
+  <div class="top-bar-action" onclick="toggleMenu()">
+    <div class="menu-btn">
+      <img src="/res/icon/navnav.png">
+    </div>
+    <span>Wiki</span>
+  </div>
+</header>
+
+<!-- DRAWER -->
+<nav id="drawer">
+  <div class="drawer-list">
+    <a href="/">Home</a>
+    <a href="/profile/">Profile</a>
+    <a href="/wiki/">Wiki</a>
+    <a href="/tradeandsales/">Trades</a>
+    <a href="/map/">Map</a>
+    <a href="/players/">Players</a>
+    <a href="/guild/">Guild</a>
+    <a href="/calculator/">Calculator</a>
+    <a href="/updates/">Updates</a>
+    <a href="/settings/">Settings</a>
+  </div>
+</nav>
 
 <main>
 
@@ -78,20 +169,26 @@ body { background:var(--rucoy-bg); color:var(--white); }
 
 <script>
 
+// ===== MENU =====
+function toggleMenu() {
+  const drawer = document.getElementById("drawer");
+  const overlay = document.getElementById("overlay");
+
+  drawer.classList.toggle("active");
+  overlay.style.display = drawer.classList.contains("active") ? "block" : "none";
+}
+
 // ============================
-// VARIÁVEIS
+// RESTO DO SEU SCRIPT (INALTERADO)
 // ============================
-let items = {};        // items.json
-let sprites = {};      // items_png.json
+
+let items = {};
+let sprites = {};
 let listaFiltrada = [];
 
 let pagina = 0;
 const POR_PAGINA = 50;
 
-
-// ============================
-// FUNÇÃO: fundo por raridade
-// ============================
 function getBackground(r) {
   r = (r || "").toLowerCase();
 
@@ -105,39 +202,20 @@ function getBackground(r) {
   return "commun-background.png";
 }
 
-
-// ============================
-// NORMALIZA NOME (pra comparar)
-// ============================
 function normalizar(nome) {
-  return nome
-    .toLowerCase()
-    .replace(/'/g, "")
-    .replace(/\(.*?\)/g, "")
-    .replace(/[^a-z0-9 ]/g, "")
-    .trim();
+  return nome.toLowerCase().replace(/'/g,"").replace(/\(.*?\)/g,"").replace(/[^a-z0-9 ]/g,"").trim();
 }
 
-
-// ============================
-// ACHA SPRITE NO JSON
-// ============================
 function acharSprite(nome) {
   let n = normalizar(nome);
 
   for (let key in sprites) {
     let k = normalizar(key.replace(".png", ""));
-
     if (k === n) return sprites[key];
   }
-
   return null;
 }
 
-
-// ============================
-// CRIA ITEM HTML (COM SPRITE)
-// ============================
 function criarItemHTML(nome, item) {
 
   let raridade = item["Rarity: "] || item.rarity || "";
@@ -170,10 +248,6 @@ function criarItemHTML(nome, item) {
   `;
 }
 
-
-// ============================
-// FILTRO (BUSCA + RARIDADE)
-// ============================
 function aplicarFiltro() {
 
   let busca = document.getElementById("search").value.toLowerCase();
@@ -204,10 +278,6 @@ function aplicarFiltro() {
   carregarMais();
 }
 
-
-// ============================
-// PAGINAÇÃO (ANTI-LAG)
-// ============================
 function carregarMais() {
 
   let lista = document.getElementById("lista");
@@ -232,17 +302,11 @@ function carregarMais() {
   }
 }
 
-
-// ============================
-// CARREGAMENTO INICIAL
-// ============================
 async function carregar() {
 
-  // 🔹 carrega itens
   let res1 = await fetch("./items.json");
   items = await res1.json();
 
-  // 🔹 carrega spritesheet JSON
   let res2 = await fetch("./items_png.json");
   let data = await res2.json();
   sprites = data.frames;
@@ -250,17 +314,9 @@ async function carregar() {
   aplicarFiltro();
 }
 
-
-// ============================
-// EVENTOS
-// ============================
 document.getElementById("search").addEventListener("input", aplicarFiltro);
 document.getElementById("rarityFilter").addEventListener("change", aplicarFiltro);
 
-
-// ============================
-// START
-// ============================
 carregar();
 
 </script>
