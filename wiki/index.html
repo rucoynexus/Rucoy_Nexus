@@ -7,7 +7,6 @@
     <title>Rucoy Nexus</title>
     <style>
         :root {
-            /* Cores oficiais baseadas no seu app */
             --rucoy-blue: #3CBCFC;
             --rucoy-bg: #121212;
             --rucoy-drawer-bg: #2173b3;
@@ -54,7 +53,7 @@
 
         .menu-btn img {
             width: 24px;
-            filter: brightness(0) invert(1); /* Deixa o ícone navnav branco */
+            filter: brightness(0) invert(1);
         }
 
         #current-page-title {
@@ -106,19 +105,21 @@
             width: 24px;
             height: 24px;
             margin-right: 32px;
-            filter: brightness(0) invert(1); /* Deixa os ícones brancos */
+            filter: brightness(0) invert(1);
         }
-/* --- ESTILO DO SETTINGS NO RODAPÉ --- */
-.settings-highlight {
-    margin-top: auto; /* Joga o botão para o final da lista */
-    border-top: 1px solid rgba(255,255,255,0.1);
-    color: #000000 !important; /* Cor da letra (cinza escuro/preto) */
-    font-weight: bold;
-}
 
-.settings-highlight img {
-    filter: brightness(0) !important; /* Deixa o ícone preto */
-}
+        /* --- ESTILO DO SETTINGS NO RODAPÉ --- */
+        .settings-highlight {
+            margin-top: auto;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            color: #000000 !important;
+            font-weight: bold;
+        }
+
+        .settings-highlight img {
+            filter: brightness(0) !important;
+        }
+
         /* --- OVERLAY --- */
         #overlay {
             position: fixed;
@@ -131,46 +132,59 @@
         /* --- CONTEÚDO --- */
         main { padding: 76px 20px 20px 20px; }
 
-        /* MODO APP (Esconde menus para exibir apenas conteúdo no Android) */
         body.is-app header, body.is-app #drawer, body.is-app #overlay {
             display: none !important;
         }
         body.is-app main { padding: 0; }
 
+        /* =========================
+           WIKI
+           ========================= */
 
-        /*aqui abaixo sao coisas do wiki*/
         #lista {
-  display: grid;
-  grid-template-columns: repeat(10, 1fr);
-  gap: 10px;
-}
+            display: grid;
+            grid-template-columns: repeat(10, 1fr);
+            gap: 10px;
+        }
 
-.item-card {
-  position: relative;
-  width: 100%;
-  aspect-ratio: 1/1;
-  background-size: cover;
-  background-position: center;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
+        .item-card {
+            position: relative;
+            width: 100%;
+            aspect-ratio: 1/1;
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+        }
 
-.item-card img {
-  max-width: 70%;
-  max-height: 70%;
-  image-rendering: pixelated;
-}
+        .item-name {
+            position: absolute;
+            bottom: 2px;
+            width: 100%;
+            text-align: center;
+            font-size: 12px;
+            font-weight: bold;
+            text-shadow: 1px 1px 2px #000;
+            padding: 0 2px;
+            line-height: 1.1;
+        }
 
-.item-name {
-  position: absolute;
-  bottom: 2px;
-  width: 100%;
-  text-align: center;
-  font-size: 12px;
-  font-weight: bold;
-  text-shadow: 1px 1px 2px #000;
-}
+        .sprite-wrap {
+            position: absolute;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transform: scale(2.5);
+            transform-origin: center center;
+            image-rendering: pixelated;
+        }
+
+        .sprite {
+            background-repeat: no-repeat;
+            image-rendering: pixelated;
+        }
     </style>
 </head>
 <body>
@@ -187,44 +201,41 @@
     </header>
 
     <nav id="drawer">
-    <div class="drawer-banner"></div>
-    <div class="drawer-list">
-        <a href="/" class="drawer-item"><img src="/res/icon/home.png"> Home</a>
-        <a href="/profile/" class="drawer-item"><img src="/res/icon/user.png"> Profile</a>
-        <a href="/wiki/" class="drawer-item"><img src="/res/icon/apps.png"> Wiki</a>
-        <a href="/tradeandsales/" class="drawer-item"><img src="/res/icon/change.png"> Trades & Sales</a>
-        <a href="/map/" class="drawer-item"><img src="/res/icon/map.png"> Map</a>
-        <a href="/players/" class="drawer-item"><img src="/res/icon/players.png"> Players</a>
-        <a href="/guild/" class="drawer-item"><img src="/res/icon/guild.png"> Guild</a>
-        <a href="/calculator/" class="drawer-item"><img src="/res/icon/calculator.png"> Calculator</a>
-        <a href="/updates/" class="drawer-item"><img src="/res/icon/update.png"> Updates</a>
-        
-        <a href="/settings/" class="drawer-item settings-highlight">
-            <img src="/res/icon/ic_cog.png"> Settings
-        </a>
-    </div>
-</nav>
+        <div class="drawer-banner"></div>
+        <div class="drawer-list">
+            <a href="/" class="drawer-item"><img src="/res/icon/home.png"> Home</a>
+            <a href="/profile/" class="drawer-item"><img src="/res/icon/user.png"> Profile</a>
+            <a href="/wiki/" class="drawer-item"><img src="/res/icon/apps.png"> Wiki</a>
+            <a href="/tradeandsales/" class="drawer-item"><img src="/res/icon/change.png"> Trades & Sales</a>
+            <a href="/map/" class="drawer-item"><img src="/res/icon/map.png"> Map</a>
+            <a href="/players/" class="drawer-item"><img src="/res/icon/players.png"> Players</a>
+            <a href="/guild/" class="drawer-item"><img src="/res/icon/guild.png"> Guild</a>
+            <a href="/calculator/" class="drawer-item"><img src="/res/icon/calculator.png"> Calculator</a>
+            <a href="/updates/" class="drawer-item"><img src="/res/icon/update.png"> Updates</a>
+
+            <a href="/settings/" class="drawer-item settings-highlight">
+                <img src="/res/icon/ic_cog.png"> Settings
+            </a>
+        </div>
+    </nav>
 
     <main id="main-content">
+        <input type="text" id="search" placeholder="Search items..." style="width:100%;padding:10px;margin-bottom:10px;">
 
-<input type="text" id="search" placeholder="Search items..." style="width:100%;padding:10px;margin-bottom:10px;">
+        <select id="rarityFilter" style="width:100%;padding:10px;margin-bottom:10px;">
+            <option value="">All rarities</option>
+            <option value="commun">Commun</option>
+            <option value="uncommun">Uncommun</option>
+            <option value="rare">Rare</option>
+            <option value="ultra rare">Ultra Rare</option>
+            <option value="legendary">Legendary</option>
+            <option value="mythic">Mythic</option>
+        </select>
 
-<select id="rarityFilter" style="width:100%;padding:10px;margin-bottom:10px;">
-  <option value="">All rarities</option>
-  <option value="commun">Commun</option>
-  <option value="uncommun">Uncommun</option>
-  <option value="rare">Rare</option>
-  <option value="ultra rare">Ultra Rare</option>
-  <option value="legendary">Legendary</option>
-  <option value="mythic">Mythic</option>
-</select>
-
-<div id="preview"></div>
-<hr>
-<div id="lista"></div>
-
-
-</main>
+        <div id="preview"></div>
+        <hr>
+        <div id="lista"></div>
+    </main>
 
     <script>
         function toggleMenu() {
@@ -234,179 +245,186 @@
             overlay.style.display = drawer.classList.contains('active') ? 'block' : 'none';
         }
 
-        // Detecta se a página foi aberta com ?platform=app
         const params = new URLSearchParams(window.location.search);
         if (params.get('platform') === 'app') {
             document.body.classList.add('is-app');
         }
 
+        /* =========================
+           WIKI
+           ========================= */
 
+        let items = {};
+        let sprites = {}; // importante: aqui entram os frames do items_png.json
+        let listaFiltrada = [];
 
+        let pagina = 0;
+        const POR_PAGINA = 50;
+        let isLoading = false;
 
+        function getRarityColor(r) {
+            r = (r || "").toLowerCase();
 
+            if (r === "commun") return "rgb(247,243,247)";
+            if (r === "uncommun") return "rgb(0,235,74)";
+            if (r === "rare") return "rgb(66,190,255)";
+            if (r === "ultra rare") return "rgb(230,117,247)";
+            if (r === "legendary") return "rgb(239,255,0)";
+            if (r === "mythic") return "mythic";
 
+            return "white";
+        }
 
+        function getBackground(r) {
+            r = (r || "").toLowerCase();
 
+            if (r === "commun") return "commun-background.png";
+            if (r === "uncommun") return "uncommun-background.png";
+            if (r === "rare") return "rare-background.png";
+            if (r === "ultra rare") return "ultra-rare-background.png";
+            if (r === "legendary") return "legendary-background.png";
+            if (r === "mythic") return "mythic-background.png";
 
+            return "commun-background.png";
+        }
 
+        function getNameStyle(raridade) {
+            raridade = (raridade || "").toLowerCase();
 
-// aqui abaixo sao coisas do wiki
-        
-let items = {};
-let listaFiltrada = [];
+            if (raridade === "mythic") {
+                return `
+                    background: -webkit-linear-gradient(top, #e75931 40%, #ff9229, #ffbe00, #e7ff00 60%);
+                    -webkit-background-clip: text;
+                    -webkit-text-fill-color: transparent;
+                    font-weight: bold;
+                `;
+            }
 
-let pagina = 0;
-const POR_PAGINA = 50;
+            return `color: ${getRarityColor(raridade)}; font-weight: bold;`;
+        }
 
-function getRarityColor(r) {
-  r = (r || "").toLowerCase();
+        function normalizar(nome) {
+            return nome
+                .toLowerCase()
+                .replace(/'/g, "")
+                .replace(/\(.*?\)/g, "")
+                .replace(/[^a-z0-9 ]/g, "")
+                .trim();
+        }
 
-  if (r === "commun") return "rgb(247,243,247)";
-  if (r === "uncommun") return "rgb(0,235,74)";
-  if (r === "rare") return "rgb(66,190,255)";
-  if (r === "ultra rare") return "rgb(230,117,247)";
-  if (r === "legendary") return "rgb(239,255,0)";
-  if (r === "mythic") return "linear-gradient(90deg,#e75931,#ff9229,#ffbe00,#e7ff00)";
-  
-  return "white";
-}
+        function acharSprite(nome) {
+            let n = normalizar(nome);
 
-function getBackground(r) {
-  r = (r || "").toLowerCase();
+            for (let key in sprites) {
+                let k = normalizar(key.replace(".png", ""));
+                if (k === n) return sprites[key];
+            }
 
-  if (r === "commun") return "commun-background.png";
-  if (r === "uncommun") return "uncommun-background.png";
-  if (r === "rare") return "rare-background.png";
-  if (r === "ultra rare") return "ultra-rare-background.png";
-  if (r === "legendary") return "legendary-background.png";
-  if (r === "mythic") return "mythic-background.png";
+            return null;
+        }
 
-  return "commun-background.png";
-}
+        function criarItemHTML(nome, item) {
+            let raridade = item["Rarity: "] || item.rarity || "";
+            let bg = getBackground(raridade);
+            let sprite = acharSprite(nome);
 
-function formatarNomeImagem(nome) {
-  return nome
-    .toLowerCase()
-    .replace(/'/g, "")
-    .replace(/\(.*?\)/g, "")
-    .replace(/[^a-z0-9 ]/g, "")
-    .trim()
-    .split(" ")
-    .map(p => p.charAt(0).toUpperCase() + p.slice(1))
-    .join("_") + ".png";
-}
+            let spriteHTML = "";
 
-function normalizar(nome) {
-  return nome
-    .toLowerCase()
-    .replace(/'/g, "")
-    .replace(/\(.*?\)/g, "")
-    .replace(/[^a-z0-9 ]/g, "")
-    .trim();
-}
+            if (sprite) {
+                let f = sprite.frame;
 
-function acharSprite(nome) {
-  let n = normalizar(nome);
+                spriteHTML = `
+                    <div class="sprite-wrap">
+                        <div class="sprite"
+                            style="
+                                width:${f.w}px;
+                                height:${f.h}px;
+                                background-image:url('./items.png');
+                                background-position:-${f.x}px -${f.y}px;
+                            ">
+                        </div>
+                    </div>
+                `;
+            }
 
-  for (let key in sprites) {
-    let k = normalizar(key.replace(".png", ""));
-    if (k === n) return sprites[key];
-  }
+            return `
+                <div class="item-card" style="background-image:url('${bg}')">
+                    ${spriteHTML}
+                    <div class="item-name" style="${getNameStyle(raridade)}">${nome}</div>
+                </div>
+            `;
+        }
 
-  return null;
-}
+        function aplicarFiltro() {
+            let busca = document.getElementById("search").value.toLowerCase();
+            let raridadeFiltro = document.getElementById("rarityFilter").value;
 
-function criarItemHTML(nome, item) {
-  let raridade = item["Rarity: "] || item.rarity || "";
-  let bg = getBackground(raridade);
+            listaFiltrada = [];
 
-  let sprite = acharSprite(nome);
+            for (let id in items) {
+                let item = items[id];
 
-  let spriteHTML = "";
+                let nome = item["Name: "] || item.name || "???";
+                let tags = (item["Tags"] || "").toLowerCase();
+                let raridade = (item["Rarity: "] || item.rarity || "").toLowerCase();
 
-  if (sprite) {
-    let f = sprite.frame;
+                if (raridadeFiltro && raridade !== raridadeFiltro) continue;
 
-    spriteHTML = `
-      <div style="
-        width:${f.w}px;
-        height:${f.h}px;
-        background-image:url('./items.png');
-        background-position:-${f.x}px -${f.y}px;
-        background-repeat:no-repeat;
-        transform:scale(2.5);
-        image-rendering:pixelated;
-      "></div>
-    `;
-  }
+                if (
+                    nome.toLowerCase().includes(busca) ||
+                    tags.includes(busca)
+                ) {
+                    listaFiltrada.push({ nome, item });
+                }
+            }
 
-  return `
-    <div class="item-card" style="background-image:url('${bg}')">
-      ${spriteHTML}
-      <div class="item-name">${nome}</div>
-    </div>
-  `;
-}
+            pagina = 0;
+            document.getElementById("lista").innerHTML = "";
+            carregarMais();
+        }
 
-function aplicarFiltro() {
-  let busca = document.getElementById("search").value.toLowerCase();
-  let raridadeFiltro = document.getElementById("rarityFilter").value;
+        function carregarMais() {
+            if (isLoading) return;
+            if (pagina * POR_PAGINA >= listaFiltrada.length) return;
 
-  listaFiltrada = [];
+            isLoading = true;
 
-  for (let id in items) {
-    let item = items[id];
+            let lista = document.getElementById("lista");
+            let inicio = pagina * POR_PAGINA;
+            let fim = inicio + POR_PAGINA;
 
-    let nome = item["Name: "] || item.name || "???";
-    let tags = (item["Tags"] || "").toLowerCase();
-    let raridade = (item["Rarity: "] || item.rarity || "").toLowerCase();
+            let slice = listaFiltrada.slice(inicio, fim);
 
-    if (raridadeFiltro && raridade !== raridadeFiltro) continue;
+            slice.forEach(e => {
+                lista.innerHTML += criarItemHTML(e.nome, e.item);
+            });
 
-    if (
-      nome.toLowerCase().includes(busca) ||
-      tags.includes(busca)
-    ) {
-      listaFiltrada.push({ nome, item });
-    }
-  }
+            pagina++;
+            isLoading = false;
+        }
 
-  pagina = 0;
-  document.getElementById("lista").innerHTML = "";
+        // carregamento automático quando chegar perto do fim da página
+        window.addEventListener("scroll", () => {
+            if (window.innerHeight + window.scrollY >= document.body.offsetHeight - 200) {
+                carregarMais();
+            }
+        });
 
-  carregarMais();
-}
+        async function carregar() {
+            let res1 = await fetch("./items.json");
+            items = await res1.json();
 
-function carregarMais() {
-  let lista = document.getElementById("lista");
+            let res2 = await fetch("./items_png.json");
+            let data = await res2.json();
+            sprites = data.frames || {};
 
-  let inicio = pagina * POR_PAGINA;
-  let fim = inicio + POR_PAGINA;
+            aplicarFiltro();
+        }
 
-  let slice = listaFiltrada.slice(inicio, fim);
+        document.getElementById("search").addEventListener("input", aplicarFiltro);
+        document.getElementById("rarityFilter").addEventListener("change", aplicarFiltro);
 
-  slice.forEach(e => {
-    lista.innerHTML += criarItemHTML(e.nome, e.item);
-  });
-
-  pagina++;
-}
-
-async function carregar() {
-  let res1 = await fetch("./items.json");
-  items = await res1.json();
-
-  let res2 = await fetch("./items_png.json");
-  let data = await res2.json();
-  sprites = data.frames;
-
-  aplicarFiltro();
-}
-
-document.getElementById("search").addEventListener("input", aplicarFiltro);
-document.getElementById("rarityFilter").addEventListener("change", aplicarFiltro);
-
-carregar();
+        carregar();
     </script>
 </body>
 </html>
