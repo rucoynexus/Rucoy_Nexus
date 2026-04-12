@@ -36,58 +36,37 @@
             height: 100%;
             padding-right: 30px;
             cursor: pointer;
-            user-select: none;
-            -webkit-user-select: none;
-        }
-
-        .top-bar-action:active { background-color: rgba(255, 255, 255, 0.1); }
-
-        .menu-btn {
-            background: none;
-            border: none;
-            margin-right: 20px;
-            display: flex;
-            align-items: center;
-            pointer-events: none;
         }
 
         .menu-btn img {
             width: 24px;
             filter: brightness(0) invert(1);
+            margin-right: 20px;
         }
 
-        #current-page-title {
-            font-size: 20px;
-            font-weight: 500;
-            color: white;
-            cursor: pointer;
-        }
+        #current-page-title { font-size: 20px; font-weight: 500; color: white; }
 
-        /* --- DRAWER (MENU LATERAL) --- */
+        /* --- DRAWER --- */
         #drawer {
             position: fixed;
-            top: 0;
-            left: -280px;
-            width: 280px;
-            height: 100%;
+            top: 0; left: -280px; width: 280px; height: 100%;
             background-color: var(--rucoy-drawer-bg);
             z-index: 200;
             transition: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
             overflow-y: auto;
-            box-shadow: 4px 0 10px rgba(0,0,0,0.5);
+            display: flex;
+            flex-direction: column;
         }
 
         #drawer.active { left: 0; }
 
         .drawer-banner {
-            width: 100%;
-            height: 150px;
+            width: 100%; height: 150px;
             background: url('/res/icon/draweBanner.png') no-repeat center;
             background-size: cover;
-            border-bottom: 1px solid rgba(255,255,255,0.1);
         }
 
-        .drawer-list { list-style: none; padding: 8px 0; }
+        .drawer-list { list-style: none; padding: 8px 0; flex-grow: 1; }
 
         .drawer-item {
             padding: 12px 16px;
@@ -96,19 +75,11 @@
             color: white;
             text-decoration: none;
             font-size: 16px;
-            cursor: pointer;
         }
 
-        .drawer-item:hover { background-color: rgba(255, 255, 255, 0.1); }
+        .drawer-item img { width: 24px; height: 24px; margin-right: 32px; filter: brightness(0) invert(1); }
 
-        .drawer-item img {
-            width: 24px;
-            height: 24px;
-            margin-right: 32px;
-            filter: brightness(0) invert(1);
-        }
-
-        /* --- ESTILO DO SETTINGS NO RODAPÉ --- */
+        /* Settings destacado no rodapé com letra preta */
         .settings-highlight {
             margin-top: auto;
             border-top: 1px solid rgba(255,255,255,0.1);
@@ -116,34 +87,19 @@
             font-weight: bold;
         }
 
-        .settings-highlight img {
-            filter: brightness(0) !important;
-        }
+        .settings-highlight img { filter: brightness(0) !important; }
 
-        /* --- OVERLAY --- */
         #overlay {
-            position: fixed;
-            top: 0; left: 0; width: 100%; height: 100%;
-            background: rgba(0,0,0,0.5);
-            display: none;
-            z-index: 150;
+            position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+            background: rgba(0,0,0,0.5); display: none; z-index: 150;
         }
 
-        /* --- CONTEÚDO --- */
         main { padding: 76px 20px 20px 20px; }
 
-        body.is-app header, body.is-app #drawer, body.is-app #overlay {
-            display: none !important;
-        }
-        body.is-app main { padding: 0; }
-
-        /* =========================
-           WIKI
-           ========================= */
-
+        /* --- WIKI GRID --- */
         #lista {
             display: grid;
-            grid-template-columns: repeat(4, 1fr);
+            grid-template-columns: repeat(auto-fill, minmax(80px, 1fr));
             gap: 10px;
         }
 
@@ -151,14 +107,11 @@
             position: relative;
             width: 100%;
             aspect-ratio: 1/1;
-            background-size: cover;
-            background-position: center;
+            background-size: 100% 100%;
             display: flex;
             align-items: center;
             justify-content: center;
             overflow: hidden;
-            image-rendering: pixelated;
-            image-rendering: crisp-edges;
         }
 
         .item-name {
@@ -166,29 +119,31 @@
             bottom: 2px;
             width: 100%;
             text-align: center;
-            font-size: 24px;
+            font-size: 11px;
             font-weight: bold;
-            font-style: normal;
-            text-shadow:
-  0 0 4px #000,
-  0 0 6px #000,
-  1px 1px 2px #000;
+            z-index: 2;
         }
 
+        /* Ajuste do Sprite para 90% do card */
         .sprite-wrap {
             position: absolute;
             display: flex;
             align-items: center;
             justify-content: center;
-            transform: scale(10);
-            transform-origin: center center;
+            transform: scale(3); /* Ajuste o scale base aqui se precisar de mais zoom */
             image-rendering: pixelated;
+        }
+        
+        /* Escala mobile/pequena */
+        @media (max-width: 600px) {
+            .sprite-wrap { transform: scale(2.2); }
+            .item-name { font-size: 10px; }
         }
 
-        .sprite {
-            background-repeat: no-repeat;
-            image-rendering: pixelated;
-        }
+        .sprite { background-repeat: no-repeat; image-rendering: pixelated; }
+
+        body.is-app header, body.is-app #drawer, body.is-app #overlay { display: none !important; }
+        body.is-app main { padding: 0; }
     </style>
 </head>
 <body>
@@ -197,9 +152,7 @@
 
     <header>
         <div class="top-bar-action" onclick="toggleMenu()">
-            <div class="menu-btn">
-                <img src="/res/icon/navnav.png" alt="menu">
-            </div>
+            <div class="menu-btn"><img src="/res/icon/navnav.png"></div>
             <span id="current-page-title">Wiki</span>
         </div>
     </header>
@@ -224,9 +177,9 @@
     </nav>
 
     <main id="main-content">
-        <input type="text" id="search" placeholder="Search items..." style="width:100%;padding:10px;margin-bottom:10px;">
+        <input type="text" id="search" placeholder="Search items..." style="width:100%;padding:12px;margin-bottom:10px;background:#222;border:1px solid #444;color:white;border-radius:8px;">
 
-        <select id="rarityFilter" style="width:100%;padding:10px;margin-bottom:10px;">
+        <select id="rarityFilter" style="width:100%;padding:12px;margin-bottom:10px;background:#222;border:1px solid #444;color:white;border-radius:8px;">
             <option value="">All rarities</option>
             <option value="commun">Commun</option>
             <option value="uncommun">Uncommun</option>
@@ -236,8 +189,6 @@
             <option value="mythic">Mythic</option>
         </select>
 
-        <div id="preview"></div>
-        <hr>
         <div id="lista"></div>
     </main>
 
@@ -249,82 +200,52 @@
             overlay.style.display = drawer.classList.contains('active') ? 'block' : 'none';
         }
 
-        const params = new URLSearchParams(window.location.search);
-        if (params.get('platform') === 'app') {
-            document.body.classList.add('is-app');
-        }
-
-        /* =========================
-           WIKI
-           ========================= */
-
         let items = {};
         let sprites = {};
         let listaFiltrada = [];
-
         let pagina = 0;
-        const POR_PAGINA = 50;
+        const POR_PAGINA = 40;
         let isLoading = false;
 
         function getRarityColor(r) {
             r = (r || "").toLowerCase();
-
             if (r === "commun") return "rgb(247,243,247)";
             if (r === "uncommun") return "rgb(0,235,74)";
             if (r === "rare") return "rgb(66,190,255)";
             if (r === "ultra rare") return "rgb(230,117,247)";
             if (r === "legendary") return "rgb(239,255,0)";
-
             return "white";
         }
 
         function getBackground(r) {
             r = (r || "").toLowerCase();
-
-            if (r === "commun") return "commun-background.png";
-            if (r === "uncommun") return "uncommun-background.png";
-            if (r === "rare") return "rare-background.png";
-            if (r === "ultra rare") return "ultra-rare-background.png";
-            if (r === "legendary") return "legendary-background.png";
-            if (r === "mythic") return "mythic-background.png";
-
-            return "commun-background.png";
+            return `${r.replace(" ", "-") || "commun"}-background.png`;
         }
 
         function getNameStyle(raridade) {
             raridade = (raridade || "").toLowerCase();
-
-      if (raridade === "mythic") {
-    return `
-        background: linear-gradient(#e75931, #ff9229, #ffbe00, #e7ff00);
-        -webkit-background-clip: text;
-        background-clip: text;
-        -webkit-text-fill-color: transparent;
-        color: transparent;
-        font-weight: bold;
-    `;
-}
-
-            return `color: ${getRarityColor(raridade)}; font-weight: bold;`;
+            if (raridade === "mythic") {
+                // Gradiente corrigido (sem shadow para não ficar preto)
+                return `
+                    background: -webkit-linear-gradient(#e75931, #ff9229, #ffbe00, #e7ff00);
+                    -webkit-background-clip: text;
+                    -webkit-text-fill-color: transparent;
+                    font-weight: bold;
+                `;
+            }
+            // Para os outros, usamos sombra para ler melhor sobre o fundo
+            return `color: ${getRarityColor(raridade)}; text-shadow: 1px 1px 2px black;`;
         }
 
         function normalizar(nome) {
-            return nome
-                .toLowerCase()
-                .replace(/'/g, "")
-                .replace(/\(.*?\)/g, "")
-                .replace(/[^a-z0-9 ]/g, "")
-                .trim();
+            return nome.toLowerCase().replace(/'/g, "").replace(/\(.*?\)/g, "").replace(/[^a-z0-9 ]/g, "").trim();
         }
 
         function acharSprite(nome) {
             let n = normalizar(nome);
-
             for (let key in sprites) {
-                let k = normalizar(key.replace(".png", ""));
-                if (k === n) return sprites[key];
+                if (normalizar(key.replace(".png", "")) === n) return sprites[key];
             }
-
             return null;
         }
 
@@ -332,53 +253,36 @@
             let raridade = item["Rarity: "] || item.rarity || "";
             let bg = getBackground(raridade);
             let sprite = acharSprite(nome);
-
             let spriteHTML = "";
 
             if (sprite) {
                 let f = sprite.frame;
-
                 spriteHTML = `
                     <div class="sprite-wrap">
-                        <div class="sprite"
-                            style="
-                                width:${f.w}px;
-                                height:${f.h}px;
-                                background-image:url('./items.png');
-                                background-position:-${f.x}px -${f.y}px;
-                            ">
-                        </div>
-                    </div>
-                `;
+                        <div class="sprite" style="width:${f.w}px;height:${f.h}px;background-image:url('./items.png');background-position:-${f.x}px -${f.y}px;"></div>
+                    </div>`;
             }
 
             return `
-                <div class="item-card" style="background-image:url('${bg}')">
+                <div class="item-card" style="background-image:url('./res/backgrounds/${bg}')">
                     ${spriteHTML}
                     <div class="item-name" style="${getNameStyle(raridade)}">${nome}</div>
-                </div>
-            `;
+                </div>`;
         }
 
         function aplicarFiltro() {
             let busca = document.getElementById("search").value.toLowerCase();
             let raridadeFiltro = document.getElementById("rarityFilter").value;
-
             listaFiltrada = [];
 
             for (let id in items) {
                 let item = items[id];
-
                 let nome = item["Name: "] || item.name || "???";
                 let tags = (item["Tags"] || "").toLowerCase();
                 let raridade = (item["Rarity: "] || item.rarity || "").toLowerCase();
 
                 if (raridadeFiltro && raridade !== raridadeFiltro) continue;
-
-                if (
-                    nome.toLowerCase().includes(busca) ||
-                    tags.includes(busca)
-                ) {
+                if (nome.toLowerCase().includes(busca) || tags.includes(busca)) {
                     listaFiltrada.push({ nome, item });
                 }
             }
@@ -389,45 +293,47 @@
         }
 
         function carregarMais() {
-            if (isLoading) return;
-            if (pagina * POR_PAGINA >= listaFiltrada.length) return;
-
+            if (isLoading || pagina * POR_PAGINA >= listaFiltrada.length) return;
             isLoading = true;
-
-            let lista = document.getElementById("lista");
+            
+            let container = document.getElementById("lista");
             let inicio = pagina * POR_PAGINA;
             let fim = inicio + POR_PAGINA;
-
             let slice = listaFiltrada.slice(inicio, fim);
 
             slice.forEach(e => {
-                lista.innerHTML += criarItemHTML(e.nome, e.item);
+                container.innerHTML += criarItemHTML(e.nome, e.item);
             });
 
             pagina++;
             isLoading = false;
         }
 
+        // Scroll Infinito melhorado para Android
         window.addEventListener("scroll", () => {
-            if (window.innerHeight + window.scrollY >= document.body.offsetHeight - 200) {
+            const scrollTotal = document.documentElement.scrollHeight;
+            const scrollAtual = window.innerHeight + window.pageYOffset;
+            // Se chegar a 150px do fim, carrega mais
+            if (scrollAtual >= scrollTotal - 150) {
                 carregarMais();
             }
         });
 
         async function carregar() {
-            let res1 = await fetch("./items.json");
-            items = await res1.json();
-
-            let res2 = await fetch("./items_png.json");
-            let data = await res2.json();
-            sprites = data.frames || {};
-
-            aplicarFiltro();
+            try {
+                const [resItems, resSprites] = await Promise.all([
+                    fetch("./items.json"),
+                    fetch("./items_png.json")
+                ]);
+                items = await resItems.json();
+                let data = await resSprites.json();
+                sprites = data.frames || {};
+                aplicarFiltro();
+            } catch (e) { console.error("Erro ao carregar dados:", e); }
         }
 
         document.getElementById("search").addEventListener("input", aplicarFiltro);
         document.getElementById("rarityFilter").addEventListener("change", aplicarFiltro);
-
         carregar();
     </script>
 </body>
