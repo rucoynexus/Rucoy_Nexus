@@ -160,21 +160,15 @@
         }
 
         .item-name {
-  position: absolute;
-  bottom: 2px;
-  width: 100%;
-  text-align: center;
-  font-size: 12px;
-  font-weight: bold;
-  font-style: normal; /* REMOVE ITALICO */
-  
-  /* BORDA PRETA MAIS FORTE */
-  text-shadow:
-    -1px -1px 0 #000,
-     1px -1px 0 #000,
-    -1px  1px 0 #000,
-     1px  1px 0 #000;
-}
+            position: absolute;
+            bottom: 2px;
+            width: 100%;
+            text-align: center;
+            font-size: 12px;
+            font-weight: bold;
+            font-style: normal;
+            text-shadow: none;
+        }
 
         .sprite-wrap {
             position: absolute;
@@ -260,7 +254,7 @@
            ========================= */
 
         let items = {};
-        let sprites = {}; // importante: aqui entram os frames do items_png.json
+        let sprites = {};
         let listaFiltrada = [];
 
         let pagina = 0;
@@ -275,12 +269,6 @@
             if (r === "rare") return "rgb(66,190,255)";
             if (r === "ultra rare") return "rgb(230,117,247)";
             if (r === "legendary") return "rgb(239,255,0)";
-            if (r === "mythic") return `
-  background: linear-gradient(#e75931,#ff9229,#ffbe00,#e7ff00);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  font-weight: bold;
-`;
 
             return "white";
         }
@@ -305,8 +293,12 @@
                 return `
                     background: -webkit-linear-gradient(top, #e75931 40%, #ff9229, #ffbe00, #e7ff00 60%);
                     -webkit-background-clip: text;
+                    background-clip: text;
                     -webkit-text-fill-color: transparent;
+                    color: transparent;
                     font-weight: bold;
+                    font-style: normal;
+                    text-shadow: none;
                 `;
             }
 
@@ -334,36 +326,36 @@
         }
 
         function criarItemHTML(nome, item) {
-    let raridade = item["Rarity: "] || item.rarity || "";
-    let bg = getBackground(raridade);
-    let sprite = acharSprite(nome);
+            let raridade = item["Rarity: "] || item.rarity || "";
+            let bg = getBackground(raridade);
+            let sprite = acharSprite(nome);
 
-    let spriteHTML = "";
+            let spriteHTML = "";
 
-    if (sprite) {
-        let f = sprite.frame;
+            if (sprite) {
+                let f = sprite.frame;
 
-        spriteHTML = `
-            <div class="sprite-wrap">
-                <div class="sprite"
-                    style="
-                        width:${f.w}px;
-                        height:${f.h}px;
-                        background-image:url('./items.png');
-                        background-position:-${f.x}px -${f.y}px;
-                    ">
+                spriteHTML = `
+                    <div class="sprite-wrap">
+                        <div class="sprite"
+                            style="
+                                width:${f.w}px;
+                                height:${f.h}px;
+                                background-image:url('./items.png');
+                                background-position:-${f.x}px -${f.y}px;
+                            ">
+                        </div>
+                    </div>
+                `;
+            }
+
+            return `
+                <div class="item-card" style="background-image:url('${bg}')">
+                    ${spriteHTML}
+                    <div class="item-name" style="${getNameStyle(raridade)}">${nome}</div>
                 </div>
-            </div>
-        `;
-    }
-
-    return `
-        <div class="item-card" style="background-image:url('${bg}')">
-            ${spriteHTML}
-            <div class="item-name" style="${getNameStyle(raridade)}">${nome}</div>
-        </div>
-    `;
-}
+            `;
+        }
 
         function aplicarFiltro() {
             let busca = document.getElementById("search").value.toLowerCase();
@@ -413,7 +405,6 @@
             isLoading = false;
         }
 
-        // carregamento automático quando chegar perto do fim da página
         window.addEventListener("scroll", () => {
             if (window.innerHeight + window.scrollY >= document.body.offsetHeight - 200) {
                 carregarMais();
