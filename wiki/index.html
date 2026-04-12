@@ -188,6 +188,10 @@
 <hr>
 <div id="lista"></div>
 
+<button id="loadMore" onclick="carregarMais()" 
+style="width:100%;padding:10px;margin-top:10px;">
+Load more
+</button>
 </main>
 
     <script>
@@ -203,8 +207,24 @@
         if (params.get('platform') === 'app') {
             document.body.classList.add('is-app');
         }
-        let items = {};
-let imagens = {};
+
+
+
+
+
+
+
+
+
+
+
+
+        
+let items = {};
+let listaFiltrada = [];
+
+let pagina = 0;
+const POR_PAGINA = 50;
 
 function getRarityColor(r) {
   r = (r || "").toLowerCase();
@@ -219,45 +239,32 @@ function getRarityColor(r) {
   return "white";
 }
 
-function criarItemHTML(nome, item, imagemNome) {
+function criarItemHTML(nome, item) {
   let raridade = item["Rarity: "] || item.rarity || "";
-
   let cor = getRarityColor(raridade);
 
   let style = cor.includes("gradient")
     ? `background:${cor};-webkit-background-clip:text;color:transparent;`
     : `color:${cor}`;
 
-  let imgHTML = imagemNome 
-    ? `<img src="/sprites.png" style="width:32px;height:32px;object-fit:none;">`
-    : "";
-
   return `
-    <div style="display:flex;align-items:center;gap:10px;padding:5px;border-bottom:1px solid #333;">
-      ${imgHTML}
+    <div style="padding:8px;border-bottom:1px solid #333;">
       <span style="${style}">${nome}</span>
     </div>
   `;
 }
 
-function filtrar() {
+function aplicarFiltro() {
   let busca = document.getElementById("search").value.toLowerCase();
   let raridadeFiltro = document.getElementById("rarityFilter").value;
 
-  let preview = document.getElementById("preview");
-  let lista = document.getElementById("lista");
-
-  preview.innerHTML = "";
-  lista.innerHTML = "";
-
-  let encontrados = [];
+  listaFiltrada = [];
 
   for (let id in items) {
     let item = items[id];
 
     let nome = item["Name: "] || item.name || "???";
     let tags = (item["Tags"] || "").toLowerCase();
-
     let raridade = (item["Rarity: "] || item.rarity || "").toLowerCase();
 
     if (raridadeFiltro && raridade !== raridadeFiltro) continue;
@@ -266,33 +273,48 @@ function filtrar() {
       nome.toLowerCase().includes(busca) ||
       tags.includes(busca)
     ) {
-      encontrados.push({ nome, item });
+      listaFiltrada.push({ nome, item });
     }
   }
 
-  // 🔹 preview (5 max)
-  encontrados.slice(0, 5).forEach(e => {
-    preview.innerHTML += criarItemHTML(e.nome, e.item);
-  });
+  pagina = 0;
+  document.getElementById("lista").innerHTML = "";
 
-  // 🔹 lista completa
-  encontrados.forEach(e => {
+  carregarMais();
+}
+
+function carregarMais() {
+  let lista = document.getElementById("lista");
+
+  let inicio = pagina * POR_PAGINA;
+  let fim = inicio + POR_PAGINA;
+
+  let slice = listaFiltrada.slice(inicio, fim);
+
+  slice.forEach(e => {
     lista.innerHTML += criarItemHTML(e.nome, e.item);
   });
+
+  pagina++;
+
+  // botão aparece só se tiver mais
+  let btn = document.getElementById("loadMore");
+  if (fim >= listaFiltrada.length) {
+    btn.style.display = "none";
+  } else {
+    btn.style.display = "block";
+  }
 }
 
 async function carregar() {
-  let res1 = await fetch("./items.json");
-  items = await res1.json();
+  let res = await fetch("./items.json");
+  items = await res.json();
 
-  let res2 = await fetch("./items_png.json");
-  imagens = await res2.json();
-
-  filtrar();
+  aplicarFiltro();
 }
 
-document.getElementById("search").addEventListener("input", filtrar);
-document.getElementById("rarityFilter").addEventListener("change", filtrar);
+document.getElementById("search").addEventListener("input", aplicarFiltro);
+document.getElementById("rarityFilter").addEventListener("change", aplicarFiltro);
 
 carregar();
     </script>
