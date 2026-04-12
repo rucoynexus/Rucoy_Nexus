@@ -136,6 +136,41 @@
             display: none !important;
         }
         body.is-app main { padding: 0; }
+
+
+        /*aqui abaixo sao coisas do wiki*/
+        #lista {
+  display: grid;
+  grid-template-columns: repeat(10, 1fr);
+  gap: 10px;
+}
+
+.item-card {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 1/1;
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.item-card img {
+  max-width: 70%;
+  max-height: 70%;
+  image-rendering: pixelated;
+}
+
+.item-name {
+  position: absolute;
+  bottom: 2px;
+  width: 100%;
+  text-align: center;
+  font-size: 12px;
+  font-weight: bold;
+  text-shadow: 1px 1px 2px #000;
+}
     </style>
 </head>
 <body>
@@ -218,7 +253,7 @@ Load more
 
 
 
-
+// aqui abaixo sao coisas do wiki
         
 let items = {};
 let listaFiltrada = [];
@@ -239,26 +274,41 @@ function getRarityColor(r) {
   return "white";
 }
 
+function getBackground(r) {
+  r = (r || "").toLowerCase();
+
+  if (r === "commun") return "commun-background.png";
+  if (r === "uncommun") return "uncommun-background.png";
+  if (r === "rare") return "rare-background.png";
+  if (r === "ultra rare") return "ultra-rare-background.png";
+  if (r === "legendary") return "legendary-background.png";
+  if (r === "mythic") return "mythic-background.png";
+
+  return "commun-background.png";
+}
+
+function formatarNomeImagem(nome) {
+  return nome
+    .toLowerCase()
+    .replace(/'/g, "")
+    .replace(/\(.*?\)/g, "")
+    .replace(/[^a-z0-9 ]/g, "")
+    .trim()
+    .split(" ")
+    .map(p => p.charAt(0).toUpperCase() + p.slice(1))
+    .join("_") + ".png";
+}
+
 function criarItemHTML(nome, item) {
   let raridade = item["Rarity: "] || item.rarity || "";
-  let cor = getRarityColor(raridade);
+  let bg = getBackground(raridade);
 
-  let style = "";
-
-  if (raridade.toLowerCase() === "mythic") {
-    style = `
-      background: -webkit-linear-gradient(top, #e75931 40%, #ff9229, #ffbe00, #e7ff00 60%);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      font-weight: bold;
-    `;
-  } else {
-    style = `color:${cor}; font-weight:bold;`;
-  }
+  let img = item["Img"] || formatarNomeImagem(nome);
 
   return `
-    <div style="padding:8px;border-bottom:1px solid #333;">
-      <span style="${style}">${nome}</span>
+    <div class="item-card" style="background-image:url('${bg}')">
+      <img src="./imgs/${img}" loading="lazy">
+      <div class="item-name">${nome}</div>
     </div>
   `;
 }
