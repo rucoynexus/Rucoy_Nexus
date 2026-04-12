@@ -166,7 +166,7 @@
             bottom: 2px;
             width: 100%;
             text-align: center;
-            font-size: 12px;
+            font-size: 24px;
             font-weight: bold;
             font-style: normal;
             text-shadow:
@@ -295,17 +295,20 @@
             raridade = (raridade || "").toLowerCase();
 
             if (raridade === "mythic") {
-                return `
-                    background: -webkit-linear-gradient(top, #e75931 40%, #ff9229, #ffbe00, #e7ff00 60%);
-                    -webkit-background-clip: text;
-                    background-clip: text;
-                    -webkit-text-fill-color: transparent;
-                    color: transparent;
-                    font-weight: bold;
-                    font-style: normal;
-                    text-shadow: none;
-                `;
-            }
+    return `
+        background: -webkit-linear-gradient(top, #e75931 40%, #ff9229, #ffbe00, #e7ff00 60%);
+        -webkit-background-clip: text;
+        background-clip: text;
+        -webkit-text-fill-color: transparent;
+        color: transparent;
+        font-weight: bold;
+        font-style: normal;
+
+        text-shadow:
+          0 0 4px #000,
+          0 0 6px #000;
+    `;
+}
 
             return `color: ${getRarityColor(raridade)}; font-weight: bold;`;
         }
