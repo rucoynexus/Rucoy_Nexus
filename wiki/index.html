@@ -294,17 +294,16 @@
         function getNameStyle(raridade) {
             raridade = (raridade || "").toLowerCase();
 
-            if (raridade === "mythic") {
+      if (raridade === "mythic") {
     return `
-        background: linear-gradient(#e75931,#ff9229,#ffbe00,#e7ff00);
+        display: inline-block;
+        background: linear-gradient(to bottom, #e75931 0%, #ff9229 35%, #ffbe00 70%, #e7ff00 100%);
         -webkit-background-clip: text;
         background-clip: text;
-        color: transparent;
         -webkit-text-fill-color: transparent;
+        color: transparent;
         font-weight: bold;
-
-        /* CONTORNO AO INVÉS DE SOMBRA */
-        -webkit-text-stroke: 1px #000;
+        font-style: normal;
     `;
 }
 
