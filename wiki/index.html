@@ -223,10 +223,7 @@
 <hr>
 <div id="lista"></div>
 
-<button id="loadMore" onclick="carregarMais()" 
-style="width:100%;padding:10px;margin-top:10px;">
-Load more
-</button>
+
 </main>
 
     <script>
@@ -299,15 +296,53 @@ function formatarNomeImagem(nome) {
     .join("_") + ".png";
 }
 
+function normalizar(nome) {
+  return nome
+    .toLowerCase()
+    .replace(/'/g, "")
+    .replace(/\(.*?\)/g, "")
+    .replace(/[^a-z0-9 ]/g, "")
+    .trim();
+}
+
+function acharSprite(nome) {
+  let n = normalizar(nome);
+
+  for (let key in sprites) {
+    let k = normalizar(key.replace(".png", ""));
+    if (k === n) return sprites[key];
+  }
+
+  return null;
+}
+
 function criarItemHTML(nome, item) {
   let raridade = item["Rarity: "] || item.rarity || "";
   let bg = getBackground(raridade);
 
-  let img = item["Img"] || formatarNomeImagem(nome);
+  let sprite = acharSprite(nome);
+
+  let spriteHTML = "";
+
+  if (sprite) {
+    let f = sprite.frame;
+
+    spriteHTML = `
+      <div style="
+        width:${f.w}px;
+        height:${f.h}px;
+        background-image:url('./items.png');
+        background-position:-${f.x}px -${f.y}px;
+        background-repeat:no-repeat;
+        transform:scale(2.5);
+        image-rendering:pixelated;
+      "></div>
+    `;
+  }
 
   return `
     <div class="item-card" style="background-image:url('${bg}')">
-      <img src="./imgs/${img}" loading="lazy">
+      ${spriteHTML}
       <div class="item-name">${nome}</div>
     </div>
   `;
@@ -355,19 +390,15 @@ function carregarMais() {
   });
 
   pagina++;
-
-  // botão aparece só se tiver mais
-  let btn = document.getElementById("loadMore");
-  if (fim >= listaFiltrada.length) {
-    btn.style.display = "none";
-  } else {
-    btn.style.display = "block";
-  }
 }
 
 async function carregar() {
-  let res = await fetch("./items.json");
-  items = await res.json();
+  let res1 = await fetch("./items.json");
+  items = await res1.json();
+
+  let res2 = await fetch("./items_png.json");
+  let data = await res2.json();
+  sprites = data.frames;
 
   aplicarFiltro();
 }
