@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 <head>
     <script src="/auth.js"></script>
     <meta charset="UTF-8">
@@ -100,14 +100,14 @@
             display: grid;
             grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
             gap: 10px;
-            padding-bottom: 50px; /* Espaço para o scroll disparar */
+            padding-bottom: 80px;
         }
 
         .item-card {
             position: relative;
             width: 100%;
             aspect-ratio: 1/1;
-            background-size: cover;
+            background-size: 100% 100%;
             background-position: center;
             display: flex;
             align-items: center;
@@ -118,14 +118,16 @@
 
         .item-name {
             position: absolute;
-            bottom: 2px;
+            bottom: 4px;
             width: 100%;
             text-align: center;
             font-size: 12px;
             font-weight: bold;
             z-index: 2;
-            padding: 0 2px;
-            line-height: 1;
+            padding: 0 4px;
+            line-height: 1.1;
+            /* O SEGREDO: drop-shadow funciona com gradiente de texto */
+            filter: drop-shadow(1px 1px 1px rgba(0,0,0,1)) drop-shadow(-1px -1px 1px rgba(0,0,0,1));
         }
 
         .sprite-wrap {
@@ -133,13 +135,13 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            transform: scale(3.5); /* Zoom do item */
+            transform: scale(3.5);
             image-rendering: pixelated;
         }
         
         @media (max-width: 600px) {
             #lista { grid-template-columns: repeat(4, 1fr); gap: 5px; }
-            .sprite-wrap { transform: scale(2.5); }
+            .sprite-wrap { transform: scale(2.8); }
             .item-name { font-size: 10px; }
         }
 
@@ -207,7 +209,7 @@
         let sprites = {};
         let listaFiltrada = [];
         let pagina = 0;
-        const POR_PAGINA = 52; // Multiplo de 4 para a grid ficar certinha
+        const POR_PAGINA = 60; 
         let isLoading = false;
 
         function getRarityColor(r) {
@@ -220,19 +222,18 @@
             return "white";
         }
 
-        // Função corrigida para usar os fundos na pasta correta
         function getBackground(r) {
             r = (r || "").toLowerCase().replace(" ", "-");
             if (!r) r = "commun";
-            return `${r}-background.png`;
+            return r + "-background.png";
         }
 
         function getNameStyle(raridade) {
             raridade = (raridade || "").toLowerCase();
             if (raridade === "mythic") {
-                return `background: -webkit-linear-gradient(#e75931, #ff9229, #ffbe00, #e7ff00); -webkit-background-clip: text; -webkit-text-fill-color: transparent; font-weight: bold;`;
+                return `background: -webkit-linear-gradient(#e75931, #ff9229, #ffbe00, #e7ff00); -webkit-background-clip: text; -webkit-text-fill-color: transparent;`;
             }
-            return `color: ${getRarityColor(raridade)}; text-shadow: 1px 1px 2px black;`;
+            return `color: ${getRarityColor(raridade)};`;
         }
 
         function normalizar(nome) {
@@ -258,9 +259,8 @@
                 spriteHTML = `<div class="sprite-wrap"><div class="sprite" style="width:${f.w}px;height:${f.h}px;background-image:url('./items.png');background-position:-${f.x}px -${f.y}px;"></div></div>`;
             }
 
-            // VOLTANDO O FUNDO ORIGINAL
             return `
-                <div class="item-card" style="background-image:url('${bg}')">
+                <div class="item-card" style="background-image:url('./${bg}')">
                     ${spriteHTML}
                     <div class="item-name" style="${getNameStyle(raridade)}">${nome}</div>
                 </div>`;
@@ -287,12 +287,10 @@
             document.getElementById("lista").innerHTML = "";
             carregarMais();
             
-            // Se a tela for muito grande e não criar scroll, carrega mais uma leva
-            setTimeout(() => {
-                if (document.documentElement.scrollHeight <= window.innerHeight) {
-                    carregarMais();
-                }
-            }, 300);
+            // Garantia para telas grandes
+            if (document.documentElement.scrollHeight <= window.innerHeight) {
+                carregarMais();
+            }
         }
 
         function carregarMais() {
@@ -304,23 +302,22 @@
             let fim = inicio + POR_PAGINA;
             let slice = listaFiltrada.slice(inicio, fim);
 
-            let htmlBuffer = "";
+            let buffer = "";
             slice.forEach(e => {
-                htmlBuffer += criarItemHTML(e.nome, e.item);
+                buffer += criarItemHTML(e.nome, e.item);
             });
-            container.innerHTML += htmlBuffer;
+            container.innerHTML += buffer;
 
             pagina++;
             isLoading = false;
         }
 
-        // Scroll Infinito Universal (PC e Mobile)
         window.addEventListener("scroll", () => {
             const scrollHeight = document.documentElement.scrollHeight;
             const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
             const clientHeight = window.innerHeight;
 
-            if (scrollTop + clientHeight >= scrollHeight - 300) {
+            if (scrollTop + clientHeight >= scrollHeight - 400) {
                 carregarMais();
             }
         });
@@ -335,7 +332,7 @@
                 let data = await resSprites.json();
                 sprites = data.frames || {};
                 aplicarFiltro();
-            } catch (e) { console.error("Erro:", e); }
+            } catch (e) { console.error(e); }
         }
 
         document.getElementById("search").addEventListener("input", aplicarFiltro);
