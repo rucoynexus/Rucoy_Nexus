@@ -143,7 +143,7 @@
 
         #lista {
             display: grid;
-            grid-template-columns: repeat(10, 1fr);
+            grid-template-columns: repeat(6, 1fr);
             gap: 10px;
         }
 
@@ -167,7 +167,10 @@
             font-size: 12px;
             font-weight: bold;
             font-style: normal;
-            text-shadow: none;
+            text-shadow:
+  0 0 4px #000,
+  0 0 6px #000,
+  1px 1px 2px #000;
         }
 
         .sprite-wrap {
@@ -175,7 +178,7 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            transform: scale(2.5);
+            transform: scale(4);
             transform-origin: center center;
             image-rendering: pixelated;
         }
