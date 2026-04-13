@@ -145,6 +145,21 @@
 
         body.is-app header, body.is-app #drawer, body.is-app #overlay { display: none !important; }
         body.is-app main { padding: 0; }
+
+        /* Efeito de Hover no Card */
+.item-card {
+    /* ... mantenha suas propriedades atuais ... */
+    cursor: pointer; /* Faz aparecer a mãozinha */
+    transition: transform 0.2s ease, border 0.1s ease; /* Suaviza a animação */
+    border: 2px solid transparent; /* Reserva o espaço da borda */
+}
+
+.item-card:hover {
+    transform: scale(1.05); /* Cresce 5% */
+    border: 2px solid white; /* Borda branca ao redor */
+    z-index: 10; /* Garante que o item focado fique por cima dos vizinhos */
+    box-shadow: 0 4px 15px rgba(0,0,0,0.5); /* Adiciona uma sombra para destacar */
+}
     </style>
 </head>
 <body>
@@ -274,23 +289,26 @@
     return null;
 }
 
-        function criarItemHTML(nome, item) {
-            let raridade = item["Rarity: "] || item.rarity || "";
-            let bg = getBackground(raridade);
-            let sprite = acharSprite(nome, item); // Passando item completo
-            let spriteHTML = "";
+        function criarItemHTML(nome, item, id) { // Adicionamos 'id' como parâmetro
+    let raridade = item["Rarity: "] || item.rarity || "";
+    let bg = getBackground(raridade);
+    let sprite = acharSprite(nome, item);
+    let spriteHTML = "";
 
-            if (sprite) {
-                let f = sprite.frame;
-                spriteHTML = `<div class="sprite-wrap"><div class="sprite" style="width:${f.w}px;height:${f.h}px;background-image:url('./items.png');background-position:-${f.x}px -${f.y}px;"></div></div>`;
-            }
+    if (sprite) {
+        let f = sprite.frame;
+        spriteHTML = `<div class="sprite-wrap"><div class="sprite" style="width:${f.w}px;height:${f.h}px;background-image:url('./items.png');background-position:-${f.x}px -${f.y}px;"></div></div>`;
+    }
 
-            return `
-                <div class="item-card" style="background-image:url('./${bg}')">
-                    ${spriteHTML}
-                    <div class="item-name" style="${getNameStyle(raridade)}">${nome}</div>
-                </div>`;
-        }
+    // Adicionado o onclick para redirecionar
+    return `
+        <div class="item-card" 
+             style="background-image:url('./${bg}')" 
+             onclick="abrirDetalhes('${id}')">
+            ${spriteHTML}
+            <div class="item-name" style="${getNameStyle(raridade)}">${nome}</div>
+        </div>`;
+}
 
         function aplicarFiltro() {
             let busca = document.getElementById("search").value.toLowerCase();
@@ -363,6 +381,58 @@
         document.getElementById("search").addEventListener("input", aplicarFiltro);
         document.getElementById("rarityFilter").addEventListener("change", aplicarFiltro);
         carregar();
+        // Função para redirecionar (atualmente para uma tela preta como pedido)
+function abrirDetalhes(id) {
+    // Você pode futuramente mudar para `/wiki/item.html?id=${id}`
+    window.location.href = "about:blank"; 
+    // Nota: Como você quer uma tela preta "por enquanto", o redirect para 
+    // uma página vazia ou carregar um overlay preto é o caminho.
+}
+
+// ATENÇÃO: Atualize sua função carregarMais para passar o ID:
+function carregarMais() {
+    if (isLoading || pagina * POR_PAGINA >= listaFiltrada.length) return;
+    isLoading = true;
+    
+    let container = document.getElementById("lista");
+    let inicio = pagina * POR_PAGINA;
+    let fim = inicio + POR_PAGINA;
+    let slice = listaFiltrada.slice(inicio, fim);
+
+    let buffer = "";
+    slice.forEach(e => {
+        // Passamos e.id para o gerador de HTML
+        buffer += criarItemHTML(e.nome, e.item, e.id); 
+    });
+    container.innerHTML += buffer;
+
+    pagina++;
+    isLoading = false;
+}
+
+// ATENÇÃO: Atualize seu aplicarFiltro para guardar o ID original:
+function aplicarFiltro() {
+    let busca = document.getElementById("search").value.toLowerCase();
+    let raridadeFiltro = document.getElementById("rarityFilter").value;
+    listaFiltrada = [];
+
+    for (let id in items) {
+        let item = items[id];
+        let nome = item["Name: "] || item.name || "???";
+        let tags = (item["Tags"] || "").toLowerCase();
+        let raridade = (item["Rarity: "] || item.rarity || "").toLowerCase();
+
+        if (raridadeFiltro && raridade !== raridadeFiltro) continue;
+        if (nome.toLowerCase().includes(busca) || tags.includes(busca)) {
+            // Guardamos o id aqui para usar no clique depois
+            listaFiltrada.push({ nome, item, id }); 
+        }
+    }
+
+    pagina = 0;
+    document.getElementById("lista").innerHTML = "";
+    carregarMais();
+}
     </script>
 </body>
 </html>
