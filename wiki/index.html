@@ -240,38 +240,39 @@
         }
 
         function acharSprite(nome, item) {
-            let n = normalizar(nome);
-            let raridade = (item["Rarity: "] || item.rarity || "").toLowerCase();
+    let n = normalizar(nome);
+    let raridade = (item["Rarity: "] || item.rarity || "").toLowerCase();
 
-            // Lógica para Key Ring (1-6)
-            if (n === "key ring") {
-                let sufixo = "1";
-                if (raridade === "uncommun") sufixo = "2";
-                else if (raridade === "rare") sufixo = "3";
-                else if (raridade === "ultra rare") sufixo = "4";
-                else if (raridade === "legendary") sufixo = "5";
-                else if (raridade === "mythic") sufixo = "6";
-                
-                let nomeChave = `key ring${sufixo}`;
-                return sprites[nomeChave + ".png"] || sprites[nomeChave];
-            }
+    // Lógica corrigida para Key_RingX.png
+    if (n === "key ring") {
+        let sufixo = "1"; // Default commun
+        if (raridade === "uncommun") sufixo = "2";
+        else if (raridade === "rare") sufixo = "3";
+        else if (raridade === "ultra rare") sufixo = "4";
+        else if (raridade === "legendary") sufixo = "5";
+        else if (raridade === "mythic") sufixo = "6";
+        
+        let nomeChave = `Key_Ring${sufixo}.png`; // Exato como no seu JSON
+        return sprites[nomeChave];
+    }
 
-            // Busca exata (mantendo parênteses para luvas/botas)
-            for (let key in sprites) {
-                if (normalizar(key.replace(".png", "")) === n) {
-                    return sprites[key];
-                }
-            }
-
-            // Busca parcial (fallback)
-            for (let key in sprites) {
-                let keyClean = normalizar(key.replace(".png", ""));
-                if (keyClean.includes(n) || n.includes(keyClean)) {
-                    return sprites[key];
-                }
-            }
-            return null;
+    // Busca normal para os outros itens
+    for (let key in sprites) {
+        if (normalizar(key.replace(".png", "")) === n) {
+            return sprites[key];
         }
+    }
+
+    // Fallback de busca parcial
+    for (let key in sprites) {
+        let keyClean = normalizar(key.replace(".png", ""));
+        if (keyClean.includes(n) || n.includes(keyClean)) {
+            return sprites[key];
+        }
+    }
+
+    return null;
+}
 
         function criarItemHTML(nome, item) {
             let raridade = item["Rarity: "] || item.rarity || "";
