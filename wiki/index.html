@@ -160,10 +160,81 @@
     z-index: 10; /* Garante que o item focado fique por cima dos vizinhos */
     box-shadow: 0 4px 15px rgba(0,0,0,0.5); /* Adiciona uma sombra para destacar */
 }
+/* Tela de Detalhes (Modal) */
+#details-overlay {
+    position: fixed;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background: rgba(0, 0, 0, 0.95); /* Fundo quase preto */
+    z-index: 1000;
+    display: none; /* Escondido por padrão */
+    flex-direction: column;
+    align-items: center;
+    padding: 40px 20px;
+    overflow-y: auto;
+}
+
+.big-item-card {
+    width: 200px;
+    height: 200px;
+    background-size: 100% 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    image-rendering: pixelated;
+    margin-bottom: 20px;
+}
+
+.big-sprite-wrap {
+    transform: scale(8); /* Item bem grande */
+    image-rendering: pixelated;
+}
+
+.details-title {
+    font-size: 28px;
+    font-weight: bold;
+    text-transform: capitalize;
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+.info-container {
+    background: #1a1a1a;
+    border: 1px solid #333;
+    border-radius: 12px;
+    padding: 20px;
+    width: 100%;
+    max-width: 400px;
+    line-height: 1.6;
+}
+
+.info-row {
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px solid #222;
+    padding: 8px 0;
+    font-size: 18px;
+}
+
+.info-row:last-child { border-bottom: none; }
+
+.val-positive { color: #00ff41; } /* Verde */
+.val-negative { color: #ff3b3b; } /* Vermelho */
+
+.btn-close {
+    position: absolute;
+    top: 20px; right: 20px;
+    background: none; border: none;
+    color: white; font-size: 40px; cursor: pointer;
+}
     </style>
 </head>
 <body>
-
+<div id="details-overlay">
+    <button class="btn-close" onclick="fecharDetalhes()">&times;</button>
+    <div id="details-content" style="display: flex; flex-direction: column; align-items: center; width: 100%;">
+        </div>
+</div>
     <div id="overlay" onclick="toggleMenu()"></div>
 
     <header>
@@ -383,10 +454,68 @@
         carregar();
         // Função para redirecionar (atualmente para uma tela preta como pedido)
 function abrirDetalhes(id) {
-    // Você pode futuramente mudar para `/wiki/item.html?id=${id}`
-    window.location.href = "about:blank"; 
-    // Nota: Como você quer uma tela preta "por enquanto", o redirect para 
-    // uma página vazia ou carregar um overlay preto é o caminho.
+    const item = items[id];
+    const nome = item["Name: "] || item.name || "???";
+    const raridade = (item["Rarity: "] || item.rarity || "").toLowerCase();
+    const overlay = document.getElementById('details-overlay');
+    const content = document.getElementById('details-content');
+    
+    // Pegar Sprite e Background
+    let sprite = acharSprite(nome, item);
+    let bg = getBackground(raridade);
+    let f = sprite ? sprite.frame : null;
+
+    // Gerar o HTML das Propriedades dinamicamente
+    let infoHtml = "";
+    
+    // Lista de chaves que não queremos exibir no meio das propriedades
+    const ignorar = ["name", "Name: ", "rarity", "Rarity: ", "tags", "Tags"];
+
+    for (let key in item) {
+        if (ignorar.includes(key)) continue;
+
+        let val = item[key];
+        let label = key.charAt(0).toUpperCase() + key.slice(1).replace(": ", "");
+        let corClasse = "";
+
+        // Lógica de cores para números
+        if (typeof val === "number") {
+            if (val > 0) corClasse = "val-positive";
+            else if (val < 0) corClasse = "val-negative";
+        }
+
+        infoHtml += `
+            <div class="info-row">
+                <span>${label}:</span>
+                <span class="${corClasse}">${val}</span>
+            </div>`;
+    }
+
+    // Adiciona Raridade manualmente no final com a cor dela
+    infoHtml += `
+        <div class="info-row">
+            <span>Rarity:</span>
+            <span style="${getNameStyle(raridade)} font-weight:bold;">${raridade.toUpperCase()}</span>
+        </div>`;
+
+    // Monta o layout do Modal
+    content.innerHTML = `
+        <div class="big-item-card" style="background-image:url('./${bg}')">
+            ${f ? `<div class="big-sprite-wrap"><div class="sprite" style="width:${f.w}px;height:${f.h}px;background-image:url('./items.png');background-position:-${f.x}px -${f.y}px;"></div></div>` : ''}
+        </div>
+        <div class="details-title" style="${getNameStyle(raridade)}">${nome}</div>
+        <div class="info-container">
+            ${infoHtml}
+        </div>
+    `;
+
+    overlay.style.display = 'flex';
+    document.body.style.overflow = 'hidden'; // Trava o scroll do fundo
+}
+
+function fecharDetalhes() {
+    document.getElementById('details-overlay').style.display = 'none';
+    document.body.style.overflow = 'auto'; // Destrava o scroll
 }
 
 // ATENÇÃO: Atualize sua função carregarMais para passar o ID:
