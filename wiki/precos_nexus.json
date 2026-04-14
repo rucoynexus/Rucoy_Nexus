@@ -3208,9 +3208,15 @@
     "nose ring_commun": {
         "nome": "nose ring",
         "raridade": "commun",
-        "preco": 0.0,
+        "preco": 7000000.0,
         "ultima_atualizacao": "14/04/26",
-        "historico": []
+        "historico": [
+            {
+                "preco": 7000000.0,
+                "data": "14/04/26",
+                "obs": ""
+            }
+        ]
     },
     "key ring_commun": {
         "nome": "key ring",
@@ -3837,9 +3843,15 @@
     "golden backpack_commun": {
         "nome": "golden backpack",
         "raridade": "commun",
-        "preco": 0.0,
+        "preco": 1500000.0,
         "ultima_atualizacao": "14/04/26",
-        "historico": []
+        "historico": [
+            {
+                "preco": 1500000.0,
+                "data": "14/04/26",
+                "obs": ""
+            }
+        ]
     },
     "golden backpack_uncommun": {
         "nome": "golden backpack",
@@ -4096,23 +4108,41 @@
     "melee training dummy_legendary": {
         "nome": "melee training dummy",
         "raridade": "legendary",
-        "preco": 0.0,
+        "preco": 4000000.0,
         "ultima_atualizacao": "14/04/26",
-        "historico": []
+        "historico": [
+            {
+                "preco": 4000000.0,
+                "data": "14/04/26",
+                "obs": ""
+            }
+        ]
     },
     "distance training dummy_legendary": {
         "nome": "distance training dummy",
         "raridade": "legendary",
-        "preco": 0.0,
+        "preco": 4300000.0,
         "ultima_atualizacao": "14/04/26",
-        "historico": []
+        "historico": [
+            {
+                "preco": 4300000.0,
+                "data": "14/04/26",
+                "obs": ""
+            }
+        ]
     },
     "magic training dummy_legendary": {
         "nome": "magic training dummy",
         "raridade": "legendary",
-        "preco": 0.0,
+        "preco": 4300000.0,
         "ultima_atualizacao": "14/04/26",
-        "historico": []
+        "historico": [
+            {
+                "preco": 4300000.0,
+                "data": "14/04/26",
+                "obs": ""
+            }
+        ]
     },
     "drow jewel_commun": {
         "nome": "drow jewel",
@@ -6308,23 +6338,41 @@
     "blue easter egg_rare": {
         "nome": "blue easter egg",
         "raridade": "rare",
-        "preco": 0.0,
+        "preco": 400000.0,
         "ultima_atualizacao": "14/04/26",
-        "historico": []
+        "historico": [
+            {
+                "preco": 400000.0,
+                "data": "14/04/26",
+                "obs": ""
+            }
+        ]
     },
     "green easter egg_rare": {
         "nome": "green easter egg",
         "raridade": "rare",
-        "preco": 0.0,
+        "preco": 400000.0,
         "ultima_atualizacao": "14/04/26",
-        "historico": []
+        "historico": [
+            {
+                "preco": 400000.0,
+                "data": "14/04/26",
+                "obs": ""
+            }
+        ]
     },
     "purple easter egg_rare": {
         "nome": "purple easter egg",
         "raridade": "rare",
-        "preco": 0.0,
+        "preco": 400000.0,
         "ultima_atualizacao": "14/04/26",
-        "historico": []
+        "historico": [
+            {
+                "preco": 400000.0,
+                "data": "14/04/26",
+                "obs": ""
+            }
+        ]
     },
     "yellow easter egg_commun": {
         "nome": "yellow easter egg",
@@ -7078,9 +7126,15 @@
     "key ring_mythic": {
         "nome": "key ring",
         "raridade": "mythic",
-        "preco": 0.0,
+        "preco": 12000000.0,
         "ultima_atualizacao": "14/04/26",
-        "historico": []
+        "historico": [
+            {
+                "preco": 12000000.0,
+                "data": "14/04/26",
+                "obs": ""
+            }
+        ]
     },
     "chicken egg_commun": {
         "nome": "chicken egg",
