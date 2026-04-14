@@ -164,14 +164,16 @@ function abrirDetalhes(id) {
     const content = document.getElementById('details-content');
     let infoHtml = "";
 
+    // --- SEÇÃO DE PREÇO ---
     if (dadosNexus) {
-        // PEGANDO A COR DA DATA
         const corData = getCorData(dadosNexus.ultima_atualizacao);
+        // Formata o número com pontos e adiciona a cor amarela
+        const precoFormatado = Number(dadosNexus.preco).toLocaleString('pt-BR');
 
         infoHtml += `
             <div class="info-row">
                 <span>Current Price:</span>
-                <span class="val-positive">${dadosNexus.preco.toLocaleString()} Gold</span>
+                <span style="color: #FFD700; font-weight: bold;">${precoFormatado}, <small style="color: #FFD700;">Gold</small></span>
             </div>
             <div class="info-row">
                 <span>Last Update:</span>
@@ -179,12 +181,30 @@ function abrirDetalhes(id) {
             </div>`;
     }
 
+    // --- SEÇÃO DE ATRIBUTOS ---
     const ignorar = ["name", "Name: ", "rarity", "Rarity: ", "tags", "Tags"];
     for (let key in item) {
         if (ignorar.includes(key)) continue;
+        
         let val = item[key];
         let label = key.replace(": ", "").charAt(0).toUpperCase() + key.replace(": ", "").slice(1);
-        infoHtml += `<div class="info-row"><span>${label}:</span><span class="${typeof val === 'number' ? 'val-positive' : ''}">${val}</span></div>`;
+        
+        // Se for a descrição, usamos um estilo que respeita as quebras de linha (\n)
+        if (label.toLowerCase().includes("description")) {
+            infoHtml += `
+                <div class="info-row" style="flex-direction: column; align-items: flex-start; border-bottom: 1px solid #333;">
+                    <span style="margin-bottom: 5px; color: #aaa;">${label}:</span>
+                    <span style="width: 100%; white-space: pre-line; text-align: left; color: #eee; font-size: 15px; line-height: 1.4;">${val}</span>
+                </div>`;
+        } else {
+            // Se for número (stats), fica verde, se não (tipo de arma, etc), fica branco
+            let corVal = (typeof val === "number") ? "#00ff41" : "#fff";
+            infoHtml += `
+                <div class="info-row">
+                    <span>${label}:</span>
+                    <span style="color: ${corVal};">${val}</span>
+                </div>`;
+        }
     }
 
     let sprite = acharSprite(nome, item);
@@ -192,12 +212,12 @@ function abrirDetalhes(id) {
     let bg = getBackground(raridade);
 
     content.innerHTML = `
-        <div style="display:flex; flex-direction:column; align-items:center;">
+        <div style="display:flex; flex-direction:column; align-items:center; width: 100%;">
             <div class="big-item-card" style="background-image:url('./${bg}')">
                 ${f ? `<div class="big-sprite-wrap"><div class="sprite" style="width:${f.w}px;height:${f.h}px;background-image:url('./items.png');background-position:-${f.x}px -${f.y}px;"></div></div>` : ''}
             </div>
             <div class="details-title" style="${getNameStyle(raridade)}">${formatarNomeExibicao(nome)}</div>
-            <div class="info-container">${infoHtml}</div>
+            <div class="info-container" style="width: 100%; max-width: 400px;">${infoHtml}</div>
         </div>`;
 
     document.getElementById('details-overlay').style.display = 'flex';
