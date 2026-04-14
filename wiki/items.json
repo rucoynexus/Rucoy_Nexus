@@ -5,8 +5,7 @@
     "Tags": "Potions,Consumables",
     "Buy NPC: ": 50,
     "Sell NPC: ": 25,
-    "Stack: ": 200,
-    "More information: ": "You start with 15 life potions and can buy more from the [entity id=entity1 name='Gear Merchant'] in [location id=location1 name='Town 1']. The potion regenerates 70 to 130 [ui id=ui1 name='HP'].\nThis potion has no minimum [ui id=ui3 name='level'] requirement."
+    "Stack: ": 200
   },
   "item2": {
     "name": "mana potion",
@@ -14,8 +13,7 @@
     "Tags": "Potions,Consumables",
     "Buy NPC: ": 50,
     "Sell NPC: ": 25,
-    "Stack: ": 200,
-    "More information: ": "You start with 15 mana potions and can buy more from the [entity id=entity1 name='Gear Merchant'] in [location id=location1 name='Town 1']. The potion regenerates 70 to 130 [ui id=ui2 name='MP'].\nThis potion has no minimum [ui id=ui3 name='level'] requirement."
+    "Stack: ": 200
   },
   "item3": {
     "name": "arrow",
