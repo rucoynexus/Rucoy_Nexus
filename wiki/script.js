@@ -38,7 +38,7 @@ function getNameStyle(raridade) {
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             /* Diminuí o borrão (de 3px para 1px) e a intensidade */
-            filter: drop-shadow(1px 1px 0px #000) drop-shadow(0px 0px 1px #000);
+            /*filter: drop-shadow(1px 1px 0px #000) drop-shadow(0px 0px 1px #000);*/
         `;
     }
     return `color: ${getRarityColor(raridade)};`;
