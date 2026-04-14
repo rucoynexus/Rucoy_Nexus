@@ -2138,6 +2138,13 @@
     "demon_xp": "2%",
     "level": 400
   },
+  "item290": {
+    "name": "superior defense necklace",
+    "rarity": "legendary",
+    "stack": 1,
+    "armor": 1,
+    "defense": 10
+  },
   "item291": {
     "name": "superior magic necklace",
     "rarity": "legendary",
@@ -4709,7 +4716,7 @@
   },
   "item633": {
     "name": "golden backpack",
-    "rarity": "ultra rare",
+    "rarity": "mythic",
     "stack": 1,
     "capacity": 94,
     "level": 400
@@ -5625,7 +5632,7 @@
     "stack": 1
   },
   "item765": {
-    "name": "battle shield",
+    "name": "gargoyle shield",
     "rarity": "ultra rare",
     "armor": 45,
     "aggro": 2,
@@ -5634,7 +5641,7 @@
     "stack": 1
   },
   "item766": {
-    "name": "battle shield",
+    "name": "gargoyle shield",
     "rarity": "legendary",
     "armor": 46,
     "aggro": 3,
@@ -7063,7 +7070,7 @@
     "level": 225
   },
   "item938": {
-    "name": "minotaur quiver",
+    "name": "frozen quiver",
     "rarity": "commun",
     "capacity": 18000,
     "stack": 1,
@@ -8158,13 +8165,13 @@
     "capacity": 40,
     "level": 300
   },
-  "item1110": {
+  "item1100": {
     "name": "void backpack",
     "rarity": "legendary",
     "stack": 1,
     "capacity": 76
   },
-  "item1111": {
+  "item1101": {
     "name": "void quiver",
     "rarity": "legendary",
     "stack": 1,
