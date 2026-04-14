@@ -7265,21 +7265,21 @@
     "stack": 1
   },
   "item968": {
-    "name": "rusted void melee ring",
+    "name": "void melee ring",
     "armor": 1,
     "melee": -40.0,
     "rarity": "mythic",
     "stack": 1
   },
   "item969": {
-    "name": "rusted void distance ring",
+    "name": "void distance ring",
     "armor": 1,
     "distance": -40.0,
     "rarity": "mythic",
     "stack": 1
   },
   "item970": {
-    "name": "rusted void magic ring",
+    "name": "void magic ring",
     "armor": 1,
     "magic": -40.0,
     "rarity": "mythic",
