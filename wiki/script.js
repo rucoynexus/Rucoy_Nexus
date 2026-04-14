@@ -165,15 +165,17 @@ function abrirDetalhes(id) {
     let infoHtml = "";
 
     // --- SEÇÃO DE PREÇO ---
+    // --- SEÇÃO DE PREÇO ---
     if (dadosNexus) {
         const corData = getCorData(dadosNexus.ultima_atualizacao);
-        // Formata o número com pontos e adiciona a cor amarela
-        const precoFormatado = Number(dadosNexus.preco).toLocaleString('pt-BR');
+        
+        // Formata para padrão americano: 7,300,000
+        const precoFormatado = Number(dadosNexus.preco).toLocaleString('en-US');
 
         infoHtml += `
             <div class="info-row">
                 <span>Current Price:</span>
-                <span style="color: #FFD700; font-weight: bold;">${precoFormatado}, <small style="color: #FFD700;">Gold</small></span>
+                <span style="color: #FFD700; font-weight: bold;">${precoFormatado} Gold</span>
             </div>
             <div class="info-row">
                 <span>Last Update:</span>
