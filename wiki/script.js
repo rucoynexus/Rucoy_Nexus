@@ -1,11 +1,11 @@
 let items = {};
 let sprites = {};
-let precosNexus = {}; // NOVO: Armazena os preços e históricos
+let precosNexus = {}; 
 let listaFiltrada = [];
 let pagina = 0;
 const POR_PAGINA = 60; 
 let isLoading = false;
-let meuGrafico = null; // Para controlar a instância do gráfico
+let meuGrafico = null;
 
 function toggleMenu() {
     const drawer = document.getElementById('drawer');
@@ -35,12 +35,7 @@ function getBackground(r) {
 function getNameStyle(raridade) {
     raridade = (raridade || "").toLowerCase();
     if (raridade === "mythic") {
-        return `
-            display: inline;
-            background: linear-gradient(to bottom, #e75931, #ff9229, #ffbe00, #e7ff00);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-        `;
+        return `display: inline; background: linear-gradient(to bottom, #e75931, #ff9229, #ffbe00, #e7ff00); -webkit-background-clip: text; -webkit-text-fill-color: transparent;`;
     }
     return `color: ${getRarityColor(raridade)};`;
 }
@@ -52,12 +47,10 @@ function normalizar(nome) {
 function acharSprite(nome, item) {
     let n = normalizar(nome);
     let raridade = (item["Rarity: "] || item.rarity || "").toLowerCase();
-
     if (n === "key ring") {
         const sufixos = { "commun": "1", "uncommun": "2", "rare": "3", "ultra rare": "4", "legendary": "5", "mythic": "6" };
         return sprites[`Key_Ring${sufixos[raridade] || "1"}.png`];
     }
-
     for (let key in sprites) {
         if (normalizar(key.replace(".png", "")) === n) return sprites[key];
     }
@@ -77,29 +70,23 @@ function criarItemHTML(nome, item, id) {
     let bg = getBackground(raridade);
     let sprite = acharSprite(nome, item);
     let spriteHTML = "";
-
     if (sprite) {
         let f = sprite.frame;
         spriteHTML = `<div class="sprite-wrap"><div class="sprite" style="width:${f.w}px;height:${f.h}px;background-image:url('./items.png');background-position:-${f.x}px -${f.y}px;"></div></div>`;
     }
-
-    return `
-        <div class="item-card" style="background-image:url('./${bg}')" onclick="abrirDetalhes('${id}')">
-            ${spriteHTML}
-            <div class="item-name">
-                <span style="${getNameStyle(raridade)}">${formatarNomeExibicao(nome)}</span>
-            </div>
-        </div>`;
+    return `<div class="item-card" style="background-image:url('./${bg}')" onclick="abrirDetalhes('${id}')">${spriteHTML}<div class="item-name"><span style="${getNameStyle(raridade)}">${formatarNomeExibicao(nome)}</span></div></div>`;
 }
 
 function desenharGrafico(chave) {
+    const chartArea = document.getElementById('chart-area');
     const info = precosNexus[chave];
+
     if (!info || !info.historico || info.historico.length === 0) {
-        document.querySelector('.chart-container').style.display = 'none';
+        chartArea.style.display = 'none';
         return;
     }
 
-    document.querySelector('.chart-container').style.display = 'block';
+    chartArea.style.display = 'block';
     const ctx = document.getElementById('graficoPreco').getContext('2d');
 
     if (meuGrafico) meuGrafico.destroy();
@@ -112,7 +99,7 @@ function desenharGrafico(chave) {
         data: {
             labels: labels,
             datasets: [{
-                label: 'Price History',
+                label: 'Price',
                 data: valores,
                 borderColor: '#3CBCFC',
                 backgroundColor: 'rgba(60, 188, 252, 0.2)',
@@ -132,7 +119,8 @@ function desenharGrafico(chave) {
                 tooltip: {
                     callbacks: {
                         footer: (items) => {
-                            return "Obs: " + info.historico[items[0].dataIndex].obs;
+                            const idx = items[0].dataIndex;
+                            return "Obs: " + (info.historico[idx].obs || "No description");
                         }
                     }
                 }
@@ -147,26 +135,19 @@ function abrirDetalhes(id) {
 
     const nome = item["Name: "] || item.name || "???";
     const raridade = (item["Rarity: "] || item.rarity || "").toLowerCase();
-    const overlay = document.getElementById('details-overlay');
-    const content = document.getElementById('details-content');
     
-    // Adicionar preço atual se existir no precos_nexus.json
-    const chaveNexus = `${nome.toLowerCase().strip()}_${raridade.toLowerCase().strip()}`.replace(/\s+/g, ' ').trim();
-    // Nota: Usei uma versão simplificada da chave abaixo para garantir match
+    // CHAVE DE BUSCA: Garante que bate com o export do Python
     const chaveBusca = `${nome.toLowerCase().trim()}_${raridade.trim()}`;
     const dadosNexus = precosNexus[chaveBusca];
 
+    const content = document.getElementById('details-content');
     let infoHtml = "";
+
+    // Adiciona Preço se existir
     if (dadosNexus) {
         infoHtml += `
-            <div class="info-row">
-                <span>Current Price:</span>
-                <span class="val-positive">${dadosNexus.preco.toLocaleString()} Gold</span>
-            </div>
-            <div class="info-row">
-                <span>Last Update:</span>
-                <span>${dadosNexus.ultima_atualizacao}</span>
-            </div>`;
+            <div class="info-row"><span>Current Price:</span><span class="val-positive">${dadosNexus.preco.toLocaleString()} Gold</span></div>
+            <div class="info-row"><span>Last Update:</span><span>${dadosNexus.ultima_atualizacao}</span></div>`;
     }
 
     const ignorar = ["name", "Name: ", "rarity", "Rarity: ", "tags", "Tags"];
@@ -174,12 +155,7 @@ function abrirDetalhes(id) {
         if (ignorar.includes(key)) continue;
         let val = item[key];
         let label = key.replace(": ", "").charAt(0).toUpperCase() + key.replace(": ", "").slice(1);
-        
-        infoHtml += `
-            <div class="info-row">
-                <span>${label}:</span>
-                <span class="${typeof val === 'number' ? 'val-positive' : ''}">${val}</span>
-            </div>`;
+        infoHtml += `<div class="info-row"><span>${label}:</span><span class="${typeof val === 'number' ? 'val-positive' : ''}">${val}</span></div>`;
     }
 
     let sprite = acharSprite(nome, item);
@@ -187,17 +163,23 @@ function abrirDetalhes(id) {
     let bg = getBackground(raridade);
 
     content.innerHTML = `
-        <div class="big-item-card" style="background-image:url('./${bg}')">
-            ${f ? `<div class="big-sprite-wrap"><div class="sprite" style="width:${f.w}px;height:${f.h}px;background-image:url('./items.png');background-position:-${f.x}px -${f.y}px;"></div></div>` : ''}
-        </div>
-        <div class="details-title" style="${getNameStyle(raridade)}">${formatarNomeExibicao(nome)}</div>
-        <div class="info-container">${infoHtml}</div>`;
+        <div style="display:flex; flex-direction:column; align-items:center;">
+            <div class="big-item-card" style="background-image:url('./${bg}')">
+                ${f ? `<div class="big-sprite-wrap"><div class="sprite" style="width:${f.w}px;height:${f.h}px;background-image:url('./items.png');background-position:-${f.x}px -${f.y}px;"></div></div>` : ''}
+            </div>
+            <div class="details-title" style="${getNameStyle(raridade)}">${formatarNomeExibicao(nome)}</div>
+            <div class="info-container">${infoHtml}</div>
+        </div>`;
 
-    overlay.style.display = 'flex';
+    document.getElementById('details-overlay').style.display = 'flex';
     document.body.style.overflow = 'hidden';
 
-    // Desenha o gráfico se houver dados
-    desenharGrafico(chaveBusca);
+    // Tenta desenhar o gráfico sem quebrar o resto
+    try {
+        desenharGrafico(chaveBusca);
+    } catch(e) {
+        console.error("Erro no gráfico:", e);
+    }
 }
 
 function fecharDetalhes() {
@@ -209,19 +191,16 @@ function aplicarFiltro() {
     let busca = document.getElementById("search").value.toLowerCase();
     let raridadeFiltro = document.getElementById("rarityFilter").value;
     listaFiltrada = [];
-
     for (let id in items) {
         let item = items[id];
         let nome = item["Name: "] || item.name || "???";
         let tags = (item["Tags"] || "").toLowerCase();
         let raridade = (item["Rarity: "] || item.rarity || "").toLowerCase();
-
         if (raridadeFiltro && raridade !== raridadeFiltro) continue;
         if (nome.toLowerCase().includes(busca) || tags.includes(busca)) {
             listaFiltrada.push({ nome, item, id }); 
         }
     }
-
     pagina = 0;
     document.getElementById("lista").innerHTML = "";
     carregarMais();
@@ -233,11 +212,9 @@ function carregarMais() {
     let container = document.getElementById("lista");
     let inicio = pagina * POR_PAGINA;
     let slice = listaFiltrada.slice(inicio, inicio + POR_PAGINA);
-
     let buffer = "";
     slice.forEach(e => buffer += criarItemHTML(e.nome, e.item, e.id));
     container.innerHTML += buffer;
-
     pagina++;
     isLoading = false;
 }
@@ -251,20 +228,16 @@ async function carregar() {
         const [resItems, resSprites, resPrecos] = await Promise.all([
             fetch("./items.json"), 
             fetch("./items_png.json"),
-            fetch("./precos_nexus.json")
+            fetch("./precos_nexus.json").catch(() => null)
         ]);
-        
         items = await resItems.json();
-        let data = await resSprites.json();
-        sprites = data.frames || {};
-        
-        // Carrega preços e históricos se o arquivo existir
-        if (resPrecos.ok) {
+        let spriteData = await resSprites.json();
+        sprites = spriteData.frames || {};
+        if (resPrecos && resPrecos.ok) {
             precosNexus = await resPrecos.json();
         }
-
         aplicarFiltro();
-    } catch (e) { console.error(e); }
+    } catch (e) { console.error("Erro ao carregar arquivos:", e); }
 }
 
 document.getElementById("search").addEventListener("input", aplicarFiltro);

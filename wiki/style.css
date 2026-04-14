@@ -231,10 +231,10 @@ main { padding: 76px 20px 20px 20px; min-height: 100vh; }
 /* NOVO: Estilo do Gráfico */
 .chart-container {
     width: 100%;
-    max-width: 500px;
-    margin-top: 25px;
     background: #1a1a1a;
+    border: 1px solid #333;
     border-radius: 12px;
     padding: 15px;
-    border: 1px solid #333;
+    margin-top: 20px;
+    margin-bottom: 40px;
 }
