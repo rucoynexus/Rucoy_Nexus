@@ -112,6 +112,16 @@
             justify-content: center;
             overflow: hidden;
             image-rendering: pixelated;
+            cursor: pointer;
+            transition: transform 0.2s ease;
+            border: 2px solid transparent;
+        }
+
+        .item-card:hover {
+            transform: scale(1.05);
+            border: 2px solid white;
+            z-index: 10;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.5);
         }
 
         .item-name {
@@ -119,12 +129,21 @@
             bottom: 4px;
             width: 100%;
             text-align: center;
-            font-size: 12px;
+            font-size: 11px;
             font-weight: bold;
             z-index: 2;
             padding: 0 4px;
             line-height: 1.1;
+            text-transform: capitalize;
             filter: drop-shadow(1px 1px 1px rgba(0,0,0,1)) drop-shadow(-1px -1px 1px rgba(0,0,0,1));
+        }
+
+        /* Correção do Gradiente: Adicionado inline-block para o mythic */
+        .mythic-text {
+            display: inline-block;
+            background: linear-gradient(#e75931, #ff9229, #ffbe00, #e7ff00);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
         }
 
         .sprite-wrap {
@@ -144,98 +163,77 @@
 
         .sprite { background-repeat: no-repeat; image-rendering: pixelated; }
 
-        body.is-app header, body.is-app #drawer, body.is-app #overlay { display: none !important; }
-        body.is-app main { padding: 0; }
+        /* Modal Details */
+        #details-overlay {
+            position: fixed;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background: rgba(0, 0, 0, 0.95);
+            z-index: 1000;
+            display: none;
+            flex-direction: column;
+            align-items: center;
+            padding: 40px 20px;
+            overflow-y: auto;
+        }
 
-        /* Efeito de Hover no Card */
-.item-card {
-    /* ... mantenha suas propriedades atuais ... */
-    cursor: pointer; /* Faz aparecer a mãozinha */
-    transition: transform 0.2s ease, border 0.1s ease; /* Suaviza a animação */
-    border: 2px solid transparent; /* Reserva o espaço da borda */
-}
+        .big-item-card {
+            width: 200px; height: 200px;
+            background-size: 100% 100%;
+            display: flex; align-items: center; justify-content: center;
+            position: relative; image-rendering: pixelated; margin-bottom: 20px;
+        }
 
-.item-card:hover {
-    transform: scale(1.05); /* Cresce 5% */
-    border: 2px solid white; /* Borda branca ao redor */
-    z-index: 10; /* Garante que o item focado fique por cima dos vizinhos */
-    box-shadow: 0 4px 15px rgba(0,0,0,0.5); /* Adiciona uma sombra para destacar */
-}
-/* Tela de Detalhes (Modal) */
-#details-overlay {
-    position: fixed;
-    top: 0; left: 0; width: 100%; height: 100%;
-    background: rgba(0, 0, 0, 0.95); /* Fundo quase preto */
-    z-index: 1000;
-    display: none; /* Escondido por padrão */
-    flex-direction: column;
-    align-items: center;
-    padding: 40px 20px;
-    overflow-y: auto;
-}
+        .big-sprite-wrap { transform: scale(8); image-rendering: pixelated; }
 
-.big-item-card {
-    width: 200px;
-    height: 200px;
-    background-size: 100% 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    position: relative;
-    image-rendering: pixelated;
-    margin-bottom: 20px;
-}
+        .details-title {
+            font-size: 28px;
+            font-weight: bold;
+            text-transform: capitalize;
+            margin-bottom: 30px;
+            text-align: center;
+        }
 
-.big-sprite-wrap {
-    transform: scale(8); /* Item bem grande */
-    image-rendering: pixelated;
-}
+        .info-container {
+            background: #1a1a1a;
+            border: 1px solid #333;
+            border-radius: 12px;
+            padding: 20px;
+            width: 100%;
+            max-width: 400px;
+            line-height: 1.6;
+        }
 
-.details-title {
-    font-size: 28px;
-    font-weight: bold;
-    text-transform: capitalize;
-    margin-bottom: 30px;
-    text-align: center;
-}
+        .info-row {
+            display: flex;
+            justify-content: space-between;
+            border-bottom: 1px solid #222;
+            padding: 8px 0;
+            font-size: 18px;
+        }
 
-.info-container {
-    background: #1a1a1a;
-    border: 1px solid #333;
-    border-radius: 12px;
-    padding: 20px;
-    width: 100%;
-    max-width: 400px;
-    line-height: 1.6;
-}
+        /* Correção da Quebra de Linha: white-space pre-line interpreta o \n */
+        .info-val {
+            text-align: right;
+            white-space: pre-line; 
+        }
 
-.info-row {
-    display: flex;
-    justify-content: space-between;
-    border-bottom: 1px solid #222;
-    padding: 8px 0;
-    font-size: 18px;
-}
+        .val-positive { color: #00ff41; }
+        .val-negative { color: #ff3b3b; }
 
-.info-row:last-child { border-bottom: none; }
-
-.val-positive { color: #00ff41; } /* Verde */
-.val-negative { color: #ff3b3b; } /* Vermelho */
-
-.btn-close {
-    position: absolute;
-    top: 20px; right: 20px;
-    background: none; border: none;
-    color: white; font-size: 40px; cursor: pointer;
-}
+        .btn-close {
+            position: absolute;
+            top: 20px; right: 20px;
+            background: none; border: none;
+            color: white; font-size: 40px; cursor: pointer;
+        }
     </style>
 </head>
 <body>
-<div id="details-overlay">
-    <button class="btn-close" onclick="fecharDetalhes()">&times;</button>
-    <div id="details-content" style="display: flex; flex-direction: column; align-items: center; width: 100%;">
-        </div>
-</div>
+    <div id="details-overlay">
+        <button class="btn-close" onclick="fecharDetalhes()">&times;</button>
+        <div id="details-content" style="display: flex; flex-direction: column; align-items: center; width: 100%;"></div>
+    </div>
+
     <div id="overlay" onclick="toggleMenu()"></div>
 
     <header>
@@ -257,16 +255,12 @@
             <a href="/guild/" class="drawer-item"><img src="/res/icon/guild.png"> Guild</a>
             <a href="/calculator/" class="drawer-item"><img src="/res/icon/calculator.png"> Calculator</a>
             <a href="/updates/" class="drawer-item"><img src="/res/icon/update.png"> Updates</a>
-
-            <a href="/settings/" class="drawer-item settings-highlight">
-                <img src="/res/icon/ic_cog.png"> Settings
-            </a>
+            <a href="/settings/" class="drawer-item settings-highlight"><img src="/res/icon/ic_cog.png"> Settings</a>
         </div>
     </nav>
 
     <main id="main-content">
         <input type="text" id="search" placeholder="Search items..." style="width:100%;padding:12px;margin-bottom:10px;background:#222;border:1px solid #444;color:white;border-radius:8px;">
-
         <select id="rarityFilter" style="width:100%;padding:12px;margin-bottom:10px;background:#222;border:1px solid #444;color:white;border-radius:8px;">
             <option value="">All rarities</option>
             <option value="commun">Commun</option>
@@ -276,18 +270,10 @@
             <option value="legendary">Legendary</option>
             <option value="mythic">Mythic</option>
         </select>
-
         <div id="lista"></div>
     </main>
 
     <script>
-        function toggleMenu() {
-            const drawer = document.getElementById('drawer');
-            const overlay = document.getElementById('overlay');
-            drawer.classList.toggle('active');
-            overlay.style.display = drawer.classList.contains('active') ? 'block' : 'none';
-        }
-
         let items = {};
         let sprites = {};
         let listaFiltrada = [];
@@ -295,274 +281,134 @@
         const POR_PAGINA = 60; 
         let isLoading = false;
 
+        function toggleMenu() {
+            const drawer = document.getElementById('drawer');
+            document.getElementById('overlay').style.display = drawer.classList.toggle('active') ? 'block' : 'none';
+        }
+
         function getRarityColor(r) {
             r = (r || "").toLowerCase();
-            if (r === "commun") return "rgb(247,243,247)";
-            if (r === "uncommun") return "rgb(0,235,74)";
-            if (r === "rare") return "rgb(66,190,255)";
-            if (r === "ultra rare") return "rgb(230,117,247)";
-            if (r === "legendary") return "rgb(239,255,0)";
-            return "white";
+            const colors = { "commun": "rgb(247,243,247)", "uncommun": "rgb(0,235,74)", "rare": "rgb(66,190,255)", "ultra rare": "rgb(230,117,247)", "legendary": "rgb(239,255,0)" };
+            return colors[r] || "white";
         }
 
         function getBackground(r) {
-            r = (r || "").toLowerCase().replace(" ", "-");
-            if (!r) r = "commun";
-            return r + "-background.png";
+            return (r || "commun").toLowerCase().replace(" ", "-") + "-background.png";
         }
 
         function getNameStyle(raridade) {
             raridade = (raridade || "").toLowerCase();
-            if (raridade === "mythic") {
-                return `background: -webkit-linear-gradient(#e75931, #ff9229, #ffbe00, #e7ff00); -webkit-background-clip: text; -webkit-text-fill-color: transparent;`;
-            }
-            return `color: ${getRarityColor(raridade)};`;
+            if (raridade === "mythic") return "mythic-text";
+            return "";
         }
 
         function normalizar(nome) {
-            return nome.toLowerCase()
-                .replace(/'/g, "")
-                .replace(/[^a-z0-9() ]/g, "")
-                .trim();
+            return nome.toLowerCase().replace(/'/g, "").replace(/[^a-z0-9() ]/g, "").trim();
         }
 
         function acharSprite(nome, item) {
-    let n = normalizar(nome);
-    let raridade = (item["Rarity: "] || item.rarity || "").toLowerCase();
-
-    // Lógica corrigida para Key_RingX.png
-    if (n === "key ring") {
-        let sufixo = "1"; // Default commun
-        if (raridade === "uncommun") sufixo = "2";
-        else if (raridade === "rare") sufixo = "3";
-        else if (raridade === "ultra rare") sufixo = "4";
-        else if (raridade === "legendary") sufixo = "5";
-        else if (raridade === "mythic") sufixo = "6";
-        
-        let nomeChave = `Key_Ring${sufixo}.png`; // Exato como no seu JSON
-        return sprites[nomeChave];
-    }
-
-    // Busca normal para os outros itens
-    for (let key in sprites) {
-        if (normalizar(key.replace(".png", "")) === n) {
-            return sprites[key];
+            let n = normalizar(nome);
+            let raridade = (item["Rarity: "] || item.rarity || "").toLowerCase();
+            if (n === "key ring") {
+                const map = { "uncommun": "2", "rare": "3", "ultra rare": "4", "legendary": "5", "mythic": "6" };
+                return sprites[`Key_Ring${map[raridade] || "1"}.png`];
+            }
+            for (let key in sprites) {
+                let cleanKey = normalizar(key.replace(".png", ""));
+                if (cleanKey === n || cleanKey.includes(n) || n.includes(cleanKey)) return sprites[key];
+            }
+            return null;
         }
-    }
 
-    // Fallback de busca parcial
-    for (let key in sprites) {
-        let keyClean = normalizar(key.replace(".png", ""));
-        if (keyClean.includes(n) || n.includes(keyClean)) {
-            return sprites[key];
+        function criarItemHTML(nome, item, id) {
+            let raridade = item["Rarity: "] || item.rarity || "";
+            let sprite = acharSprite(nome, item);
+            let spriteHTML = sprite ? `<div class="sprite-wrap"><div class="sprite" style="width:${sprite.frame.w}px;height:${sprite.frame.h}px;background-image:url('./items.png');background-position:-${sprite.frame.x}px -${sprite.frame.y}px;"></div></div>` : "";
+            
+            return `<div class="item-card" style="background-image:url('./${getBackground(raridade)}')" onclick="abrirDetalhes('${id}')">
+                        ${spriteHTML}
+                        <div class="item-name ${getNameStyle(raridade)}" style="${!getNameStyle(raridade) ? 'color:'+getRarityColor(raridade) : ''}">${nome}</div>
+                    </div>`;
         }
-    }
-
-    return null;
-}
-
-        function criarItemHTML(nome, item, id) { // Adicionamos 'id' como parâmetro
-    let raridade = item["Rarity: "] || item.rarity || "";
-    let bg = getBackground(raridade);
-    let sprite = acharSprite(nome, item);
-    let spriteHTML = "";
-
-    if (sprite) {
-        let f = sprite.frame;
-        spriteHTML = `<div class="sprite-wrap"><div class="sprite" style="width:${f.w}px;height:${f.h}px;background-image:url('./items.png');background-position:-${f.x}px -${f.y}px;"></div></div>`;
-    }
-
-    // Adicionado o onclick para redirecionar
-    return `
-        <div class="item-card" 
-             style="background-image:url('./${bg}')" 
-             onclick="abrirDetalhes('${id}')">
-            ${spriteHTML}
-            <div class="item-name" style="${getNameStyle(raridade)}">${nome}</div>
-        </div>`;
-}
 
         function aplicarFiltro() {
             let busca = document.getElementById("search").value.toLowerCase();
             let raridadeFiltro = document.getElementById("rarityFilter").value;
             listaFiltrada = [];
-
             for (let id in items) {
                 let item = items[id];
                 let nome = item["Name: "] || item.name || "???";
-                let tags = (item["Tags"] || "").toLowerCase();
                 let raridade = (item["Rarity: "] || item.rarity || "").toLowerCase();
-
-                if (raridadeFiltro && raridade !== raridadeFiltro) continue;
-                if (nome.toLowerCase().includes(busca) || tags.includes(busca)) {
-                    listaFiltrada.push({ nome, item });
+                if ((!raridadeFiltro || raridade === raridadeFiltro) && (nome.toLowerCase().includes(busca) || (item["Tags"] || "").toLowerCase().includes(busca))) {
+                    listaFiltrada.push({ nome, item, id });
                 }
             }
-
             pagina = 0;
             document.getElementById("lista").innerHTML = "";
             carregarMais();
-            
-            if (document.documentElement.scrollHeight <= window.innerHeight) {
-                carregarMais();
-            }
         }
 
         function carregarMais() {
             if (isLoading || pagina * POR_PAGINA >= listaFiltrada.length) return;
             isLoading = true;
-            
             let container = document.getElementById("lista");
-            let inicio = pagina * POR_PAGINA;
-            let fim = inicio + POR_PAGINA;
-            let slice = listaFiltrada.slice(inicio, fim);
-
-            let buffer = "";
-            slice.forEach(e => {
-                buffer += criarItemHTML(e.nome, e.item);
-            });
-            container.innerHTML += buffer;
-
+            let slice = listaFiltrada.slice(pagina * POR_PAGINA, (pagina + 1) * POR_PAGINA);
+            container.innerHTML += slice.map(e => criarItemHTML(e.nome, e.item, e.id)).join("");
             pagina++;
             isLoading = false;
         }
 
-        window.addEventListener("scroll", () => {
-            const scrollHeight = document.documentElement.scrollHeight;
-            const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-            const clientHeight = window.innerHeight;
-
-            if (scrollTop + clientHeight >= scrollHeight - 400) {
-                carregarMais();
-            }
-        });
-
         async function carregar() {
             try {
-                const [resItems, resSprites] = await Promise.all([
-                    fetch("./items.json"),
-                    fetch("./items_png.json")
-                ]);
+                const [resItems, resSprites] = await Promise.all([fetch("./items.json"), fetch("./items_png.json")]);
                 items = await resItems.json();
-                let data = await resSprites.json();
-                sprites = data.frames || {};
+                sprites = (await resSprites.json()).frames || {};
                 aplicarFiltro();
             } catch (e) { console.error(e); }
         }
 
+        function abrirDetalhes(id) {
+            const item = items[id];
+            const nome = item["Name: "] || item.name || "???";
+            const raridade = (item["Rarity: "] || item.rarity || "").toLowerCase();
+            const content = document.getElementById('details-content');
+            let sprite = acharSprite(nome, item);
+            let infoHtml = "";
+            const ignorar = ["name", "Name: ", "rarity", "Rarity: ", "tags", "Tags"];
+
+            for (let key in item) {
+                if (ignorar.includes(key)) continue;
+                let val = item[key];
+                let label = key.replace(": ", "").charAt(0).toUpperCase() + key.replace(": ", "").slice(1);
+                let cor = typeof val === "number" ? (val > 0 ? "val-positive" : (val < 0 ? "val-negative" : "")) : "";
+                infoHtml += `<div class="info-row"><span>${label}:</span><span class="info-val ${cor}">${val}</span></div>`;
+            }
+
+            infoHtml += `<div class="info-row"><span>Rarity:</span><span class="info-val ${getNameStyle(raridade)}" style="${!getNameStyle(raridade) ? 'color:'+getRarityColor(raridade) : ''}; font-weight:bold;">${raridade.toUpperCase()}</span></div>`;
+
+            content.innerHTML = `
+                <div class="big-item-card" style="background-image:url('./${getBackground(raridade)}')">
+                    ${sprite ? `<div class="big-sprite-wrap"><div class="sprite" style="width:${sprite.frame.w}px;height:${sprite.frame.h}px;background-image:url('./items.png');background-position:-${sprite.frame.x}px -${sprite.frame.y}px;"></div></div>` : ''}
+                </div>
+                <div class="details-title ${getNameStyle(raridade)}" style="${!getNameStyle(raridade) ? 'color:'+getRarityColor(raridade) : ''}">${nome}</div>
+                <div class="info-container">${infoHtml}</div>`;
+            
+            document.getElementById('details-overlay').style.display = 'flex';
+            document.body.style.overflow = 'hidden';
+        }
+
+        function fecharDetalhes() {
+            document.getElementById('details-overlay').style.display = 'none';
+            document.body.style.overflow = 'auto';
+        }
+
+        window.addEventListener("scroll", () => {
+            if (window.innerHeight + window.pageYOffset >= document.documentElement.scrollHeight - 400) carregarMais();
+        });
+
         document.getElementById("search").addEventListener("input", aplicarFiltro);
         document.getElementById("rarityFilter").addEventListener("change", aplicarFiltro);
         carregar();
-        // Função para redirecionar (atualmente para uma tela preta como pedido)
-function abrirDetalhes(id) {
-    const item = items[id];
-    const nome = item["Name: "] || item.name || "???";
-    const raridade = (item["Rarity: "] || item.rarity || "").toLowerCase();
-    const overlay = document.getElementById('details-overlay');
-    const content = document.getElementById('details-content');
-    
-    // Pegar Sprite e Background
-    let sprite = acharSprite(nome, item);
-    let bg = getBackground(raridade);
-    let f = sprite ? sprite.frame : null;
-
-    // Gerar o HTML das Propriedades dinamicamente
-    let infoHtml = "";
-    
-    // Lista de chaves que não queremos exibir no meio das propriedades
-    const ignorar = ["name", "Name: ", "rarity", "Rarity: ", "tags", "Tags"];
-
-    for (let key in item) {
-        if (ignorar.includes(key)) continue;
-
-        let val = item[key];
-        let label = key.charAt(0).toUpperCase() + key.slice(1).replace(": ", "");
-        let corClasse = "";
-
-        // Lógica de cores para números
-        if (typeof val === "number") {
-            if (val > 0) corClasse = "val-positive";
-            else if (val < 0) corClasse = "val-negative";
-        }
-
-        infoHtml += `
-            <div class="info-row">
-                <span>${label}:</span>
-                <span class="${corClasse}">${val}</span>
-            </div>`;
-    }
-
-    // Adiciona Raridade manualmente no final com a cor dela
-    infoHtml += `
-        <div class="info-row">
-            <span>Rarity:</span>
-            <span style="${getNameStyle(raridade)} font-weight:bold;">${raridade.toUpperCase()}</span>
-        </div>`;
-
-    // Monta o layout do Modal
-    content.innerHTML = `
-        <div class="big-item-card" style="background-image:url('./${bg}')">
-            ${f ? `<div class="big-sprite-wrap"><div class="sprite" style="width:${f.w}px;height:${f.h}px;background-image:url('./items.png');background-position:-${f.x}px -${f.y}px;"></div></div>` : ''}
-        </div>
-        <div class="details-title" style="${getNameStyle(raridade)}">${nome}</div>
-        <div class="info-container">
-            ${infoHtml}
-        </div>
-    `;
-
-    overlay.style.display = 'flex';
-    document.body.style.overflow = 'hidden'; // Trava o scroll do fundo
-}
-
-function fecharDetalhes() {
-    document.getElementById('details-overlay').style.display = 'none';
-    document.body.style.overflow = 'auto'; // Destrava o scroll
-}
-
-// ATENÇÃO: Atualize sua função carregarMais para passar o ID:
-function carregarMais() {
-    if (isLoading || pagina * POR_PAGINA >= listaFiltrada.length) return;
-    isLoading = true;
-    
-    let container = document.getElementById("lista");
-    let inicio = pagina * POR_PAGINA;
-    let fim = inicio + POR_PAGINA;
-    let slice = listaFiltrada.slice(inicio, fim);
-
-    let buffer = "";
-    slice.forEach(e => {
-        // Passamos e.id para o gerador de HTML
-        buffer += criarItemHTML(e.nome, e.item, e.id); 
-    });
-    container.innerHTML += buffer;
-
-    pagina++;
-    isLoading = false;
-}
-
-// ATENÇÃO: Atualize seu aplicarFiltro para guardar o ID original:
-function aplicarFiltro() {
-    let busca = document.getElementById("search").value.toLowerCase();
-    let raridadeFiltro = document.getElementById("rarityFilter").value;
-    listaFiltrada = [];
-
-    for (let id in items) {
-        let item = items[id];
-        let nome = item["Name: "] || item.name || "???";
-        let tags = (item["Tags"] || "").toLowerCase();
-        let raridade = (item["Rarity: "] || item.rarity || "").toLowerCase();
-
-        if (raridadeFiltro && raridade !== raridadeFiltro) continue;
-        if (nome.toLowerCase().includes(busca) || tags.includes(busca)) {
-            // Guardamos o id aqui para usar no clique depois
-            listaFiltrada.push({ nome, item, id }); 
-        }
-    }
-
-    pagina = 0;
-    document.getElementById("lista").innerHTML = "";
-    carregarMais();
-}
     </script>
 </body>
 </html>

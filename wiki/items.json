@@ -2,7 +2,6 @@
   "item1": {
     "Name: ": "health potion",
     "Rarity: ": "commun",
-    "Tags": "Potions,Consumables",
     "Buy NPC: ": 50,
     "Sell NPC: ": 25,
     "Stack: ": 200
@@ -10,7 +9,6 @@
   "item2": {
     "name": "mana potion",
     "rarity": "commun",
-    "Tags": "Potions,Consumables",
     "Buy NPC: ": 50,
     "Sell NPC: ": 25,
     "Stack: ": 200
@@ -909,7 +907,7 @@
     "name": "halloween potion",
     "rarity": "commun",
     "stack": 1,
-    "description": "Increases HP and MP\nregeneration for 20 minutes\nduring the halloween event"
+    "description ": "Increases HP and MP\nregeneration for 20 minutes\nduring the halloween event"
   },
   "item134": {
     "name": "superior magic ring",
@@ -1103,7 +1101,7 @@
     "name": "christmas candy",
     "rarity": "commun",
     "stack": 1,
-    "description": "Increases HP and MP\nregeneration for 20 minutes\nduring the christmas event"
+    "description ": "Increases HP and MP\nregeneration for 20 minutes\nduring the christmas event"
   },
   "item160": {
     "name": "dragon light armor",
@@ -2561,13 +2559,13 @@
     "name": "death charm",
     "rarity": "commun",
     "stack": 1,
-    "description": "Avoid experience death\npenalties, one use only"
+    "description ": "Avoid experience death\npenalties, one use only"
   },
   "item348": {
     "name": "return scroll",
     "rarity": "commun",
     "stack": 20,
-    "description": "Teleports you to the last place\nwhere you used a town scroll"
+    "description ": "Teleports you to the last place\nwhere you used a town scroll"
   },
   "item349": {
     "name": "gargoyle's key",
@@ -3374,43 +3372,43 @@
     "name": "destination scroll",
     "rarity": "commun",
     "stack": 20,
-    "description": "Teleports you to your chosen\ndestination"
+    "description ": "Teleports you to your chosen\ndestination"
   },
   "item459": {
     "name": "nose ring",
     "rarity": "commun",
     "stack": 1,
-    "description": "Can be used as key ring."
+    "description ": "Can be used as key ring."
   },
   "item460": {
     "name": "key ring",
     "rarity": "commun",
     "stack": 1,
-    "description": "Assassin's key."
+    "description ": "Assassin's key."
   },
   "item461": {
     "name": "key ring",
     "rarity": "uncommun",
     "stack": 1,
-    "description": "Assassin's key\nVampire's key"
+    "description ": "Assassin's key\nVampire's key"
   },
   "item462": {
     "name": "key ring",
     "rarity": "rare",
     "stack": 1,
-    "description": "Assassin's key\nVampire's key\nDrow's key"
+    "description ": "Assassin's key\nVampire's key\nDrow's key"
   },
   "item463": {
     "name": "key ring",
     "rarity": "ultra rare",
     "stack": 1,
-    "description": "Assassin's key\nVampire's key\nDrow's key\nLizard's key"
+    "description ": "Assassin's key\nVampire's key\nDrow's key\nLizard's key"
   },
   "item464": {
     "name": "key ring",
     "rarity": "legendary",
     "stack": 1,
-    "description": "Assassin's key\nVampire's key\nDrow's key\nLizard's key\nGargoyle's key"
+    "description ": "Assassin's key\nVampire's key\nDrow's key\nLizard's key\nGargoyle's key"
   },
   "item465": {
     "name": "santa's backpack",
@@ -3423,7 +3421,7 @@
     "name": "tracker scroll",
     "rarity": "commun",
     "stack": 20,
-    "description": "Helps your track a character for\na short period of time"
+    "description ": "Helps your track a character for\na short period of time"
   },
   "item467": {
     "name": "lava helmet",
@@ -4345,19 +4343,19 @@
     "name": "melee training dummy",
     "rarity": "legendary",
     "stack": 1,
-    "description": "Keep in your inventory to train\nmelee and defese while offline"
+    "description ": "Keep in your inventory to train\nmelee and defese while offline"
   },
   "item586": {
     "name": "distance training dummy",
     "rarity": "legendary",
     "stack": 1,
-    "description": "Keep in your inventory to train\ndistance and defese while offline"
+    "description ": "Keep in your inventory to train\ndistance and defese while offline"
   },
   "item587": {
     "name": "magic training dummy",
     "rarity": "legendary",
     "stack": 1,
-    "description": "Keep in your inventory to train\nmagic and defese while offline"
+    "description ": "Keep in your inventory to train\nmagic and defese while offline"
   },
   "item588": {
     "name": "drow jewel",
@@ -6814,25 +6812,25 @@
     "name": "blue easter egg",
     "rarity": "rare",
     "stack": 1,
-    "description": "Unlocks an outfit"
+    "description ": "Unlocks an outfit"
   },
   "item902": {
     "name": "green easter egg",
     "rarity": "rare",
     "stack": 1,
-    "description": "Unlocks an outfit"
+    "description ": "Unlocks an outfit"
   },
   "item903": {
     "name": "purple easter egg",
     "rarity": "rare",
     "stack": 1,
-    "description": "Unlocks an outfit"
+    "description ": "Unlocks an outfit"
   },
   "item904": {
     "name": "yellow easter egg",
     "rarity": "commun",
     "stack": 1,
-    "description": "Increases HP and MP\nregeneration for 20 minutes\nduring the easter event"
+    "description ": "Increases HP and MP\nregeneration for 20 minutes\nduring the easter event"
   },
   "item905": {
     "name": "void melee ring",
@@ -6881,7 +6879,7 @@
     "rarity": "legendary",
     "stack": 1,
     "armor": 22,
-    "description": "Stops base experience gains"
+    "description ": "Stops base experience gains"
   },
   "item912": {
     "name": "leather quiver",
@@ -7295,7 +7293,7 @@
     "name": "bandana",
     "rarity": "legendary",
     "stack": 1,
-    "description": "Unlocks an outfit"
+    "description ": "Unlocks an outfit"
   },
   "item973": {
     "name": "rusted void melee necklace",
@@ -7342,7 +7340,7 @@
     "name": "crown",
     "rarity": "legendary",
     "stack": 1,
-    "description": "Unlocks an outfit"
+    "description ": "Unlocks an outfit"
   },
   "item981": {
     "name": "piece of cloth",
@@ -7374,151 +7372,151 @@
     "name": "owl pet",
     "rarity": "legendary",
     "stack": 1,
-    "description": "Unlocks an outfit"
+    "description ": "Unlocks an outfit"
   },
   "item986": {
     "name": "health potion",
     "rarity": "uncommun",
     "stack": 200,
-    "description": "Non transferable"
+    "description ": "Non transferable"
   },
   "item987": {
     "name": "greater health potion",
     "rarity": "uncommun",
     "stack": 200,
-    "description": "Non transferable",
+    "description ": "Non transferable",
     "level": 75
   },
   "item988": {
     "name": "super health potion",
     "rarity": "uncommun",
     "stack": 200,
-    "description": "Non transferable",
+    "description ": "Non transferable",
     "level": 150
   },
   "item989": {
     "name": "ultimate health potion",
     "rarity": "uncommun",
     "stack": 200,
-    "description": "Non transferable",
+    "description ": "Non transferable",
     "level": 250
   },
   "item990": {
     "name": "mana potion",
     "rarity": "uncommun",
     "stack": 200,
-    "description": "Non transferable"
+    "description ": "Non transferable"
   },
   "item991": {
     "name": "greater mana potion",
     "rarity": "uncommun",
     "stack": 200,
-    "description": "Non transferable",
+    "description ": "Non transferable",
     "level": 75
   },
   "item992": {
     "name": "super mana potion",
     "rarity": "uncommun",
     "stack": 200,
-    "description": "Non transferable",
+    "description ": "Non transferable",
     "level": 150
   },
   "item993": {
     "name": "ultimate mana potion",
     "rarity": "uncommun",
     "stack": 200,
-    "description": "Non transferable",
+    "description ": "Non transferable",
     "level": 250
   },
   "item994": {
     "name": "gold supporter scroll",
     "rarity": "commun",
     "stack": 20,
-    "description": "1 hour gold supporter\nNon transferable"
+    "description ": "1 hour gold supporter\nNon transferable"
   },
   "item995": {
     "name": "gold supporter scroll",
     "rarity": "uncommun",
     "stack": 20,
-    "description": "3 hour golds supporter\nNon transferable"
+    "description ": "3 hour golds supporter\nNon transferable"
   },
   "item996": {
     "name": "gold supporter scroll",
     "rarity": "rare",
     "stack": 20,
-    "description": "6 hours gold supporter\nNon transferable"
+    "description ": "6 hours gold supporter\nNon transferable"
   },
   "item997": {
     "name": "gold supporter scroll",
     "rarity": "ultra rare",
     "stack": 20,
-    "description": "12 hours gold supporter\nNon transferable"
+    "description ": "12 hours gold supporter\nNon transferable"
   },
   "item998": {
     "name": "gold supporter scroll",
     "rarity": "legendary",
     "stack": 20,
-    "description": "1 day gold supporter\nNon transferable"
+    "description ": "1 day gold supporter\nNon transferable"
   },
   "item999": {
     "name": "bonus jewel",
     "rarity": "commun",
     "stack": 500,
-    "description": "Non transferable"
+    "description ": "Non transferable"
   },
   "item1000": {
     "name": "xp potion",
     "rarity": "commun",
     "stack": 200,
-    "description": "1 hour double xp\nNon transferable"
+    "description ": "1 hour double xp\nNon transferable"
   },
   "item1001": {
     "name": "greater xp potion",
     "rarity": "commun",
     "stack": 200,
-    "description": "2 hours double xp\nNon transferable"
+    "description ": "2 hours double xp\nNon transferable"
   },
   "item1002": {
     "name": "super xp potion",
     "rarity": "commun",
     "stack": 200,
-    "description": "4 hours double xp\nNon transferable"
+    "description ": "4 hours double xp\nNon transferable"
   },
   "item1003": {
     "name": "ultimate xp potion",
     "rarity": "commun",
     "stack": 200,
-    "description": "8 hours double xp\nNon transferable"
+    "description ": "8 hours double xp\nNon transferable"
   },
   "item1004": {
     "name": "skill xp potion",
     "rarity": "commun",
     "stack": 200,
-    "description": "1 hour double xp\nNon transferable"
+    "description ": "1 hour double xp\nNon transferable"
   },
   "item1005": {
     "name": "greater skill xp potion",
     "rarity": "commun",
     "stack": 200,
-    "description": "2 hours double xp\nNon transferable"
+    "description ": "2 hours double xp\nNon transferable"
   },
   "item1006": {
     "name": "super skill xp potion",
     "rarity": "commun",
     "stack": 200,
-    "description": "4 hours double xp\nNon transferable"
+    "description ": "4 hours double xp\nNon transferable"
   },
   "item1007": {
     "name": "ultimate skill xp potion",
     "rarity": "commun",
     "stack": 200,
-    "description": "8 hours double xp\nNon transferable"
+    "description ": "8 hours double xp\nNon transferable"
   },
   "item1008": {
     "name": "gold supporter scroll",
     "rarity": "mythic",
     "stack": 20,
-    "description": "7 days gold supporter\nNon transferable"
+    "description ": "7 days gold supporter\nNon transferable"
   },
   "item1009": {
     "name": "titan boots",
@@ -7537,13 +7535,13 @@
     "name": "key ring",
     "rarity": "mythic",
     "stack": 1,
-    "description": "Assassin's key\nVampire's key\nDrow's key\nLizard's key\nGargoyle's key\nminotaur's key"
+    "description ": "Assassin's key\nVampire's key\nDrow's key\nLizard's key\nGargoyle's key\nminotaur's key"
   },
   "item1012": {
     "name": "chicken egg",
     "rarity": "commun",
     "stack": 20,
-    "description": "increases speed for 20 minutes\ncan only be used during the\nchickenpocalypse"
+    "description ": "increases speed for 20 minutes\ncan only be used during the\nchickenpocalypse"
   },
   "item1013": {
     "name": "chicken feather",
@@ -7559,13 +7557,13 @@
     "name": "chicken pet",
     "rarity": "legendary",
     "stack": 1,
-    "description": "Unlocks an outfit"
+    "description ": "Unlocks an outfit"
   },
   "item1016": {
     "name": "golden chicken pet",
     "rarity": "legendary",
     "stack": 1,
-    "description": "Unlocks an outfit"
+    "description ": "Unlocks an outfit"
   },
   "item1017": {
     "name": "titan glove (left)",
@@ -7579,49 +7577,49 @@
     "name": "outfit jewel",
     "rarity": "commun",
     "stack": 500,
-    "description": "Non transferable"
+    "description ": "Non transferable"
   },
   "item1019": {
     "name": "reward jewel",
     "rarity": "commun",
     "stack": 500,
-    "description": "Non transferable"
+    "description ": "Non transferable"
   },
   "item1020": {
     "name": "purple sword",
     "rarity": "legendary",
     "stack": 1,
-    "description": "Unlocks an outfit\nNon transferable"
+    "description ": "Unlocks an outfit\nNon transferable"
   },
   "item1021": {
     "name": "purple shield",
     "rarity": "legendary",
     "stack": 1,
-    "description": "Unlocks an outfit\nNon transferable"
+    "description ": "Unlocks an outfit\nNon transferable"
   },
   "item1022": {
     "name": "purple bow",
     "rarity": "legendary",
     "stack": 1,
-    "description": "Unlocks an outfit\nNon transferable"
+    "description ": "Unlocks an outfit\nNon transferable"
   },
   "item1023": {
     "name": "purple quiver",
     "rarity": "legendary",
     "stack": 1,
-    "description": "Unlocks an outfit\nNon transferable"
+    "description ": "Unlocks an outfit\nNon transferable"
   },
   "item1024": {
     "name": "purple wand",
     "rarity": "legendary",
     "stack": 1,
-    "description": "Unlocks an outfit\nNon transferable"
+    "description ": "Unlocks an outfit\nNon transferable"
   },
   "item1025": {
     "name": "purple cobra pet",
     "rarity": "legendary",
     "stack": 1,
-    "description": "Unlocks an outfit\nNon transferable"
+    "description ": "Unlocks an outfit\nNon transferable"
   },
   "item1026": {
     "name": "swift ring",
@@ -7629,7 +7627,7 @@
     "stack": 1,
     "armor": 1,
     "speed": 5,
-    "description": "Non transferable"
+    "description ": "Non transferable"
   },
   "item1027": {
     "name": "swift ring",
@@ -7637,7 +7635,7 @@
     "stack": 1,
     "armor": 1,
     "speed": 10,
-    "description": "Non transferable"
+    "description ": "Non transferable"
   },
   "item1028": {
     "name": "swift ring",
@@ -7645,7 +7643,7 @@
     "stack": 1,
     "armor": 1,
     "speed": 15,
-    "description": "Non transferable"
+    "description ": "Non transferable"
   },
   "item1029": {
     "name": "swift melee ring",
@@ -7654,7 +7652,7 @@
     "armor": 1,
     "speed": 15,
     "melee": 15,
-    "description": "Non transferable"
+    "description ": "Non transferable"
   },
   "item1030": {
     "name": "swift distance ring",
@@ -7663,7 +7661,7 @@
     "armor": 1,
     "speed": 15,
     "distance": 15,
-    "description": "Non transferable"
+    "description ": "Non transferable"
   },
   "item1031": {
     "name": "swift magic ring",
@@ -7672,7 +7670,7 @@
     "armor": 1,
     "speed": 15,
     "magic": 15,
-    "description": "Non transferable"
+    "description ": "Non transferable"
   },
   "item1032": {
     "name": "swift defense ring",
@@ -7681,7 +7679,7 @@
     "armor": 1,
     "speed": 15,
     "defense": 15,
-    "description": "Non transferable"
+    "description ": "Non transferable"
   },
   "item1033": {
     "name": "necklace",
@@ -7696,7 +7694,7 @@
     "stack": 1,
     "armor": 1,
     "speed": 5,
-    "description": "Non transferable"
+    "description ": "Non transferable"
   },
   "item1035": {
     "name": "swift necklace",
@@ -7704,7 +7702,7 @@
     "stack": 1,
     "armor": 1,
     "speed": 10,
-    "description": "Non transferable"
+    "description ": "Non transferable"
   },
   "item1036": {
     "name": "swift necklace",
@@ -7712,7 +7710,7 @@
     "stack": 1,
     "armor": 1,
     "speed": 15,
-    "description": "Non transferable"
+    "description ": "Non transferable"
   },
   "item1037": {
     "name": "swift melee necklace",
@@ -7721,7 +7719,7 @@
     "armor": 1,
     "speed": 15,
     "melee": 15,
-    "description": "Non transferable"
+    "description ": "Non transferable"
   },
   "item1038": {
     "name": "swift distance necklace",
@@ -7730,7 +7728,7 @@
     "armor": 1,
     "speed": 15,
     "distance": 15,
-    "description": "Non transferable"
+    "description ": "Non transferable"
   },
   "item1039": {
     "name": "swift magic necklace",
@@ -7739,7 +7737,7 @@
     "armor": 1,
     "speed": 15,
     "magic": 15,
-    "description": "Non transferable"
+    "description ": "Non transferable"
   },
   "item1040": {
     "name": "swift defense necklace",
@@ -7748,7 +7746,7 @@
     "armor": 1,
     "speed": 15,
     "defense": 15,
-    "description": "Non transferable"
+    "description ": "Non transferable"
   },
   "item1041": {
     "name": "titan helmet",
@@ -7812,13 +7810,13 @@
     "name": "korvak hat",
     "rarity": "legendary",
     "stack": 1,
-    "description": "Unlocks an outfit"
+    "description ": "Unlocks an outfit"
   },
   "item1050": {
     "name": "rusted golden grimoire",
     "rarity": "mythic",
     "stack": 1,
-    "description": "This item cannot be used yet.\nsave it for a future update."
+    "description ": "This item cannot be used yet.\nsave it for a future update."
   },
   "item1051": {
     "name": "santa's backpack",
