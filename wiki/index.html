@@ -361,10 +361,18 @@
     return null;
 }
 
-        function criarItemHTML(nome, item, id) { // Adicionamos 'id' como parâmetro
+    // 1. Nova função auxiliar para formatar o nome apenas para exibição
+function formatarNomeExibicao(nome) {
+    return nome.toLowerCase().replace(/\b\w/g, l => l.toUpperCase());
+}
+
+// 2. Atualize a função criarItemHTML
+function criarItemHTML(nome, item, id) {
     let raridade = item["Rarity: "] || item.rarity || "";
     let bg = getBackground(raridade);
-    let sprite = acharSprite(nome, item);
+    
+    // AQUI: A busca da sprite continua usando o 'nome' original/minúsculo
+    let sprite = acharSprite(nome, item); 
     let spriteHTML = "";
 
     if (sprite) {
@@ -372,14 +380,71 @@
         spriteHTML = `<div class="sprite-wrap"><div class="sprite" style="width:${f.w}px;height:${f.h}px;background-image:url('./items.png');background-position:-${f.x}px -${f.y}px;"></div></div>`;
     }
 
-    // Adicionado o onclick para redirecionar
+    // AQUI: Usamos formatarNomeExibicao(nome) APENAS dentro da div de texto
     return `
         <div class="item-card" 
              style="background-image:url('./${bg}')" 
              onclick="abrirDetalhes('${id}')">
             ${spriteHTML}
-            <div class="item-name" style="${getNameStyle(raridade)}">${nome}</div>
+            <div class="item-name" style="${getNameStyle(raridade)}">
+                ${formatarNomeExibicao(nome)}
+            </div>
         </div>`;
+}
+
+// 3. Atualize a função abrirDetalhes (Modal)
+function abrirDetalhes(id) {
+    const item = items[id];
+    if (!item) return; // Segurança caso o id falhe
+
+    const nome = item["Name: "] || item.name || "???";
+    const raridade = (item["Rarity: "] || item.rarity || "").toLowerCase();
+    const overlay = document.getElementById('details-overlay');
+    const content = document.getElementById('details-content');
+    
+    let sprite = acharSprite(nome, item);
+    let bg = getBackground(raridade);
+    let f = sprite ? sprite.frame : null;
+
+    let infoHtml = "";
+    const ignorar = ["name", "Name: ", "rarity", "Rarity: ", "tags", "Tags"];
+
+    for (let key in item) {
+        if (ignorar.includes(key)) continue;
+        let val = item[key];
+        let label = key.charAt(0).toUpperCase() + key.slice(1).replace(": ", "");
+        let corClasse = "";
+        if (typeof val === "number") {
+            if (val > 0) corClasse = "val-positive";
+            else if (val < 0) corClasse = "val-negative";
+        }
+        infoHtml += `
+            <div class="info-row">
+                <span>${label}:</span>
+                <span class="${corClasse}">${val}</span>
+            </div>`;
+    }
+
+    infoHtml += `
+        <div class="info-row">
+            <span>Rarity:</span>
+            <span style="${getNameStyle(raridade)} font-weight:bold;">${raridade.toUpperCase()}</span>
+        </div>`;
+
+    content.innerHTML = `
+        <div class="big-item-card" style="background-image:url('./${bg}')">
+            ${f ? `<div class="big-sprite-wrap"><div class="sprite" style="width:${f.w}px;height:${f.h}px;background-image:url('./items.png');background-position:-${f.x}px -${f.y}px;"></div></div>` : ''}
+        </div>
+        <div class="details-title" style="${getNameStyle(raridade)}">
+            ${formatarNomeExibicao(nome)}
+        </div>
+        <div class="info-container">
+            ${infoHtml}
+        </div>
+    `;
+
+    overlay.style.display = 'flex';
+    document.body.style.overflow = 'hidden';
 }
 
         function aplicarFiltro() {
