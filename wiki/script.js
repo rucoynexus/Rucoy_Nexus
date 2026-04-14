@@ -129,6 +129,28 @@ function desenharGrafico(chave) {
     });
 }
 
+// Função para definir a cor da data baseada no tempo passado
+function getCorData(dataString) {
+    if (!dataString) return "white";
+    
+    // Converte DD/MM/YY para um objeto Date do JS
+    const partes = dataString.split('/');
+    const dia = parseInt(partes[0]);
+    const mes = parseInt(partes[1]) - 1; // Meses no JS começam em 0
+    const ano = 2000 + parseInt(partes[2]);
+    const dataUpdate = new Date(ano, mes, dia);
+    const hoje = new Date();
+    
+    // Diferença em milissegundos convertida para dias
+    const diffTempo = Math.abs(hoje - dataUpdate);
+    const diffDias = Math.ceil(diffTempo / (1000 * 60 * 60 * 24)) - 1;
+
+    if (diffDias <= 0) return "#00ff41";    // Verde (Hoje)
+    if (diffDias <= 7) return "#fbff00";    // Amarelo (Esta semana)
+    if (diffDias <= 30) return "#ff9100";   // Laranja (Este mês)
+    return "#ff3b3b";                       // Vermelho (+ de 1 mês)
+}
+
 function abrirDetalhes(id) {
     const item = items[id];
     if (!item) return;
@@ -136,18 +158,25 @@ function abrirDetalhes(id) {
     const nome = item["Name: "] || item.name || "???";
     const raridade = (item["Rarity: "] || item.rarity || "").toLowerCase();
     
-    // CHAVE DE BUSCA: Garante que bate com o export do Python
     const chaveBusca = `${nome.toLowerCase().trim()}_${raridade.trim()}`;
     const dadosNexus = precosNexus[chaveBusca];
 
     const content = document.getElementById('details-content');
     let infoHtml = "";
 
-    // Adiciona Preço se existir
     if (dadosNexus) {
+        // PEGANDO A COR DA DATA
+        const corData = getCorData(dadosNexus.ultima_atualizacao);
+
         infoHtml += `
-            <div class="info-row"><span>Current Price:</span><span class="val-positive">${dadosNexus.preco.toLocaleString()} Gold</span></div>
-            <div class="info-row"><span>Last Update:</span><span>${dadosNexus.ultima_atualizacao}</span></div>`;
+            <div class="info-row">
+                <span>Current Price:</span>
+                <span class="val-positive">${dadosNexus.preco.toLocaleString()} Gold</span>
+            </div>
+            <div class="info-row">
+                <span>Last Update:</span>
+                <span style="color: ${corData}; font-weight: bold;">${dadosNexus.ultima_atualizacao}</span>
+            </div>`;
     }
 
     const ignorar = ["name", "Name: ", "rarity", "Rarity: ", "tags", "Tags"];
@@ -174,7 +203,6 @@ function abrirDetalhes(id) {
     document.getElementById('details-overlay').style.display = 'flex';
     document.body.style.overflow = 'hidden';
 
-    // Tenta desenhar o gráfico sem quebrar o resto
     try {
         desenharGrafico(chaveBusca);
     } catch(e) {
