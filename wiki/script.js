@@ -200,3 +200,54 @@ async function carregar() {
 document.getElementById("search").addEventListener("input", aplicarFiltro);
 document.getElementById("rarityFilter").addEventListener("change", aplicarFiltro);
 carregar();
+let meuGrafico = null; // Variável global para resetar o gráfico
+
+function desenharGrafico(itemChave, dadosCompletos) {
+    const ctx = document.getElementById('graficoPreco').getContext('2d');
+    const infoItem = dadosCompletos[itemChave];
+
+    if (!infoItem || !infoItem.historico) return;
+
+    // Se já existir um gráfico, destrói para criar o novo
+    if (meuGrafico) {
+        meuGrafico.destroy();
+    }
+
+    const labels = infoItem.historico.map(h => h.data);
+    const valores = infoItem.historico.map(h => h.preco);
+
+    meuGrafico = new Chart(ctx, {
+        type: 'line',
+        data: {
+            labels: labels,
+            datasets: [{
+                label: 'Histórico de Preço (Gold)',
+                data: valores,
+                borderColor: '#ff9229',
+                backgroundColor: 'rgba(255, 146, 41, 0.2)',
+                borderWidth: 2,
+                fill: true,
+                tension: 0.3 // Deixa a linha curvada
+            }]
+        },
+        options: {
+            responsive: true,
+            plugins: {
+                legend: { display: false },
+                tooltip: {
+                    callbacks: {
+                        footer: (tooltipItems) => {
+                            // Mostra a descrição da modificação no hover
+                            const index = tooltipItems[0].dataIndex;
+                            return 'Obs: ' + infoItem.historico[index].obs;
+                        }
+                    }
+                }
+            },
+            scales: {
+                y: { beginAtZero: false, grid: { color: '#333' } },
+                x: { grid: { display: false } }
+            }
+        }
+    });
+}
