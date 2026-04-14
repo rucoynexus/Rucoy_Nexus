@@ -23,7 +23,7 @@
   "item4": {
     "name": "gold",
     "rarity": "commun",
-    "stack": "n/a"
+    "stack": 500
   },
   "item5": {
     "name": "leather helmet",
