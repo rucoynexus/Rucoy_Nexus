@@ -7,13 +7,17 @@
     <title>Rucoy Nexus - Wiki</title>
     
     <link rel="stylesheet" href="style.css">
-    
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script src="/auth.js"></script>
 </head>
 <body>
     <div id="details-overlay">
         <button class="btn-close" onclick="fecharDetalhes()">&times;</button>
         <div id="details-content" style="display: flex; flex-direction: column; align-items: center; width: 100%;"></div>
+        
+        <div class="chart-container">
+            <canvas id="graficoPreco"></canvas>
+        </div>
     </div>
     
     <div id="overlay" onclick="toggleMenu()"></div>

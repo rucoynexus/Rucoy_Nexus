@@ -1,3 +1,5 @@
+/* ... manter todo o seu CSS anterior ... */
+
 :root {
     --rucoy-blue: #3CBCFC;
     --rucoy-bg: #121212;
@@ -224,4 +226,15 @@ main { padding: 76px 20px 20px 20px; min-height: 100vh; }
     top: 20px; right: 20px;
     background: none; border: none;
     color: white; font-size: 40px; cursor: pointer;
+}
+
+/* NOVO: Estilo do Gráfico */
+.chart-container {
+    width: 100%;
+    max-width: 500px;
+    margin-top: 25px;
+    background: #1a1a1a;
+    border-radius: 12px;
+    padding: 15px;
+    border: 1px solid #333;
 }
