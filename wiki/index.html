@@ -312,12 +312,19 @@
         }
 
         function getNameStyle(raridade) {
-            raridade = (raridade || "").toLowerCase();
-            if (raridade === "mythic") {
-                return `background: -webkit-linear-gradient(#e75931, #ff9229, #ffbe00, #e7ff00); -webkit-background-clip: text; -webkit-text-fill-color: transparent;`;
-            }
-            return `color: ${getRarityColor(raridade)};`;
-        }
+    raridade = (raridade || "").toLowerCase();
+    if (raridade === "mythic") {
+        return `
+            display: inline;
+            background: linear-gradient(to bottom, #e75931, #ff9229, #ffbe00, #e7ff00);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            -webkit-box-decoration-break: clone;
+            box-decoration-break: clone;
+        `;
+    }
+    return `color: ${getRarityColor(raridade)};`;
+}
 
         function normalizar(nome) {
             return nome.toLowerCase()
@@ -370,9 +377,7 @@ function formatarNomeExibicao(nome) {
 function criarItemHTML(nome, item, id) {
     let raridade = item["Rarity: "] || item.rarity || "";
     let bg = getBackground(raridade);
-    
-    // AQUI: A busca da sprite continua usando o 'nome' original/minúsculo
-    let sprite = acharSprite(nome, item); 
+    let sprite = acharSprite(nome, item);
     let spriteHTML = "";
 
     if (sprite) {
@@ -380,14 +385,13 @@ function criarItemHTML(nome, item, id) {
         spriteHTML = `<div class="sprite-wrap"><div class="sprite" style="width:${f.w}px;height:${f.h}px;background-image:url('./items.png');background-position:-${f.x}px -${f.y}px;"></div></div>`;
     }
 
-    // AQUI: Usamos formatarNomeExibicao(nome) APENAS dentro da div de texto
     return `
         <div class="item-card" 
              style="background-image:url('./${bg}')" 
              onclick="abrirDetalhes('${id}')">
             ${spriteHTML}
-            <div class="item-name" style="${getNameStyle(raridade)}">
-                ${formatarNomeExibicao(nome)}
+            <div class="item-name">
+                <span style="${getNameStyle(raridade)}">${formatarNomeExibicao(nome)}</span>
             </div>
         </div>`;
 }
@@ -431,17 +435,18 @@ function abrirDetalhes(id) {
             <span style="${getNameStyle(raridade)} font-weight:bold;">${raridade.toUpperCase()}</span>
         </div>`;
 
-    content.innerHTML = `
-        <div class="big-item-card" style="background-image:url('./${bg}')">
-            ${f ? `<div class="big-sprite-wrap"><div class="sprite" style="width:${f.w}px;height:${f.h}px;background-image:url('./items.png');background-position:-${f.x}px -${f.y}px;"></div></div>` : ''}
-        </div>
-        <div class="details-title" style="${getNameStyle(raridade)}">
-            ${formatarNomeExibicao(nome)}
-        </div>
-        <div class="info-container">
-            ${infoHtml}
-        </div>
-    `;
+    // Dentro da função abrirDetalhes, na parte do content.innerHTML:
+content.innerHTML = `
+    <div class="big-item-card" style="background-image:url('./${bg}')">
+        ${f ? `<div class="big-sprite-wrap"><div class="sprite" style="width:${f.w}px;height:${f.h}px;background-image:url('./items.png');background-position:-${f.x}px -${f.y}px;"></div></div>` : ''}
+    </div>
+    <div class="details-title">
+        <span style="${getNameStyle(raridade)}">${formatarNomeExibicao(nome)}</span>
+    </div>
+    <div class="info-container">
+        ${infoHtml}
+    </div>
+`;
 
     overlay.style.display = 'flex';
     document.body.style.overflow = 'hidden';
