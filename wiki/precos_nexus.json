@@ -779,9 +779,15 @@
     "diamond_commun": {
         "nome": "diamond",
         "raridade": "commun",
-        "preco": 0.0,
+        "preco": 40000.0,
         "ultima_atualizacao": "14/04/26",
-        "historico": []
+        "historico": [
+            {
+                "preco": 40000.0,
+                "data": "14/04/26",
+                "obs": ""
+            }
+        ]
     },
     "swift boots_legendary": {
         "nome": "swift boots",
@@ -821,16 +827,28 @@
     "life ring_rare": {
         "nome": "life ring",
         "raridade": "rare",
-        "preco": 0.0,
+        "preco": 75000.0,
         "ultima_atualizacao": "14/04/26",
-        "historico": []
+        "historico": [
+            {
+                "preco": 75000.0,
+                "data": "14/04/26",
+                "obs": "lol don't buy it"
+            }
+        ]
     },
     "soul ring_rare": {
         "nome": "soul ring",
         "raridade": "rare",
-        "preco": 0.0,
+        "preco": 140000.0,
         "ultima_atualizacao": "14/04/26",
-        "historico": []
+        "historico": [
+            {
+                "preco": 140000.0,
+                "data": "14/04/26",
+                "obs": "Price Update"
+            }
+        ]
     },
     "defense ring_ultra rare": {
         "nome": "defense ring",
@@ -1493,9 +1511,15 @@
     "melee necklace_ultra rare": {
         "nome": "melee necklace",
         "raridade": "ultra rare",
-        "preco": 0.0,
+        "preco": 8500000.0,
         "ultima_atualizacao": "14/04/26",
-        "historico": []
+        "historico": [
+            {
+                "preco": 8500000.0,
+                "data": "14/04/26",
+                "obs": "Price Update"
+            }
+        ]
     },
     "distance necklace_ultra rare": {
         "nome": "distance necklace",
@@ -1514,9 +1538,15 @@
     "lizard armor_rare": {
         "nome": "lizard armor",
         "raridade": "rare",
-        "preco": 0.0,
+        "preco": 200000.0,
         "ultima_atualizacao": "14/04/26",
-        "historico": []
+        "historico": [
+            {
+                "preco": 200000.0,
+                "data": "14/04/26",
+                "obs": "Price Update"
+            }
+        ]
     },
     "lizard light armor_uncommun": {
         "nome": "lizard light armor",
@@ -1528,9 +1558,15 @@
     "lizard light armor_rare": {
         "nome": "lizard light armor",
         "raridade": "rare",
-        "preco": 0.0,
+        "preco": 140000.0,
         "ultima_atualizacao": "14/04/26",
-        "historico": []
+        "historico": [
+            {
+                "preco": 140000.0,
+                "data": "14/04/26",
+                "obs": ""
+            }
+        ]
     },
     "lizard robe_uncommun": {
         "nome": "lizard robe",
@@ -1556,9 +1592,15 @@
     "lizard helmet_rare": {
         "nome": "lizard helmet",
         "raridade": "rare",
-        "preco": 0.0,
+        "preco": 290000.0,
         "ultima_atualizacao": "14/04/26",
-        "historico": []
+        "historico": [
+            {
+                "preco": 290000.0,
+                "data": "14/04/26",
+                "obs": "Price Update"
+            }
+        ]
     },
     "lizard hood_uncommun": {
         "nome": "lizard hood",
@@ -1605,9 +1647,15 @@
     "lizard legs_uncommun": {
         "nome": "lizard legs",
         "raridade": "uncommun",
-        "preco": 0.0,
+        "preco": 100000.0,
         "ultima_atualizacao": "14/04/26",
-        "historico": []
+        "historico": [
+            {
+                "preco": 100000.0,
+                "data": "14/04/26",
+                "obs": "Price Update"
+            }
+        ]
     },
     "lizard legs_rare": {
         "nome": "lizard legs",
@@ -1619,9 +1667,15 @@
     "lizard boots_uncommun": {
         "nome": "lizard boots",
         "raridade": "uncommun",
-        "preco": 0.0,
+        "preco": 70000.0,
         "ultima_atualizacao": "14/04/26",
-        "historico": []
+        "historico": [
+            {
+                "preco": 70000.0,
+                "data": "14/04/26",
+                "obs": "Price Update"
+            }
+        ]
     },
     "lizard boots_rare": {
         "nome": "lizard boots",
@@ -1633,9 +1687,15 @@
     "lizard glove (left)_uncommun": {
         "nome": "lizard glove (left)",
         "raridade": "uncommun",
-        "preco": 0.0,
+        "preco": 65000.0,
         "ultima_atualizacao": "14/04/26",
-        "historico": []
+        "historico": [
+            {
+                "preco": 65000.0,
+                "data": "14/04/26",
+                "obs": "Price Update"
+            }
+        ]
     },
     "lizard glove (left)_rare": {
         "nome": "lizard glove (left)",
@@ -1647,9 +1707,15 @@
     "lizard glove (right)_uncommun": {
         "nome": "lizard glove (right)",
         "raridade": "uncommun",
-        "preco": 0.0,
+        "preco": 65000.0,
         "ultima_atualizacao": "14/04/26",
-        "historico": []
+        "historico": [
+            {
+                "preco": 65000.0,
+                "data": "14/04/26",
+                "obs": "Price Update"
+            }
+        ]
     },
     "lizard glove (right)_rare": {
         "nome": "lizard glove (right)",
@@ -2060,9 +2126,15 @@
     "assassin's key_commun": {
         "nome": "assassin's key",
         "raridade": "commun",
-        "preco": 0.0,
+        "preco": 20000.0,
         "ultima_atualizacao": "14/04/26",
-        "historico": []
+        "historico": [
+            {
+                "preco": 20000.0,
+                "data": "14/04/26",
+                "obs": "Price Update"
+            }
+        ]
     },
     "vampire's key_commun": {
         "nome": "vampire's key",
@@ -2074,16 +2146,28 @@
     "drow's key_commun": {
         "nome": "drow's key",
         "raridade": "commun",
-        "preco": 0.0,
+        "preco": 100000.0,
         "ultima_atualizacao": "14/04/26",
-        "historico": []
+        "historico": [
+            {
+                "preco": 100000.0,
+                "data": "14/04/26",
+                "obs": "Price Update"
+            }
+        ]
     },
     "lizard's key_commun": {
         "nome": "lizard's key",
         "raridade": "commun",
-        "preco": 0.0,
+        "preco": 500000.0,
         "ultima_atualizacao": "14/04/26",
-        "historico": []
+        "historico": [
+            {
+                "preco": 500000.0,
+                "data": "14/04/26",
+                "obs": "Price Update"
+            }
+        ]
     },
     "gargoyle helmet_commun": {
         "nome": "gargoyle helmet",
@@ -2438,9 +2522,15 @@
     "gargoyle's key_commun": {
         "nome": "gargoyle's key",
         "raridade": "commun",
-        "preco": 0.0,
+        "preco": 900000.0,
         "ultima_atualizacao": "14/04/26",
-        "historico": []
+        "historico": [
+            {
+                "preco": 900000.0,
+                "data": "14/04/26",
+                "obs": "Price Update"
+            }
+        ]
     },
     "golden belt_legendary": {
         "nome": "golden belt",
@@ -2620,23 +2710,41 @@
     "healer necklace_ultra rare": {
         "nome": "healer necklace",
         "raridade": "ultra rare",
-        "preco": 0.0,
+        "preco": 600000.0,
         "ultima_atualizacao": "14/04/26",
-        "historico": []
+        "historico": [
+            {
+                "preco": 600000.0,
+                "data": "14/04/26",
+                "obs": "Price Update"
+            }
+        ]
     },
     "superior healer necklace_legendary": {
         "nome": "superior healer necklace",
         "raridade": "legendary",
-        "preco": 0.0,
+        "preco": 3000000.0,
         "ultima_atualizacao": "14/04/26",
-        "historico": []
+        "historico": [
+            {
+                "preco": 3000000.0,
+                "data": "14/04/26",
+                "obs": "Price Update"
+            }
+        ]
     },
     "healer ring_ultra rare": {
         "nome": "healer ring",
         "raridade": "ultra rare",
-        "preco": 0.0,
+        "preco": 600000.0,
         "ultima_atualizacao": "14/04/26",
-        "historico": []
+        "historico": [
+            {
+                "preco": 600000.0,
+                "data": "14/04/26",
+                "obs": "Price Update"
+            }
+        ]
     },
     "superior healer ring_legendary": {
         "nome": "superior healer ring",
@@ -2718,9 +2826,15 @@
     "recovery boots_ultra rare": {
         "nome": "recovery boots",
         "raridade": "ultra rare",
-        "preco": 0.0,
+        "preco": 660000.0,
         "ultima_atualizacao": "14/04/26",
-        "historico": []
+        "historico": [
+            {
+                "preco": 660000.0,
+                "data": "14/04/26",
+                "obs": "Price Update"
+            }
+        ]
     },
     "recovery boots_legendary": {
         "nome": "recovery boots",
@@ -2774,16 +2888,28 @@
     "recovery belt_rare": {
         "nome": "recovery belt",
         "raridade": "rare",
-        "preco": 0.0,
+        "preco": 700000.0,
         "ultima_atualizacao": "14/04/26",
-        "historico": []
+        "historico": [
+            {
+                "preco": 700000.0,
+                "data": "14/04/26",
+                "obs": "Price Update"
+            }
+        ]
     },
     "recovery belt_ultra rare": {
         "nome": "recovery belt",
         "raridade": "ultra rare",
-        "preco": 0.0,
+        "preco": 2600000.0,
         "ultima_atualizacao": "14/04/26",
-        "historico": []
+        "historico": [
+            {
+                "preco": 2600000.0,
+                "data": "14/04/26",
+                "obs": "Price Update"
+            }
+        ]
     },
     "recovery belt_legendary": {
         "nome": "recovery belt",
@@ -2816,9 +2942,15 @@
     "recovery necklace_ultra rare": {
         "nome": "recovery necklace",
         "raridade": "ultra rare",
-        "preco": 0.0,
+        "preco": 1000000.0,
         "ultima_atualizacao": "14/04/26",
-        "historico": []
+        "historico": [
+            {
+                "preco": 1000000.0,
+                "data": "14/04/26",
+                "obs": ""
+            }
+        ]
     },
     "superior recovery necklace_legendary": {
         "nome": "superior recovery necklace",
@@ -4196,16 +4328,28 @@
     "golden jewel_legendary": {
         "nome": "golden jewel",
         "raridade": "legendary",
-        "preco": 0.0,
+        "preco": 7600.0,
         "ultima_atualizacao": "14/04/26",
-        "historico": []
+        "historico": [
+            {
+                "preco": 7600.0,
+                "data": "14/04/26",
+                "obs": "Price Update"
+            }
+        ]
     },
     "boss jewel_mythic": {
         "nome": "boss jewel",
         "raridade": "mythic",
-        "preco": 0.0,
+        "preco": 8000000.0,
         "ultima_atualizacao": "14/04/26",
-        "historico": []
+        "historico": [
+            {
+                "preco": 8000000.0,
+                "data": "14/04/26",
+                "obs": ""
+            }
+        ]
     },
     "golden helmet_ultra rare": {
         "nome": "golden helmet",
@@ -4980,9 +5124,15 @@
     "rusted santa's backpack_mythic": {
         "nome": "rusted santa's backpack",
         "raridade": "mythic",
-        "preco": 0.0,
+        "preco": 11000000.0,
         "ultima_atualizacao": "14/04/26",
-        "historico": []
+        "historico": [
+            {
+                "preco": 11000000.0,
+                "data": "14/04/26",
+                "obs": "Price Update"
+            }
+        ]
     },
     "swift boots_mythic": {
         "nome": "swift boots",
@@ -5001,9 +5151,15 @@
     "swift boots_ultra rare": {
         "nome": "swift boots",
         "raridade": "ultra rare",
-        "preco": 0.0,
+        "preco": 11300000.0,
         "ultima_atualizacao": "14/04/26",
-        "historico": []
+        "historico": [
+            {
+                "preco": 11300000.0,
+                "data": "14/04/26",
+                "obs": "Price Update"
+            }
+        ]
     },
     "lizard helmet_ultra rare": {
         "nome": "lizard helmet",
@@ -5050,9 +5206,15 @@
     "lizard armor_ultra rare": {
         "nome": "lizard armor",
         "raridade": "ultra rare",
-        "preco": 0.0,
+        "preco": 500000.0,
         "ultima_atualizacao": "14/04/26",
-        "historico": []
+        "historico": [
+            {
+                "preco": 500000.0,
+                "data": "14/04/26",
+                "obs": "Price Update"
+            }
+        ]
     },
     "lizard armor_legendary": {
         "nome": "lizard armor",
@@ -5064,9 +5226,15 @@
     "lizard light armor_ultra rare": {
         "nome": "lizard light armor",
         "raridade": "ultra rare",
-        "preco": 0.0,
+        "preco": 440000.0,
         "ultima_atualizacao": "14/04/26",
-        "historico": []
+        "historico": [
+            {
+                "preco": 440000.0,
+                "data": "14/04/26",
+                "obs": ""
+            }
+        ]
     },
     "lizard light armor_legendary": {
         "nome": "lizard light armor",
@@ -5757,9 +5925,15 @@
     "dragon belt_legendary": {
         "nome": "dragon belt",
         "raridade": "legendary",
-        "preco": 0.0,
+        "preco": 3000000.0,
         "ultima_atualizacao": "14/04/26",
-        "historico": []
+        "historico": [
+            {
+                "preco": 3000000.0,
+                "data": "14/04/26",
+                "obs": "Price Update"
+            }
+        ]
     },
     "dragon legs_ultra rare": {
         "nome": "dragon legs",
@@ -5799,9 +5973,15 @@
     "dragon glove (left)_legendary": {
         "nome": "dragon glove (left)",
         "raridade": "legendary",
-        "preco": 0.0,
+        "preco": 3800000.0,
         "ultima_atualizacao": "14/04/26",
-        "historico": []
+        "historico": [
+            {
+                "preco": 3800000.0,
+                "data": "14/04/26",
+                "obs": "Price Update"
+            }
+        ]
     },
     "dragon glove (right)_ultra rare": {
         "nome": "dragon glove (right)",
@@ -5813,9 +5993,15 @@
     "dragon glove (right)_legendary": {
         "nome": "dragon glove (right)",
         "raridade": "legendary",
-        "preco": 0.0,
+        "preco": 3800000.0,
         "ultima_atualizacao": "14/04/26",
-        "historico": []
+        "historico": [
+            {
+                "preco": 3800000.0,
+                "data": "14/04/26",
+                "obs": "Price Update"
+            }
+        ]
     },
     "dragon slayer_ultra rare": {
         "nome": "dragon slayer",
@@ -5841,9 +6027,15 @@
     "dragon shield_legendary": {
         "nome": "dragon shield",
         "raridade": "legendary",
-        "preco": 0.0,
+        "preco": 12000000.0,
         "ultima_atualizacao": "14/04/26",
-        "historico": []
+        "historico": [
+            {
+                "preco": 12000000.0,
+                "data": "14/04/26",
+                "obs": "Price Update"
+            }
+        ]
     },
     "dragon bow_ultra rare": {
         "nome": "dragon bow",
@@ -6685,9 +6877,15 @@
     "golden quiver_commun": {
         "nome": "golden quiver",
         "raridade": "commun",
-        "preco": 0.0,
+        "preco": 500000.0,
         "ultima_atualizacao": "14/04/26",
-        "historico": []
+        "historico": [
+            {
+                "preco": 500000.0,
+                "data": "14/04/26",
+                "obs": ""
+            }
+        ]
     },
     "golden quiver_uncommun": {
         "nome": "golden quiver",
@@ -7119,9 +7317,15 @@
     "minotaur's key_commun": {
         "nome": "minotaur's key",
         "raridade": "commun",
-        "preco": 0.0,
+        "preco": 4400000.0,
         "ultima_atualizacao": "14/04/26",
-        "historico": []
+        "historico": [
+            {
+                "preco": 4400000.0,
+                "data": "14/04/26",
+                "obs": "Price Update"
+            }
+        ]
     },
     "key ring_mythic": {
         "nome": "key ring",
@@ -7153,9 +7357,15 @@
     "golden chicken feather_legendary": {
         "nome": "golden chicken feather",
         "raridade": "legendary",
-        "preco": 0.0,
+        "preco": 1000000.0,
         "ultima_atualizacao": "14/04/26",
-        "historico": []
+        "historico": [
+            {
+                "preco": 1000000.0,
+                "data": "14/04/26",
+                "obs": "Price Update"
+            }
+        ]
     },
     "chicken pet_legendary": {
         "nome": "chicken pet",
@@ -7412,9 +7622,15 @@
     "santa's backpack_ultra rare": {
         "nome": "santa's backpack",
         "raridade": "ultra rare",
-        "preco": 0.0,
+        "preco": 10500000.0,
         "ultima_atualizacao": "14/04/26",
-        "historico": []
+        "historico": [
+            {
+                "preco": 10500000.0,
+                "data": "14/04/26",
+                "obs": "Price Update"
+            }
+        ]
     },
     "santa's potion bag_ultra rare": {
         "nome": "santa's potion bag",
