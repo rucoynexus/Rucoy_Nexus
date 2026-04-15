@@ -166,10 +166,16 @@ function abrirDetalhes(id) {
 
     // --- SEÇÃO DE PREÇO ---
     // --- SEÇÃO DE PREÇO ---
-    if (dadosNexus) {
+    // --- SEÇÃO DE PREÇO ---
+    if (Object.keys(precosNexus).length === 0) {
+        // Se o objeto estiver vazio, significa que o fetch falhou ou o PC está desligado
+        infoHtml += `
+            <div class="info-row" style="justify-content: center; padding: 10px; background: rgba(255, 0, 0, 0.1); border-radius: 5px; border: 1px solid #ff3b3b; margin-bottom: 15px;">
+                <span style="color: #ff3b3b; font-weight: bold; font-size: 13px;">⚠️ Server unavailable, please try again later.</span>
+            </div>`;
+    } else if (dadosNexus) {
+        // Se o servidor estiver ON e o item existir no banco
         const corData = getCorData(dadosNexus.ultima_atualizacao);
-        
-        // Formata para padrão americano: 7,300,000
         const precoFormatado = Number(dadosNexus.preco).toLocaleString('en-US');
 
         infoHtml += `
@@ -180,6 +186,12 @@ function abrirDetalhes(id) {
             <div class="info-row">
                 <span>Last Update:</span>
                 <span style="color: ${corData}; font-weight: bold;">${dadosNexus.ultima_atualizacao}</span>
+            </div>`;
+    } else {
+        // Se o servidor estiver ON mas esse item específico não tiver preço cadastrado
+        infoHtml += `
+            <div class="info-row">
+                <span style="color: #aaa; font-style: italic;">No price data for this item.</span>
             </div>`;
     }
 
