@@ -294,10 +294,17 @@ async function carregar() {
             // CONVERSÃO IMPORTANTE:
             // O seu script espera que precosNexus seja um objeto { "item_raridade": {dados} }
             // A API manda uma lista [{nome, raridade, preco...}]. Vamos converter aqui:
+            // CONVERSÃO CORRIGIDA:
             precosNexus = {};
             listaDaApi.forEach(item => {
                 const chave = `${item.nome.toLowerCase().trim()}_${item.raridade.toLowerCase().trim()}`;
-                precosNexus[chave] = item;
+                
+                // Aqui está o segredo: garantimos que o JS entenda 'preco' 
+                // mesmo que o banco envie como 'preco_atual'
+                precosNexus[chave] = {
+                    ...item,
+                    preco: item.preco_atual || item.preco || 0 
+                };
             });
 
             console.log("✅ Dados da API carregados com sucesso!");
