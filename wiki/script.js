@@ -275,19 +275,40 @@ window.addEventListener("scroll", () => {
 
 async function carregar() {
     try {
+        // Chamada para a sua API oficial no seu PC via Cloudflare
+        const apiURL = "https://api.rucoynexus.com/get_items";
+
         const [resItems, resSprites, resPrecos] = await Promise.all([
             fetch("./items.json"), 
             fetch("./items_png.json"),
-            fetch("./precos_nexus.json").catch(() => null)
+            fetch(apiURL).catch(() => null) // Busca da sua nova API
         ]);
+
         items = await resItems.json();
         let spriteData = await resSprites.json();
         sprites = spriteData.frames || {};
+
         if (resPrecos && resPrecos.ok) {
-            precosNexus = await resPrecos.json();
+            const listaDaApi = await resPrecos.json();
+            
+            // CONVERSÃO IMPORTANTE:
+            // O seu script espera que precosNexus seja um objeto { "item_raridade": {dados} }
+            // A API manda uma lista [{nome, raridade, preco...}]. Vamos converter aqui:
+            precosNexus = {};
+            listaDaApi.forEach(item => {
+                const chave = `${item.nome.toLowerCase().trim()}_${item.raridade.toLowerCase().trim()}`;
+                precosNexus[chave] = item;
+            });
+
+            console.log("✅ Dados da API carregados com sucesso!");
+        } else {
+            console.warn("⚠️ Não foi possível carregar os preços da API. O servidor no PC está ligado?");
         }
+
         aplicarFiltro();
-    } catch (e) { console.error("Erro ao carregar arquivos:", e); }
+    } catch (e) { 
+        console.error("❌ Erro ao carregar arquivos:", e); 
+    }
 }
 
 document.getElementById("search").addEventListener("input", aplicarFiltro);
