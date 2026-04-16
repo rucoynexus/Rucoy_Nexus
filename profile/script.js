@@ -23,16 +23,20 @@ document.getElementById('inputName').addEventListener('input', function(e) {
 const API_BASE_URL = "https://api.rucoynexus.com";
 
 async function salvarPersonagem() {
+    const btn = document.querySelector('.btn-save'); // Pegando o botão
     const charName = document.getElementById('inputName').value;
-    
-    // Pequena validação antes de enviar
+
     if (!charName) {
-        alert("Por favor, digite o nome do personagem.");
+        showToast("Please enter a character name.", "error");
         return;
     }
 
+    // Desativar o botão para evitar cliques duplos enquanto processa
+    btn.disabled = true;
+    btn.innerText = "Saving...";
+
     const charData = {
-        email: "david@test.com", // Provisório para testes
+        email: "david@test.com",
         name: charName,
         lv: document.getElementById('inputLv').value || 0,
         def: document.getElementById('inputDef').value || 0,
@@ -51,16 +55,33 @@ async function salvarPersonagem() {
         const result = await response.json();
 
         if (response.ok && result.status === "success") {
-            alert("Sucesso: " + result.message);
-            closeModal();
-            // A lista será atualizada automaticamente no futuro quando fizermos o GET
+            showToast(result.message, "success");
+            closeModal(); // Fecha a telinha na hora
         } else {
-            alert("Erro do Servidor: " + (result.message || "Falha ao salvar"));
+            showToast(result.message || "Server error.", "error");
         }
     } catch (error) {
-        console.error("Erro na requisição:", error);
-        alert("Erro: Não foi possível conectar ao servidor. Verifique se o CMD do Cloudflared e o Python estão ativos.");
+        showToast("Server is currently unavailable. Please try again later.", "error");
+    } finally {
+        // Reativar o botão após terminar
+        btn.disabled = false;
+        btn.innerText = "SAVE PROFILE";
     }
+}
+
+// Função para criar um aviso bonito na tela (Toast)
+function showToast(message, type) {
+    const toast = document.createElement('div');
+    toast.className = `custom-toast ${type}`;
+    toast.innerText = message;
+    
+    document.body.appendChild(toast);
+    
+    // Remove o aviso depois de 3 segundos
+    setTimeout(() => {
+        toast.style.opacity = '0';
+        setTimeout(() => toast.remove(), 500);
+    }, 3000);
 }
 
 // Detecta modo App (AndLua+ IDE)
