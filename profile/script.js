@@ -79,7 +79,7 @@ function handleAuthError() {
     
     setTimeout(() => {
         // Redireciona para a pasta correta de login
-        window.location.href = "/account/index.html"; 
+        window.location.href = "https://rucoynexus.com/account/index.html"; 
     }, 2000);
 }
 
