@@ -3,29 +3,22 @@ const API_BASE_URL = "https://api.rucoynexus.com";
 // PEGA O EMAIL DA PESSOA LOGADA NO MOMENTO
 function getUserEmail() {
     try {
-        // Tenta buscar nas 3 chaves possíveis (mais comum no seu caso deve ser user ou userToken)
-        const storageData = 
-            localStorage.getItem("userData") || 
-            localStorage.getItem("user") || 
-            localStorage.getItem("userToken");
-
-        if (storageData) {
-            // Se o dado for um texto direto (email), ele usa. Se for um objeto, ele extrai o email.
-            if (storageData.includes("@")) {
-                // Caso o dado seja apenas o email puro (ex: "david@gmail.com")
-                return storageData.replace(/"/g, ''); 
-            } else {
-                // Caso seja um objeto JSON (ex: {"email": "david@gmail.com"})
-                const user = JSON.parse(storageData);
-                return user.email || user;
-            }
+        // 1. Tenta pegar o objeto 'user' que a maioria dos scripts de login usa
+        const userObj = localStorage.getItem("user");
+        if (userObj) {
+            const parsed = JSON.parse(userObj);
+            // Se for um objeto {email: "..."} retorna o email, se for só o texto, retorna o texto
+            return parsed.email || parsed;
         }
+
+        // 2. Tenta pegar 'userEmail' ou 'userData' caso o nome seja outro
+        const backupEmail = localStorage.getItem("userEmail") || localStorage.getItem("userData");
+        if (backupEmail) return backupEmail.replace(/"/g, '');
+
     } catch (e) {
-        console.error("Erro ao ler sessão:", e);
+        console.error("Erro ao ler e-mail da sessão:", e);
     }
-    
-    // Se tudo falhar, ele pega o que está logado no seu dashboard como garantia
-    return "davidangeloficial@gmail.com"; 
+    return null; // Retorna null para forçar o erro de "Log in" se não achar nada
 }
 
 function toggleMenu() {
