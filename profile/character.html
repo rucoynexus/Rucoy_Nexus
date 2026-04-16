@@ -4,24 +4,45 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Character Details - Rucoy Nexus</title>
-    <link rel="stylesheet" href="style.css"> <style>
-        .stats-container { margin-top: 20px; display: grid; gap: 15px; }
+    <link rel="stylesheet" href="style.css"> 
+    <style>
+        .stats-container { margin-top: 20px; display: grid; gap: 15px; padding: 10px; }
         .stat-box { 
             background: rgba(255,255,255,0.05); 
             padding: 20px; 
             border-radius: 15px; 
-            border: 1px solid var(--rucoy-blue);
-            display: flex; justify-content: space-between;
+            border: 1px solid #00b4ff; /* Substituído var por cor direta caso a var falhe */
+            display: flex; 
+            justify-content: space-between;
+            align-items: center;
         }
-        .stat-label { color: #aaa; text-transform: uppercase; font-size: 12px; }
-        .stat-value { font-size: 20px; font-weight: bold; color: var(--white); }
+        .stat-label { color: #aaa; text-transform: uppercase; font-size: 12px; margin: 0; }
+        .stat-value { font-size: 22px; font-weight: bold; color: #fff; margin: 5px 0 0 0; }
+        
+        /* Estilo para os Toasts que você gosta */
+        .custom-toast {
+            position: fixed;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            padding: 12px 24px;
+            border-radius: 8px;
+            color: white;
+            font-weight: bold;
+            z-index: 1000;
+            transition: opacity 0.5s, transform 0.5s;
+            background: #333;
+            border-left: 5px solid #ff4444;
+        }
+        .error-toast { border-left-color: #ff4444; }
+        .success-toast { border-left-color: #00c851; }
     </style>
 </head>
 <body>
     <header>
-        <div class="top-bar-action" onclick="window.history.back()">
-            <span style="font-size: 24px; margin-right: 10px;">←</span>
-            <span id="char-title">Loading...</span>
+        <div class="top-bar-action" onclick="window.history.back()" style="cursor: pointer; display: flex; align-items: center; padding: 15px;">
+            <span style="font-size: 24px; margin-right: 15px; color: #00b4ff;">←</span>
+            <span id="char-title" style="font-size: 20px; font-weight: bold; color: #fff;">Loading...</span>
         </div>
     </header>
 
@@ -33,11 +54,33 @@
     <script>
         const API_BASE_URL = "https://api.rucoynexus.com";
 
+        // Função para mostrar avisos bonitos
+        function showToast(message, type) {
+            const toast = document.createElement('div');
+            toast.className = `custom-toast ${type}-toast`;
+            toast.innerText = message;
+            document.body.appendChild(toast);
+            setTimeout(() => {
+                toast.style.opacity = '0';
+                setTimeout(() => toast.remove(), 500);
+            }, 3000);
+        }
+
+        // Função para lidar com o Token Expirado (Erro 401)
+        function handleAuthError() {
+            showToast("Sessão expirada. Faça login novamente.", "error");
+            localStorage.removeItem("userToken"); // Limpa o token do seu auth.js
+            setTimeout(() => {
+                window.location.href = "login.html"; // Mande para sua página de login
+            }, 2500);
+        }
+
         async function loadDetails() {
             const params = new URLSearchParams(window.location.search);
             const charName = params.get('name');
             const token = localStorage.getItem("userToken");
 
+            // Se não tiver nome na URL ou token, volta para a lista
             if (!charName || !token) {
                 window.location.href = "index.html";
                 return;
@@ -45,6 +88,13 @@
 
             try {
                 const response = await fetch(`${API_BASE_URL}/get_character_details?token=${token}&name=${charName}`);
+                
+                // Se o servidor retornar 401, o token do Google expirou
+                if (response.status === 401) {
+                    handleAuthError();
+                    return;
+                }
+
                 const result = await response.json();
 
                 if (result.status === "success") {
@@ -60,10 +110,11 @@
                     `;
                     document.getElementById('stats-display').innerHTML = html;
                 } else {
-                    alert("Erro: " + result.message);
+                    showToast(result.message, "error");
                 }
             } catch (e) {
-                console.error(e);
+                console.error("Erro ao carregar detalhes:", e);
+                showToast("Erro ao conectar com o servidor.", "error");
             }
         }
 
