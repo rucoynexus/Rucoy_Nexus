@@ -3,11 +3,11 @@
     --rucoy-bg: #121212;
     --rucoy-drawer-bg: #2173b3;
     --white: #F3F3F3;
-    --card-bg: rgba(255, 255, 255, 0.03); /* Fundo quase preto para o card */
-    --danger: #ff4d4d;    /* Vermelho para o Trash */
-    --success: #2ecc71;   /* Verde para os botões */
-    --info: #3498db;      /* Azul para o Edit */
-    --rucoy-green: #00ff41; /* Verde clássico para o nome */
+    --card-bg: rgba(255, 255, 255, 0.03); 
+    --danger: #ff4d4d;
+    --success: #2ecc71;
+    --info: #3498db;
+    --rucoy-green: #00ff41;
 }
 
 * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Roboto', sans-serif; }
@@ -58,20 +58,16 @@ header {
 /* --- PROFILE CONTENT --- */
 main { padding: 76px 15px 20px 15px; max-width: 600px; margin: 0 auto; }
 
-/* --- LISTA DE PERSONAGENS (PILL LAYOUT) --- */
-/* Container da lista - Onde o espaço entre itens é controlado */
+/* --- LISTA DE PERSONAGENS (CORREÇÃO DO ESPAÇAMENTO) --- */
 .char-list { 
-    margin-top: 25px; /* Espaço entre os contadores do topo e o primeiro item */
+    margin-top: 30px; /* Aumentado para não colar nos contadores do topo */
     display: flex;
     flex-direction: column;
-    gap: 16px; /* Aumentado para 16px para dar respiro entre os itens */
-    padding-bottom: 20px; /* Espaço extra no final da lista */
+    gap: 18px; /* ESPAÇO REAL ENTRE OS CARDS */
+    padding-bottom: 30px;
 }
 
-/* Opcional: Adicionar uma margem externa para garantir que não encostem nas bordas */
 .char-card {
-    /* ... mantenha o código anterior ... */
-    margin: 0 5px; 
     background: var(--card-bg);
     border: 1px solid rgba(255, 255, 255, 0.4);
     border-radius: 50px;
@@ -82,6 +78,7 @@ main { padding: 76px 15px 20px 15px; max-width: 600px; margin: 0 auto; }
     align-items: center;
     transition: 0.3s ease;
     box-shadow: 0 4px 6px rgba(0,0,0,0.2);
+    /* Removido margens manuais para deixar o gap do flexbox trabalhar */
 }
 
 .char-card:hover { 
@@ -91,19 +88,17 @@ main { padding: 76px 15px 20px 15px; max-width: 600px; margin: 0 auto; }
 
 .char-name { 
     font-size: 18px; 
-    font-weight: bold; /* Bold solicitado */
-    color: var(--rucoy-green); /* Nome em verde */
+    font-weight: bold; 
+    color: var(--rucoy-green);
     text-transform: capitalize;
 }
 
-/* Container dos botões à direita centralizados */
 .char-actions-right {
     display: flex;
     gap: 10px;
     align-items: center;
 }
 
-/* Botões de ação circulares */
 .btn-action {
     width: 38px;
     height: 38px;
@@ -116,21 +111,16 @@ main { padding: 76px 15px 20px 15px; max-width: 600px; margin: 0 auto; }
     transition: transform 0.2s, opacity 0.2s;
 }
 
-.btn-action img { 
-    width: 18px; 
-    height: 18px; 
-    filter: brightness(0) invert(1); 
-}
-
+.btn-action img { width: 18px; height: 18px; filter: brightness(0) invert(1); }
 .btn-action:active { transform: scale(0.9); }
 .btn-action:hover { opacity: 0.85; }
 
-.btn-view { background-color: var(--success); }   /* Verde */
-.btn-edit { background-color: var(--info); }      /* Azul */
-.btn-delete { background-color: var(--danger); }  /* Vermelho */
+.btn-view { background-color: var(--success); }
+.btn-edit { background-color: var(--info); }
+.btn-delete { background-color: var(--danger); }
 
 /* --- BOTÃO DE ADICIONAR --- */
-.add-char-container { margin-top: 30px; text-align: center; }
+.add-char-container { margin-top: 20px; text-align: center; }
 .btn-add {
     background: var(--rucoy-blue);
     color: white;
