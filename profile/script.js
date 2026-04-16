@@ -1,5 +1,16 @@
 const API_BASE_URL = "https://api.rucoynexus.com";
 
+// Função para pegar o e-mail real do usuário logado
+function getUserEmail() {
+    try {
+        // Tenta pegar os dados do usuário salvos pelo seu sistema de login
+        const user = JSON.parse(localStorage.getItem("userData")); 
+        return user ? user.email : "davidangeloficial@gmail.com"; 
+    } catch (e) {
+        return "davidangeloficial@gmail.com";
+    }
+}
+
 function toggleMenu() {
     const drawer = document.getElementById('drawer');
     const overlay = document.getElementById('overlay');
@@ -15,16 +26,14 @@ function closeModal() {
     document.getElementById('modal-char').style.display = 'none'; 
 }
 
-// Formata o nome
 document.getElementById('inputName').addEventListener('input', function(e) {
     let val = e.target.value;
     e.target.value = val.toLowerCase().replace(/(^\w|\s\w)/g, m => m.toUpperCase());
 });
 
-// FUNÇÃO PARA CARREGAR OS CARDS NA TELA
 async function carregarPerfis() {
     const charList = document.getElementById('charList');
-    const email = "david@test.com";
+    const email = getUserEmail(); // AGORA USA O EMAIL REAL
 
     try {
         const response = await fetch(`${API_BASE_URL}/get_profiles?email=${email}`);
@@ -32,7 +41,7 @@ async function carregarPerfis() {
 
         if (result.status === "success") {
             const profiles = result.data;
-            charList.innerHTML = ""; // Limpa a lista
+            charList.innerHTML = ""; 
 
             let mCount = 0;
             let aCount = 0;
@@ -44,7 +53,6 @@ async function carregarPerfis() {
             profiles.forEach(char => {
                 if(char.is_automatic) aCount++; else mCount++;
                 
-                // Layout do Card usando seus ícones (eye.png para stats)
                 const card = `
                 <div class="char-card">
                     <div class="char-card-header">
@@ -64,11 +72,8 @@ async function carregarPerfis() {
                 charList.innerHTML += card;
             });
 
-            // Atualiza os limites na tela
             document.getElementById('manualLimit').innerText = `Manual: ${mCount}/10`;
             document.getElementById('autoLimit').innerText = `Automatic: ${aCount}`;
-            
-            // Esconde o botão de add se chegar no limite de 10 manuais
             document.getElementById('btnAddChar').style.display = mCount >= 10 ? 'none' : 'block';
         }
     } catch (e) {
@@ -89,7 +94,7 @@ async function salvarPersonagem() {
     btn.innerText = "Saving...";
 
     const charData = {
-        email: "david@test.com",
+        email: getUserEmail(), // ENVIANDO O EMAIL REAL PARA O BANCO
         name: charName,
         lv: document.getElementById('inputLv').value || 0,
         def: document.getElementById('inputDef').value || 0,
@@ -110,12 +115,12 @@ async function salvarPersonagem() {
         if (response.ok && result.status === "success") {
             showToast(result.message, "success");
             closeModal();
-            carregarPerfis(); // Recarrega a lista após salvar
+            carregarPerfis(); 
         } else {
             showToast(result.message || "Server error.", "error");
         }
     } catch (error) {
-        showToast("Server is currently unavailable. Please try again later.", "error");
+        showToast("Server is currently unavailable.", "error");
     } finally {
         btn.disabled = false;
         btn.innerText = "SAVE PROFILE";
@@ -133,5 +138,4 @@ function showToast(message, type) {
     }, 3000);
 }
 
-// Carrega a lista quando a página abre
 window.onload = carregarPerfis;
