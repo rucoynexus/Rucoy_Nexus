@@ -1,24 +1,28 @@
 const API_BASE_URL = "https://api.rucoynexus.com";
 
 // PEGA O EMAIL DA PESSOA LOGADA NO MOMENTO
-function getUserEmail() {
+// Função para decodificar o token (igual a que você já usa no home)
+function parseJwt(token) {
     try {
-        // 1. Tenta pegar o objeto 'user' que a maioria dos scripts de login usa
-        const userObj = localStorage.getItem("user");
-        if (userObj) {
-            const parsed = JSON.parse(userObj);
-            // Se for um objeto {email: "..."} retorna o email, se for só o texto, retorna o texto
-            return parsed.email || parsed;
-        }
-
-        // 2. Tenta pegar 'userEmail' ou 'userData' caso o nome seja outro
-        const backupEmail = localStorage.getItem("userEmail") || localStorage.getItem("userData");
-        if (backupEmail) return backupEmail.replace(/"/g, '');
-
+        const base64Url = token.split('.')[1];
+        const base64 = base64Url.replace(/-/g, '+').replace(/_/g, '/');
+        const jsonPayload = decodeURIComponent(atob(base64).split('').map(function(c) {
+            return '%' + ('00' + c.charCodeAt(0).toString(16)).slice(-2);
+        }).join(''));
+        return JSON.parse(jsonPayload);
     } catch (e) {
-        console.error("Erro ao ler e-mail da sessão:", e);
+        return null;
     }
-    return null; // Retorna null para forçar o erro de "Log in" se não achar nada
+}
+
+// Pega o e-mail real de quem está logado agora
+function getUserEmail() {
+    const token = localStorage.getItem("userToken"); // Nome correto da sua chave!
+    if (token) {
+        const userData = parseJwt(token);
+        return userData ? userData.email : null;
+    }
+    return null;
 }
 
 function toggleMenu() {
