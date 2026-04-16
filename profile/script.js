@@ -209,10 +209,19 @@ function showToast(message, type) {
     }, 3500);
 }
 
-// Detecta se a página foi aberta com ?platform=app
-        const params = new URLSearchParams(window.location.search);
-        if (params.get('platform') === 'app') {
+(function() {
+    const params = new URLSearchParams(window.location.search);
+    if (params.get('platform') === 'app') {
+        document.documentElement.classList.add('is-app');
+        // Se o body já existir, aplica nele também
+        if (document.body) {
             document.body.classList.add('is-app');
+        } else {
+            window.addEventListener('DOMContentLoaded', () => {
+                document.body.classList.add('is-app');
+            });
         }
-        
+    }
+})();
+
 window.onload = carregarPerfis;

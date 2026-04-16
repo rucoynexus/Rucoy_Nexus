@@ -238,3 +238,19 @@ main { padding: 76px 20px 20px 20px; min-height: 100vh; }
     margin-top: 20px;
     margin-bottom: 40px;
 }
+
+/* --- MODO APP (ESCONDER INTERFACE) --- */
+body.is-app header, 
+body.is-app #drawer, 
+body.is-app #overlay {
+    display: none !important;
+}
+
+body.is-app main {
+    padding-top: 20px !important; /* Remove o espaço do header no App */
+}
+
+/* Ajuste para o scroll não bugar no mobile do App */
+body.is-app {
+    overflow-x: hidden;
+}

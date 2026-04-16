@@ -329,12 +329,23 @@ async function carregar() {
         console.error("❌ Erro ao carregar arquivos:", e); 
     }
 }
-// Detecta se a página foi aberta com ?platform=app
-        const params = new URLSearchParams(window.location.search);
-        if (params.get('platform') === 'app') {
+
+(function() {
+    const params = new URLSearchParams(window.location.search);
+    if (params.get('platform') === 'app') {
+        document.documentElement.classList.add('is-app');
+        // Se o body já existir, aplica nele também
+        if (document.body) {
             document.body.classList.add('is-app');
+        } else {
+            window.addEventListener('DOMContentLoaded', () => {
+                document.body.classList.add('is-app');
+            });
         }
-        
+    }
+})();
+
+// ... resto do seu código (carregar, event listeners, etc)
 document.getElementById("search").addEventListener("input", aplicarFiltro);
 document.getElementById("rarityFilter").addEventListener("change", aplicarFiltro);
 carregar();
