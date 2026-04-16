@@ -3,10 +3,11 @@
     --rucoy-bg: #121212;
     --rucoy-drawer-bg: #2173b3;
     --white: #F3F3F3;
-    --card-bg: #1e1e1e;
+    --card-bg: rgba(255, 255, 255, 0.03); /* Fundo quase preto para o card */
     --danger: #ff4d4d;    /* Vermelho para o Trash */
-    --success: #2ecc71;   /* Verde para o Olho */
+    --success: #2ecc71;   /* Verde para os botões */
     --info: #3498db;      /* Azul para o Edit */
+    --rucoy-green: #00ff41; /* Verde clássico para o nome */
 }
 
 * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Roboto', sans-serif; }
@@ -57,41 +58,51 @@ header {
 /* --- PROFILE CONTENT --- */
 main { padding: 76px 15px 20px 15px; max-width: 600px; margin: 0 auto; }
 
-/* --- LISTA DE PERSONAGENS (O NOVO LAYOUT) --- */
+/* --- LISTA DE PERSONAGENS (PILL LAYOUT) --- */
 .char-list { 
     margin-top: 20px; 
     display: flex;
     flex-direction: column;
-    gap: 12px;
+    gap: 15px;
 }
 
 .char-card {
     background: var(--card-bg);
-    border-radius: 12px; /* Bordas arredondadas conforme pedido */
-    padding: 12px 18px;
+    border: 1px solid rgba(255, 255, 255, 0.4); /* Borda branca simples sutil */
+    border-radius: 50px; /* Formato de pílula igual ao botão */
+    padding: 10px 25px;
+    height: 60px;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    border: 1px solid #333;
     transition: 0.3s ease;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.2);
 }
 
-.char-card:hover { border-color: var(--rucoy-blue); }
+.char-card:hover { 
+    border-color: #ffffff; 
+    background: rgba(255, 255, 255, 0.08);
+}
 
-.char-info-left { display: flex; flex-direction: column; }
-.char-name { font-size: 18px; font-weight: bold; color: var(--white); }
+.char-name { 
+    font-size: 18px; 
+    font-weight: bold; /* Bold solicitado */
+    color: var(--rucoy-green); /* Nome em verde */
+    text-transform: capitalize;
+}
 
-/* Container dos botões à direita */
+/* Container dos botões à direita centralizados */
 .char-actions-right {
     display: flex;
-    gap: 8px;
+    gap: 10px;
+    align-items: center;
 }
 
-/* Estilo base dos botões de ação */
+/* Botões de ação circulares */
 .btn-action {
-    width: 40px;
-    height: 40px;
-    border-radius: 8px;
+    width: 38px;
+    height: 38px;
+    border-radius: 50%; 
     border: none;
     display: flex;
     justify-content: center;
@@ -101,15 +112,14 @@ main { padding: 76px 15px 20px 15px; max-width: 600px; margin: 0 auto; }
 }
 
 .btn-action img { 
-    width: 22px; 
-    height: 22px; 
-    filter: brightness(0) invert(1); /* Ícones brancos */
+    width: 18px; 
+    height: 18px; 
+    filter: brightness(0) invert(1); 
 }
 
 .btn-action:active { transform: scale(0.9); }
 .btn-action:hover { opacity: 0.85; }
 
-/* Cores específicas solicitadas */
 .btn-view { background-color: var(--success); }   /* Verde */
 .btn-edit { background-color: var(--info); }      /* Azul */
 .btn-delete { background-color: var(--danger); }  /* Vermelho */

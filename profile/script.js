@@ -69,28 +69,28 @@ async function carregarPerfis() {
                 return;
             }
 
-            profiles.forEach(char => {
-                const card = `
-                <div class="char-card-list">
-                    <div class="char-info-left">
-                        <span class="name">${char.name}</span>
-                    </div>
-                    <div class="char-actions-right">
-                        <button class="btn-action btn-view" onclick="verPerfil('${char.name}')" title="View Profile">
-                            <img src="/res/icon/eye.png">
-                        </button>
-                        
-                        <button class="btn-action btn-edit" onclick="abrirEdicao('${char.name}')" title="Edit Profile">
-                            <img src="/res/icon/user-edit.png">
-                        </button>
-                        
-                        <button class="btn-action btn-delete" onclick="deletarPerfil('${char.name}')" title="Delete Profile">
-                            <img src="/res/icon/trash.png">
-                        </button>
-                    </div>
-                </div>`;
-                charList.innerHTML += card;
-            });
+           profiles.forEach(char => {
+    const card = `
+    <div class="char-card">
+        
+        <span class="char-name">${char.name}</span>
+        
+        <div class="char-actions-right">
+            <button class="btn-action btn-view" onclick="verPerfil('${char.name}')" title="View Profile">
+                <img src="/res/icon/eye.png">
+            </button>
+            
+            <button class="btn-action btn-edit" onclick="abrirEdicao('${char.name}')" title="Edit Profile">
+                <img src="/res/icon/user-edit.png">
+            </button>
+            
+            <button class="btn-action btn-delete" onclick="deletarPerfil('${char.name}')" title="Delete Profile">
+                <img src="/res/icon/trash.png">
+            </button>
+        </div>
+    </div>`;
+    charList.innerHTML += card;
+});
         }
     } catch (e) {
         showToast("Error loading profiles.", "error");
