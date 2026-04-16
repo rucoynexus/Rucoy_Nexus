@@ -1,5 +1,6 @@
 const API_BASE_URL = "https://api.rucoynexus.com";
 
+// --- UTILITÁRIOS ---
 function parseJwt(token) {
     try {
         const base64Url = token.split('.')[1];
@@ -20,11 +21,32 @@ function getUserEmail() {
     return null;
 }
 
-function closeModal() { 
-    document.getElementById('modal-char').style.display = 'none'; 
-    document.getElementById('inputName').disabled = false; // Reativa o nome para novos cadastros
+// --- FUNÇÕES DE INTERAÇÃO ---
+function openModal() { 
+    // Limpa os campos para um novo cadastro
+    document.getElementById('inputName').value = '';
+    document.getElementById('inputName').disabled = false;
+    document.getElementById('inputLv').value = '';
+    document.getElementById('inputDef').value = '';
+    document.getElementById('inputMelee').value = '';
+    document.getElementById('inputDist').value = '';
+    document.getElementById('inputMag').value = '';
+    
+    document.getElementById('modal-char').style.display = 'flex'; 
 }
 
+function closeModal() { 
+    document.getElementById('modal-char').style.display = 'none'; 
+}
+
+function toggleMenu() {
+    const drawer = document.getElementById('drawer');
+    const overlay = document.getElementById('overlay');
+    drawer.classList.toggle('active');
+    overlay.style.display = drawer.classList.contains('active') ? 'block' : 'none';
+}
+
+// --- LÓGICA DE PERFIS ---
 async function carregarPerfis() {
     const charList = document.getElementById('charList');
     const token = localStorage.getItem("userToken");
@@ -40,7 +62,7 @@ async function carregarPerfis() {
             charList.innerHTML = ""; 
 
             if (profiles.length === 0) {
-                charList.innerHTML = '<p style="text-align: center; color: #666;">No characters found.</p>';
+                charList.innerHTML = '<p style="text-align: center; color: #666; margin-top: 20px;">No characters found.</p>';
                 return;
             }
 
@@ -71,10 +93,9 @@ async function carregarPerfis() {
     }
 }
 
-// Preenche o modal com os dados para editar
 function abrirEdicao(name, lv, def, melee, dist, mag) {
     document.getElementById('inputName').value = name;
-    document.getElementById('inputName').disabled = true; // Não permite mudar o nome ao editar
+    document.getElementById('inputName').disabled = true; 
     document.getElementById('inputLv').value = lv;
     document.getElementById('inputDef').value = def;
     document.getElementById('inputMelee').value = melee;
@@ -87,6 +108,8 @@ async function deletarPerfil(name) {
     if (!confirm(`Are you sure you want to delete ${name}?`)) return;
     
     const token = localStorage.getItem("userToken");
+    showToast(`Deleting ${name}...`, "info");
+
     try {
         const response = await fetch(`${API_BASE_URL}/delete_profile`, {
             method: 'POST',
@@ -102,7 +125,7 @@ async function deletarPerfil(name) {
             showToast(result.message, "error");
         }
     } catch (e) {
-        showToast("Error connecting to server.", "error");
+        showToast("Connection error.", "error");
     }
 }
 
@@ -151,15 +174,28 @@ async function salvarPersonagem() {
     }
 }
 
+function verPerfil(name) {
+    window.location.href = `character.html?name=${name}`;
+}
+
+// --- NOTIFICAÇÕES (TOASTS BONITOS) ---
 function showToast(message, type) {
+    // Remove toasts antigos se houver muitos
+    const activeToasts = document.querySelectorAll('.custom-toast');
+    if (activeToasts.length > 2) activeToasts[0].remove();
+
     const toast = document.createElement('div');
-    toast.className = `custom-toast ${type}`;
+    toast.className = `custom-toast ${type}-toast`; // Usa as classes success-toast ou error-toast do seu CSS
     toast.innerText = message;
+    
     document.body.appendChild(toast);
+
+    // Animação e remoção
     setTimeout(() => {
         toast.style.opacity = '0';
+        toast.style.transform = 'translateX(20px)';
         setTimeout(() => toast.remove(), 500);
-    }, 3000);
+    }, 3500);
 }
 
 window.onload = carregarPerfis;
