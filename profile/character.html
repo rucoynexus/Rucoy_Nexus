@@ -68,12 +68,13 @@
 
         // Função para lidar com o Token Expirado (Erro 401)
         function handleAuthError() {
-            showToast("Sessão expirada. Faça login novamente.", "error");
-            localStorage.removeItem("userToken"); // Limpa o token do seu auth.js
-            setTimeout(() => {
-                window.location.href = "login.html"; // Mande para sua página de login
-            }, 2500);
-        }
+    showToast("Sessão expirada. Faça login novamente.", "error");
+    localStorage.removeItem("userToken");
+    setTimeout(() => {
+        // Usando o caminho completo para não ter erro de 404
+        window.location.href = "https://rucoynexus.com/account/"; 
+    }, 2500);
+}
 
         async function loadDetails() {
             const params = new URLSearchParams(window.location.search);

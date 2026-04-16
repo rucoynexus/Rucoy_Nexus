@@ -74,12 +74,12 @@ async function carregarPerfis() {
 
 // Função central para lidar com expiração
 function handleAuthError() {
-    showToast("Sessão expirada. Redirecionando...", "error");
-    localStorage.removeItem("userToken"); // Deleta o token expirado
+    showToast("Sessão expirada. Redirecionando para login...", "error");
+    localStorage.removeItem("userToken"); 
     
-    // Aguarda um pouco para o usuário ler o aviso e manda para o login
     setTimeout(() => {
-        window.location.href = "login.html"; 
+        // Redireciona para a pasta correta de login
+        window.location.href = "/account/index.html"; 
     }, 2000);
 }
 
