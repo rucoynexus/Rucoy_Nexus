@@ -43,16 +43,19 @@ function closeModal() {
 // FUNÇÃO PARA CARREGAR OS CARDS DA PESSOA LOGADA
 async function carregarPerfis() {
     const charList = document.getElementById('charList');
-    const email = getUserEmail();
+    const token = localStorage.getItem("userToken"); // Pega o token bruto
 
-    if (!email) {
-        showToast("Please log in to see your profiles.", "error");
+    if (!token) {
+        showToast("Please log in.", "error");
         return;
     }
 
     try {
-        const response = await fetch(`${API_BASE_URL}/get_profiles?email=${email}`);
+        // Enviamos o token na URL (ou no header, mas na URL é mais simples para GET)
+        const response = await fetch(`${API_BASE_URL}/get_profiles?token=${token}`);
         const result = await response.json();
+        
+        // ... resto da lógica de exibir os cards ...
 
         if (result.status === "success") {
             const profiles = result.data;
