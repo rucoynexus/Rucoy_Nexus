@@ -41,14 +41,27 @@ function closeModal() {
 }
 
 // FUNÇÃO PARA CARREGAR OS CARDS DA PESSOA LOGADA
-async function carregarPerfis() {
-    const charList = document.getElementById('charList');
-    const token = localStorage.getItem("userToken"); // Pega o token bruto
+// Adicione esta verificação no início do seu script.js
+function isTokenExpired(token) {
+    const payload = parseJwt(token);
+    if (!payload || !payload.exp) return true;
+    
+    const now = Math.floor(Date.now() / 1000); // Tempo atual em segundos
+    return payload.exp < now; // Retorna true se o token já expirou
+}
 
-    if (!token) {
-        showToast("Please log in.", "error");
+async function carregarPerfis() {
+    const token = localStorage.getItem("userToken");
+
+    // Se o token não existe OU se já expirou, desloga o cara
+    if (!token || isTokenExpired(token)) {
+        console.warn("Sessão expirada. Redirecionando...");
+        localStorage.removeItem("userToken");
+        window.location.href = "/account/"; // Manda de volta pro login
         return;
     }
+
+    // ... resto do seu código fetch ...
 
     try {
         // Enviamos o token na URL (ou no header, mas na URL é mais simples para GET)
