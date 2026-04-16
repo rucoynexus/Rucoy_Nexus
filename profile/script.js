@@ -48,39 +48,49 @@ function toggleMenu() {
 
 // --- LÓGICA DE PERFIS ---
 async function carregarPerfis() {
+    const charList = document.getElementById('charList');
     const token = localStorage.getItem("userToken");
-    if (!token) {
-        window.location.href = "login.html"; // Redireciona se não houver token
-        return;
-    }
+
+    if (!token) return;
 
     try {
         const response = await fetch(`${API_BASE_URL}/get_profiles?token=${token}`);
-        
-        // Se o servidor retornar 401, o token expirou
-        if (response.status === 401) {
-            handleAuthError();
-            return;
-        }
-
         const result = await response.json();
+
         if (result.status === "success") {
-            renderizarCards(result.data); // Chame sua função de renderizar aqui
+            const profiles = result.data;
+            charList.innerHTML = ""; 
+
+            if (profiles.length === 0) {
+                charList.innerHTML = '<p style="text-align: center; color: #666; margin-top: 20px;">No characters found.</p>';
+                return;
+            }
+
+            profiles.forEach(char => {
+                const card = `
+                <div class="char-card">
+                    <span class="char-name">${char.name}</span>
+                    <div class="char-actions-right">
+                        <button class="btn-action btn-view" onclick="verPerfil('${char.name}')">
+                            <img src="/res/icon/eye.png">
+                        </button>
+                        
+                        ${!char.is_automatic ? `
+                        <button class="btn-action btn-edit" onclick="abrirEdicao('${char.name}', ${char.level}, ${char.def}, ${char.melee}, ${char.dist}, ${char.mag})">
+                            <img src="/res/icon/user-edit.png">
+                        </button>` : ''}
+                        
+                        <button class="btn-action btn-delete" onclick="deletarPerfil('${char.name}')">
+                            <img src="/res/icon/trash.png">
+                        </button>
+                    </div>
+                </div>`;
+                charList.innerHTML += card;
+            });
         }
     } catch (e) {
-        showToast("Erro de conexão com o servidor.", "error");
+        showToast("Error loading profiles.", "error");
     }
-}
-
-// Função central para lidar com expiração
-function handleAuthError() {
-    showToast("Sessão expirada. Redirecionando...", "error");
-    localStorage.removeItem("userToken"); // Deleta o token expirado
-    
-    // Aguarda um pouco para o usuário ler o aviso e manda para o login
-    setTimeout(() => {
-        window.location.href = "login.html"; 
-    }, 2000);
 }
 
 function abrirEdicao(name, lv, def, melee, dist, mag) {
