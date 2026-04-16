@@ -1,18 +1,19 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 <head>
-     <!--<script src="/auth.js"></script>-->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" type="image/jpeg" href="/icon.jpeg">
-    <title>Rucoy Nexus</title>
+    <title>Rucoy Nexus - Profile</title>
     <style>
         :root {
-            /* Cores oficiais baseadas no seu app */
             --rucoy-blue: #3CBCFC;
             --rucoy-bg: #121212;
             --rucoy-drawer-bg: #2173b3;
             --white: #F3F3F3;
+            --card-bg: #1e1e1e;
+            --danger: #ff4d4d;
+            --success: #00ff41;
         }
 
         * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Roboto', sans-serif; }
@@ -26,117 +27,114 @@
             align-items: center;
             padding: 0 16px;
             position: fixed;
-            top: 0;
-            width: 100%;
+            top: 0; width: 100%;
             z-index: 100;
             box-shadow: 0 2px 4px rgba(0,0,0,0.3);
         }
 
-        .top-bar-action {
-            display: flex;
-            align-items: center;
-            height: 100%;
-            padding-right: 30px;
-            cursor: pointer;
-            user-select: none;
-            -webkit-user-select: none;
-        }
+        .top-bar-action { display: flex; align-items: center; cursor: pointer; padding-right: 20px; }
+        .menu-btn img { width: 24px; filter: brightness(0) invert(1); margin-right: 15px; }
+        #current-page-title { font-size: 20px; font-weight: 500; }
 
-        .top-bar-action:active { background-color: rgba(255, 255, 255, 0.1); }
-
-        .menu-btn {
-            background: none;
-            border: none;
-            margin-right: 20px;
-            display: flex;
-            align-items: center;
-            pointer-events: none;
-        }
-
-        .menu-btn img {
-            width: 24px;
-            filter: brightness(0) invert(1); /* Deixa o ícone navnav branco */
-        }
-
-        #current-page-title {
-            font-size: 20px;
-            font-weight: 500;
-            color: white;
-            cursor: pointer;
-        }
-
-        /* --- DRAWER (MENU LATERAL) --- */
+        /* --- DRAWER --- */
         #drawer {
-            position: fixed;
-            top: 0;
-            left: -280px;
-            width: 280px;
-            height: 100%;
-            background-color: var(--rucoy-drawer-bg);
-            z-index: 200;
-            transition: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-            overflow-y: auto;
-            box-shadow: 4px 0 10px rgba(0,0,0,0.5);
+            position: fixed; top: 0; left: -280px; width: 280px; height: 100%;
+            background-color: var(--rucoy-drawer-bg); z-index: 200;
+            transition: 0.3s cubic-bezier(0.4, 0, 0.2, 1); overflow-y: auto;
         }
-
         #drawer.active { left: 0; }
+        .drawer-banner { width: 100%; height: 150px; background: url('/res/icon/draweBanner.png') center/cover; }
+        .drawer-item { padding: 12px 16px; display: flex; align-items: center; color: white; text-decoration: none; }
+        .drawer-item img { width: 24px; margin-right: 32px; filter: brightness(0) invert(1); }
+        .settings-highlight { margin-top: 20px; border-top: 1px solid rgba(255,255,255,0.1); color: #000 !important; font-weight: bold; }
+        .settings-highlight img { filter: brightness(0) !important; }
 
-        .drawer-banner {
-            width: 100%;
-            height: 150px;
-            background: url('/res/icon/draweBanner.png') no-repeat center;
-            background-size: cover;
-            border-bottom: 1px solid rgba(255,255,255,0.1);
+        #overlay { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.5); display: none; z-index: 150; }
+
+        /* --- PROFILE CONTENT --- */
+        main { padding: 76px 15px 20px 15px; max-width: 600px; margin: 0 auto; }
+        
+        .char-list { margin-top: 20px; }
+        
+        .char-card {
+            background: var(--card-bg);
+            border-radius: 8px;
+            padding: 15px;
+            margin-bottom: 12px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-left: 4px solid var(--rucoy-blue);
+            box-shadow: 0 4px 6px rgba(0,0,0,0.2);
         }
 
-        .drawer-list { list-style: none; padding: 8px 0; }
+        .char-info { display: flex; flex-direction: column; }
+        .char-name { font-size: 18px; font-weight: bold; color: var(--white); }
+        .char-stats-preview { font-size: 12px; color: #888; margin-top: 4px; }
 
-        .drawer-item {
-            padding: 12px 16px;
+        .char-actions { display: flex; gap: 10px; }
+        .action-btn {
+            background: rgba(255,255,255,0.05);
+            border: none;
+            padding: 8px;
+            border-radius: 6px;
+            cursor: pointer;
             display: flex;
             align-items: center;
+            transition: 0.2s;
+        }
+        .action-btn:hover { background: rgba(255,255,255,0.1); }
+        .action-btn img { width: 20px; height: 20px; }
+
+        /* --- ADD BUTTON --- */
+        .add-char-container { margin-top: 30px; text-align: center; }
+        .btn-add {
+            background: var(--rucoy-blue);
             color: white;
-            text-decoration: none;
+            border: none;
+            padding: 12px 24px;
+            border-radius: 50px;
+            font-weight: bold;
             font-size: 16px;
             cursor: pointer;
+            box-shadow: 0 4px 10px rgba(60, 188, 252, 0.3);
         }
 
-        .drawer-item:hover { background-color: rgba(255, 255, 255, 0.1); }
-
-        .drawer-item img {
-            width: 24px;
-            height: 24px;
-            margin-right: 32px;
-            filter: brightness(0) invert(1); /* Deixa os ícones brancos */
+        /* --- MODAL FORM --- */
+        #modal-char {
+            position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+            background: rgba(0,0,0,0.9); display: none; z-index: 300;
+            align-items: center; justify-content: center; padding: 20px;
         }
-/* --- ESTILO DO SETTINGS NO RODAPÉ --- */
-.settings-highlight {
-    margin-top: auto; /* Joga o botão para o final da lista */
-    border-top: 1px solid rgba(255,255,255,0.1);
-    color: #000000 !important; /* Cor da letra (cinza escuro/preto) */
-    font-weight: bold;
-}
-
-.settings-highlight img {
-    filter: brightness(0) !important; /* Deixa o ícone preto */
-}
-        /* --- OVERLAY --- */
-        #overlay {
-            position: fixed;
-            top: 0; left: 0; width: 100%; height: 100%;
-            background: rgba(0,0,0,0.5);
-            display: none;
-            z-index: 150;
+        .modal-content {
+            background: #252525;
+            width: 100%;
+            max-width: 400px;
+            padding: 25px;
+            border-radius: 12px;
+            border: 1px solid #333;
         }
-
-        /* --- CONTEÚDO --- */
-        main { padding: 76px 20px 20px 20px; }
-
-        /* MODO APP (Esconde menus para exibir apenas conteúdo no Android) */
-        body.is-app header, body.is-app #drawer, body.is-app #overlay {
-            display: none !important;
+        .modal-content h2 { color: var(--rucoy-blue); margin-bottom: 20px; text-align: center; }
+        
+        .form-group { margin-bottom: 15px; }
+        .form-group label { display: block; font-size: 12px; color: #aaa; margin-bottom: 5px; }
+        .form-group input {
+            width: 100%;
+            padding: 12px;
+            background: #121212;
+            border: 1px solid #444;
+            color: white;
+            border-radius: 6px;
+            outline: none;
         }
-        body.is-app main { padding: 0; }
+        .form-group input:focus { border-color: var(--rucoy-blue); }
+
+        .modal-actions { display: flex; gap: 10px; margin-top: 20px; }
+        .btn-save { background: var(--rucoy-blue); flex: 1; padding: 12px; border: none; border-radius: 6px; color: white; font-weight: bold; cursor: pointer; }
+        .btn-cancel { background: #444; padding: 12px 20px; border: none; border-radius: 6px; color: white; cursor: pointer; }
+
+        body.is-app header, body.is-app #drawer, body.is-app #overlay { display: none !important; }
+        body.is-app main { padding: 20px; }
     </style>
 </head>
 <body>
@@ -145,36 +143,76 @@
 
     <header>
         <div class="top-bar-action" onclick="toggleMenu()">
-            <div class="menu-btn">
-                <img src="/res/icon/navnav.png" alt="menu">
-            </div>
+            <div class="menu-btn"><img src="/res/icon/navnav.png" alt="menu"></div>
             <span id="current-page-title">Profile</span>
         </div>
     </header>
 
     <nav id="drawer">
-    <div class="drawer-banner"></div>
-    <div class="drawer-list">
-        <a href="/" class="drawer-item"><img src="/res/icon/home.png"> Home</a>
-        <a href="/profile/" class="drawer-item"><img src="/res/icon/user.png"> Profile</a>
-        <a href="/wiki/" class="drawer-item"><img src="/res/icon/apps.png"> Wiki</a>
-        <a href="/tradeandsales/" class="drawer-item"><img src="/res/icon/change.png"> Trades & Sales</a>
-        <a href="/map/" class="drawer-item"><img src="/res/icon/map.png"> Map</a>
-        <a href="/players/" class="drawer-item"><img src="/res/icon/players.png"> Players</a>
-        <a href="/guild/" class="drawer-item"><img src="/res/icon/guild.png"> Guild</a>
-        <a href="/calculator/" class="drawer-item"><img src="/res/icon/calculator.png"> Calculator</a>
-        <a href="/updates/" class="drawer-item"><img src="/res/icon/update.png"> Updates</a>
-        
-        <a href="/settings/" class="drawer-item settings-highlight">
-            <img src="/res/icon/ic_cog.png"> Settings
-        </a>
-    </div>
-</nav>
+        <div class="drawer-banner"></div>
+        <div class="drawer-list">
+            <a href="/" class="drawer-item"><img src="/res/icon/home.png"> Home</a>
+            <a href="/profile/" class="drawer-item"><img src="/res/icon/user.png"> Profile</a>
+            <a href="/wiki/" class="drawer-item"><img src="/res/icon/apps.png"> Wiki</a>
+            <a href="/tradeandsales/" class="drawer-item"><img src="/res/icon/change.png"> Trades & Sales</a>
+            <a href="/map/" class="drawer-item"><img src="/res/icon/map.png"> Map</a>
+            <a href="/settings/" class="drawer-item settings-highlight"><img src="/res/icon/ic_cog.png"> Settings</a>
+        </div>
+    </nav>
 
-    <main id="main-content">
-        <h1>Profile</h1>
-        <p>Bem-vindo ao Nexus!</p>
+    <main>
+        <div id="welcome-msg">
+            <h1 style="font-size: 24px; color: var(--rucoy-blue);">My Characters</h1>
+            <p style="color: #888; font-size: 14px;">Manage your Rucoy Online profiles.</p>
+        </div>
+
+        <div id="charList" class="char-list">
+            <p id="no-chars" style="text-align: center; margin: 40px 0; color: #555;">No characters found.</p>
+        </div>
+
+        <div class="add-char-container">
+            <button id="btnAddChar" class="btn-add" onclick="openModal()">+ ADD CHARACTER</button>
+            <p id="limit-msg" style="font-size: 11px; color: #666; margin-top: 10px;">Limit: 0/10 characters</p>
+        </div>
     </main>
+
+    <div id="modal-char">
+        <div class="modal-content">
+            <h2>New Character</h2>
+            <div class="form-group">
+                <label>CHARACTER NAME</label>
+                <input type="text" id="inputName" placeholder="Ex: Brutal Bestiall" maxlength="15">
+            </div>
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px;">
+                <div class="form-group">
+                    <label>LEVEL</label>
+                    <input type="number" id="inputLv" placeholder="0">
+                </div>
+                <div class="form-group">
+                    <label>DEFENSE</label>
+                    <input type="number" id="inputDef" placeholder="0">
+                </div>
+            </div>
+            <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 10px;">
+                <div class="form-group">
+                    <label>MELEE</label>
+                    <input type="number" id="inputMelee" placeholder="0">
+                </div>
+                <div class="form-group">
+                    <label>DISTANCE</label>
+                    <input type="number" id="inputDist" placeholder="0">
+                </div>
+                <div class="form-group">
+                    <label>MAGIC</label>
+                    <input type="number" id="inputMag" placeholder="0">
+                </div>
+            </div>
+            <div class="modal-actions">
+                <button class="btn-cancel" onclick="closeModal()">CANCEL</button>
+                <button class="btn-save" onclick="salvarPersonagem()">SAVE PROFILE</button>
+            </div>
+        </div>
+    </div>
 
     <script>
         function toggleMenu() {
@@ -184,11 +222,23 @@
             overlay.style.display = drawer.classList.contains('active') ? 'block' : 'none';
         }
 
-        // Detecta se a página foi aberta com ?platform=app
-        const params = new URLSearchParams(window.location.search);
-        if (params.get('platform') === 'app') {
-            document.body.classList.add('is-app');
+        function openModal() { document.getElementById('modal-char').style.display = 'flex'; }
+        function closeModal() { document.getElementById('modal-char').style.display = 'none'; }
+
+        // Formata o nome conforme você pediu (Cada palavra inicia com maiúscula)
+        document.getElementById('inputName').addEventListener('input', function(e) {
+            let val = e.target.value;
+            e.target.value = val.toLowerCase().replace(/(^\w|\s\w)/g, m => m.toUpperCase());
+        });
+
+        function salvarPersonagem() {
+            // Aqui entra a lógica de enviar o JSON para o seu servidor no PC
+            alert("Enviando para o servidor do David para verificação...");
+            closeModal();
         }
+
+        const params = new URLSearchParams(window.location.search);
+        if (params.get('platform') === 'app') { document.body.classList.add('is-app'); }
     </script>
 </body>
 </html>
