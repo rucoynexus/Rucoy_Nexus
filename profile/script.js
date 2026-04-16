@@ -102,10 +102,13 @@ async function carregarPerfis() {
 async function salvarPersonagem() {
     const btn = document.querySelector('.btn-save');
     const charName = document.getElementById('inputName').value;
-    const email = getUserEmail();
+    
+    // Pegamos o TOKEN e o EMAIL
+    const token = localStorage.getItem("userToken");
+    const email = getUserEmail(); 
 
-    if (!email) {
-        showToast("Error: User session not found.", "error");
+    if (!token || !email) {
+        showToast("Error: User session not found. Please log in again.", "error");
         return;
     }
 
@@ -118,7 +121,8 @@ async function salvarPersonagem() {
     btn.innerText = "Saving...";
 
     const charData = {
-        email: email, // AGORA ENVIA O EMAIL DE QUEM ESTÁ LOGADO
+        token: token,  // ENVIA O TOKEN PARA VALIDAÇÃO
+        email: email,  // ENVIA O EMAIL PARA CONFERÊNCIA
         name: charName,
         lv: document.getElementById('inputLv').value || 0,
         def: document.getElementById('inputDef').value || 0,
@@ -141,6 +145,7 @@ async function salvarPersonagem() {
             closeModal();
             carregarPerfis(); 
         } else {
+            // Se o token for inválido, o erro do Python aparecerá aqui
             showToast(result.message || "Server error.", "error");
         }
     } catch (error) {
