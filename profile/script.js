@@ -51,11 +51,21 @@ async function carregarPerfis() {
     const charList = document.getElementById('charList');
     const token = localStorage.getItem("userToken");
 
-    if (!token) return;
+    if (!token) {
+        window.location.href = "login.html";
+        return;
+    }
 
     try {
         const response = await fetch(`${API_BASE_URL}/get_profiles?token=${token}`);
-        const result = await response.json();
+        
+        // Se o servidor retornar 401, o token expirou
+        if (response.status === 401) {
+            handleAuthError();
+            return;
+        }
+
+        const result = await response.json(); // Declarei apenas UMA vez aqui
 
         if (result.status === "success") {
             const profiles = result.data;
@@ -74,12 +84,10 @@ async function carregarPerfis() {
                         <button class="btn-action btn-view" onclick="verPerfil('${char.name}')">
                             <img src="/res/icon/eye.png">
                         </button>
-                        
                         ${!char.is_automatic ? `
                         <button class="btn-action btn-edit" onclick="abrirEdicao('${char.name}', ${char.level}, ${char.def}, ${char.melee}, ${char.dist}, ${char.mag})">
                             <img src="/res/icon/user-edit.png">
                         </button>` : ''}
-                        
                         <button class="btn-action btn-delete" onclick="deletarPerfil('${char.name}')">
                             <img src="/res/icon/trash.png">
                         </button>
@@ -89,7 +97,8 @@ async function carregarPerfis() {
             });
         }
     } catch (e) {
-        showToast("Error loading profiles.", "error");
+        console.error("Erro no fetch:", e);
+        showToast("Erro de conexão com o servidor.", "error");
     }
 }
 

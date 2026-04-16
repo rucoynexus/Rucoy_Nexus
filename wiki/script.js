@@ -287,13 +287,13 @@ window.addEventListener("scroll", () => {
 
 async function carregar() {
     try {
-        // Chamada para a sua API oficial no seu PC via Cloudflare
-        const apiURL = "https://api.rucoynexus.com/get_items";
+        // Agora o 'api.rucoynexus.com' aponta para o servidor unificado
+        const apiURL = "https://api.rucoynexus.com/get_items"; 
 
         const [resItems, resSprites, resPrecos] = await Promise.all([
             fetch("./items.json"), 
             fetch("./items_png.json"),
-            fetch(apiURL).catch(() => null) // Busca da sua nova API
+            fetch(apiURL).catch(() => null) 
         ]);
 
         items = await resItems.json();
