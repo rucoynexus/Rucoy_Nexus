@@ -19,40 +19,26 @@ document.getElementById('inputName').addEventListener('input', function(e) {
     e.target.value = val.toLowerCase().replace(/(^\w|\s\w)/g, m => m.toUpperCase());
 });
 
-function salvarPersonagem() {
-    // Pegando os valores dos inputs para futura integração
-    const charData = {
-        name: document.getElementById('inputName').value,
-        lv: document.getElementById('inputLv').value,
-        def: document.getElementById('inputDef').value,
-        melee: document.getElementById('inputMelee').value,
-        dist: document.getElementById('inputDist').value,
-        mag: document.getElementById('inputMag').value
-    };
-
-    console.log("Dados capturados:", charData);
-    alert("Enviando para o servidor do David para verificação...");
-    closeModal();
-}
-
-// Detecta modo App
-const params = new URLSearchParams(window.location.search);
-if (params.get('platform') === 'app') { 
-    document.body.classList.add('is-app'); 
-}
-
-// SUBSTITUA pelo seu endereço do Cloudflare (ex: https://api.rucoynexus.com)
+// Endereço do seu túnel Cloudflare para o servidor Python
 const API_BASE_URL = "https://api.rucoynexus.com";
 
 async function salvarPersonagem() {
+    const charName = document.getElementById('inputName').value;
+    
+    // Pequena validação antes de enviar
+    if (!charName) {
+        alert("Por favor, digite o nome do personagem.");
+        return;
+    }
+
     const charData = {
-        email: "david@test.com", // Provisório
-        name: document.getElementById('inputName').value,
-        lv: document.getElementById('inputLv').value,
-        def: document.getElementById('inputDef').value,
-        melee: document.getElementById('inputMelee').value,
-        dist: document.getElementById('inputDist').value,
-        mag: document.getElementById('inputMag').value
+        email: "david@test.com", // Provisório para testes
+        name: charName,
+        lv: document.getElementById('inputLv').value || 0,
+        def: document.getElementById('inputDef').value || 0,
+        melee: document.getElementById('inputMelee').value || 0,
+        dist: document.getElementById('inputDist').value || 0,
+        mag: document.getElementById('inputMag').value || 0
     };
 
     try {
@@ -62,23 +48,23 @@ async function salvarPersonagem() {
             body: JSON.stringify(charData)
         });
 
-        // Verifica se a resposta foi ok antes de tentar ler o JSON
-        if (!response.ok) {
-            const errorData = await response.json();
-            throw new Error(errorData.message || "Erro desconhecido no servidor");
-        }
-
         const result = await response.json();
 
-        if (result.status === "success") {
+        if (response.ok && result.status === "success") {
             alert("Sucesso: " + result.message);
             closeModal();
-            // Futuramente: atualizarLista();
+            // A lista será atualizada automaticamente no futuro quando fizermos o GET
         } else {
-            alert("Erro: " + result.message);
+            alert("Erro do Servidor: " + (result.message || "Falha ao salvar"));
         }
     } catch (error) {
         console.error("Erro na requisição:", error);
-        alert("Não foi possível conectar ao servidor. Verifique se o Cloudflared está rodando no seu PC.");
+        alert("Erro: Não foi possível conectar ao servidor. Verifique se o CMD do Cloudflared e o Python estão ativos.");
     }
+}
+
+// Detecta modo App (AndLua+ IDE)
+const params = new URLSearchParams(window.location.search);
+if (params.get('platform') === 'app') { 
+    document.body.classList.add('is-app'); 
 }
