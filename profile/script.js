@@ -1,5 +1,8 @@
 const API_BASE_URL = "https://api.rucoynexus.com";
-
+const params = new URLSearchParams(window.location.search);
+if (params.get('platform') === 'app') {
+    document.body.classList.add('is-app');
+}
 // --- UTILITÁRIOS ---
 function parseJwt(token) {
     try {

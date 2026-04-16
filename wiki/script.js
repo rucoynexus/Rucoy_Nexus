@@ -6,7 +6,10 @@ let pagina = 0;
 const POR_PAGINA = 60; 
 let isLoading = false;
 let meuGrafico = null;
-
+const params = new URLSearchParams(window.location.search);
+if (params.get('platform') === 'app') {
+    document.body.classList.add('is-app');
+}
 function toggleMenu() {
     const drawer = document.getElementById('drawer');
     const overlay = document.getElementById('overlay');
