@@ -1,14 +1,18 @@
 const API_BASE_URL = "https://api.rucoynexus.com";
 
-// Função para pegar o e-mail real do usuário logado
+// PEGA O EMAIL DA PESSOA LOGADA NO MOMENTO
 function getUserEmail() {
     try {
-        // Tenta pegar os dados do usuário salvos pelo seu sistema de login
-        const user = JSON.parse(localStorage.getItem("userData")); 
-        return user ? user.email : "davidangeloficial@gmail.com"; 
+        // Busca o objeto de usuário que o seu auth.js salvou no login
+        const userData = JSON.parse(localStorage.getItem("userData"));
+        if (userData && userData.email) {
+            return userData.email;
+        }
     } catch (e) {
-        return "davidangeloficial@gmail.com";
+        console.error("Erro ao recuperar dados do usuário:", e);
     }
+    // Se não encontrar (usuário não logado), redireciona ou retorna erro
+    return null;
 }
 
 function toggleMenu() {
@@ -26,14 +30,15 @@ function closeModal() {
     document.getElementById('modal-char').style.display = 'none'; 
 }
 
-document.getElementById('inputName').addEventListener('input', function(e) {
-    let val = e.target.value;
-    e.target.value = val.toLowerCase().replace(/(^\w|\s\w)/g, m => m.toUpperCase());
-});
-
+// FUNÇÃO PARA CARREGAR OS CARDS DA PESSOA LOGADA
 async function carregarPerfis() {
     const charList = document.getElementById('charList');
-    const email = getUserEmail(); // AGORA USA O EMAIL REAL
+    const email = getUserEmail();
+
+    if (!email) {
+        showToast("Please log in to see your profiles.", "error");
+        return;
+    }
 
     try {
         const response = await fetch(`${API_BASE_URL}/get_profiles?email=${email}`);
@@ -77,13 +82,19 @@ async function carregarPerfis() {
             document.getElementById('btnAddChar').style.display = mCount >= 10 ? 'none' : 'block';
         }
     } catch (e) {
-        console.log("Error loading profiles");
+        showToast("Server currently unavailable.", "error");
     }
 }
 
 async function salvarPersonagem() {
     const btn = document.querySelector('.btn-save');
     const charName = document.getElementById('inputName').value;
+    const email = getUserEmail();
+
+    if (!email) {
+        showToast("Error: User session not found.", "error");
+        return;
+    }
 
     if (!charName) {
         showToast("Please enter a character name.", "error");
@@ -94,7 +105,7 @@ async function salvarPersonagem() {
     btn.innerText = "Saving...";
 
     const charData = {
-        email: getUserEmail(), // ENVIANDO O EMAIL REAL PARA O BANCO
+        email: email, // AGORA ENVIA O EMAIL DE QUEM ESTÁ LOGADO
         name: charName,
         lv: document.getElementById('inputLv').value || 0,
         def: document.getElementById('inputDef').value || 0,
