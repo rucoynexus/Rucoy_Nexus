@@ -41,9 +41,12 @@ if (params.get('platform') === 'app') {
     document.body.classList.add('is-app'); 
 }
 
+// SUBSTITUA pelo seu endereço do Cloudflare (ex: https://api.rucoynexus.com)
+const API_BASE_URL = "https://api.rucoynexus.com";
+
 async function salvarPersonagem() {
     const charData = {
-        email: "david@test.com", // Provisório enquanto não integramos o Login
+        email: "david@test.com", // Provisório
         name: document.getElementById('inputName').value,
         lv: document.getElementById('inputLv').value,
         def: document.getElementById('inputDef').value,
@@ -52,19 +55,30 @@ async function salvarPersonagem() {
         mag: document.getElementById('inputMag').value
     };
 
-    const response = await fetch('http://localhost:5000/save_manual_profile', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(charData)
-    });
+    try {
+        const response = await fetch(`${API_BASE_URL}/save_manual_profile`, {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify(charData)
+        });
 
-    const result = await response.json();
+        // Verifica se a resposta foi ok antes de tentar ler o JSON
+        if (!response.ok) {
+            const errorData = await response.json();
+            throw new Error(errorData.message || "Erro desconhecido no servidor");
+        }
 
-    if (result.status === "success") {
-        alert("Salvo com sucesso!");
-        closeModal();
-        // Aqui você chamaria uma função para atualizar a lista na tela
-    } else {
-        alert("Erro: " + result.message);
+        const result = await response.json();
+
+        if (result.status === "success") {
+            alert("Sucesso: " + result.message);
+            closeModal();
+            // Futuramente: atualizarLista();
+        } else {
+            alert("Erro: " + result.message);
+        }
+    } catch (error) {
+        console.error("Erro na requisição:", error);
+        alert("Não foi possível conectar ao servidor. Verifique se o Cloudflared está rodando no seu PC.");
     }
 }
