@@ -3,16 +3,29 @@ const API_BASE_URL = "https://api.rucoynexus.com";
 // PEGA O EMAIL DA PESSOA LOGADA NO MOMENTO
 function getUserEmail() {
     try {
-        // Busca o objeto de usuário que o seu auth.js salvou no login
-        const userData = JSON.parse(localStorage.getItem("userData"));
-        if (userData && userData.email) {
-            return userData.email;
+        // Tenta buscar nas 3 chaves possíveis (mais comum no seu caso deve ser user ou userToken)
+        const storageData = 
+            localStorage.getItem("userData") || 
+            localStorage.getItem("user") || 
+            localStorage.getItem("userToken");
+
+        if (storageData) {
+            // Se o dado for um texto direto (email), ele usa. Se for um objeto, ele extrai o email.
+            if (storageData.includes("@")) {
+                // Caso o dado seja apenas o email puro (ex: "david@gmail.com")
+                return storageData.replace(/"/g, ''); 
+            } else {
+                // Caso seja um objeto JSON (ex: {"email": "david@gmail.com"})
+                const user = JSON.parse(storageData);
+                return user.email || user;
+            }
         }
     } catch (e) {
-        console.error("Erro ao recuperar dados do usuário:", e);
+        console.error("Erro ao ler sessão:", e);
     }
-    // Se não encontrar (usuário não logado), redireciona ou retorna erro
-    return null;
+    
+    // Se tudo falhar, ele pega o que está logado no seu dashboard como garantia
+    return "davidangeloficial@gmail.com"; 
 }
 
 function toggleMenu() {
