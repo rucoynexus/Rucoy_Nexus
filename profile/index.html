@@ -41,13 +41,17 @@
             <p style="color: #888; font-size: 14px;">Manage your Rucoy Online profiles.</p>
         </div>
 
-        <div id="charList" class="char-list">
+        <div class="status-bar">
+            <span id="manualLimit">Manual: 0/10</span>
+            <span id="autoLimit">Automatic: 0</span>
+        </div>
+
+        <div id="charList" class="char-grid">
             <p id="no-chars" style="text-align: center; margin: 40px 0; color: #555;">No characters found.</p>
         </div>
 
         <div class="add-char-container">
             <button id="btnAddChar" class="btn-add" onclick="openModal()">+ ADD CHARACTER</button>
-            <p id="limit-msg" style="font-size: 11px; color: #666; margin-top: 10px;">Limit: 0/10 characters</p>
         </div>
     </main>
 
