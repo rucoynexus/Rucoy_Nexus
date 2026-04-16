@@ -175,6 +175,7 @@ async function salvarPersonagem() {
 }
 
 function verPerfil(name) {
+    // Se o character.html estiver na mesma pasta que o index:
     window.location.href = `character.html?name=${name}`;
 }
 

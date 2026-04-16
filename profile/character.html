@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Character Details - Rucoy Nexus</title>
+    <link rel="stylesheet" href="style.css"> <style>
+        .stats-container { margin-top: 20px; display: grid; gap: 15px; }
+        .stat-box { 
+            background: rgba(255,255,255,0.05); 
+            padding: 20px; 
+            border-radius: 15px; 
+            border: 1px solid var(--rucoy-blue);
+            display: flex; justify-content: space-between;
+        }
+        .stat-label { color: #aaa; text-transform: uppercase; font-size: 12px; }
+        .stat-value { font-size: 20px; font-weight: bold; color: var(--white); }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="top-bar-action" onclick="window.history.back()">
+            <span style="font-size: 24px; margin-right: 10px;">←</span>
+            <span id="char-title">Loading...</span>
+        </div>
+    </header>
+
+    <main>
+        <div class="stats-container" id="stats-display">
+            </div>
+    </main>
+
+    <script>
+        const API_BASE_URL = "https://api.rucoynexus.com";
+
+        async function loadDetails() {
+            const params = new URLSearchParams(window.location.search);
+            const charName = params.get('name');
+            const token = localStorage.getItem("userToken");
+
+            if (!charName || !token) {
+                window.location.href = "index.html";
+                return;
+            }
+
+            try {
+                const response = await fetch(`${API_BASE_URL}/get_character_details?token=${token}&name=${charName}`);
+                const result = await response.json();
+
+                if (result.status === "success") {
+                    const char = result.data;
+                    document.getElementById('char-title').innerText = char.name;
+                    
+                    const html = `
+                        <div class="stat-box"><div><p class="stat-label">Level</p><p class="stat-value">${char.level}</p></div></div>
+                        <div class="stat-box"><div><p class="stat-label">Melee</p><p class="stat-value">${char.melee}</p></div></div>
+                        <div class="stat-box"><div><p class="stat-label">Distance</p><p class="stat-value">${char.dist}</p></div></div>
+                        <div class="stat-box"><div><p class="stat-label">Magic</p><p class="stat-value">${char.mag}</p></div></div>
+                        <div class="stat-box"><div><p class="stat-label">Defense</p><p class="stat-value">${char.def}</p></div></div>
+                    `;
+                    document.getElementById('stats-display').innerHTML = html;
+                } else {
+                    alert("Erro: " + result.message);
+                }
+            } catch (e) {
+                console.error(e);
+            }
+        }
+
+        window.onload = loadDetails;
+    </script>
+</body>
+</html>
