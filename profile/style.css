@@ -59,17 +59,22 @@ header {
 main { padding: 76px 15px 20px 15px; max-width: 600px; margin: 0 auto; }
 
 /* --- LISTA DE PERSONAGENS (PILL LAYOUT) --- */
+/* Container da lista - Onde o espaço entre itens é controlado */
 .char-list { 
-    margin-top: 20px; 
+    margin-top: 25px; /* Espaço entre os contadores do topo e o primeiro item */
     display: flex;
     flex-direction: column;
-    gap: 15px;
+    gap: 16px; /* Aumentado para 16px para dar respiro entre os itens */
+    padding-bottom: 20px; /* Espaço extra no final da lista */
 }
 
+/* Opcional: Adicionar uma margem externa para garantir que não encostem nas bordas */
 .char-card {
+    /* ... mantenha o código anterior ... */
+    margin: 0 5px; 
     background: var(--card-bg);
-    border: 1px solid rgba(255, 255, 255, 0.4); /* Borda branca simples sutil */
-    border-radius: 50px; /* Formato de pílula igual ao botão */
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    border-radius: 50px;
     padding: 10px 25px;
     height: 60px;
     display: flex;
