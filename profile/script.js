@@ -40,3 +40,31 @@ const params = new URLSearchParams(window.location.search);
 if (params.get('platform') === 'app') { 
     document.body.classList.add('is-app'); 
 }
+
+async function salvarPersonagem() {
+    const charData = {
+        email: "david@test.com", // Provisório enquanto não integramos o Login
+        name: document.getElementById('inputName').value,
+        lv: document.getElementById('inputLv').value,
+        def: document.getElementById('inputDef').value,
+        melee: document.getElementById('inputMelee').value,
+        dist: document.getElementById('inputDist').value,
+        mag: document.getElementById('inputMag').value
+    };
+
+    const response = await fetch('http://localhost:5000/save_manual_profile', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(charData)
+    });
+
+    const result = await response.json();
+
+    if (result.status === "success") {
+        alert("Salvo com sucesso!");
+        closeModal();
+        // Aqui você chamaria uma função para atualizar a lista na tela
+    } else {
+        alert("Erro: " + result.message);
+    }
+}
