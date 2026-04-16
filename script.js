@@ -22,7 +22,7 @@
     }
 
     // 2. PROTEÇÃO DE ACESSO (COMENTADO PARA DESATIVAR) 🛡️
-    /* const token = localStorage.getItem("userToken");
+     const token = localStorage.getItem("userToken");
     
     if (!token && !window.location.pathname.includes('/account/')) {
         const loginUrl = isApp ? "/account/?platform=app" : "/account/";
@@ -35,7 +35,7 @@
             welcomeElement.innerHTML = `Olá, <strong>${userData.name}</strong>! 👋<br><span style="color: #bbb; font-size: 14px;">Logado como: ${userData.email}</span>`;
         }
     }
-    */
+    
 
     // 3. MENU DRAWER
     function toggleMenu() {
