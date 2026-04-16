@@ -4,8 +4,9 @@
     --rucoy-drawer-bg: #2173b3;
     --white: #F3F3F3;
     --card-bg: #1e1e1e;
-    --danger: #ff4d4d;
-    --success: #00ff41;
+    --danger: #ff4d4d;    /* Vermelho para o Trash */
+    --success: #2ecc71;   /* Verde para o Olho */
+    --info: #3498db;      /* Azul para o Edit */
 }
 
 * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Roboto', sans-serif; }
@@ -49,45 +50,71 @@ header {
     color: #000000 !important;
     font-weight: bold;
 }
-
 .settings-highlight img { filter: brightness(0) !important; }
 
 #overlay { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.5); display: none; z-index: 150; }
 
 /* --- PROFILE CONTENT --- */
 main { padding: 76px 15px 20px 15px; max-width: 600px; margin: 0 auto; }
-.char-list { margin-top: 20px; }
+
+/* --- LISTA DE PERSONAGENS (O NOVO LAYOUT) --- */
+.char-list { 
+    margin-top: 20px; 
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
 .char-card {
     background: var(--card-bg);
-    border-radius: 8px;
-    padding: 15px;
-    margin-bottom: 12px;
+    border-radius: 12px; /* Bordas arredondadas conforme pedido */
+    padding: 12px 18px;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    border-left: 4px solid var(--rucoy-blue);
-    box-shadow: 0 4px 6px rgba(0,0,0,0.2);
+    border: 1px solid #333;
+    transition: 0.3s ease;
 }
 
-.char-info { display: flex; flex-direction: column; }
+.char-card:hover { border-color: var(--rucoy-blue); }
+
+.char-info-left { display: flex; flex-direction: column; }
 .char-name { font-size: 18px; font-weight: bold; color: var(--white); }
-.char-stats-preview { font-size: 12px; color: #888; margin-top: 4px; }
 
-.char-actions { display: flex; gap: 10px; }
-.action-btn {
-    background: rgba(255,255,255,0.05);
-    border: none;
-    padding: 8px;
-    border-radius: 6px;
-    cursor: pointer;
+/* Container dos botões à direita */
+.char-actions-right {
     display: flex;
-    align-items: center;
-    transition: 0.2s;
+    gap: 8px;
 }
-.action-btn:hover { background: rgba(255,255,255,0.1); }
-.action-btn img { width: 20px; height: 20px; }
 
-/* --- ADD BUTTON --- */
+/* Estilo base dos botões de ação */
+.btn-action {
+    width: 40px;
+    height: 40px;
+    border-radius: 8px;
+    border: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    transition: transform 0.2s, opacity 0.2s;
+}
+
+.btn-action img { 
+    width: 22px; 
+    height: 22px; 
+    filter: brightness(0) invert(1); /* Ícones brancos */
+}
+
+.btn-action:active { transform: scale(0.9); }
+.btn-action:hover { opacity: 0.85; }
+
+/* Cores específicas solicitadas */
+.btn-view { background-color: var(--success); }   /* Verde */
+.btn-edit { background-color: var(--info); }      /* Azul */
+.btn-delete { background-color: var(--danger); }  /* Vermelho */
+
+/* --- BOTÃO DE ADICIONAR --- */
 .add-char-container { margin-top: 30px; text-align: center; }
 .btn-add {
     background: var(--rucoy-blue);
@@ -134,9 +161,11 @@ main { padding: 76px 15px 20px 15px; max-width: 600px; margin: 0 auto; }
 .btn-save { background: var(--rucoy-blue); flex: 1; padding: 12px; border: none; border-radius: 6px; color: white; font-weight: bold; cursor: pointer; }
 .btn-cancel { background: #444; padding: 12px 20px; border: none; border-radius: 6px; color: white; cursor: pointer; }
 
+/* Ajustes para App */
 body.is-app header, body.is-app #drawer, body.is-app #overlay { display: none !important; }
 body.is-app main { padding: 20px; }
-/* Notificação flutuante no canto da tela */
+
+/* --- TOAST NOTIFICATIONS --- */
 .custom-toast {
     position: fixed;
     top: 20px;
@@ -149,59 +178,10 @@ body.is-app main { padding: 20px; }
     animation: slideIn 0.5s ease-out;
     box-shadow: 0 4px 15px rgba(0,0,0,0.3);
 }
-
-.success { background-color: #2ecc71; border-left: 5px solid #27ae60; }
-.error { background-color: #e74c3c; border-left: 5px solid #c0392b; }
+.success-toast { background-color: #2ecc71; border-left: 5px solid #27ae60; }
+.error-toast { background-color: #e74c3c; border-left: 5px solid #c0392b; }
 
 @keyframes slideIn {
     from { transform: translateX(100%); opacity: 0; }
     to { transform: translateX(0); opacity: 1; }
 }
-
-.characters-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-    gap: 15px;
-    margin: 20px 0;
-}
-
-.char-card {
-    background: #1a1a1a;
-    border: 1px solid #333;
-    border-radius: 10px;
-    padding: 15px;
-    position: relative;
-    transition: 0.3s;
-}
-
-.char-card:hover { border-color: #00b4ff; }
-
-.char-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    border-bottom: 1px solid #333;
-    padding-bottom: 10px;
-    margin-bottom: 10px;
-}
-
-.char-name { font-weight: bold; color: #fff; font-size: 1.1em; }
-
-/* Badge para indicar se é Auto ou Manual */
-.badge {
-    font-size: 0.7em;
-    padding: 2px 6px;
-    border-radius: 4px;
-    text-transform: uppercase;
-}
-.badge-auto { background: #9b59b6; color: #fff; }
-.badge-manual { background: #34495e; color: #fff; }
-
-.char-stats-mini {
-    display: flex;
-    gap: 10px;
-    font-size: 0.9em;
-}
-
-.stat-item { display: flex; align-items: center; gap: 5px; }
-.stat-item img { width: 16px; height: 16px; }

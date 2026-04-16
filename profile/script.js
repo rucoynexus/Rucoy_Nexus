@@ -51,65 +51,63 @@ function isTokenExpired(token) {
 }
 
 async function carregarPerfis() {
+    const charList = document.getElementById('charList');
     const token = localStorage.getItem("userToken");
 
-    // Se o token não existe OU se já expirou, desloga o cara
-    if (!token || isTokenExpired(token)) {
-        console.warn("Sessão expirada. Redirecionando...");
-        localStorage.removeItem("userToken");
-        window.location.href = "/account/"; // Manda de volta pro login
-        return;
-    }
-
-    // ... resto do seu código fetch ...
+    if (!token) return;
 
     try {
-        // Enviamos o token na URL (ou no header, mas na URL é mais simples para GET)
         const response = await fetch(`${API_BASE_URL}/get_profiles?token=${token}`);
         const result = await response.json();
-        
-        // ... resto da lógica de exibir os cards ...
 
         if (result.status === "success") {
             const profiles = result.data;
             charList.innerHTML = ""; 
 
-            let mCount = 0;
-            let aCount = 0;
-
             if (profiles.length === 0) {
-                charList.innerHTML = '<p id="no-chars" style="text-align: center; margin: 40px 0; color: #555;">No characters found.</p>';
+                charList.innerHTML = '<p style="text-align: center; color: #666;">No characters found.</p>';
+                return;
             }
 
             profiles.forEach(char => {
-                if(char.is_automatic) aCount++; else mCount++;
-                
                 const card = `
-                <div class="char-card">
-                    <div class="char-card-header">
+                <div class="char-card-list">
+                    <div class="char-info-left">
                         <span class="name">${char.name}</span>
-                        <span class="badge ${char.is_automatic ? 'auto' : 'manual'}">${char.is_automatic ? 'Auto' : 'Manual'}</span>
                     </div>
-                    <div class="char-card-body">
-                        <div class="lv-info">Level ${char.level}</div>
-                        <div class="stats-row">
-                            <span><img src="/res/icon/eye.png"> ${char.melee}</span>
-                            <span><img src="/res/icon/eye.png"> ${char.dist}</span>
-                            <span><img src="/res/icon/eye.png"> ${char.mag}</span>
-                            <span><img src="/res/icon/eye.png"> ${char.def}</span>
-                        </div>
+                    <div class="char-actions-right">
+                        <button class="btn-action btn-view" onclick="verPerfil('${char.name}')" title="View Profile">
+                            <img src="/res/icon/eye.png">
+                        </button>
+                        
+                        <button class="btn-action btn-edit" onclick="abrirEdicao('${char.name}')" title="Edit Profile">
+                            <img src="/res/icon/user-edit.png">
+                        </button>
+                        
+                        <button class="btn-action btn-delete" onclick="deletarPerfil('${char.name}')" title="Delete Profile">
+                            <img src="/res/icon/trash.png">
+                        </button>
                     </div>
                 </div>`;
                 charList.innerHTML += card;
             });
-
-            document.getElementById('manualLimit').innerText = `Manual: ${mCount}/10`;
-            document.getElementById('autoLimit').innerText = `Automatic: ${aCount}`;
-            document.getElementById('btnAddChar').style.display = mCount >= 10 ? 'none' : 'block';
         }
     } catch (e) {
-        showToast("Server currently unavailable.", "error");
+        showToast("Error loading profiles.", "error");
     }
+}
+
+// Funções de clique
+function verPerfil(name) {
+    window.location.href = `character.html?name=${name}`;
+}
+
+async function deletarPerfil(name) {
+    if (!confirm(`Are you sure you want to delete ${name}?`)) return;
+    
+    const token = localStorage.getItem("userToken");
+    // Aqui você faria o fetch para uma rota de DELETE no Python
+    showToast(`Deleting ${name}...`, "info");
 }
 
 async function salvarPersonagem() {
