@@ -329,7 +329,12 @@ async function carregar() {
         console.error("❌ Erro ao carregar arquivos:", e); 
     }
 }
-
+// Detecta se a página foi aberta com ?platform=app
+        const params = new URLSearchParams(window.location.search);
+        if (params.get('platform') === 'app') {
+            document.body.classList.add('is-app');
+        }
+        
 document.getElementById("search").addEventListener("input", aplicarFiltro);
 document.getElementById("rarityFilter").addEventListener("change", aplicarFiltro);
 carregar();

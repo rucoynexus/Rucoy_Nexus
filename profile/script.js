@@ -209,4 +209,10 @@ function showToast(message, type) {
     }, 3500);
 }
 
+// Detecta se a página foi aberta com ?platform=app
+        const params = new URLSearchParams(window.location.search);
+        if (params.get('platform') === 'app') {
+            document.body.classList.add('is-app');
+        }
+        
 window.onload = carregarPerfis;
