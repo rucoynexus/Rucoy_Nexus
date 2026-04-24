@@ -48,17 +48,18 @@
                 const result = await response.json();
 
                 if (result.status === "success") {
-                    const char = result.data;
-                    document.getElementById('char-title').innerText = char.name;
-                    
-                    const html = `
-                        <div class="stat-box"><div><p class="stat-label">Level</p><p class="stat-value">${char.level}</p></div></div>
-                        <div class="stat-box"><div><p class="stat-label">Melee</p><p class="stat-value">${char.melee}</p></div></div>
-                        <div class="stat-box"><div><p class="stat-label">Distance</p><p class="stat-value">${char.dist}</p></div></div>
-                        <div class="stat-box"><div><p class="stat-label">Magic</p><p class="stat-value">${char.mag}</p></div></div>
-                        <div class="stat-box"><div><p class="stat-label">Defense</p><p class="stat-value">${char.def}</p></div></div>
-                    `;
-                    document.getElementById('stats-display').innerHTML = html;
+                    // Dentro da função loadDetails() no character.html
+const char = result.data;
+document.getElementById('char-title').innerText = char.name;
+
+const html = `
+    <div class="stat-box"><div><p class="stat-label">Level</p><p class="stat-value">${char.level}</p></div></div>
+    <div class="stat-box"><div><p class="stat-label">Melee</p><p class="stat-value">${char.melee}</p></div></div>
+    <div class="stat-box"><div><p class="stat-label">Distance</p><p class="stat-value">${char.distance}</p></div></div>
+    <div class="stat-box"><div><p class="stat-label">Magic</p><p class="stat-value">${char.magic}</p></div></div>
+    <div class="stat-box"><div><p class="stat-label">Defense</p><p class="stat-value">${char.defense}</p></div></div>
+`;
+document.getElementById('stats-display').innerHTML = html;
                 } else {
                     alert("Erro: " + result.message);
                 }

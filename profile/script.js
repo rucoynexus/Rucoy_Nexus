@@ -143,7 +143,6 @@ async function salvarPersonagem() {
     const btn = document.querySelector('.btn-save');
     const charName = document.getElementById('inputName').value;
     const token = localStorage.getItem("userToken");
-    const email = getUserEmail(); 
 
     if (!charName) { showToast("Enter a name.", "error"); return; }
 
@@ -152,13 +151,12 @@ async function salvarPersonagem() {
 
     const charData = {
         token: token,
-        email: email,
         name: charName,
-        lv: document.getElementById('inputLv').value || 0,
-        def: document.getElementById('inputDef').value || 0,
-        melee: document.getElementById('inputMelee').value || 0,
-        dist: document.getElementById('inputDist').value || 0,
-        mag: document.getElementById('inputMag').value || 0
+        lv: parseInt(document.getElementById('inputLv').value) || 0,
+        def: parseInt(document.getElementById('inputDef').value) || 0,
+        melee: parseInt(document.getElementById('inputMelee').value) || 0,
+        distance: parseInt(document.getElementById('inputDist').value) || 0, // Mudado de 'dist' para 'distance'
+        magic: parseInt(document.getElementById('inputMag').value) || 0    // Mudado de 'mag' para 'magic'
     };
 
     try {
