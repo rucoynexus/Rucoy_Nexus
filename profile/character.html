@@ -4,24 +4,35 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Character Details - Rucoy Nexus</title>
-    <link rel="stylesheet" href="style.css"> <style>
-        .stats-container { margin-top: 20px; display: grid; gap: 15px; }
+    <link rel="stylesheet" href="style.css"> 
+    <style>
+        .stats-container { margin-top: 20px; display: grid; gap: 15px; padding: 15px; }
         .stat-box { 
             background: rgba(255,255,255,0.05); 
             padding: 20px; 
             border-radius: 15px; 
             border: 1px solid var(--rucoy-blue);
-            display: flex; justify-content: space-between;
+            display: flex; 
+            justify-content: space-between;
+            align-items: center;
         }
-        .stat-label { color: #aaa; text-transform: uppercase; font-size: 12px; }
-        .stat-value { font-size: 20px; font-weight: bold; color: var(--white); }
+        .stat-label { color: #aaa; text-transform: uppercase; font-size: 12px; margin-bottom: 5px; }
+        .stat-value { font-size: 22px; font-weight: bold; color: #fff; margin: 0; }
+        
+        /* Estilo para quando for automático e tiver dados extras */
+        .info-extra { 
+            font-size: 14px; 
+            color: var(--rucoy-blue); 
+            margin-top: 10px;
+            display: block;
+        }
     </style>
 </head>
 <body>
     <header>
-        <div class="top-bar-action" onclick="window.history.back()">
-            <span style="font-size: 24px; margin-right: 10px;">←</span>
-            <span id="char-title">Loading...</span>
+        <div class="top-bar-action" onclick="window.location.href='index.html'" style="cursor: pointer; display: flex; align-items: center; padding: 15px;">
+            <span style="font-size: 24px; margin-right: 15px;">←</span>
+            <span id="char-title" style="font-size: 20px; font-weight: bold;">Loading...</span>
         </div>
     </header>
 
@@ -35,36 +46,62 @@
 
         async function loadDetails() {
             const params = new URLSearchParams(window.location.search);
-            const charName = params.get('name');
-            const token = localStorage.getItem("userToken");
-
-            if (!charName || !token) {
+            const charId = params.get('id'); // AGORA BUSCA POR ID
+            
+            // Se não houver ID na URL, volta para a lista
+            if (!charId) {
                 window.location.href = "index.html";
                 return;
             }
 
             try {
-                const response = await fetch(`${API_BASE_URL}/get_character_details?token=${token}&name=${charName}`);
+                // Chamada para a nova rota que criamos no Flask usando o ID
+                const response = await fetch(`${API_BASE_URL}/get_character_details?id=${charId}`);
                 const result = await response.json();
 
                 if (result.status === "success") {
-                    // Dentro da função loadDetails() no character.html
-const char = result.data;
-document.getElementById('char-title').innerText = char.name;
+                    const char = result.data;
+                    document.getElementById('char-title').innerText = char.name;
 
-const html = `
-    <div class="stat-box"><div><p class="stat-label">Level</p><p class="stat-value">${char.level}</p></div></div>
-    <div class="stat-box"><div><p class="stat-label">Melee</p><p class="stat-value">${char.melee}</p></div></div>
-    <div class="stat-box"><div><p class="stat-label">Distance</p><p class="stat-value">${char.distance}</p></div></div>
-    <div class="stat-box"><div><p class="stat-label">Magic</p><p class="stat-value">${char.magic}</p></div></div>
-    <div class="stat-box"><div><p class="stat-label">Defense</p><p class="stat-value">${char.defense}</p></div></div>
-`;
-document.getElementById('stats-display').innerHTML = html;
+                    let html = `
+                        <div class="stat-box">
+                            <div><p class="stat-label">Level</p><p class="stat-value">${char.level}</p></div>
+                        </div>
+                        <div class="stat-box">
+                            <div><p class="stat-label">Melee</p><p class="stat-value">${char.melee || 0}</p></div>
+                        </div>
+                        <div class="stat-box">
+                            <div><p class="stat-label">Distance</p><p class="stat-value">${char.distance || 0}</p></div>
+                        </div>
+                        <div class="stat-box">
+                            <div><p class="stat-label">Magic</p><p class="stat-value">${char.magic || 0}</p></div>
+                        </div>
+                        <div class="stat-box">
+                            <div><p class="stat-label">Defense</p><p class="stat-value">${char.defense || 0}</p></div>
+                        </div>
+                    `;
+
+                    // Se for um perfil automático, podemos mostrar informações extras que existem no seu banco 
+                    if (char.is_automatic) {
+                        html += `
+                            <div class="stat-box" style="border-color: #ffd700;">
+                                <div>
+                                    <p class="stat-label">Gold & Diamonds</p>
+                                    <p class="stat-value" style="font-size: 16px;">💰 ${char.gold} | 💎 ${char.diamonds}</p>
+                                    <span class="info-extra">Last Online: ${char.last_online}</span>
+                                </div>
+                            </div>
+                        `;
+                    }
+
+                    document.getElementById('stats-display').innerHTML = html;
                 } else {
-                    alert("Erro: " + result.message);
+                    alert("Error: " + result.message);
+                    window.location.href = "index.html";
                 }
             } catch (e) {
-                console.error(e);
+                console.error("Erro ao buscar detalhes:", e);
+                document.getElementById('stats-display').innerHTML = "<p style='color:red; text-align:center;'>Server connection error.</p>";
             }
         }
 
