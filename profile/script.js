@@ -86,7 +86,8 @@ async function carregarPerfis() {
                             <img src="/res/icon/eye.png">
                         </button>
                         ${!char.is_automatic ? `
-                        <button class="btn-action btn-edit" onclick="abrirEdicao('${char.name}', ${char.level}, ${char.def}, ${char.melee}, ${char.dist}, ${char.mag})">
+                        // Note que agora usamos char.distance e char.magic para bater com o banco de dados
+                            <button class="btn-action btn-edit" onclick="abrirEdicao('${char.name}', ${char.level}, ${char.defense}, ${char.melee}, ${char.distance}, ${char.magic})"> 
                             <img src="/res/icon/user-edit.png">
                         </button>` : ''}
                         <button class="btn-action btn-delete" onclick="deletarPerfil('${char.name}')">
