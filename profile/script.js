@@ -52,6 +52,10 @@ async function carregarPerfis() {
     const charList = document.getElementById('charList');
     const token = localStorage.getItem("userToken");
 
+    // Referências para os elementos de texto da contagem
+    const manualLimitText = document.getElementById('manualLimit');
+    const autoLimitText = document.getElementById('autoLimit');
+
     if (!token) {
         window.location.href = "login.html";
         return;
@@ -59,18 +63,15 @@ async function carregarPerfis() {
 
     try {
         const response = await fetch(`${API_BASE_URL}/get_profiles?token=${token}`);
-        
-        // Se o servidor retornar 401, o token expirou
-        if (response.status === 401) {
-            handleAuthError();
-            return;
-        }
-
-        const result = await response.json(); // Declarei apenas UMA vez aqui
+        const result = await response.json();
 
         if (result.status === "success") {
+            // ATUALIZA A INTERFACE COM OS VALORES VINDOS DO BACKEND
+            if (manualLimitText) manualLimitText.innerText = `Manual: ${result.manual_count}/10`;
+            if (autoLimitText) autoLimitText.innerText = `Automatic: ${result.auto_count}`;
+
             const profiles = result.data;
-            charList.innerHTML = ""; 
+            charList.innerHTML = "";
 
             if (profiles.length === 0) {
                 charList.innerHTML = '<p style="text-align: center; color: #666; margin-top: 20px;">No characters found.</p>';
