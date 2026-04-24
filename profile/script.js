@@ -109,6 +109,7 @@ function abrirEdicao(name, lv, def, melee, dist, mag) {
     document.getElementById('inputLv').value = lv;
     document.getElementById('inputDef').value = def;
     document.getElementById('inputMelee').value = melee;
+    // Garantindo que use os IDs corretos do seu HTML
     document.getElementById('inputDist').value = dist;
     document.getElementById('inputMag').value = mag;
     document.getElementById('modal-char').style.display = 'flex';
@@ -150,14 +151,14 @@ async function salvarPersonagem() {
     btn.innerText = "Saving...";
 
     const charData = {
-        token: token,
-        name: charName,
-        lv: parseInt(document.getElementById('inputLv').value) || 0,
-        def: parseInt(document.getElementById('inputDef').value) || 0,
-        melee: parseInt(document.getElementById('inputMelee').value) || 0,
-        distance: parseInt(document.getElementById('inputDist').value) || 0, // Mudado de 'dist' para 'distance'
-        magic: parseInt(document.getElementById('inputMag').value) || 0    // Mudado de 'mag' para 'magic'
-    };
+    token: token,
+    name: charName,
+    lv: parseInt(document.getElementById('inputLv').value) || 0,
+    def: parseInt(document.getElementById('inputDef').value) || 0,
+    melee: parseInt(document.getElementById('inputMelee').value) || 0,
+    distance: parseInt(document.getElementById('inputDist').value) || 0, 
+    magic: parseInt(document.getElementById('inputMag').value) || 0
+};
 
     try {
         const response = await fetch(`${API_BASE_URL}/save_manual_profile`, {
