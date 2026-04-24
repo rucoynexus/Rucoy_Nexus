@@ -184,9 +184,9 @@ async function salvarPersonagem() {
     }
 }
 
-function verPerfil(name) {
-    // Se o character.html estiver na mesma pasta que o index:
-    window.location.href = `character.html?name=${name}`;
+function verPerfil(id) {
+    // Redireciona usando o ID único do banco de dados
+    window.location.href = `character.html?id=${id}`;
 }
 
 // --- NOTIFICAÇÕES (TOASTS BONITOS) ---
