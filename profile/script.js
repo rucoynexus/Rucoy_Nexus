@@ -83,7 +83,7 @@ async function carregarPerfis() {
                 <div class="char-card">
                     <span class="char-name">${char.name}</span>
                     <div class="char-actions-right">
-                        <button class="btn-action btn-view" onclick="verPerfil('${char.name}')">
+                        <button class="btn-action btn-view" onclick="verPerfil(${char.id})">
                             <img src="/res/icon/eye.png">
                         </button>
                         ${!char.is_automatic ? `
